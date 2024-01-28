@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+export const nextConfig = {
   reactStrictMode: true,
 };
 
-export default nextConfig;
+export const i18n = {
+    locales: ['en', 'hi'],
+    defaultLocale: 'en',
+}
