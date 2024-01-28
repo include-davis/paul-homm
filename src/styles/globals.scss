@@ -1,0 +1,31 @@
+@use "src/styles/mixins.scss";
+
+:root {
+  // colors: rgba/hex
+  --primary: #4287f5;
+  --secondary: #eba134;
+  --text-light: #f0f6ff;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --include-purple: #3c257e;
+  --gradient-purple: linear-gradient(68deg,
+      #332950 10.09%,
+      #3c257e 50.92%,
+      #322d41 93.48%);
+
+  // spacers: px
+  --edge-spacer: 24px;
+
+  // font sizes: ALWAYS IN REM
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-inter);
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
