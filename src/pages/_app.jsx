@@ -4,6 +4,10 @@ import Footer from "@/components/footer/footer";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
+import ImageSlider from "@/components/services/imageSlider";
+import Card from "@/components/getInvolved/card";
+import PopupCard from "@/components/getInvolved/popupCard";
+import CommitteeDescription from "@/components/committees/committeeDesription";
 
 const inter = Inter({
   weight: ["400", "700"],
@@ -19,8 +23,7 @@ export default function App({ Component, pageProps }) {
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}>
-      <Navbar></Navbar>
+      className={`${inter.variable}`}>      
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>
