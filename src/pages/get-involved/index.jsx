@@ -1,13 +1,13 @@
 import React from 'react';
 //import styles 
 
-export default function committees()
+export default function GetInvolved()
 {
     return(
         <>
-        committees yay
+        Get Involved yay
         </>
     )
 }
 
-committees;
+GetInvolved;

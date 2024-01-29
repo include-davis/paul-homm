@@ -4,6 +4,6 @@ export const nextConfig = {
 };
 
 export const i18n = {
-    locales: ['en', 'hi'],
+    locales: ['en', 'zh', 'vi', 'ko', 'es', 'hmn'],
     defaultLocale: 'en',
 }
