@@ -1,0 +1,41 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-maroon);
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 8%;
+
+}
+
+.text {
+    color: var(--color-gold);
+    // font-family: Jost;
+    font-weight: bold;
+    p {
+        display: flex;
+        justify-content: center;
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 15%;
+        }
+    }
+}
+
+.icons {
+    //fill: var(--color-white);
+    color: var(--color-maroon);
+    background-color: var(--color-white);
+}
+
+// Contains Include message
+.subfooter {
+    background-color: var(--color-gold);
+}
+
