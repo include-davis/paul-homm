@@ -4,6 +4,7 @@ import Footer from "@/components/footer/footer";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
+import GetInvolved from "@/pages/get-involved/index";
 
 const inter = Inter({
   weight: ["400", "700"],
@@ -15,12 +16,14 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   return (
-    <NextIntlClientProvider 
+    <NextIntlClientProvider
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}>
+      className={`${inter.variable}`}
+    >
       <Navbar></Navbar>
+      <GetInvolved></GetInvolved>
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>
