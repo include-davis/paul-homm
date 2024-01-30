@@ -1,12 +1,14 @@
 import React from 'react';
-//import styles 
+import PopupCard from '@/components/getInvolved/popupCard';
 
 export default function GetInvolved()
 {
     return(
         <>
-        Get Involved yay
+        Get Involved yay  
+        <PopupCard> </PopupCard>
         </>
+
     )
 }
 
