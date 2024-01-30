@@ -1,6 +1,5 @@
 import React from "react";
-//import styles - wrong stylesheet - fix
-import styles from "@/styles/pages/contact/contact.module.scss";
+import styles from "@/styles/pages/get-involved/cards.modules.scss";
 
 export default function GetInvolved() {
   return (

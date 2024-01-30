@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import Navbar from "@/components/navBar/navBar";
 import Footer from "@/components/footer/footer";
+// import GetInvolved from "@/components/getInvolved/card";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
