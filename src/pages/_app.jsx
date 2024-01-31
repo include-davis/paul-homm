@@ -5,7 +5,6 @@ import Footer from "@/components/footer/footer";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
-import GetInvolved from "@/pages/get-involved/index";
 import ImageSlider from "@/components/services/imageSlider";
 import Card from "@/components/getInvolved/card";
 import PopupCard from "@/components/getInvolved/popupCard";
@@ -28,7 +27,7 @@ export default function App({ Component, pageProps }) {
       className={`${inter.variable}`}
     >
       <Navbar></Navbar>
-      <GetInvolved></GetInvolved>
+      <Card></Card>
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>
