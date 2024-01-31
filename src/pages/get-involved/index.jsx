@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/pages/get-involved/cards.modules.scss";
+import styles from "@/styles/pages/get-involved/cards.module.scss";
 
 export default function GetInvolved() {
   return (
