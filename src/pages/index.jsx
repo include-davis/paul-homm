@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
+import LangDropDown from "@/components/dropDown/dropDown";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       Home yay
+      <LangDropDown></LangDropDown>
     </>
   );
 }
