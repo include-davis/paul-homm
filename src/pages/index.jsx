@@ -1,8 +1,11 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
 import LangDropDown from "@/components/dropDown/dropDown";
+import React, { useState, createContext } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const LanguageContext = React.createContext() //the "language" state variable initialized below can be accessed by all child components, wrapped by the <languageProvider> tag, by using the "const {language, setLanguage} = useContext(LanguageContext)" statement
 
 export async function getStaticProps({ locale }) {
   return {
@@ -14,10 +17,23 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
   const t = useTranslations('Index');
+
+  //creates a "language" state variable, to track the currently selected language and indicate which language data to pull from the json
+  const [language, setLanguage] = useState('moo');
+  //sets up the context that will be passed to child compoenents
+  const contextValue = {
+    language,
+    setLanguage,
+  };
+
   return (
     <>
       Home yay
-      <LangDropDown></LangDropDown>
+      <LanguageContext.Provider value={contextValue}>
+        <LangDropDown></LangDropDown>
+        Testing if 
+        <LangDropDown></LangDropDown>
+      </LanguageContext.Provider>
     </>
   );
 }

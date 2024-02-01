@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/dropDown.module.scss";
-
-
-export const LanguageContext = React.createContext() //the state variables in the component below can be accessed from any other component using the useContext(Language) hook
+import { LanguageContext } from "../../pages/index";
 
 
 
@@ -23,7 +21,7 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
 
 export default function LangDropDown() {
     const [dropDown, setDropDown] = useState(false)
-    const [language, setLanguage] = useState('moo')
+    const {language, setLanguage} = useContext(LanguageContext)
 
     function toggleDropDown() {
         setDropDown(prevState => !prevState)
