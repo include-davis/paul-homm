@@ -1,11 +1,62 @@
 .header {
     display: flex;
     flex-direction: column;
-    background-color: maroon;
+    background-color: var(--maroon, #5B1110);
     height: 226px;
+    justify-content: space-around;
+    
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
+
+.title_text {
+    color: #FFFBF0;
+    h1 {
+        font-family: "Malayalam MN";
+        font-size: 2.8125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    h2 {
+        //FONT NOT BEING APPLIED??
+        font-family: "Be Vietnam";
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
 }
 
 .pages {
     display: flex;
     flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    
+    a {
+        color: var(--Gold, #D79C1A);
+        font-family: Jost;
+        font-size: 1.5rem;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 2px solid var(--Gold, #D79C1A);
+        }
+
+        &.currentPage {
+            font-weight: 600 ; 
+        }
+
+        &.aboutUs {
+            font-size: 1.28569rem;;
+        }
+        
+    }
+    
 }
