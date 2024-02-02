@@ -14,16 +14,23 @@ export default function Footer() {
     <footer className={styles.footer}>
         <div className={styles.body}>
             {/* nav buttons */}
-            <div className={styles.text}>
-                <ul>
-                    <li>HOME</li>
-                    <li>ABOUT US</li>
-                    <li>SERVICES</li>
-                    <li>COMMITEES</li>
-                    <li>GET INVOLVED</li>
-                </ul>
-                
-            </div>
+            <ul className={styles.pages}>
+                <li>
+                    <Link href="/">HOME</Link>
+                </li>
+                <li>
+                    <Link href="/">ABOUT US</Link>
+                </li>
+                <li>
+                    <Link href="/">SERVICES</Link>
+                </li>
+                <li>
+                    <Link href="/">COMMITEES</Link>
+                </li>
+                <li>
+                    <Link href="/">GET INVOLVED</Link>
+                </li>
+            </ul>
         
             {/* contacts */}
             <div className={styles.contact}> 
