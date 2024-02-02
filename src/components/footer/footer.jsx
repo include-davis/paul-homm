@@ -1,13 +1,14 @@
-import React, { Component } from "react";
 import styles from "@/styles/components/footer/footer.module.scss";
-import {useTranslations} from 'next-intl';
 
+import {useTranslations} from 'next-intl';
 import Image from "next/image";
+import Link from "next/link";
+
+import React, { Component } from "react";
 import { TiSocialFacebookCircular } from "react-icons/ti";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
-
 
 export default function Footer() {
   return (
