@@ -73,6 +73,12 @@
 
 // Contains Include message
 .subfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+
+    color: var(--color-maroon);
     background-color: var(--color-gold);
 }
 
