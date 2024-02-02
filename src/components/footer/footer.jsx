@@ -26,18 +26,46 @@ export default function Footer() {
             </div>
         
             {/* contacts */}
-            <div className={styles.text}> 
+            <div className={styles.contact}> 
                 <h3>CONTACT US</h3>
-                <TiSocialFacebookCircular size={63} className={styles.icons}/>
-                <AiOutlineInstagram size={63} className={styles.icons}/>
-                <LuPhone size={63} className={styles.icons}/>
-                <MdOutlineMailOutline size={63} className={styles.icons}/>
+                <div className={styles.circle_frame}>
+                    <Image
+                        src="/ellipse.svg"
+                        width={63}
+                        height={63}
+                        alt={"Icon background"}
+                    />
+                    <Image
+                        src="/ellipse.svg"
+                        width={63}
+                        height={63}
+                        alt={"Icon background"}
+                    />
+                    <Image
+                        src="/ellipse.svg"
+                        width={63}
+                        height={63}
+                        alt={"Icon background"}
+                    />
+                    <Image
+                        src="/ellipse.svg"
+                        width={63}
+                        height={63}
+                        alt={"Icon background"}
+                    />
+                </div>
+                <div className={styles.icons}>
+                    <TiSocialFacebookCircular size={60}/>
+                    <AiOutlineInstagram size={63}/>
+                    <LuPhone size={63}/>
+                    <MdOutlineMailOutline size={63}/>
+                </div>
                 <p>6341 Folsom Blvd <br/>
                     Sacramento, CA 95819</p>
             </div>
 
             {/* thank you message */}
-            <div className={styles.text}>
+            <div className={styles.sponsor}>
                 <p>THANK YOU TO OUR SPONSORS <br/>
                     FOR THEIR GENEROUS SUPPORT</p>
                 <Image

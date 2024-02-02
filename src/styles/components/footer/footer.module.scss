@@ -12,26 +12,63 @@
 
 }
 
-.text {
-    color: var(--color-gold);
-    // font-family: Jost;
+.pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     font-weight: bold;
+    font-size: 1rem;
+    gap: 22px;
+    list-style: none;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     p {
         display: flex;
         justify-content: center;
+        text-align: center;
+        line-height: 1.5;
     }
-    ul {
-        list-style: none;
-        li {
-            margin-bottom: 15%;
-        }
+    h3 {
+        display: flex;
+        justify-content: center;
     }
+
+    // color: var(--color-gold);
+    // font-weight: bold;
+    font-size: 1rem;
+    gap: 5px;
+
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    // color: var(--color-gold);
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .icons {
-    //fill: var(--color-white);
+    position: absolute;
     color: var(--color-maroon);
-    background-color: var(--color-white);
+    display: flex;
+    // background-color: var(--color-white);
+}
+
+.circle_frame {
+    position: relative;
 }
 
 // Contains Include message
