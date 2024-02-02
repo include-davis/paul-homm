@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import styles from "@/styles/components/dropDown/dropDown.module.scss";
 import { LanguageContext } from "../../pages/index";
 
@@ -10,11 +10,11 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
         dropdownlist=[];
     }
     return (
-        <div>
+        <ul className={styles.table}>
             {dropdownlist.map((arr) => {
-                return <button onClick={() => clickLanguageFunct(arr)}>{arr}</button>
+                return <button onClick={() => clickLanguageFunct(arr)} className={styles.options}>{arr}</button>
             })}
-        </div>
+        </ul>
     )
 
 }
@@ -22,6 +22,7 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
 export default function LangDropDown() {
     const [dropDown, setDropDown] = useState(false)
     const {language, setLanguage} = useContext(LanguageContext)
+    let dropDownRef = useRef()
 
     function toggleDropDown() {
         setDropDown(prevState => !prevState)
@@ -32,11 +33,22 @@ export default function LangDropDown() {
         setLanguage(lang_code)
     }
 
+    useEffect(() => {
+        let handler = (e) => {
+            if (!(dropDownRef.current.contains(e.target))) {
+                setDropDown(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handler)
+    })
 
   return (
-    <div className={styles.container}>
-        <button>{ language }</button>
-        <button onClick={ toggleDropDown }>v</button>
+    <div className={styles.container} ref={dropDownRef}>
+        <div className={styles.header}>
+            <button>{ language }</button>
+            <button onClick={ toggleDropDown }>v</button>
+        </div>
         <DropDownTable tableState={ dropDown } clickLanguageFunct={ clickLanguage } />
     </div>
 

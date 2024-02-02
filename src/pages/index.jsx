@@ -32,7 +32,6 @@ export default function Home() {
       <LanguageContext.Provider value={contextValue}>
         <LangDropDown></LangDropDown>
         Testing if 
-        <LangDropDown></LangDropDown>
       </LanguageContext.Provider>
     </>
   );

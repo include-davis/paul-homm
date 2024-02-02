@@ -1,3 +1,36 @@
 .container {
-    background-color: aqua;
+    background-color: #FFFBF0;
+    width: 269px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 20px;
+}
+
+.header {
+    display: flex;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.options {
+    color: #5B1110;
+    font-family: Inter;
+    background-color: transparent;
+    border-radius: 5%;
+    padding: 7px;
+
+}
+
+.options:hover {
+    color: #D79C1A;
+    background-color:#5B1110;
 }
