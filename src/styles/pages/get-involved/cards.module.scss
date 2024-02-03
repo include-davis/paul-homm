@@ -23,20 +23,42 @@
 }
 
 .card {
-  width: 30%;
+  width: 380px;
+  height: 350px;
   border: 1px solid #ccc; // keep for now just to visualzie border
-  margin: 10px;
-  padding: 20px;
+
   text-align: center;
   border-radius: 5px;
+  flex-shrink: 0;
 }
 
-.cardImg {
-  // margin-bottom: 10px;
-  width: 100%;
-  height: auto;
+.cardImg1 {
+  width: 380px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: url(/images/physiciansAndResidents.png),
+    lightgray -5.605px 0px / 123.248% 100% no-repeat;
 }
 
+.cardImg2 {
+  width: 380px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: url(/images/undergrad.png),
+    lightgray -5.605px 0px / 123.248% 100% no-repeat;
+}
+
+.cardImg3 {
+  width: 380px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: url(/images/clinics.png),
+    // from figma dev
+    lightgray -5.605px 0px / 123.248% 100% no-repeat;
+}
 .cardText {
   font-size: 1rem;
   margin-bottom: 10px;
