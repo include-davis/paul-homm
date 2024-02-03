@@ -111,27 +111,46 @@
 }
 
 
-@keyframes close {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(
-        calc(var(--list-num)*-1*60)
-        );
-    }
-  }
-
-
-
 .arrow {
-    background-color: pink;
 }
 
 .arrow:active {
     transition: transform 0.3s;
-    transform: rotate(45deg);
+    transform: rotate(180deg);
     background-color: aqua;
   // This is important to keep the icon from rotating with the parent button.
   
+}
+
+.translationIcon {
+    width: 29px;
+    height: 29px;
+}
+
+.line {
+    width: 269px;
+}
+.line1 {
+    --list-num: 1px;
+    animation: .4s rollout;
+}
+.line2 {
+    --list-num: 2px;
+    animation: .4s rollout;
+}
+.line3 {
+    --list-num: 3px;
+    animation: .4s rollout;
+}
+.line4 {
+    --list-num: 4px;
+    animation: .4s rollout;
+}
+.line5 {
+    --list-num: 5px;
+    animation: .4s rollout;
+}
+.line6 {
+    --list-num: 6px;
+    animation: .4s rollout;
 }
