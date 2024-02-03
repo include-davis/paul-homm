@@ -2,7 +2,7 @@
 /* view and test it out by importing it to the respective page */
 import styles from "@/styles/pages/get-involved/cards.module.scss";
 import Image from "next/image";
-import AbImage from "/next.svg";
+// import AbImage from "/next.svg";
 export default function Card() {
   return (
     <div>
@@ -11,24 +11,23 @@ export default function Card() {
         <div className={styles.cardsContainer}>
           <div className={styles.card}>
             <Image
-              src="/public/physiciansAndResidents.png"
-              width={300}
-              height={400}
-              objectFit="cover"
-              alt="Physicians And Residents"
+              src="/physiciansAndResidents.png"
+              width={150}
+              height={250}
+              objectFit="contain"
+              alt="Girl Getting Her Blood Drawn"
             />
-            <AbImage></AbImage>
             <p className={styles.cardText}>Physicians & Residents</p>
             <button className={styles.detailsButton}>Details</button>
             <button className={styles.signUpButton}>Sign Up</button>
           </div>
           <div className={styles.card}>
             <Image
-              src="/public/undergrad.png"
-              width={300}
+              src="/undergrad.png"
+              width={150}
               height={400}
               objectFit="cover"
-              alt="Undergrad"
+              alt="Group Of Residents"
             />
             <p className={styles.cardText}>Undergrad. Patient Advocates</p>
             <button className={styles.detailsButton}>Details</button>
@@ -37,11 +36,11 @@ export default function Card() {
           <div className={styles.card}>
             <div className={styles.cardImg}>
               <Image
-                src="/public/specialtyClinincs.png"
+                src="/specialtyClinics.png"
                 width={300}
                 height={400}
                 objectFit="cover"
-                alt="Specialty Clinics"
+                alt="Group of Residents"
               />
             </div>
 
