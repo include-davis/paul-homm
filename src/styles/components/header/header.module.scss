@@ -55,14 +55,17 @@
             border-bottom: 2px solid var(--Gold, #D79C1A);
         }
 
-        &currentPage {
-            font-weight: 10000 ; 
-        }
-
-        &.aboutUs {
-            font-size: 1.28569rem;
-        }
-        
     }
+
+   
     
 }
+
+
+.page_link.active {
+   
+    background-color: #FFFBF0;
+   
+    
+}
+
