@@ -38,11 +38,56 @@
         justify-content: center;
     }
 
-    // color: var(--color-gold);
-    // font-weight: bold;
+    width: 25%;
     font-size: 1rem;
     gap: 5px;
 
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.circle_frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-maroon);
+    width: 63px;
+    height: 63px;
+    font-size: 2.7rem;
+    
+    text-decoration: none;
+    transition: margin 0.2s ease-in-out;
+}
+
+.circle_frame_facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-maroon);
+    width: 63px;
+    height: 63px;
+    font-size: 3.5rem;
+    
+    text-decoration: none;
+    transition: margin 0.2s ease-in-out;
+}
+
+.circle_frame:hover {
+    margin-top: -0.5rem;
+}
+
+.circle_frame_facebook:hover {
+    margin-top: -0.5rem;
 }
 
 .sponsor {
@@ -60,16 +105,6 @@
     font-size: 1rem;
 }
 
-.icons {
-    position: absolute;
-    color: var(--color-maroon);
-    display: flex;
-    // background-color: var(--color-white);
-}
-
-.circle_frame {
-    position: relative;
-}
 
 // Contains Include message
 .subfooter {

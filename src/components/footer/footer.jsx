@@ -5,10 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import React, { Component } from "react";
-import { TiSocialFacebookCircular } from "react-icons/ti";
 import { AiOutlineInstagram } from "react-icons/ai";
-import { LuPhone } from "react-icons/lu";
-import { MdOutlineMailOutline } from "react-icons/md";
+import { MdOutlineMailOutline, MdFacebook } from "react-icons/md";
+import { HiOutlinePhone } from "react-icons/hi";
 
 export default function Footer() {
   return (
@@ -36,37 +35,19 @@ export default function Footer() {
             {/* contacts */}
             <div className={styles.contact}> 
                 <h3>CONTACT US</h3>
-                <div className={styles.circle_frame}>
-                    <Image
-                        src="/ellipse.svg"
-                        width={63}
-                        height={63}
-                        alt={"Icon background"}
-                    />
-                    <Image
-                        src="/ellipse.svg"
-                        width={63}
-                        height={63}
-                        alt={"Icon background"}
-                    />
-                    <Image
-                        src="/ellipse.svg"
-                        width={63}
-                        height={63}
-                        alt={"Icon background"}
-                    />
-                    <Image
-                        src="/ellipse.svg"
-                        width={63}
-                        height={63}
-                        alt={"Icon background"}
-                    />
-                </div>
                 <div className={styles.icons}>
-                    <TiSocialFacebookCircular size={60}/>
-                    <AiOutlineInstagram size={63}/>
-                    <LuPhone size={63}/>
-                    <MdOutlineMailOutline size={63}/>
+                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame_facebook}>
+                        <MdFacebook/> 
+                    </a>
+                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <AiOutlineInstagram/>
+                    </a>
+                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <HiOutlinePhone/>
+                    </a>
+                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <MdOutlineMailOutline/>
+                    </a>
                 </div>
                 <p>6341 Folsom Blvd <br/>
                     Sacramento, CA 95819</p>
