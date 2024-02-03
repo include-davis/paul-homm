@@ -23,6 +23,11 @@
     list-style: none;
 }
 
+.link {
+    text-decoration: none;
+    color: var(--color-gold);
+}
+
 .contact {
     display: flex;
     flex-direction: column;

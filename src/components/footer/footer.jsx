@@ -16,19 +16,19 @@ export default function Footer() {
             {/* nav buttons */}
             <ul className={styles.pages}>
                 <li>
-                    <Link href="/">HOME</Link>
+                    <Link className={styles.link} href="/">HOME</Link>
                 </li>
                 <li>
-                    <Link href="/">ABOUT US</Link>
+                    <Link className={styles.link} href="/">ABOUT US</Link>
                 </li>
                 <li>
-                    <Link href="/">SERVICES</Link>
+                    <Link className={styles.link}  href="/">SERVICES</Link>
                 </li>
                 <li>
-                    <Link href="/">COMMITEES</Link>
+                    <Link className={styles.link}  href="/">COMMITEES</Link>
                 </li>
                 <li>
-                    <Link href="/">GET INVOLVED</Link>
+                    <Link className={styles.link} href="/">GET INVOLVED</Link>
                 </li>
             </ul>
         
