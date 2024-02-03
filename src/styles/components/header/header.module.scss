@@ -21,12 +21,11 @@
         font-family: "Malayalam MN";
         font-size: 2.8125rem;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 550;
         line-height: normal;
     }
 
     h2 {
-        //FONT NOT BEING APPLIED??
         font-family: "Be Vietnam";
         font-size: 1.875rem;
         font-style: normal;
@@ -44,20 +43,24 @@
     
     a {
         color: var(--Gold, #D79C1A);
+        text-align: center;
         font-family: Jost;
         font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
         text-decoration: none;
 
         &:hover {
             border-bottom: 2px solid var(--Gold, #D79C1A);
         }
 
-        &.currentPage {
-            font-weight: 600 ; 
+        &currentPage {
+            font-weight: 10000 ; 
         }
 
         &.aboutUs {
-            font-size: 1.28569rem;;
+            font-size: 1.28569rem;
         }
         
     }

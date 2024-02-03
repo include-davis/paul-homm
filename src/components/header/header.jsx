@@ -2,15 +2,20 @@ import styles from "@/styles/components/header/header.module.scss";
 import {useTranslations} from 'next-intl';
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import Image from 'next/image'
 
 export default function Header() {
     const router = useRouter();
     return (
         <header className={styles.header}>
             <div className={styles.title}>
-                <div className={styles.logo}>
-                    {/*ADD LOGO HERE*/ }
-                </div>
+                
+                <Image 
+                    src = "/paul_hom_logo.png"
+                    width = {110}
+                    height = {110}
+                    alt = "Paul Hom logo"
+                />
 
                 <div className={styles.title_text}>
                     <h1>Paul Hom Asian Clinic</h1>
