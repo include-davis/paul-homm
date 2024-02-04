@@ -2,7 +2,10 @@
 /* view and test it out by importing it to the respective page */
 import styles from "@/styles/pages/get-involved/cards.module.scss";
 import Image from "next/image";
-// import AbImage from "/next.svg";
+
+/*NOTE: for the second card image - couldn't find the image that was used in the Figma design. For now I've used a different image 
+(found on their current site) and will make the change once I can get a hold of the correct image
+*/
 export default function Card() {
   return (
     <div>
