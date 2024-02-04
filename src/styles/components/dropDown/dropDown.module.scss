@@ -16,25 +16,50 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     background-color: #FFFBF0;
+}
 
+.selected {
+    color: #5B1110;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.46669rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 45%;
 }
 
 .table {
-    background-color: transparent;
+    background-color: #FFFBF0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: .3s drop;
 }
 
+@keyframes drop {
+    0% {
+      transform: translateY(-110%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 .options {
-    color: #5B1110;
-    font-family: Inter;
     background-color: transparent;
     border-color: transparent;
     border-radius: 7px;
     padding: 7px;
+    color: #5B1110;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.46669rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .options:hover {
@@ -55,7 +80,8 @@
 
 .enOption {
     width: 100%;
-    background-color: #FFFBF0;
+    background-color: transparent;
+    //background-color: #FFFBF0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -67,7 +93,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #FFFBF0;
+    background-color: transparent;
     --list-num: 2px;
     animation: .4s rollout;
 }
@@ -76,7 +102,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #FFFBF0;
+    background-color: transparent;
     --list-num: 3px;
     animation: .4s rollout;
 }
@@ -85,7 +111,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #FFFBF0;
+    background-color: transparent;
     --list-num: 4px;
     animation: .4s rollout;
 }
@@ -94,7 +120,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #FFFBF0;
+    background-color: transparent;
     --list-num: 5px;
     animation: .4s rollout;
 }
@@ -103,7 +129,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #FFFBF0;
+    background-color: transparent;
     --list-num: 6px;
     animation: .4s rollout;
     border-bottom-left-radius: 10px;
@@ -112,45 +138,61 @@
 
 
 .arrow {
+    width: 9.67%;
+    height: 23.3%;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .arrow:active {
     transition: transform 0.3s;
-    transform: rotate(180deg);
-    background-color: aqua;
-  // This is important to keep the icon from rotating with the parent button.
-  
+    transform: rotate(180deg);  
+}
+
+.arrowIcon {
+    width: 100%;
+    height: 100%;
 }
 
 .translationIcon {
-    width: 29px;
-    height: 29px;
+    width: 9.29%;
+    margin-right: 5%;
 }
 
 .line {
-    width: 269px;
+    width: 90%;
 }
 .line1 {
-    --list-num: 1px;
+    --list-num: 0.5px;
     animation: .4s rollout;
 }
 .line2 {
-    --list-num: 2px;
+    --list-num: 1.5px;
     animation: .4s rollout;
 }
 .line3 {
-    --list-num: 3px;
+    --list-num: 2.5px;
     animation: .4s rollout;
 }
 .line4 {
-    --list-num: 4px;
+    --list-num: 3.5px;
     animation: .4s rollout;
 }
 .line5 {
-    --list-num: 5px;
+    --list-num: 4.5px;
     animation: .4s rollout;
 }
 .line6 {
-    --list-num: 6px;
+    --list-num: 5.5px;
     animation: .4s rollout;
+}
+
+.vDivider {
+    font-size: 3rem;
+    color: #5B1110;
 }
