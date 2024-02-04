@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 //hardcoded width/height/radius/padding values in .container, .options, keyframe-rollout, .spOption
 //hardcoded animation speed in .enOption, .cnOption, .koOption, .vnOption, .hmOption, & .spOption
 
@@ -52,10 +54,12 @@
     background-color: transparent;
     border-color: transparent;
     border-radius: 7px;
-    padding: 7px;
+    padding: 5px;
+    margin-top: 3%;
+    margin-bottom: 3%;
     color: #5B1110;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1.46669rem;
     font-style: normal;
     font-weight: 400;
@@ -195,4 +199,6 @@
 .vDivider {
     font-size: 3rem;
     color: #5B1110;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }

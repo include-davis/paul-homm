@@ -19,7 +19,7 @@ export default function Home() {
   const t = useTranslations('Index');
 
   //creates a "language" state variable, to track the currently selected language and indicate which language data to pull from the json
-  const [language, setLanguage] = useState('moo');
+  const [language, setLanguage] = useState("en");
   //sets up the context that will be passed to child compoenents
   const contextValue = {
     language,
@@ -31,7 +31,6 @@ export default function Home() {
       Home yay
       <LanguageContext.Provider value={contextValue}>
         <LangDropDown></LangDropDown>
-        Testing if this
       </LanguageContext.Provider>
     </>
   );

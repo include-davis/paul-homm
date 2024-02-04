@@ -11,17 +11,17 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
     if (tableState==true) {
         table = <ul className={styles.table}>
             <img  src='/dropDown/divider.svg' className={styles.line1 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.enOption}><button onClick={() => clickLanguageFunct("English")} className={styles.options}>{"English"}</button></div>
+            <div className={styles.enOption}><button onClick={() => clickLanguageFunct("en")} className={styles.options}>{"English"}</button></div>
             <img  src='/dropDown/divider.svg' className={styles.line2 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.cnOption}><button onClick={() => clickLanguageFunct("Chinese")} className={styles.options}>{"Chinese"}</button></div>
+            <div className={styles.cnOption}><button onClick={() => clickLanguageFunct("zh")} className={styles.options}>{"中文"}</button></div>
             <img  src='/dropDown/divider.svg' className={styles.line3 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.koOption}><button onClick={() => clickLanguageFunct("Korean")} className={styles.options}>{"Korean"}</button></div>
+            <div className={styles.koOption}><button onClick={() => clickLanguageFunct("ko")} className={styles.options}>{"한국어"}</button></div>
             <img  src='/dropDown/divider.svg' className={styles.line4 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.vnOption}><button onClick={() => clickLanguageFunct("Viet")} className={styles.options}>{"Viet"}</button></div>
+            <div className={styles.vnOption}><button onClick={() => clickLanguageFunct("vi")} className={styles.options}>{"Tiếng Việt"}</button></div>
             <img  src='/dropDown/divider.svg' className={styles.line5 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.hmOption}><button onClick={() => clickLanguageFunct("Hmong")} className={styles.options}>{"Hmong"}</button></div>
+            <div className={styles.hmOption}><button onClick={() => clickLanguageFunct("hmn")} className={styles.options}>{"Hmoob"}</button></div>
             <img  src='/dropDown/divider.svg' className={styles.line6 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.spOption}><button onClick={() => clickLanguageFunct("Spanish")} className={styles.options}>{"Spanish"}</button></div>
+            <div className={styles.spOption}><button onClick={() => clickLanguageFunct("es")} className={styles.options}>{"Español"}</button></div>
             </ul>
     }
     return (
@@ -35,6 +35,7 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
 export default function LangDropDown() {
     const [dropDown, setDropDown] = useState(false)
     const {language, setLanguage} = useContext(LanguageContext)
+    let selected;
     let arrow;
     if (dropDown==false) { //render downward arrow is list is closed
         arrow = <button onClick={ toggleDropDown } className={styles.arrow}><img  src='/dropDown/arrowDown.svg' className={styles.arrowIcon} alt="Down Arrow"/></button>
@@ -46,17 +47,35 @@ export default function LangDropDown() {
     function toggleDropDown() {
         setDropDown(prevState => !prevState)
     }
-
     
     function clickLanguage(lang_code) {
         setLanguage(lang_code)
         setDropDown(prevState => !prevState)
     }
 
+    if (language=="en") {
+        selected = "English"
+    }
+    else if (language=="zh") {
+        selected = "中文"
+    }
+    else if (language=="ko") {
+        selected = "한국어"
+    }
+    else if (language=="vi") {
+        selected = "Tiếng Việt"
+    }
+    else if (language=="hmn") {
+        selected = "Hmoob"
+    }
+    else {
+        selected = "Español"
+    }
+    
   return (
     <div className={styles.container}>
         <div className={styles.header}>
-            <div className={styles.selected}>{ language }</div>
+            <div className={styles.selected}>{ selected }</div>
             <RxDividerVertical className={styles.vDivider} />
             <img  src='/dropDown/translationIcon.svg' className={styles.translationIcon} alt="Translation Symbol"/>
             {arrow}
