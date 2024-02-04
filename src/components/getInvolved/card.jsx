@@ -12,25 +12,27 @@ export default function Card() {
           <div className={styles.card}>
             <div className={styles.cardImg1}>
               <Image />
+              <p className={styles.cardText}>Physicians & Residents</p>
             </div>
-            <p className={styles.cardText}>Physicians & Residents</p>
+
             <button className={styles.detailsButton}>Details</button>
             <button className={styles.signUpButton}>Sign Up</button>
           </div>
           <div className={styles.card}>
             <div className={styles.cardImg2}>
               <Image />
+              <p className={styles.cardText}>Undergrad. Patient Advocates</p>
             </div>
-            <p className={styles.cardText}>Undergrad. Patient Advocates</p>
+
             <button className={styles.detailsButton}>Details</button>
             <button className={styles.signUpButton}>Sign Up</button>
           </div>
           <div className={styles.card}>
             <div className={styles.cardImg3}>
               <Image />
+              <p className={styles.cardText}>Health Professional Students</p>
             </div>
 
-            <p className={styles.cardText}>Health Professional Students</p>
             <button className={styles.detailsButton}>Details</button>
             <button className={styles.signUpButton}>Sign Up</button>
           </div>
