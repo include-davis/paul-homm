@@ -10,31 +10,34 @@ import { MdOutlineMailOutline, MdFacebook } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
 
 export default function Footer() {
+
+  const t = useTranslations('Footer');
+
   return (
     <footer className={styles.footer}>
         <div className={styles.body}>
             {/* nav buttons */}
             <ul className={styles.pages}>
                 <li>
-                    <Link className={styles.link} href="/">HOME</Link>
+                    <Link className={styles.link} href="/">{t('pages.page1')}</Link>
                 </li>
                 <li>
-                    <Link className={styles.link} href="/">ABOUT US</Link>
+                    <Link className={styles.link} href="/">{t('pages.page2')}</Link>
                 </li>
                 <li>
-                    <Link className={styles.link}  href="/">SERVICES</Link>
+                    <Link className={styles.link}  href="/">{t('pages.page3')}</Link>
                 </li>
                 <li>
-                    <Link className={styles.link}  href="/">COMMITEES</Link>
+                    <Link className={styles.link}  href="/">{t('pages.page4')}</Link>
                 </li>
                 <li>
-                    <Link className={styles.link} href="/">GET INVOLVED</Link>
+                    <Link className={styles.link} href="/">{t('pages.page5')}</Link>
                 </li>
             </ul>
         
             {/* contacts */}
             <div className={styles.contact}> 
-                <h3>CONTACT US</h3>
+                <h3>{t('contact.message')}</h3>
                 <div className={styles.icons}>
                     <a href="https://includedavis.com" target="_blank" className={styles.circle_frame_facebook}>
                         <MdFacebook/> 
@@ -49,20 +52,18 @@ export default function Footer() {
                         <MdOutlineMailOutline/>
                     </a>
                 </div>
-                <p>6341 Folsom Blvd <br/>
-                    Sacramento, CA 95819</p>
+                <p>{t('contact.address_pt1')}<br/>{t('contact.address_pt2')}</p>
             </div>
 
             {/* thank you message */}
             <div className={styles.sponsor}>
-                <p>THANK YOU TO OUR SPONSORS <br/>
-                    FOR THEIR GENEROUS SUPPORT</p>
+                <p>{t('sponsor_pt1')}<br/>{t('sponsor_pt2')}</p>
                 <Image
                     src="/credit-union.png"
                     width={280}
                     height={100}
                     alt={"Safe Credit Union Logo"}
-                    // style={styles.picture}
+                    style={{borderRadius: '12px'}}
                 />
             </div>
         </div>
