@@ -44,8 +44,12 @@
   border-radius: 12px;
   background: url(/images/physiciansAndResidents.png),
     lightgray -5.605px 0px / 123.248% 100% no-repeat;
-  // object-fit: contain;
-  object-fit: scale-down;
+  background-size: cover; /* or "contain" depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
 }
 
 .cardImg2 {
@@ -55,7 +59,12 @@
   border-radius: 12px;
   background: url(/images/undergrad.png),
     lightgray -5.605px 0px / 123.248% 100% no-repeat;
-  object-fit: scale-down;
+  background-size: cover; /* or "contain" depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
 }
 
 .cardImg3 {
@@ -66,6 +75,12 @@
   background: url(/images/clinics.png),
     // from figma dev
     lightgray -5.605px 0px / 123.248% 100% no-repeat;
+  background-size: cover; /* or "contain" depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
 }
 .cardText {
   position: relative;
