@@ -2,16 +2,11 @@
 
 :root {
   // colors: rgba/hex
-  --primary: #4287f5;
-  --secondary: #eba134;
-  --text-light: #f0f6ff;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --include-purple: #3c257e;
-  --gradient-purple: linear-gradient(68deg,
-      #332950 10.09%,
-      #3c257e 50.92%,
-      #322d41 93.48%);
+  --color-maroon: #5b1110;
+  --color-gold: #d79c1A;
+  --color-white: #fffBf0;
+  --color-beige: #e7d3b8;
+  --text-black: #333333;
 
   // spacers: px
   --edge-spacer: 24px;
@@ -25,6 +20,9 @@
   padding: 0;
   margin: 0;
 }
+
+/* Desktop Styles */
+
 
 button {
   cursor: pointer;
