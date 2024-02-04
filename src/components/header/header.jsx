@@ -13,7 +13,7 @@ export default function Header() {
 
     const links = [
         { href: '/', text: 'HOME' },
-        { href: '/about', text: 'ABOUT US' },
+        { href: '/about-us', text: 'ABOUT US' },
         { href: '/services', text: 'SERVICES' },
         { href: '/committees', text: 'COMMITEES' },
         { href: '/get-involved', text: 'GET INVOLVED' }
@@ -35,9 +35,10 @@ export default function Header() {
             </div>
             <div className={styles.pages}>
                 {links.map((link, index) => (
-                    <li key = {index} className = {`${styles.page_link} ${activeLinks? styles.active : ''}`}>
+                    <li key = {index} className = {`${styles.page_link} ${activeLinks[index]? styles.active : null}`}>
                         <Link 
-                            href={`/${link.href}`} 
+                         
+                            href={`${link.href}`} 
                             onClick={() => toggleActive(index)}
                         >
                             {link.text}
