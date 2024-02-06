@@ -48,7 +48,7 @@ export default function ImageSlider() {
       </div>
 
       <div className={styles.slideContainer}>
-        <div className={currTab === 1 ? `${styles.slide} ${styles.activeSlide}` : `${styles.slide}`}>
+        <div className={currTab === 1 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div>
             <Image className={styles.image} src="/specialtyClinics.png" width={500} height={300} alt="Clinic staff" />
           </div>
@@ -62,7 +62,7 @@ export default function ImageSlider() {
           </div>
         </div>
 
-        <div className={currTab === 2 ? `${styles.slide} ${styles.activeSlide}` : `${styles.slide}`}>
+        <div className={currTab === 2 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div>
             <Image className={styles.image} src="/hepatitis.png" width={500} height={300} alt="Woman being vaccinated" />
           </div>
@@ -79,7 +79,7 @@ export default function ImageSlider() {
 
         </div>
 
-        <div className={currTab === 3 ? `${styles.slide} ${styles.activeSlide}` : `${styles.slide}`}>
+        <div className={currTab === 3 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div>
             <Image className={styles.image} src="/healthEdu.png" width={500} height={300} alt="Clinic students" />
           </div>
@@ -93,7 +93,7 @@ export default function ImageSlider() {
           </div>
         </div>
 
-        <div className={currTab === 4 ? `${styles.slide} ${styles.activeSlide}` : `${styles.slide}`}>
+        <div className={currTab === 4 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div>
             <Image className={styles.image} src="/vaccines.png" width={500} height={300} alt="Woman receiving vaccine" />
           </div>
@@ -109,6 +109,5 @@ export default function ImageSlider() {
         </div>
       </div>
     </div >
-
   );
 }
