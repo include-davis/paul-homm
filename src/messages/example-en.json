@@ -1,0 +1,32 @@
+{
+    "storing global components like navbar OUTSIDE of any page" : "",
+    "Navbar" : {
+        "navlinks": [
+            "about",
+            "projects",
+            "services",
+            "get involved"
+        ]
+    },
+
+    "storing text for a page" : "",
+    "Index": {
+        "storing non-component text on the page": "",
+        "header-title" : "Design. Develop. Create",
+        "club-description": "We are a UC Davis community of web developers and designers dedicated to fostering collaboration, growth and the creation of creative digital solutions.",
+        "join-button": "Join the Community",
+
+        "storing page-specific component text like the project cards on the homepage INSIDE the json for the homepage" : "",
+        "project-cards": {
+            "ielc": {
+                "quarter": "Winter/spring 2023",
+                "description" : "Website and brand identity project for the Interactive Elementary Learning Center to boost credibility and increase participation in their free 7-week summer program."
+            }
+        }
+    },
+
+    "starting the json for a new page OUTSIDE the previous one": "",
+    "About": {
+        "imma stop transcribing the whole website" : "but lmk if anything here didn't make sense but this is def one of the wackier ways of doing this."
+    }
+}
