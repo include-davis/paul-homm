@@ -26,13 +26,13 @@ export default function ImageSlider() {
   const [currTab, setCurrTab] = useState(1);
 
   const toggleTab = (index) => {
-    // I already checked if index works and it does. This is not the problem.
     setCurrTab(index);
   }
 
   return (
-    <div className={styles.sliderContainer}>
-      <div className={styles.navigation}>
+    <div className={styles.slideContainer}>
+
+      <div className={styles.tabContainer}>
         <button className={currTab === 1 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(1)}>
           Specialty Clinics
         </button>
@@ -48,11 +48,12 @@ export default function ImageSlider() {
       </div>
 
       <div className={styles.slideContainer}>
+
         <div className={currTab === 1 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
-          <div>
+          <div className={styles.imageContainer}>
             <Image className={styles.image} src="/specialtyClinics.png" width={500} height={300} alt="Clinic staff" />
           </div>
-          <div>
+          <div className={styles.slideText}>
             <ul>
               <li>Musculoskeletal Clinic (MSK)</li>
               <li>Dermatology</li>
@@ -63,11 +64,11 @@ export default function ImageSlider() {
         </div>
 
         <div className={currTab === 2 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
-          <div>
+          <div className={styles.imageContainer}>
             <Image className={styles.image} src="/hepatitis.png" width={500} height={300} alt="Woman being vaccinated" />
           </div>
 
-          <div>
+          <div className={styles.slideText}>
             <ul>
               <li>Liver cancer is often tied to Hepatitis B</li>
               <li>Transmission: blood, sex, mother-to-child; late diagnosis common</li>
@@ -80,11 +81,11 @@ export default function ImageSlider() {
         </div>
 
         <div className={currTab === 3 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
-          <div>
+          <div className={styles.imageContainer}>
             <Image className={styles.image} src="/healthEdu.png" width={500} height={300} alt="Clinic students" />
           </div>
 
-          <div>
+          <div className={styles.slideText}>
             <ul>
               <li>Hypertension Workshops</li>
               <li>Nutrition Counseling</li>
@@ -94,11 +95,11 @@ export default function ImageSlider() {
         </div>
 
         <div className={currTab === 4 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
-          <div>
+          <div className={styles.imageContainer}>
             <Image className={styles.image} src="/vaccines.png" width={500} height={300} alt="Woman receiving vaccine" />
           </div>
 
-          <div>
+          <div className={styles.slideText}>
             <ul>
               <li>Hepatitis</li>
               <li>Annual flu-shots</li>
