@@ -1,0 +1,37 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--off-white, #FFFBF0);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-inter);
+
+    >h1{
+        color: var(--maroon, #5B1110);
+        font-size: 55px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    >h2{
+        font-size: 25px;
+        font-style: normal;
+        text-align: center;
+        font-weight: 500;
+        line-height: 170%; /* 42.5px */
+    }
+}
+
+.button {
+    margin-bottom: 60px; 
+    margin-right: 50px;
+}
