@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+
+.mainContainer {
+    font-family: 'Jost', sans-serif;
+}
+
+.ourServicesContainer {
+    background-color: #FFFBF0;
+    color: #5B1110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .heading {
+        padding: 1rem;
+        font-size: 1.6rem;
+        word-wrap: break-word;
+
+    }
+}
+
+.servicesBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    width: 36%;
+
+    .service {
+        background-color: #E7D3B8;
+        border-radius: 0.75rem;
+        padding: 2rem;
+        text-align: center;
+        flex-basis: 100%;
+
+        >h3 {
+            size: 200%;
+            color: #5B1110;
+            flex-basis: 100%;
+
+        }
+
+        >p {
+            color: black;
+            padding-top: 1rem;
+        }
+    }
+}
+
+
+
+
+.sliderContainer {
+    background-color: #FFFBF0;
+    margin-top: 4rem;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    row-gap: 10rem;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 1rem;
+}
+
+
+
+.tab {
+    background-color: #E7D3B8;
+    border: none;
+    row-gap: 1rem;
+    color: #5B1110;
+    padding: 1rem 2rem 1rem 1rem;
+    border-radius: 1rem 1rem 0 0;
+    height: auto;
+    //need to add the gap 
+    width: 25%rem;
+    word-wrap: break-word;
+}
+
+.tab:hover {
+    color: #D79C1A;
+    background-color: #5B1110;
+}
+
+/*
+    this is to use w the conditional classes
+.currTab {
+    color: #D79C1A;  
+    background-color: #5B1110;
+    display: block; 
+}
+*/
+
+.slidersContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #D79C1A;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+    background-color: #5B1110;
+    padding: 3rem;
+    align-items: center;
+    //display: none; (for conditional tab use) 
+
+}
+
+.image {
+    border-radius: 0.75rem;
+}
+
+//.slidersContainer .slider {
+//display: none;
+
+//}
