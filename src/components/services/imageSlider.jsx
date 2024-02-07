@@ -22,6 +22,7 @@ Used this to figure out the class naming convention to use for multiple classes
 */
 
 
+// COMMENT TO WORK ON: Can I jsut use the same tab element? (Instead of two to keep track of tab, just one.)
 export default function ImageSlider() {
   const [currTab, setCurrTab] = useState(1);
 
@@ -53,6 +54,11 @@ export default function ImageSlider() {
           <div className={styles.imageContainer}>
             <Image className={styles.image} src="/specialtyClinics.png" width={500} height={300} alt="Clinic staff" />
           </div>
+
+          <div className={styles.arrContainer}>
+            <div className={styles.arr} onClick={() => toggleTab(2)}></div>
+          </div>
+
           <div className={styles.slideText}>
             <ul>
               <li>Musculoskeletal Clinic (MSK)</li>
@@ -66,6 +72,10 @@ export default function ImageSlider() {
         <div className={currTab === 2 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
             <Image className={styles.image} src="/hepatitis.png" width={500} height={300} alt="Woman being vaccinated" />
+          </div>
+
+          <div className={styles.arrContainer}>
+            <div className={styles.arr} onClick={() => toggleTab(3)}></div>
           </div>
 
           <div className={styles.slideText}>
@@ -85,6 +95,10 @@ export default function ImageSlider() {
             <Image className={styles.image} src="/healthEdu.png" width={500} height={300} alt="Clinic students" />
           </div>
 
+          <div className={styles.arrContainer}>
+            <div className={styles.arr} onClick={() => toggleTab(4)}></div>
+          </div>
+
           <div className={styles.slideText}>
             <ul>
               <li>Hypertension Workshops</li>
@@ -97,6 +111,10 @@ export default function ImageSlider() {
         <div className={currTab === 4 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
             <Image className={styles.image} src="/vaccines.png" width={500} height={300} alt="Woman receiving vaccine" />
+          </div>
+
+          <div className={styles.arrContainer}>
+            <div className={styles.arr} onClick={() => toggleTab(1)}></div>
           </div>
 
           <div className={styles.slideText}>
