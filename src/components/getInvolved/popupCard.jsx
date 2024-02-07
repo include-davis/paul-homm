@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import styles from "@/styles/getInvolved/popupCard";
+import styles from '@/styles/components/getInvolved/popupCard.module.scss';
 export async function getStaticProps({ locale }) {
   return {
     props: {
