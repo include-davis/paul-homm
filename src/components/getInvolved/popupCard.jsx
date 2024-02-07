@@ -25,8 +25,9 @@ export default function PopupCard() {
           <h1>Physcians and Residents</h1>
         </div>
         <div className={styles.paragraph1}>
-          <p>Physicians and residents are a valuable component to our clinic because they serve as teachers and mentors to health professional students and undergrad patient advocates. They help facilitate the clinical process, such as guiding medical students in making a correct diagnosis, writing prescriptions for our patients, and providing medical services and advice. Any physician and resident, primary care and specialty alike, is welcomed and appreciated in our clinic!
-            If you are interested in volunteering as a preceptor please contact our physician scheduling team at phac.physician.scheduler@gmail.com</p>
+          <p>Physicians and residents are a valuable component to our clinic because they serve as teachers and mentors to health professional students and undergrad patient advocates. They help facilitate the clinical process, such as guiding medical students in making a correct diagnosis, writing prescriptions for our patients, and providing medical services and advice. Any physician and resident, primary care and specialty alike, is welcomed and appreciated in our clinic!<p>
+            <br></br>
+          </p>If you are interested in volunteering as a preceptor please contact our physician scheduling team at phac.physician.scheduler@gmail.com</p>
         </div>
       </div>
       <div className={styles.beigecontainer2}>
@@ -47,6 +48,7 @@ export default function PopupCard() {
         </div>
         <div className={styles.paragraph3}>
           <p>The term Patient Advocate aptly describes an undergraduate volunteer at the Paul Hom Asian Clinic. Patient Advocates mainly act as interpreters for predominantly Cantonese, Mandarin, and Vietnamese patients who visit the clinic. They also have a variety of responsibilities such as in taking vital signs, assisting in the dispensing of medications, and assisting medical students with patient care. They continue to play an important role as patient educators and interpreters for our clinic. In addition, they have the opportunity to learn more about providing social services to the underserved.<p>
+            <br></br>
           </p>Our Fall 2023 undergraduate application is currently open!! If you have any additional questions, please contact  phacugco-d@ucdavis.edu</p>
         </div>
       </div>
