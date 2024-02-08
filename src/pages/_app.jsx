@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
 import ImageSlider from "@/components/services/imageSlider";
 import Card from "@/components/getInvolved/card";
+import Donate from "@/components/getInvolved/donate";
 import PopupCard from "@/components/getInvolved/popupCard";
 import CommitteeDescription from "@/components/committees/committeeDesription";
 
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }) {
     >
       <Navbar></Navbar>
       <Card></Card>
+      <Donate></Donate>
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>
