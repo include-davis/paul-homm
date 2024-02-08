@@ -13,12 +13,14 @@ export default function Donate() {
           to support our clinic, donations can be mailed to:
         </p>
         <div className={styles.centeredSubtext}>
-          <p className={styles.centeredText1}>Paul Home Asian Clinic</p>
-          <p className={styles.centeredText2}>6341 Folsom Blvd</p>
-          <p className={styles.centeredText3}>Sacramento, CA 95819</p>
-          <p className={styles.centeredText4}>
-            We thank you for your generoristy!
-          </p>
+          <div className={styles.centeredText}>
+            <p className={styles.centeredText1}>Paul Home Asian Clinic</p>
+            <p className={styles.centeredText2}>6341 Folsom Blvd</p>
+            <p className={styles.centeredText3}>Sacramento, CA 95819</p>
+            <p className={styles.centeredText4}>
+              We thank you for your generoristy!
+            </p>
+          </div>
         </div>
       </div>
     </div>

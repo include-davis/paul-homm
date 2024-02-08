@@ -1,12 +1,13 @@
 .sectionContainer {
-  // display: flex;
-  padding-top: 24px;
+  display: flex;
+  padding-top: 32px;
   background-color: var(--color-white);
   font-family: var(--font-inter);
   padding: var(--edge-spacer);
 }
 
 .donateBox {
+  margin-top: 16px;
   background-color: var(--color-beige);
   padding-top: 16px;
   padding-bottom: 16px;
@@ -15,7 +16,8 @@
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
+  font-size: 1.25rem;
 }
 
 .donateHeading {
@@ -23,4 +25,16 @@
   text-align: center;
   color: var(--color-maroon);
   padding-bottom: 16px;
+}
+
+.startSubtext1 {
+  padding-bottom: 16px;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.centeredText4 {
+  padding-top: 16px;
 }
