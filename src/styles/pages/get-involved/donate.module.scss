@@ -1,0 +1,26 @@
+.sectionContainer {
+  // display: flex;
+  padding-top: 24px;
+  background-color: var(--color-white);
+  font-family: var(--font-inter);
+  padding: var(--edge-spacer);
+}
+
+.donateBox {
+  background-color: var(--color-beige);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.donateHeading {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-maroon);
+  padding-bottom: 16px;
+}
