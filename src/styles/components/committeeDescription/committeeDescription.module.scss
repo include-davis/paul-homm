@@ -1,8 +1,5 @@
 .wrapper{
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: var(--off-white, #FFFBF0);
 }
 
@@ -28,10 +25,35 @@
         text-align: center;
         font-weight: 500;
         line-height: 170%; /* 42.5px */
+        margin-top: 32px;
+        margin-left: 216px;
+        margin-right:  216px;
+
     }
 }
 
 .button {
     margin-bottom: 60px; 
     margin-right: 50px;
+    margin-left: 24px;
+    border: none;
+    background: none;
+    color: #5B1110;
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonClass{
+    margin-left: 32px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.linkStyle{
+    text-decoration: none;
 }
