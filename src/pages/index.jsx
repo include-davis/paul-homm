@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { MdPhone, MdLocationOn } from "react-icons/md";
+import { FiMessageSquare } from "react-icons/fi";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +19,7 @@ export default function Home() {
   const t = useTranslations('Index');
   return (
     <div>
+      {/* Red "Our Mission" Section */}
       <div>
         <h2>Our Misson</h2>
         <p>
@@ -31,14 +35,21 @@ export default function Home() {
             // style={styles.picture}
         />
       </div>
+
+      {/* White Section with Info cards */}
       <div>
+        {/* Visit us card with contact Info */}
         <div>
             <h2>Visit Us!</h2>
             <p>Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.</p>
+            <MdPhone/>
             <p>(916) 736-3966</p>
+            <FiMessageSquare/>
             <p>Message</p>
+            <MdLocationOn/>
             <p>6341 Folsom Blvd Sacramento, CA 95819</p>
         </div>
+        {/* Important Closure Dates */}
         <div>
             <h2>Closure Dates</h2>
             <ul>
@@ -49,6 +60,7 @@ export default function Home() {
                 <li>Aug 31, 2024</li>
             </ul>
         </div>
+        {/* Upcoming Events Section */}
         <div>
             <h2>Upcoming Events</h2>
             <ul>
