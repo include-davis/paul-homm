@@ -1,8 +1,9 @@
 import React from 'react';
 //import styles 
 
-export default function committees()
-{
+const data = [{name: "Cardiopulmonary", image:}]
+
+export default function committees({props}) {
     return(
         <>
         committees yay
