@@ -1,0 +1,99 @@
+// Mission statement and paragraph
+.mission {
+    display: flex;
+    background-color: var(--color-maroon);
+    color: var(--color-beige);
+}
+
+.title {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+// White section with info cards
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--color-white);
+}
+
+// Styling for "Visit Us!" card. Requires some 
+.visit_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    
+    background-color: var(--color-beige);
+}
+
+.visit {
+    display: flex;
+}
+
+.row_icons {
+    display: flex;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.dates { // This is to style lower two cards; make them flex basis and row
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: solid black 1px;
+}
+
+// Styling for "Closure Dates" card
+.closure_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    
+    background-color: var(--color-beige);
+}
+
+// Styling for "Upcoming Events" card
+.events_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    
+    background-color: var(--color-beige);
+}
+
+.events {
+    display: flex;
+}
+
+// Add circular background behind icons
+.circle_frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    color: var(--color-maroon);
+    width: 30px;
+    height: 30px;
+    font-size: 1.0rem;
+    
+    text-decoration: none;
+    transition: margin 0.2s ease-in-out;
+}
+
+.circle_frame:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 5px var(--color-maroon);
+    text-shadow: 0 0 5px var(--color-maroon);
+}
+
+
