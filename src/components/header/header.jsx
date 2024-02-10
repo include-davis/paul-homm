@@ -22,16 +22,22 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.title}>
-                <Image
-                    src="/images/header/paul_hom_logo.png"
-                    width={110}
-                    height={110}
-                    alt="Paul Hom logo"
-                    href = '/'
-                />
+                <a href = '/'>
+                    <Image
+                        src="/images/header/paul_hom_logo.png"
+                        width={110}
+                        height={110}
+                        alt="Paul Hom logo"
+                        href = '/'
+                    />
+                </a>
                 <div className={styles.title_text}>
                     <h1>Paul Hom Asian Clinic</h1>
                     <h2>A Student-Run Clinic at UC Davis</h2>
+                </div>
+
+                <div className={styles.language_dropdown}>
+                    {/* placeholder div for language dropdown*/}
                 </div>
             </div>
             <div className={styles.pages}>
