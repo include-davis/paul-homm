@@ -31,10 +31,21 @@
   padding-bottom: 16px;
 }
 
-.centeredText {
-  text-align: center;
+.centeredSubtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.centeredTextBox {
+  text-align: left;
+}
+.centeredText1,
+.centeredText2,
+.centeredText3 {
+  margin-left: 36px;
+  font-weight: bold;
+}
 .centeredText4 {
   padding-top: 16px;
 }
