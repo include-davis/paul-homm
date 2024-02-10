@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
+import HomepageGallery from "@/components/homepageGallery/homepageGallery";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       Home yay
+      <HomepageGallery></HomepageGallery>
     </>
   );
 }
