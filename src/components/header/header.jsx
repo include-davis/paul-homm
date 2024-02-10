@@ -23,10 +23,11 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.title}>
                 <Image
-                    src="/paul_hom_logo.png"
+                    src="/images/header/paul_hom_logo.png"
                     width={110}
                     height={110}
                     alt="Paul Hom logo"
+                    href = '/'
                 />
                 <div className={styles.title_text}>
                     <h1>Paul Hom Asian Clinic</h1>
