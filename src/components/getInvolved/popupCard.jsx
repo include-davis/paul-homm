@@ -21,6 +21,9 @@ export default function PopupCard() {
   return (
     <div className={styles.container}>
       <div className={styles.beigecontainer1}>
+        <div className={styles.button1}>
+          <p>Close <img src="../annap/Downloads/fontisto_close.svg" alt="close button"></img> </p>
+        </div>
         <div className={styles.heading_text}>
           <h1>Physcians and Residents</h1>
         </div>
@@ -31,6 +34,9 @@ export default function PopupCard() {
         </div>
       </div>
       <div className={styles.beigecontainer2}>
+        <div className={styles.button2}>
+          <p>Close <img src="../annap/Downloads/fontisto_close.svg" alt="close button"></img></p>
+        </div>
         <div className={styles.heading_text2}>
           <h1>Health Professional Students </h1>
         </div>
@@ -43,6 +49,9 @@ export default function PopupCard() {
         </div>
       </div>
       <div className={styles.beigecontainer3}>
+        <div className={styles.button3}>
+          <p>Close <img src="../annap/Downloads/fontisto_close.svg" alt="close button"></img></p>
+        </div>
         <div className={styles.heading_text3}>
           <h1>Undergraduate Patient Advocates</h1>
         </div>

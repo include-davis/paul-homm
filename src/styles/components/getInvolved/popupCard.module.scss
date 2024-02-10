@@ -5,7 +5,7 @@
 }
 
 .beigecontainer1 {
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     border-radius: 12px;
     margin-top: 100px;
     padding: 40px;
@@ -24,8 +24,15 @@
     //line-height: normal;
 }
 
+.button1 {
+    cursor: pointer;
+    float: right;
+    font-size: 25px;
+    color: var(--color-maroonn);
+}
+
 .heading_text {
-    color: #5B1110;
+    color: var(--color-maroon);
     font-family: Jost;
     width: 536px;
     height: 64px;
@@ -34,8 +41,9 @@
 }
 
 .paragraph1 {
-    color: #333;
-    font-family: Jost;
+    color: var(--Off-Black);
+    //font-family: Jost;
+    font-family: "Be Vietnam";
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -49,7 +57,7 @@
 }
 
 .beigecontainer2 {
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     border-radius: 12px;
     padding: 40px;
     margin-bottom: 40px;
@@ -57,9 +65,17 @@
     width: 840px;
 }
 
+.button2 {
+    cursor: pointer;
+    float: right;
+    font-size: 25px;
+    color: var(--color-maroon);
+}
+
 .paragraph2 {
-    color: #333;
-    font-family: Jost;
+    color: var(--Off-Black);
+    //font-family: Jost;
+    font-family: "Be Vietnam";
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -71,7 +87,7 @@
 }
 
 .heading_text2 {
-    color: #5B1110;
+    color: var(--color-maroon);
     font-family: Jost;
     width: 536px;
     height: 64px;
@@ -80,7 +96,7 @@
 }
 
 .beigecontainer3 {
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     padding: 80px;
     border-radius: 12px;
     margin-bottom: 40px;
@@ -89,9 +105,18 @@
 
 }
 
+.button3 {
+    //margin-top: 80px;
+    cursor: pointer;
+    float: right;
+    font-size: 25px;
+    color: var(--color-maroon);
+}
+
 .paragraph3 {
-    color: #333;
-    font-family: Jost;
+    color: var(--Off-Black);
+    //font-family: Jost;
+    font-family: "Be Vietnam";
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -102,7 +127,7 @@
 }
 
 .heading_text3 {
-    color: #5B1110;
+    color: var(--color-maroon);
     font-family: Jost;
     width: 536px;
     height: 64px;
