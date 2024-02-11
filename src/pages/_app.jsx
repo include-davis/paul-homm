@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
       className={`${inter.variable}`}
     >
       <Navbar></Navbar>
-      <Card></Card>
+
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>

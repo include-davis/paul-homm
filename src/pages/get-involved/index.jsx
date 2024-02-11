@@ -1,8 +1,10 @@
 import React from "react";
-
+import Card from "@/components/getInvolved/card";
 export default function GetInvolved() {
   return (
-    <div></div> // must return parent element
+    <div>
+      <Card></Card>
+    </div> // must return parent element
   );
 }
 GetInvolved;
