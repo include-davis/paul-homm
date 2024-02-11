@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from "@/styles/components/homepageGallery/homepageGallery.module.scss";
+import { FaCircle } from "react-icons/fa";
 
 
 
@@ -38,11 +39,27 @@ export default function HomepageGallery() {
     prevFrame = prev[3];
     }
   
+  let navDots = []
+  for (let i = 0; i < 4; i++) {
+    if (i==activeImg) {
+      navDots.push(<button className={styles.navBttn} onClick={()=>{select_Frame(i)}}><FaCircle className={styles.selected+' '+styles.circle}/></button>)
+      }
+    else {
+      navDots.push(<button className={styles.navBttn} onClick={()=>{select_Frame(i)}}><FaCircle className={styles.circle}/></button>)
+      }
+  }
+
   return (
     <div className={styles.container}>
       <div key={activeImg} className={styles.frameContainer}>
         {prevFrame}
         {currFrame}
+      </div>
+      <div className={styles.nav}>
+        {navDots[0]}
+        {navDots[1]}
+        {navDots[2]}
+        {navDots[3]}
       </div>
       <h1>Howdy</h1>
     </div>
