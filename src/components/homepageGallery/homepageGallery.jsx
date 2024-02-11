@@ -5,8 +5,8 @@ import styles from "@/styles/components/homepageGallery/homepageGallery.module.s
 
 export default function HomepageGallery() { 
   const [activeImg, setActiveImg] = useState(0);
+  let prev = [<img  src='/homepageGallery/HomepageGalleryImage1.jpg' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage2.png' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage3.png' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage4.png' alt="Divider" className={styles.frame+' '+styles.prev}/>]
   let curr = [<img  src='/homepageGallery/HomepageGalleryImage1.jpg' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage2.png' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage3.png' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage4.png' alt="Divider" className={styles.frame+' '+styles.curr}/>]
-  let next = [<img  src='/homepageGallery/HomepageGalleryImage1.jpg' alt="Divider" className={styles.frame+' '+styles.next}/>, <img  src='/homepageGallery/HomepageGalleryImage2.png' alt="Divider" className={styles.frame+' '+styles.next}/>, <img  src='/homepageGallery/HomepageGalleryImage3.png' alt="Divider" className={styles.frame+' '+styles.next}/>, <img  src='/homepageGallery/HomepageGalleryImage4.png' alt="Divider" className={styles.frame+' '+styles.next}/>]
   
 
   function go_nextFrame() {
@@ -18,6 +18,10 @@ export default function HomepageGallery() {
       }
   }
 
+  function select_Frame(index) {
+    setActiveImg(index);
+  }
+
   useEffect(() => {
     const autoPlay = setInterval(() => { go_nextFrame(); }, 4000);
     return () => {
@@ -26,19 +30,19 @@ export default function HomepageGallery() {
   }, [activeImg]);
 
   let currFrame = curr[activeImg];
-  let nextFrame;
-  if (activeImg!=3) {
-    nextFrame = next[activeImg+1];
+  let prevFrame;
+  if (activeImg!=0) {
+    prevFrame = prev[activeImg-1];
     }
   else {
-    nextFrame = next[0];
+    prevFrame = prev[3];
     }
   
   return (
     <div className={styles.container}>
       <div key={activeImg} className={styles.frameContainer}>
+        {prevFrame}
         {currFrame}
-        {nextFrame}
       </div>
       <h1>Howdy</h1>
     </div>
