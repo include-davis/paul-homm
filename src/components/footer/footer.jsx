@@ -37,10 +37,10 @@ export default function Footer() {
         
             {/* contacts */}
             <div className={styles.contact}> 
-                <h3>{t('contact.message')}</h3>
+                <p>{t('contact.message')}</p>
                 <div className={styles.icons}>
-                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame_facebook}>
-                        <MdFacebook/> 
+                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <MdFacebook className={styles.facebook}/> 
                     </a>
                     <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
                         <AiOutlineInstagram/>
@@ -58,13 +58,15 @@ export default function Footer() {
             {/* thank you message */}
             <div className={styles.sponsor}>
                 <p>{t('sponsor_pt1')}<br/>{t('sponsor_pt2')}</p>
-                <Image
-                    src="/credit-union.png"
-                    width={280}
-                    height={100}
-                    alt={"Safe Credit Union Logo"}
-                    style={{borderRadius: '12px'}}
-                />
+                <div>
+                    <Image
+                        src="/credit-union.png"
+                        width={280}
+                        height={100}
+                        alt={"Safe Credit Union Logo"}
+                        style={{borderRadius: '12px'}}
+                    />
+                </div>
             </div>
         </div>
 

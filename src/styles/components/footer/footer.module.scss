@@ -71,27 +71,11 @@
     transition: margin 0.2s ease-in-out;
 }
 
-.circle_frame_facebook {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-maroon);
-    width: 63px;
-    height: 63px;
+.facebook {
     font-size: 3.5rem;
-    
-    text-decoration: none;
-    transition: margin 0.2s ease-in-out;
 }
 
 .circle_frame:hover {
-    margin-top: -0.5rem;
-}
-
-.circle_frame_facebook:hover {
     margin-top: -0.5rem;
 }
 
