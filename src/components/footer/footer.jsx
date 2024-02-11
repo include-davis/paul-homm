@@ -9,30 +9,31 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { MdOutlineMailOutline, MdFacebook } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
 
+const pages = [
+    {page: 'pages.page1', route: "/"},
+    {page: 'pages.page2', route: "/"},
+    {page: 'pages.page3', route: "/"},
+    {page: 'pages.page4', route: "/"},
+    {page: 'pages.page5', route: "/"}
+];
+
 export default function Footer() {
 
   const t = useTranslations('Footer');
 
+  // Function creates a page link list element from the parameters
+  function createPageLink(page, route, index) {
+    return <li> <Link className={styles.link} href={route} key={index}>{t(page)}</Link> </li>
+  }
+
   return (
     <footer className={styles.footer}>
         <div className={styles.body}>
-            {/* nav buttons */}
+            {/* nav buttons: mapped links to each page */}
             <ul className={styles.pages}>
-                <li>
-                    <Link className={styles.link} href="/">{t('pages.page1')}</Link>
-                </li>
-                <li>
-                    <Link className={styles.link} href="/">{t('pages.page2')}</Link>
-                </li>
-                <li>
-                    <Link className={styles.link}  href="/">{t('pages.page3')}</Link>
-                </li>
-                <li>
-                    <Link className={styles.link}  href="/">{t('pages.page4')}</Link>
-                </li>
-                <li>
-                    <Link className={styles.link} href="/">{t('pages.page5')}</Link>
-                </li>
+                {pages.map((item, index) => {
+                    return createPageLink(item.page, item.route, index)
+                })}
             </ul>
         
             {/* contacts */}
@@ -71,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* Subfooter: Include developer message */}
-        <div className={styles.subfooter}>Designed & Developed with 🤍 by #include @ Davis</div>
+        <div className={styles.subfooter}>{t('include')}</div>
 
     </footer>
     
