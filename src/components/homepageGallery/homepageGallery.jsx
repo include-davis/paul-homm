@@ -51,6 +51,7 @@ export default function HomepageGallery() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.textContainer}><div className={styles.blur}></div></div>
       <div key={activeImg} className={styles.frameContainer}>
         {prevFrame}
         {currFrame}

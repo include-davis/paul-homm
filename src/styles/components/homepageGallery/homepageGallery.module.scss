@@ -1,11 +1,17 @@
+
+
 .container {
     background-color: palevioletred;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    --frame_scale: 2; //"slide" keyframes had the frame_scale hardcoded into it; that must be changed whenever changing this variable
 }
 
 .frameContainer { //figma file sizes: width=1041px & height=459px
     position: relative;
-    width: calc(1041/2*1px);
-    height: calc(459/2*1px);
+    width: calc(1041 / var(--frame_scale)*1px);
+    height: calc(459/var(--frame_scale)*1px);
     background-color: aquamarine;
     overflow: hidden;
     display: flex;
@@ -16,13 +22,14 @@
 .frame {
     position: absolute;
     width: 100%;
-    top: calc(-59/2*1px);
+    top: calc(-59 / var(--frame_scale)*1px);
     animation: slide;
     animation-duration: 1s;
+    box-shadow: 0 0 8px 8px palevioletred inset;
 }
 
 .prev {
-    left: calc(-1041/2*1px);
+    left: calc(-1041/var(--frame_scale)*1px);
 }
 
 .curr {
@@ -52,4 +59,21 @@
 
 .selected {
     color:antiquewhite;
+}
+
+.textContainer {
+    position: relative;
+    width: calc(475 / var(--frame_scale)*1px);
+    height: calc(459/var(--frame_scale)*1px);
+    background-color: yellowgreen;
+}
+
+.blur {
+    position: absolute;
+    width: calc(490 / var(--frame_scale)*1px);
+    height: calc(459/var(--frame_scale)*1px);
+    background-color: plum;
+    border-style: double;
+    z-index: 1000;
+    box-shadow: inset -10px -10px 10px 20px transparent;
 }
