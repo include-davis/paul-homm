@@ -1,13 +1,17 @@
 // Mission statement and paragraph
 .mission {
     display: flex;
+    align-items: center;
+    
+    padding: 32px calc(8px * 21);
+    height: calc(8px * 86);
+    
     background-color: var(--color-maroon);
     color: var(--color-beige);
-}
 
-.title {
-    color: var(--color-gold);
-    font-weight: bold;
+    h1 {
+        color: var(--color-gold);
+    }
 }
 
 // White section with info cards
