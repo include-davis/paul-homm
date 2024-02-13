@@ -6,17 +6,19 @@ export default function Services() {
         <div className={styles.mainContainer}>
 
             <div className={styles.servicesContainer}>
-                <div className={styles.heading}> Our Services </div>
+                <div className={styles.heading}>
+                    <h1> Our Services </h1>
+                </div>
 
                 <div className={styles.boxesContainer}>
 
-                    <div className={styles.serviceBox}>
-                        <h3> Primary Care Services </h3>
+                    <div className={styles.topServiceBox}>
+                        <h2> Primary Care Services </h2>
                         <p> Every Saturday </p>
                     </div>
 
-                    <div className={styles.serviceBox}>
-                        <h3> Cancer Screenings </h3>
+                    <div className={styles.topServiceBox}>
+                        <h2> Cancer Screenings </h2>
                         <p> First Sunday monthly </p>
                     </div>
 
@@ -30,8 +32,8 @@ export default function Services() {
 
             <div className={styles.servicesContainer}>
                 <div className={styles.boxesContainer}>
-                    <div className={styles.serviceBox}>
-                        <h3>Referrals</h3>
+                    <div className={styles.bottomServiceBox}>
+                        <h2>Referrals</h2>
                         <ul>
                             <li>Surgery with SPIRIT program</li>
                             <li>UCDMC</li>
@@ -39,8 +41,8 @@ export default function Services() {
                         </ul>
                     </div>
 
-                    <div className={styles.serviceBox}>
-                        <h3>Transltors</h3>
+                    <div className={styles.bottomServiceBox}>
+                        <h2>Translators</h2>
                         <ul>
                             <li>Cantonese</li>
                             <li>Mandarin</li>

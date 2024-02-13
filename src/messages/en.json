@@ -1,7 +1,7 @@
 {
     "Index": {
-      "title": "Home",
-      "description": "Testing internationalization."
+        "title": "Home",
+        "description": "Testing internationalization."
     },
     "Footer": {
         "pages": {
@@ -19,5 +19,82 @@
         "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
         "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
         "include": "Designed & Developed with 🤍 by #include @ Davis"
+    },
+    "Services": {
+        "heading": "Our Services",
+        "services1": {
+            "service1": {
+                "heading": "Primary Care Services",
+                "desc": "Every Saturday"
+            },
+            "service2": {
+                "heading": "Cancer Screenings",
+                "desc": "First Sunday Monthly"
+            }
+        },
+        "tabs": {
+            "tab1": "Specialty Clinics",
+            "tab2": "Hepatitis",
+            "tab3": "Health Education & Preventative Measures",
+            "tab4": "Vaccines"
+        },
+        "slides": {
+            "slide1": {
+                "image": "/images/services/specialtyClinics.png",
+                "list": {
+                    "item1": "Musculoskeletal Clinic (MSK)",
+                    "item2": "Dermatology",
+                    "item3": "Cardiopulmonary Clinic",
+                    "item4": "Liver Clinic"
+                }
+            },
+            "slide2": {
+                "image": "/images/services/hepatitis.png",
+                "list": {
+                    "item1": "Liver cancer is often tied to Hepatitis B",
+                    "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+                    "item3": "Asians more vulnerable, higher infection rates, mortality",
+                    "item4": "Screening, vaccination, tratments available",
+                    "item5": "Free vaccines"
+                }
+            },
+            "slide3": {
+                "image": "/images/services/healthEdu.png",
+                "list": {
+                    "item1": "Hypertension Workshops",
+                    "item2": "Nutrition Counseling",
+                    "item3": "Health Fair"
+                }
+            },
+            "slide4": {
+                "image4": "/images/services/vaccines.png",
+                "list": {
+                    "item1": "Hepatitis",
+                    "item2": "Annual flu-shots",
+                    "item3": "Health Fair"
+                }
+            }
+        },
+        "services2": {
+            "service1": {
+                "heading": "Referrals",
+                "list": {
+                    "item1": "Surgery with SPIRIT program",
+                    "item2": "UCDMC",
+                    "item3": "Primary Care Clinic"
+                }
+            },
+            "service2": {
+                "heading": "Translators",
+                "list": {
+                    "item1": "Cantonese",
+                    "item2": "Mandaring",
+                    "item3": "Korean",
+                    "item4": "Taishanese",
+                    "item5": "Vietnamese",
+                    "item6": "Hmong"
+                }
+            }
+        }
     }
-  }
+}

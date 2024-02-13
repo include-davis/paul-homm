@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
-
 .mainContainer {
-    font-family: 'Jost', sans-serif;
+    font-family: Arial; //import later 
     display: flex;
     flex-direction: column;
+
 }
 
 .servicesContainer {
@@ -12,12 +11,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
     row-gap: 1rem;
+    justify-content: space-between;
 
     .heading {
         padding: 1rem;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         word-wrap: break-word;
     }
 }
@@ -29,14 +30,41 @@
     width: 36%;
     column-gap: 2rem; //do not change gap size 
 
-    .serviceBox {
+    .topServiceBox {
         background-color: #E7D3B8;
         border-radius: 0.75rem;
         padding: 2rem;
         text-align: center;
         flex-basis: 100%;
 
-        >h3 {
+
+        >h2 {
+            font-size: 1rem;
+            color: #5B1110;
+            flex-basis: 100%;
+
+        }
+
+        >p {
+            color: black;
+            padding-top: 1rem;
+        }
+
+        >ul {
+            color: black;
+            padding-top: 1rem;
+            columns: 2;
+        }
+    }
+
+    .bottomServiceBox {
+        background-color: #E7D3B8;
+        border-radius: 0.75rem;
+        padding: 2rem;
+        text-align: center;
+        flex-basis: 100%;
+
+        >h2 {
             size: 200%;
             color: #5B1110;
             flex-basis: 100%;
@@ -55,6 +83,7 @@
         }
     }
 }
+
 
 // Slider code 
 
@@ -103,33 +132,33 @@
 
 .activeSlide {
     display: flex;
-    flex-direction: row; //for some reason using row shows it as column?
+    flex-direction: row;
     background-color: #5B1110;
-    padding: 3rem;
     word-wrap: break-word;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     justify-content: space-around;
+    column-gap: 10rem;
     height: 30rem;
     align-items: center;
-    position: absolute;
+    line-height: 3rem;
 
     .arrContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-        width: 5rem;
-        //position: absolute;
+        width: 10%;
+        position: absolute;
     }
 
     .arr {
-        height: 1rem;
-        width: 1rem;
-        height: 3rem;
-        width: 3rem;
-        border-top: 0.5rem solid #E7D3B8;
-        border-right: 0.5rem solid #E7D3B8;
+        height: 1.5rem; //1
+        width: 1.5rem; //1
+        height: 3rem; //3
+        width: 3rem; //3
+        border-top: 0.3rem solid #E7D3B8;
+        border-right: 0.3rem solid #E7D3B8;
         transform: rotate(45deg);
         justify-content: center;
         cursor: pointer;
@@ -137,15 +166,22 @@
 
 
     .imageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 40%;
         position: relative; //absolute 
     }
 
     .image {
         border-radius: 0.75rem;
         transform: scale(0.8);
+        position: absolute;
     }
 
     .slideText {
-        position: relative;
+        width: 40%;
     }
+
 }

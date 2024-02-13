@@ -52,7 +52,7 @@ export default function ImageSlider() {
 
         <div className={currTab === 1 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
-            <Image className={styles.image} src="/specialtyClinics.png" width={500} height={300} alt="Clinic staff" />
+            <Image className={styles.image} src="/images/services/specialtyClinics.png" width={500} height={300} alt="Clinic staff" />
           </div>
 
           <div className={styles.arrContainer}>
@@ -71,7 +71,7 @@ export default function ImageSlider() {
 
         <div className={currTab === 2 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
-            <Image className={styles.image} src="/hepatitis.png" width={500} height={300} alt="Woman being vaccinated" />
+            <Image className={styles.image} src="/images/services/hepatitis.png" width={500} height={300} alt="Woman being vaccinated" />
           </div>
 
           <div className={styles.arrContainer}>
@@ -92,7 +92,7 @@ export default function ImageSlider() {
 
         <div className={currTab === 3 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
-            <Image className={styles.image} src="/healthEdu.png" width={500} height={300} alt="Clinic students" />
+            <Image className={styles.image} src="/images/services/healthEdu.png" width={500} height={300} alt="Clinic students" />
           </div>
 
           <div className={styles.arrContainer}>
@@ -110,7 +110,7 @@ export default function ImageSlider() {
 
         <div className={currTab === 4 ? `${styles.activeSlide}` : `${styles.inactiveSlide}`}>
           <div className={styles.imageContainer}>
-            <Image className={styles.image} src="/vaccines.png" width={500} height={300} alt="Woman receiving vaccine" />
+            <Image className={styles.image} src="/images/services/vaccines.png" width={500} height={300} alt="Woman receiving vaccine" />
           </div>
 
           <div className={styles.arrContainer}>
