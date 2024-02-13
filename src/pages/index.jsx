@@ -4,7 +4,6 @@ import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
 import { BiSolidMessage } from "react-icons/bi";
 
-
 import styles from "@/styles/pages/home/home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +23,7 @@ export default function Home() {
       {/* Red "Our Mission" Section */}
       <div className={styles.mission}>
         <div>
-            <h2>Our Mission</h2>
+            <h1>Our Mission</h1>
             <p>
                 Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.<br/>
                 At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.<br/>
@@ -33,10 +32,10 @@ export default function Home() {
         </div>
         <Image
             src="/happy-doctors.png"
-            width={593}
-            height={383}
+            width={592}
+            height={384}
             alt={"Happy doctors"}
-            // style={styles.picture}
+            style={{borderRadius: '8px'}}
         />
       </div>
 
@@ -44,7 +43,7 @@ export default function Home() {
       <div className={styles.info}>
         {/* Visit us card with contact Info */}
         <div className={styles.visit_card}>
-            <h2>Visit Us!</h2>
+            <h1>Visit Us!</h1>
             <p>Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.</p>
             <div className={styles.visit}>
                 <div className={styles.contact}>
@@ -58,15 +57,17 @@ export default function Home() {
                     </div>
                     
                 </div>
-                <div className={styles.circle_frame}><MdLocationOn/></div>
-                <p>6341 Folsom Blvd Sacramento, CA 95819</p>
+                <div className={styles.row_icons}>
+                    <div className={styles.circle_frame}><MdLocationOn/></div>
+                    <p>6341 Folsom Blvd Sacramento, CA 95819</p>
+                </div>
             </div>
             
         </div>
         <div className={styles.dates}>
             {/* Important Closure Dates */}
             <div className={styles.closure_card}>
-                <h2>Closure Dates</h2>
+                <h1>Closure Dates</h1>
                 <ul>
                     <li>Feb. 10, 2024</li>
                     <li>Mar. 30, 2024</li>
@@ -77,7 +78,7 @@ export default function Home() {
             </div>
             {/* Upcoming Events Section */}
             <div className={styles.events_card}>
-                <h2>Upcoming Events</h2>
+                <h1>Upcoming Events</h1>
                 <div className={styles.events}>
                     <ul>
                         <li>Jan. 7, 2023</li>
@@ -95,10 +96,10 @@ export default function Home() {
                     </ul>
                     <Image
                         src="/events-img.png"
-                        width={411}
-                        height={263}
+                        width={408}
+                        height={264}
                         alt={"People holding posters"}
-                        // style={styles.picture}
+                        style={{borderRadius: '8px'}}
                     />
                 </div>
             </div>
