@@ -1,6 +1,8 @@
 {
-    "Index": {
-      "title": "Home",
-      "description": "Testing internationalization."
+  "Popup Card": {
+    "props": {
+      "title": "",
+      "content": ""
     }
   }
+}

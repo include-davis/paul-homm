@@ -13,16 +13,15 @@ export async function getStaticProps({ locale }) {
 export default function PopupCard({ props }) {
   const t = useTranslations('Index');
   const { title, content } = props;
-  //return (
-  //<div> pop up yay
-  //<h1>{t('title')}</h1>
-  //<p>{t('description')}</p>
-  //</div>
-
-  //);
   return (
     <div className={styles.container}>
-      <div className={styles.content}
+      <button className={styles.button}>Close</button>
+      <div className={styles.buttonClass}><IoIosCloseCircleOutline />
+      </div>
+      <div className={styles.layout}>
+        <h1>{title}</h1>
+        <p>{content}</p>
+      </div>
     </div>
   )
 }
