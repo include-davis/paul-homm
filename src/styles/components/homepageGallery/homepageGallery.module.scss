@@ -70,10 +70,10 @@
 
 .blur {
     position: absolute;
-    width: calc(490 / var(--frame_scale)*1px);
+    width: calc(700 / var(--frame_scale)*1px);
     height: calc(459/var(--frame_scale)*1px);
-    background-color: plum;
-    border-style: double;
+    //background-color: plum;
+    //border-style: double;
     z-index: 1000;
-    box-shadow: inset -10px -10px 10px 20px transparent;
+    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 10%);
 }
