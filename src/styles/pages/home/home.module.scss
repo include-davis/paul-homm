@@ -19,6 +19,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+    height: calc(8px * 113);
 
     background-color: var(--color-white);
 }
@@ -28,17 +30,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 16px;
     
     background-color: var(--color-beige);
+    color: var(--text-black);
+
+    h1 {
+        padding: 16px 32px;
+        color: var(--color-maroon);
+    }
+    p {
+        padding-bottom: 32px;
+    }
+    
+    width: calc(8px * 117);
+    height: calc(8px * 48);
+    
 }
 
 .visit {
     display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    color: var(--color-maroon);
 }
 
 .row_icons {
     display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    // border: solid black 1px;
 }
 
 .contact {
@@ -50,7 +71,6 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    border: solid black 1px;
 }
 
 // Styling for "Closure Dates" card
@@ -58,9 +78,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 16px;
     
     background-color: var(--color-beige);
+    color: var(--text-black);
+
+    h1 {
+        padding: 16px 32px;
+        color: var(--color-maroon);
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        margin-bottom: var(--edge-spacer);
+    }
+
+    width: calc(8px * 45);
+    height: calc(8px * 48);
 }
 
 // Styling for "Upcoming Events" card
@@ -68,13 +103,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
-    
+    border-radius: 16px;
+
     background-color: var(--color-beige);
+    color: var(--text-black);
+    
+    h1 {
+        padding: 16px 32px;
+        color: var(--color-maroon);
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        margin-bottom: var(--edge-spacer);
+    }
+
+    width: calc(8px * 128);
+    height: calc(8px * 48);
 }
 
 .events {
     display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 // Add circular background behind icons
@@ -86,9 +138,9 @@
     border-radius: 50%;
     background-color: var(--color-gold);
     color: var(--color-maroon);
-    width: 30px;
-    height: 30px;
-    font-size: 1.0rem;
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
     
     text-decoration: none;
     transition: margin 0.2s ease-in-out;
@@ -96,8 +148,9 @@
 
 .circle_frame:hover {
     transition: 0.5s;
-    box-shadow: 0 0 5px var(--color-maroon);
-    text-shadow: 0 0 5px var(--color-maroon);
+    box-shadow: 0 0 8px var(--color-maroon);
+    text-shadow: 0 0 8px var(--color-maroon);
 }
+
 
 
