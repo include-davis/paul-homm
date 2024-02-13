@@ -11,7 +11,7 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function PopupCard({ props }) {
-  const t = useTranslations('Index');
+  const t = useTranslations('Popup Card');
   const { title, content } = props;
   return (
     <div className={styles.container}>
