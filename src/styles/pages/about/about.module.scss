@@ -1,3 +1,52 @@
-.div {
-  background-color: blue;
+.wrapperClass{
+  background-color: #FFFBF0;
+  text-align: center;
+  height:100vh;
+  padding-top: 40px;
+
+  >*{
+      margin: 24px;
+  }
+
+  >h1{
+    font-size: 56px;
+    color: #5B1110;
+  }
+
+  >h2{
+    font-size: 30px;
+    color: #D79C1A;
+  }
+  >p{
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+
+.listClass{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+.defaultClass{
+  margin: 32px;
+  margin-bottom: 32px;
+
+  >h3{
+    color: #5B1110;
+    font-size: 24px;
+    padding-bottom: 12px;
+  }
+
+  >ul{
+    text-align:left;
+    padding-left: 32px;
+    
+  }
+
+  >li{
+    margin: 12px;
+  }
 }
