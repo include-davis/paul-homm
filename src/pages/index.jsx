@@ -57,7 +57,7 @@ export default function Home() {
                 </div>
                 <div className={styles.row_icons}>
                     <div className={styles.circle_frame}><MdLocationOn/></div>
-                    <p>6341 Folsom Blvd Sacramento, CA 95819</p>
+                    <p>6341 Folsom Blvd<br/>Sacramento, CA<br/>95819</p>
                 </div>
             </div>
             
