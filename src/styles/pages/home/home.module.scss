@@ -2,8 +2,8 @@
 .mission {
     display: flex;
     align-items: center;
+    gap: 32px;
     
-    padding: 32px calc(8px * 21);
     height: calc(8px * 86);
     
     background-color: var(--color-maroon);
@@ -11,7 +11,18 @@
 
     h1 {
         color: var(--color-gold);
+        font-size: 48px;
     }
+    p {
+        font-size: 24px;
+        line-height: 40px;
+    }
+    h1, p {
+        padding-left: calc(8px * 25);
+        width: calc(8px * 85);
+        margin-bottom: var(--edge-spacer);
+    }
+
 }
 
 // White section with info cards

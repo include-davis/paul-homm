@@ -24,11 +24,9 @@ export default function Home() {
       <div className={styles.mission}>
         <div>
             <h1>Our Mission</h1>
-            <p>
-                Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.<br/>
-                At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.<br/>
-                Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.
-            </p>
+            <p> Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.</p>
+            <p>At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.</p>
+            <p>Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.</p>
         </div>
         <Image
             src="/happy-doctors.png"
