@@ -18,6 +18,8 @@
                 }
             },
             "closure": {
+                "title": "Closure Dates",
+                
                 "date1": "Feb. 10, 2024",
                 "date2": "Mar. 30, 2024",
                 "date3": "May 25, 2024",
@@ -25,6 +27,8 @@
                 "date5": "Aug 31, 2024"
             },
             "events": {
+                "title": "Upcoming Events",
+                
                 "date1": "Jan. 7, 2023",
                 "date2": "Jan. 8, 2023",
                 "date3": "Jan. 14, 2023",

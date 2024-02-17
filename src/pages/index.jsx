@@ -18,15 +18,19 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
   const t = useTranslations('Index');
+  
+  const dates = ["date1", "date2", "date3", "date4", "date5"]
+  const events = ["event1", "event2", "event3", "event4", "event5"]
+  
   return (
     <div>
       {/* Red "Our Mission" Section */}
       <div className={styles.mission}>
         <div>
-            <h1>Our Mission</h1>
-            <p> Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.</p>
-            <p>At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.</p>
-            <p>Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.</p>
+            <h1>{t('mission.title')}</h1>
+            <p>{t('mission.p1')}</p>
+            <p>{t('mission.p2')}</p>
+            <p>{t('mission.p3')}</p>
         </div>
         <Image
             src="/happy-doctors.png"
@@ -41,24 +45,24 @@ export default function Home() {
       <div className={styles.info}>
         {/* Visit us card with contact Info */}
         <div className={styles.visit_card}>
-            <h1>Visit Us!</h1>
-            <p>Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.</p>
+            <h1>{t('cards.visit.title')}</h1>
+            <p>{t('cards.visit.description')}</p>
             <div className={styles.visit}>
                 <div className={styles.contact}>
                     <div className={styles.row_icons}>
                         <div className={styles.circle_frame}><MdPhone/></div>
-                        <p>(916) 736-3966</p>
+                        <p>{t('cards.visit.contact.phone')}</p>
                     </div>
                     <div className={styles.row_icons}>
                         <div className={styles.circle_frame}><BiSolidMessage/></div>
-                        <p>Message</p>
+                        <p>{t('cards.visit.contact.msg')}</p>
                     </div>
                     
                 </div>
                 <div className={styles.address}>
                     <div className={styles.row_icons}>
                         <div className={styles.circle_frame}><MdLocationOn/></div>
-                        <p>6341 Folsom Blvd Sacramento, CA 95819</p>
+                        <p>{t('cards.visit.contact.address')}</p>
                     </div>
                 </div>
                 
@@ -68,32 +72,26 @@ export default function Home() {
         <div className={styles.dates}>
             {/* Important Closure Dates */}
             <div className={styles.closure_card}>
-                <h1>Closure Dates</h1>
+                <h1>{t('cards.closure.title')}</h1>
                 <ul>
-                    <li>Feb. 10, 2024</li>
-                    <li>Mar. 30, 2024</li>
-                    <li>May 25, 2024</li>
-                    <li>Jul. 6, 2024</li>
-                    <li>Aug 31, 2024</li>
+                    {dates.map((item) => {
+                        return <li>{t('cards.closure.' + item)}</li>
+                    })}
                 </ul>
             </div>
             {/* Upcoming Events Section */}
             <div className={styles.events_card}>
-                <h1>Upcoming Events</h1>
+                <h1>{t('cards.events.title')}</h1>
                 <div className={styles.events}>
                     <ul>
-                        <li>Jan. 7, 2023</li>
-                        <li>Jan. 8, 2023</li>
-                        <li>Jan. 14, 2023</li>
-                        <li>Jan. 15, 2023</li>
-                        <li>Jan. 29, 2023</li>
+                        {dates.map((item) => (
+                            <li>{t('cards.events.' + item)}</li>
+                        ))}
                     </ul>
                     <ul>
-                        <li>Musculoskeletal Clinic</li>
-                        <li>VN Cares Cancer Screening</li>
-                        <li>Psychiatry Clinic</li>
-                        <li>Hepatitis Vaccination</li>
-                        <li>Dermatology Clinic</li>
+                        {events.map((item) => (
+                            <li>{t('cards.events.' + item)}</li>
+                        ))}
                     </ul>
                     <Image
                         src="/events-img.png"
