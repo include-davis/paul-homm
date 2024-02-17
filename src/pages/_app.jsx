@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
       <Navbar></Navbar>
       <Donate></Donate>
       <Component {...pageProps} />
-      <Footer></Footer>
+      {/*<Footer></Footer>*/}
     </NextIntlClientProvider>
   );
 }
