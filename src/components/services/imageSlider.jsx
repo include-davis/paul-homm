@@ -1,12 +1,7 @@
 import styles from "@/styles/pages/services/services.module.scss";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import { useState } from "react";
-
-//import sc from "./public/specialtyClinics.png";
-
-// trying to add images 
-// make sure to make the shape of the boxes 
-////<Image src="/specialtyClinics.png" width={100} height={50} alt="image of clinic staff" />
 
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
@@ -21,14 +16,14 @@ Used this to figure out the class naming convention to use for multiple classes
   https://stackoverflow.com/questions/65912413/how-to-add-multiple-classnames-to-nextjs-elements 
 */
 
-
-// COMMENT TO WORK ON: Can I jsut use the same tab element? (Instead of two to keep track of tab, just one.)
 export default function ImageSlider() {
   const [currTab, setCurrTab] = useState(1);
 
   const toggleTab = (index) => {
     setCurrTab(index);
   }
+
+  const slideOneText = ["Musculoskeletal Clinic (MSK)", "Dermatology", "Cardiopulmonary Clinic", "Liver Clinic"];
 
   return (
     <div className={styles.slideContainer}>
@@ -56,7 +51,7 @@ export default function ImageSlider() {
           </div>
 
           <div className={styles.arrContainer}>
-            <div className={styles.arr} onClick={() => toggleTab(2)}></div>
+            <MdKeyboardArrowRight className={styles.arr} onClick={() => toggleTab(2)} />
           </div>
 
           <div className={styles.slideText}>
@@ -75,7 +70,7 @@ export default function ImageSlider() {
           </div>
 
           <div className={styles.arrContainer}>
-            <div className={styles.arr} onClick={() => toggleTab(3)}></div>
+            <MdKeyboardArrowRight className={styles.arr} onClick={() => toggleTab(3)} />
           </div>
 
           <div className={styles.slideText}>
@@ -96,7 +91,7 @@ export default function ImageSlider() {
           </div>
 
           <div className={styles.arrContainer}>
-            <div className={styles.arr} onClick={() => toggleTab(4)}></div>
+            <MdKeyboardArrowRight className={styles.arr} onClick={() => toggleTab(4)} />
           </div>
 
           <div className={styles.slideText}>
@@ -114,7 +109,7 @@ export default function ImageSlider() {
           </div>
 
           <div className={styles.arrContainer}>
-            <div className={styles.arr} onClick={() => toggleTab(1)}></div>
+            <MdKeyboardArrowRight className={styles.arr} onClick={() => toggleTab(1)} />
           </div>
 
           <div className={styles.slideText}>

@@ -2,7 +2,6 @@
     font-family: Arial; //import later 
     display: flex;
     flex-direction: column;
-
 }
 
 .servicesContainer {
@@ -11,14 +10,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    row-gap: 1rem;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    row-gap: 16px;
     justify-content: space-between;
 
     .heading {
-        padding: 1rem;
-        font-size: 1.2rem;
+        padding: 16px;
+        font-size: 1.4rem;
         word-wrap: break-word;
     }
 }
@@ -27,63 +26,63 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 36%;
-    column-gap: 2rem; //do not change gap size 
+    column-gap: 32px;
+    vertical-align: center;
 
-    .topServiceBox {
+    .serviceBox {
         background-color: #E7D3B8;
-        border-radius: 0.75rem;
-        padding: 2rem;
+        border-radius: 12px;
+        padding: 32px;
+        row-gap: 8px;
         text-align: center;
         flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        vertical-align: middle;
 
-
-        >h2 {
-            font-size: 1rem;
-            color: #5B1110;
-            flex-basis: 100%;
-
-        }
 
         >p {
             color: black;
-            padding-top: 1rem;
+            padding-top: 16px;
+            vertical-align: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-align: center;
         }
 
         >ul {
             color: black;
-            padding-top: 1rem;
-            columns: 2;
+            padding-top: 16px;
+            text-align: left;
+            font-size: 1.25rem;
+        }
+    }
+
+
+    .topServiceBox {
+        width: 320px; //240px
+        height: 234px; //176
+
+        >h2 {
+            font-size: 2.4rem;
+            color: #5B1110;
         }
     }
 
     .bottomServiceBox {
-        background-color: #E7D3B8;
-        border-radius: 0.75rem;
-        padding: 2rem;
-        text-align: center;
-        flex-basis: 100%;
+        width: 384px; //352px
+        height: 234px;
 
         >h2 {
-            size: 200%;
+            font-size: 1.6rem;
             color: #5B1110;
-            flex-basis: 100%;
-
         }
 
-        >p {
-            color: black;
-            padding-top: 1rem;
-        }
-
-        >ul {
-            color: black;
-            padding-top: 1rem;
+        .translatorsList {
             columns: 2;
         }
     }
 }
-
 
 // Slider code 
 
@@ -100,20 +99,20 @@
     align-items: center;
     justify-content: space-around;
     background-color: #FFFBF0;
-
 }
 
 .tab {
+    font-size: 1.2rem; //1.875rem
     background-color: #E7D3B8;
     border: none;
-    row-gap: 1rem;
+    row-gap: 16px;
     color: #5B1110;
-    padding: 1rem 0rem 1rem 2rem; //top right bottom left 
-    border-radius: 1rem 1rem 0 0;
-    width: 20%;
+    padding-left: 32px;
+    border-radius: 16px 16px 0 0;
+    width: 304px; //256px 
     word-wrap: break-word;
     text-align: left;
-    height: 4rem;
+    height: 64px;
 }
 
 .tab:hover {
@@ -135,53 +134,49 @@
     flex-direction: row;
     background-color: #5B1110;
     word-wrap: break-word;
-    width: 100%;
-    font-size: 1.4rem;
+    width: 1412px; //1280px (the one I guestimated)
     justify-content: space-around;
-    column-gap: 10rem;
-    height: 30rem;
+    column-gap: 160px;
+    height: 431px; //480px (my guestimation) 
     align-items: center;
-    line-height: 3rem;
+    line-height: 48px;
 
     .arrContainer {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        width: 10%;
+        height: 480px;
+        width: 128px;
         position: absolute;
     }
 
     .arr {
-        height: 1.5rem; //1
-        width: 1.5rem; //1
-        height: 3rem; //3
-        width: 3rem; //3
-        border-top: 0.3rem solid #E7D3B8;
-        border-right: 0.3rem solid #E7D3B8;
-        transform: rotate(45deg);
+        color: #E7D3B8;
+        height: 80px;
+        width: 80px;
         justify-content: center;
         cursor: pointer;
     }
-
 
     .imageContainer {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        width: 40%;
-        position: relative; //absolute 
+        height: 480px;
+        width: 512px; //40% -> 512px 
     }
 
     .image {
-        border-radius: 0.75rem;
-        transform: scale(0.8);
+        border-radius: 12px;
         position: absolute;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 
     .slideText {
-        width: 40%;
+        width: 512px;
+        height: 480px;
+        font-size: 1.875rem;
+        display: flex;
+        align-items: center;
     }
-
 }
