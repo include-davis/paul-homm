@@ -32,8 +32,8 @@ export default function Header() {
                     />
                 </a>
                 <div className={styles.title_text}>
-                    <h1>Paul Hom Asian Clinic</h1>
-                    <h2>A Student-Run Clinic at UC Davis</h2>
+                    <h1>{t('title.clinic_name')}</h1>
+                    <h2>{t('title.subtitle')}</h2>
                 </div>
 
                 <div className={styles.language_dropdown}>

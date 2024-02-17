@@ -2,5 +2,19 @@
     "Index": {
       "title": "Home",
       "description": "Testing internationalization."
+    },
+
+    "Header": {
+      "pages": {
+        "page1": "HOME", 
+        "page2": "ABOUT US", 
+        "page3": "SERVICES", 
+        "page4": "COMMITEES", 
+        "page5": "GET INVOLVED"
+      },
+      "title": {
+        "clinic_name": "Paul Hom Asian Clinic",
+        "subtitle": "A Student-Run Clinic at UC Davis"
+      }
     }
   }
