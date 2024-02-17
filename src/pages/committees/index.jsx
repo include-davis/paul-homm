@@ -1,18 +1,8 @@
 import React from 'react';
 import styles from "@/styles/pages/committees/committees.module.scss"
 
-//actual component?
-function CommitteeCard(props) {
-    return (
-        <div className={styles.committee_card}>
-            <Img
-                src={props.image}
-                alt={props.name}
-            />
-            <h3>{props.name}</h3>
-        </div>
-    )
-}
+
+
 
 
 
