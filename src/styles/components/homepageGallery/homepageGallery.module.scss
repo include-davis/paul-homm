@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fredoka:wght@300..700&display=swap');
 
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .container {
     background-color: palevioletred;
     width: 100%;
+    height: calc(459/var(--frame_scale)*1px);
     display: flex;
     flex-direction: row;
-    --frame_scale: 2; //"slide" keyframes had the frame_scale hardcoded into it; that must be changed whenever changing this variable
+    --frame_scale: 1; //"slide" keyframes had the frame_scale hardcoded into it; that must be changed whenever changing this variable
 }
 
 .frameContainer { //figma file sizes: width=1041px & height=459px
     position: relative;
     width: calc(1041 / var(--frame_scale)*1px);
-    height: calc(459/var(--frame_scale)*1px);
-    background-color: aquamarine;
+    height: 100%;
+    background-color: #FFFBF0;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -24,7 +32,7 @@
     width: 100%;
     top: calc(-59 / var(--frame_scale)*1px);
     animation: slide;
-    animation-duration: 1s;
+    animation-duration: 2s;
     box-shadow: 0 0 8px 8px palevioletred inset;
 }
 
@@ -38,7 +46,7 @@
 
 @keyframes slide {
     from {
-      transform: translateX(1041/2*1px);
+      transform: translateX(calc(1041/var(--frame_scale)*1px));
     }
     to {
       transform: translateX(0px);
@@ -46,34 +54,63 @@
   }
 
 .nav {
-
+    background-color: purple;
+    position: relative;
+    bottom: 30px;   
+    display: flex;
+    flex-direction: row;
+    z-index: 2000;
 }
 
 .navBttn {
-
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .circle {
-    color:aqua;
+    width: 100%;
+    height: 100%;
+    color:#FFFBF0;
 }
 
 .selected {
-    color:antiquewhite;
+    color:#D79C1A;
 }
 
 .textContainer {
     position: relative;
     width: calc(475 / var(--frame_scale)*1px);
     height: calc(459/var(--frame_scale)*1px);
-    background-color: yellowgreen;
+    background-color: #FFFBF0;
 }
 
 .blur {
     position: absolute;
-    width: calc(700 / var(--frame_scale)*1px);
+    width: calc(680 / var(--frame_scale)*1px);
     height: calc(459/var(--frame_scale)*1px);
     //background-color: plum;
     //border-style: double;
     z-index: 1000;
-    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 10%);
+    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 25%);
+}
+
+.title {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--Gold, #D79C1A);
+}
+
+.description {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.65625rem;
+    color: var(--maroon, #5B1110);
+    width: 70%;
 }

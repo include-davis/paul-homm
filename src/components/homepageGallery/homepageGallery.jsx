@@ -24,7 +24,7 @@ export default function HomepageGallery() {
   }
 
   useEffect(() => {
-    const autoPlay = setInterval(() => { go_nextFrame(); }, 4000);
+    const autoPlay = setInterval(() => { go_nextFrame(); }, 7000);
     return () => {
       clearInterval(autoPlay);
     };
@@ -50,11 +50,16 @@ export default function HomepageGallery() {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.textContainer}><div className={styles.blur}></div></div>
-      <div key={activeImg} className={styles.frameContainer}>
-        {prevFrame}
-        {currFrame}
+    <div className={styles.gallery}>
+      <div className={styles.container}>
+        <div className={styles.textContainer}><div className={styles.blur}>
+          <h2 div className={styles.title}>A Passion to Serve</h2>
+          <p div className={styles.description}>Quality clinical services for our local community</p></div>
+        </div>
+        <div key={activeImg} className={styles.frameContainer}>
+          {prevFrame}
+          {currFrame}
+        </div>
       </div>
       <div className={styles.nav}>
         {navDots[0]}
@@ -62,7 +67,6 @@ export default function HomepageGallery() {
         {navDots[2]}
         {navDots[3]}
       </div>
-      <h1>Howdy</h1>
     </div>
   );
 }
