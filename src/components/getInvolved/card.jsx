@@ -3,9 +3,6 @@
 import styles from "@/styles/pages/get-involved/cards.module.scss";
 import Image from "next/image";
 
-/*NOTE: for the second card image - couldn't find the image that was used in the Figma design. For now I've used a different image 
-(found on their current site) and will make the change once I can get a hold of the correct image
-*/
 export default function Card() {
   return (
     <div>
