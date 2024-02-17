@@ -3,14 +3,18 @@ import Card from "@/components/getInvolved/card";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const cardProps = [
-  "Physicians & Residents",
-  "Undergrad. Patient Advocates",
-  "Health Professional Students",
-];
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: (await import(`@/messages/${locale}.json`)).default,
+    },
+  };
+}
+
+const cardProps = ["Card1", "Card2", "Card3"];
 
 export default function GetInvolved() {
-  const t = useTranslations("Example");
+  // const t = useTranslations("Example");
 
   return (
     <div>

@@ -1,5 +1,20 @@
 {
     "Index": {
       "sectionHeading": "Get Involved"
+    },
+    "Get_Involved":{
+      "Card1":{
+        "cardText": "Physicians & Residents",
+        "selector": "cardImg1"
+      },
+      "Card2":{
+        "cardText": "Undergrad. Patient Advocates",
+        "selector": "cardImg2"
+      },
+      "Card3":{
+        "cardText": "Health Professional Students",
+        "selector": "cardImg3"
+      }
     }
+    
   }
