@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@/components/getInvolved/card";
+import styles from "@/styles/pages/get-involved/cards.module.scss";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -17,7 +18,8 @@ export default function GetInvolved() {
   // const t = useTranslations("Example");
 
   return (
-    <div>
+    <div className={styles.sectionContainer}>
+      <h1 className={styles.sectionHeading}>Get Involved</h1>
       <div>
         {cardProps.map((cardProp, index) => (
           <div key={index}>

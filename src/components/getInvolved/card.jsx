@@ -18,7 +18,7 @@ export default function Card({ cardProps }) {
   return (
     <div>
       <div className={styles.sectionContainer}>
-        <h1 className={styles.sectionHeading}>Get Involved</h1>
+        {/* MOVED TO index.jsx <h1 className={styles.sectionHeading}>Get Involved</h1>*/}
         <div className={styles.cardsContainer}>
           <div className={styles.card}>
             <div className={css}>
