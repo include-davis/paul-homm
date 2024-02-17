@@ -1,10 +1,23 @@
 {
     "Index": {
-      "sectionHeading": "Donate Today!",
-      "startSubtext1": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
-      "centeredText1": "Paul Home Asian Clinic",
-      "centeredText2": "6341 Folsom Blvd",
-      "centeredText3": "Sacramento, CA 95819",
-      "centeredText4": "We thank you for your generoristy!"
+      "title": "Home",
+      "description": "Testing internationalization."
+    },
+    "Footer": {
+        "pages": {
+            "page1": "HOME",
+            "page2": "ABOUT US",
+            "page3": "SERVICES",
+            "page4": "COMMITEES",
+            "page5": "GET INVOLVED"
+        },
+        "contact": {
+            "message": "CONTACT US",
+            "address_pt1": "6341 Folsom Blvd",
+            "address_pt2": "Sacramento, CA 95819"
+        },
+        "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
+        "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
+        "include": "Designed & Developed with 🤍 by #include @ Davis"
     }
   }
