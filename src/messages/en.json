@@ -2,23 +2,28 @@
     "Flipping Card": {
         "Card1": {
             "title": "1971 Our Beginning",
-            "content": "In 1971, a group of UC Davis medical students led by Paul Hom held meetings with a group of activist undergraduate students from the California State University of Sacramento to discuss improving health care for elderly Asians and new immigrant families who were struggling to obtain adequate health care due to socioeconomic and language barriers. They decided to start a free clinic to target this problem."
+            "content": "In 1971, a group of UC Davis medical students led by Paul Hom held meetings with a group of activist undergraduate students from the California State University of Sacramento to discuss improving health care for elderly Asians and new immigrant families who were struggling to obtain adequate health care due to socioeconomic and language barriers. They decided to start a free clinic to target this problem.",
+            "image": "1971image.png"
         },
         "Card2": {
             "title": "Creating a Team",
-            "content": "Paul Hom approached Dr. Lindy Kumagai, one of the few Asian medical faculty members at UC Davis School of Medicine, and asked if he would be the medical director of the clinic. Dr. Lindy Kumagai was an advocate for the Civil Rights Movement and underserved Asian communities. He accepted the position and worked with Paul Hom and UC Davis medical students for the next 30 years."
+            "content": "Paul Hom approached Dr. Lindy Kumagai, one of the few Asian medical faculty members at UC Davis School of Medicine, and asked if he would be the medical director of the clinic. Dr. Lindy Kumagai was an advocate for the Civil Rights Movement and underserved Asian communities. He accepted the position and worked with Paul Hom and UC Davis medical students for the next 30 years.",
+            "image": "creatingateam.png"
         },
         "Card3": {
             "title": "Early Operations",
-            "content": "The ‘Asian Clinic’, as it was called before being renamed to the Paul Hom Asian Clinic, operated out of the back of a bookstore providing primary care services to about 9-10 patients every Saturday. After some time, the community closed the bookstore and the clinic moved to the Sacramento Projects in New Helvecia (low income housing). The clinic later moved to its current location at the Safe Credit Union on Folsom Boulevard."
+            "content": "The ‘Asian Clinic’, as it was called before being renamed to the Paul Hom Asian Clinic, operated out of the back of a bookstore providing primary care services to about 9-10 patients every Saturday. After some time, the community closed the bookstore and the clinic moved to the Sacramento Projects in New Helvecia (low income housing). The clinic later moved to its current location at the Safe Credit Union on Folsom Boulevard.",
+            "image": "earlyoperations.png"
         },
         "Card4": {
             "title": "Continuing the Legacy",
-            "content": "After serving for 30 years, Dr. Lindy Kumagai passed on his position as medical director to Dr. Ronald Guy Jan. Dr. Jan had been volunteering for the clinic since 1980. He had an undying dedication and passion for serving the underserved. In the midst of starting his own practice, Dr. Jan would do his rounds between seven different hospitals and then come to the clinic to take on any patient that needed his help. Dr. Jan served for about 18-20 years before passing his position to the current medical director Dr. Christian Bohringer."
+            "content": "After serving for 30 years, Dr. Lindy Kumagai passed on his position as medical director to Dr. Ronald Guy Jan. Dr. Jan had been volunteering for the clinic since 1980. He had an undying dedication and passion for serving the underserved. In the midst of starting his own practice, Dr. Jan would do his rounds between seven different hospitals and then come to the clinic to take on any patient that needed his help. Dr. Jan served for about 18-20 years before passing his position to the current medical director Dr. Christian Bohringer.",
+            "image": "continuingthelegacy.png"
         },
         "Card5": {
             "title": "Today",
-            "content": "The existence of the Paul Hom Asian Clinic has proved beneficial not only to the patients, but also to the undergraduate students, medical students, and physicians who volunteer their time and efforts. The legacy of Dr. Paul Hom continues to thrive and is the oldest Asian clinic in all of America."
+            "content": "The existence of the Paul Hom Asian Clinic has proved beneficial not only to the patients, but also to the undergraduate students, medical students, and physicians who volunteer their time and efforts. The legacy of Dr. Paul Hom continues to thrive and is the oldest Asian clinic in all of America.",
+            "image": "Today.png"
         }
     }
 }
