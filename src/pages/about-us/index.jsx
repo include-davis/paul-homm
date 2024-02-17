@@ -1,13 +1,10 @@
 import React from 'react';
-//import styles 
-
-export default function About()
-{
-    return(
+import flippingCard from '@/components/about-us/flippingCard';
+export default function About() {
+    return (
         <>
-        about yay
+            <flippingCard>Card1</flippingCard>
         </>
     )
 }
-
 About;

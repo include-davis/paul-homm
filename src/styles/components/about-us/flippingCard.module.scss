@@ -1,4 +1,4 @@
-.containter {
+.container {
     background-color: (var, --color-beige);
     border-radius: 12px;
 }
@@ -17,6 +17,7 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    font-family: Jost;
 }
 
 .FlipCard:hover .CardInner {
@@ -32,7 +33,7 @@
     backface-visibility: hidden;
 }
 
-.flip-card-back {
+.FlipBack {
     background-color: (var, --color-beige);
     transform: rotateY(180deg);
 }
