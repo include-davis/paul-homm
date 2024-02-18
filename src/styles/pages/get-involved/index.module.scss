@@ -16,5 +16,8 @@
 .cardContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; // Or any other styling you prefer
+  padding-top: 24px;
+  justify-content: space-evenly; /* space-between, space-evenly, etc. */
+  font-size: 1.5rem;
+  padding: 0px;
 }

@@ -23,8 +23,10 @@ export default function Card({ cardProps, imgSrc }) {
         <div className={styles.cardsContainer}>
           <div className={styles.card}>
             <div className={styles.cardImg}>
-              <img src={imgSrc} alt={cardProps} width={368} height={328} />
-              <p className={styles.cardText}>{t("cardText")}</p>
+              <Image src={imgSrc} alt={cardProps} width={368} height={328} />
+            </div>
+            <div className={styles.cardText}>
+              <p>{t("cardText")}</p>
             </div>
             <button className={styles.detailsButton}>Details</button>
             <button className={styles.signUpButton}>Sign Up</button>
