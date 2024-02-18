@@ -29,9 +29,8 @@
   flex-shrink: 0;
 }
 // dead code??????
-.cardImg1,
-.cardImg2,
-.cardImg3 {
+/*
+.cardImg {
   width: 368px;
   height: 328px;
   border-radius: 12px;
@@ -39,7 +38,7 @@
 
 .cardImg1 {
   background: url(/images/get-involved/physiciansAndResidents.png); // from figma dev
-  background-size: cover; /* or "contain"  */
+  background-size: cover; or "contain" 
 }
 
 .cardImg2 {
@@ -53,11 +52,12 @@
   background-size: cover;
   background-position: center center;
 }
+*/
 
 .cardText {
   // text overlay
   position: relative;
-  top: 79%;
+  top: 2%;
   border-radius: 0px 0px 12px 12px;
   background: rgba(27, 1, 1, 0.7);
   color: #d4d0d0;

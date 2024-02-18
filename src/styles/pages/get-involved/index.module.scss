@@ -1,0 +1,20 @@
+.sectionContainer {
+  // display: flex;
+  padding-top: 24px;
+  background-color: var(--color-white);
+  font-family: var(--font-inter);
+  padding-left: var(--edge-spacer);
+  padding-right: var(--edge-spacer);
+}
+
+.sectionHeading {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--color-maroon);
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; // Or any other styling you prefer
+}

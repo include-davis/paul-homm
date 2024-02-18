@@ -1,6 +1,7 @@
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
 import styles from "@/styles/pages/get-involved/cards.module.scss";
+//import styles from "@/styles/pages/get-involved/index.module.scss";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -14,14 +15,14 @@ export async function getStaticProps({ locale }) {
 
 export default function Card({ cardProps, imgSrc }) {
   const t = useTranslations(`Get_Involved.${cardProps}`);
-  const css = `styles.${t("selector")}`;
+  //const css = `styles.${t("selector")}`;
   return (
     <div>
       <div className={styles.sectionContainer}>
         {/* MOVED TO index.jsx <h1 className={styles.sectionHeading}>Get Involved</h1>*/}
         <div className={styles.cardsContainer}>
           <div className={styles.card}>
-            <div className={css}>
+            <div className={styles.cardImg}>
               <img src={imgSrc} alt={cardProps} width={368} height={328} />
               <p className={styles.cardText}>{t("cardText")}</p>
             </div>
