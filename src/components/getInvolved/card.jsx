@@ -19,6 +19,7 @@ export default function Card({ cardProps, imgSrc }) {
     <div>
       <div className={styles.cardsContainer}>
         <div className={styles.card}>
+          {/* each card has an image and text (the overlay) */}
           <div className={styles.cardImg}>
             <Image src={imgSrc} alt={cardProps} width={368} height={328} />
           </div>
