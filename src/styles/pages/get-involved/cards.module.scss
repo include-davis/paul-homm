@@ -9,13 +9,13 @@
   font-size: 1.5rem;
   text-align: center;
 }
-
+//TODO: figure out how to round images in cards and fix image compression
 .cardImg {
   object-fit: cover;
   border-radius: 12px;
   overflow: hidden; // ensures Image component respects the border-radius (per stack overflow...)
 }
-// dead code??????
+// dead code
 /*
 .cardImg {
   width: 368px;
@@ -64,7 +64,7 @@
   text-align: center;
 }
 
-//TODO: buttons are lower than wanted??
+//TODO: buttons are lower than wanted?? too spaced out from cards
 .detailsButton,
 .signUpButton {
   height: 38px;

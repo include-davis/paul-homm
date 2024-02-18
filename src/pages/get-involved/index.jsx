@@ -15,7 +15,7 @@ export async function getStaticProps({ locale }) {
 const cardProps = ["Card1", "Card2", "Card3"];
 const images = [
   "/images/get-involved/physiciansAndResidents.png",
-  "/images/get-involved/undergrad.png", // doesn't work when these two are included?
+  "/images/get-involved/undergrad.png",
   "/images/get-involved/clinics.png",
 ];
 export default function GetInvolved() {
