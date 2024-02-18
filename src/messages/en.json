@@ -15,6 +15,23 @@
       "title": {
         "clinic_name": "Paul Hom Asian Clinic",
         "subtitle": "A Student-Run Clinic at UC Davis"
-      }
+      },
+    "Footer": {
+        "pages": {
+            "page1": "HOME",
+            "page2": "ABOUT US",
+            "page3": "SERVICES",
+            "page4": "COMMITEES",
+            "page5": "GET INVOLVED"
+        },
+        "contact": {
+            "message": "CONTACT US",
+            "address_pt1": "6341 Folsom Blvd",
+            "address_pt2": "Sacramento, CA 95819"
+        },
+        "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
+        "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
+        "include": "Designed & Developed with 🤍 by #include @ Davis"
     }
   }
+}
