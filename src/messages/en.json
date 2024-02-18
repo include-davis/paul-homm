@@ -4,7 +4,7 @@
       "description": "Testing internationalization."
     }, 
 
-    "Committee_Page": {
+    "CommitteeCards": {
       "committee1": {
         "name": "Cardiopulmonary", 
         "image":"/images/committees/cardiopulmonary.png"
@@ -43,5 +43,10 @@
         "name": "Ophthalmology", 
         "image":"/images/committees/ophthalmology.png"
       }
+    },
+
+    "CommitteesPage": {
+      "meetOurCommittees": "Meet Our Committees!"
     }
+
   }

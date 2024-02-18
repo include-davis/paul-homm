@@ -13,14 +13,14 @@ export async function getStaticProps({ locale }) {
 
 
 export default function CommitteeCard({props}) {
-    const t = useTranslations(`Committee_Page.${props}`)
+    const t = useTranslations(`CommitteeCards.${props}`)
     return (
         <div className={styles.committee_card}>
             <Image
                 src={t('image')}
                 alt={t('name')}
                 width={306}
-                height={305.152}
+                height={306}
             />
             <h3>{t('name')}</h3>
         </div>

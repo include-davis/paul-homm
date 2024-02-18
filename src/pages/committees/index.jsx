@@ -17,8 +17,10 @@ const data = ["committee1", "committee2", "committee3",
 
 
 export default function committees() {
+    const t = useTranslations(`CommitteesPage`)
     return(
         <div className={styles.committees_page}>
+            <h1>{t('meetOurCommittees')}</h1>
             <div className={styles.committees_cards}>
                 {data.map((committee, index) => (
                     <div key={index}> 
