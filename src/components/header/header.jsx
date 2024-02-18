@@ -4,6 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from 'next/image'
 
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        messages: (await import(`@/messages/${locale}.json`)).default
+      }
+    };
+}
+
 export default function Header() {
     const [activeLinks, setActiveLinks] = useState([false, false, false, false, false]);
 
@@ -12,12 +20,14 @@ export default function Header() {
     }
 
     const links = [
-        { href: '/', text: 'HOME' },
-        { href: '/about-us', text: 'ABOUT US' },
-        { href: '/services', text: 'SERVICES' },
-        { href: '/committees', text: 'COMMITEES' },
-        { href: '/get-involved', text: 'GET INVOLVED' }
+        { href: '/', text: 'pages.page1' },
+        { href: '/about-us', text: 'pages.page2' },
+        { href: '/services', text: 'pages.page3' },
+        { href: '/committees', text: 'pages.page4' },
+        { href: '/get-involved', text: 'pages.page5' }
     ];
+
+    const t = useTranslations(`Header`)
 
     return (
         <header className={styles.header}>
@@ -48,7 +58,7 @@ export default function Header() {
                             href={`${link.href}`} 
                             onClick={() => toggleActive(index)}
                         >
-                            {link.text}
+                            {t(link.text)}
                         </Link>
                      </li>
                 )
