@@ -15,41 +15,18 @@ export async function getStaticProps({ locale }) {
 
 export default function Card({ cardProps, imgSrc }) {
   const t = useTranslations(`Get_Involved.${cardProps}`);
-  //const css = `styles.${t("selector")}`;
   return (
     <div>
-      <div className={styles.sectionContainer}>
-        {/* MOVED TO index.jsx <h1 className={styles.sectionHeading}>Get Involved</h1>*/}
-        <div className={styles.cardsContainer}>
-          <div className={styles.card}>
-            <div className={styles.cardImg}>
-              <Image src={imgSrc} alt={cardProps} width={368} height={328} />
-            </div>
-            <div className={styles.cardText}>
-              <p>{t("cardText")}</p>
-            </div>
-            <button className={styles.detailsButton}>Details</button>
-            <button className={styles.signUpButton}>Sign Up</button>
+      <div className={styles.cardsContainer}>
+        <div className={styles.card}>
+          <div className={styles.cardImg}>
+            <Image src={imgSrc} alt={cardProps} width={368} height={328} />
           </div>
-          {/* duplicate cards */}
-          {/*
-          <div className={styles.card}>
-            <div className={`styles.${t("selector")}`}>
-              <Image />
-              <p className={styles.cardText}>Undergrad. Patient Advocates</p>
-            </div>
-            <button className={styles.detailsButton}>Details</button>
-            <button className={styles.signUpButton}>Sign Up</button>
+          <div className={styles.cardText}>
+            <p>{t("cardText")}</p>
           </div>
-          <div className={styles.card}>
-            <div className={styles.cardImg3}>
-              <Image />
-              <p className={styles.cardText}>Health Professional Students</p>
-            </div>
-            <button className={styles.detailsButton}>Details</button>
-            <button className={styles.signUpButton}>Sign Up</button>
-          </div>
-          */}
+          <button className={styles.detailsButton}>Details</button>
+          <button className={styles.signUpButton}>Sign Up</button>
         </div>
       </div>
     </div>
