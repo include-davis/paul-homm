@@ -13,7 +13,11 @@ export async function getStaticProps({ locale }) {
 }
 
 const cardProps = ["Card1", "Card2", "Card3"];
-
+const images = [
+  "/images/get-involved/physiciansAndResidents.png",
+  "/images/get-involved/undergrad.png", // doesn't work when these two are included?
+  "/images/get-involved/clinics.png",
+];
 export default function GetInvolved() {
   // const t = useTranslations("Example");
 
@@ -23,7 +27,7 @@ export default function GetInvolved() {
       <div>
         {cardProps.map((cardProp, index) => (
           <div key={index}>
-            <Card cardProps={cardProp} />
+            <Card cardProps={cardProp} imgSrc={images[index]} />
           </div>
         ))}
       </div>

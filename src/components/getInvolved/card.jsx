@@ -12,7 +12,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Card({ cardProps }) {
+export default function Card({ cardProps, imgSrc }) {
   const t = useTranslations(`Get_Involved.${cardProps}`);
   const css = `styles.${t("selector")}`;
   return (
@@ -22,7 +22,7 @@ export default function Card({ cardProps }) {
         <div className={styles.cardsContainer}>
           <div className={styles.card}>
             <div className={css}>
-              <Image />
+              <img src={imgSrc} alt={cardProps} width={368} height={328} />
               <p className={styles.cardText}>{t("cardText")}</p>
             </div>
             <button className={styles.detailsButton}>Details</button>
