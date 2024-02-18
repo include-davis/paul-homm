@@ -1,0 +1,17 @@
+
+
+
+
+.committees_cards {
+display: flex;
+flex-wrap: wrap; 
+justify-content: space-between;
+
+}
+
+.committees_cards > div {
+    flex: 0 0 31%; 
+    margin-bottom: 200px;
+  }
+
+  

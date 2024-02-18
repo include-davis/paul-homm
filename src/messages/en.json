@@ -2,5 +2,46 @@
     "Index": {
       "title": "Home",
       "description": "Testing internationalization."
+    }, 
+
+    "Committee_Page": {
+      "committee1": {
+        "name": "Cardiopulmonary", 
+        "image":"/images/committees/cardiopulmonary.png"
+      },
+      "committee2": {
+        "name": "Covered California", 
+        "image":"/images/committees/covered_california.png"
+      }, 
+      "committee3": {
+        "name": "Dermatology", 
+        "image":"/images/committees/dermatology.png"
+      },
+
+      "committee4": {
+        "name": "Diabetes", 
+        "image":"/images/committees/diabetes.png"
+      },
+      "committee5": {
+        "name": "Patient Assistance Program", 
+        "image":"/images/committees/patient_assistance_program.png"
+      },
+      "committee6": {
+        "name": "Hepatitis", 
+        "image":"/images/committees/hepatitis.png"
+      },
+      
+      "committee7": {
+        "name": "Neurology", 
+        "image":"/images/committees/neurology.png"
+      },
+      "committee8": {
+        "name": "Women's Health", 
+        "image":"/images/committees/womens_health.png"
+      },
+      "committee9": {
+        "name": "Ophthalmology", 
+        "image":"/images/committees/ophthalmology.png"
+      }
     }
   }

@@ -1,13 +1,28 @@
 import React from 'react';
+import { useTranslations } from "next-intl";
+import styles from "@/styles/components/committees/committee.module.scss"
+import Image from 'next/image'
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        messages: (await import(`@/messages/${locale}.json`)).default
+      }
+    };
+}
+
 
 export default function CommitteeCard({props}) {
+    const t = useTranslations(`Committee_Page.${props}`)
     return (
         <div className={styles.committee_card}>
-            <Img
-                src={props.image}
-                alt={props.name}
+            <Image
+                src={t('image')}
+                alt={t('name')}
+                width={306}
+                height={305.152}
             />
-            <h3>{props.name}</h3>
+            <h3>{t('name')}</h3>
         </div>
     )
 }
