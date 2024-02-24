@@ -5,77 +5,70 @@
 }
 
 .servicesContainer {
-    background-color: #FFFBF0;
-    color: #5B1110;
+    background-color: var(--color-white);
+    color: var(--color-maroon);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 32px;
-    padding-top: 32px;
-    row-gap: 16px;
-    justify-content: space-between;
+    padding: 32px;
+    row-gap: 40px;
+    justify-content: space-around;
 
-    .heading {
-        padding: 16px;
-        font-size: 1.4rem;
-        word-wrap: break-word;
+    .pageHeading {
+        font-size: 3.4375rem;
+        //font-family: "Be Vietnam";
     }
 }
 
-.boxesContainer {
+.boxContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    column-gap: 32px;
-    vertical-align: center;
+    column-gap: 40px;
+    justify-content: center;
 
     .serviceBox {
-        background-color: #E7D3B8;
+        background-color: var(--color-beige);
         border-radius: 12px;
-        padding: 32px;
-        row-gap: 8px;
-        text-align: center;
-        flex-basis: 100%;
         display: flex;
         flex-direction: column;
-        vertical-align: middle;
-
-
-        >p {
-            color: black;
-            padding-top: 16px;
-            vertical-align: center;
-            font-weight: bold;
-            font-size: 1.25rem;
-            text-align: center;
-        }
-
-        >ul {
-            color: black;
-            padding-top: 16px;
-            text-align: left;
-            font-size: 1.25rem;
-        }
     }
 
-
     .topServiceBox {
-        width: 320px; //240px
-        height: 234px; //176
+        row-gap: 65px;
+        width: 402px;
+        height: 300px;
 
-        >h2 {
-            font-size: 2.4rem;
-            color: #5B1110;
+
+        .boxHeadingTop {
+            font-size: 2.8125rem;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        >p {
+            font-size: 1.875rem;
+            color: black;
+            font-weight: bold;
+            text-align: center;
         }
     }
 
     .bottomServiceBox {
-        width: 384px; //352px
-        height: 234px;
+        width: 492px;
+        height: 338px;
+        row-gap: 26px;
+        justify-content: center;
 
         >h2 {
-            font-size: 1.6rem;
-            color: #5B1110;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .desc {
+            font-size: 2rem;
+            color: black;
+            list-style-position: inside;
+            padding-left: 27px;
         }
 
         .translatorsList {
@@ -84,45 +77,48 @@
     }
 }
 
-// Slider code 
 
+// Slider code 
 .slideContainer {
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
-    color: #D79C1A;
+    color: var(--color-gold);
 }
 
 .tabContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #FFFBF0;
+    column-gap: 28px;
 }
 
 .tab {
-    font-size: 1.2rem; //1.875rem
-    background-color: #E7D3B8;
+    width: 300px;
+    height: 80px;
+    font-size: 1.875rem;
+    color: var(--color-maroon);
+    background-color: var(--color-beige);
     border: none;
-    row-gap: 16px;
-    color: #5B1110;
-    padding-left: 32px;
-    border-radius: 16px 16px 0 0;
-    width: 304px; //256px 
-    word-wrap: break-word;
+    border-radius: 20px 20px 0 0;
     text-align: left;
-    height: 64px;
+    padding-left: 14px;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.tabExcep {
+    font-size: 1.5625rem;
 }
 
 .tab:hover {
-    color: #D79C1A;
-    background-color: #5B1110;
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
+
 }
 
 .activeTab {
-    color: #D79C1A;
-    background-color: #5B1110;
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
 }
 
 .inactiveSlide {
@@ -132,51 +128,51 @@
 .activeSlide {
     display: flex;
     flex-direction: row;
-    background-color: #5B1110;
-    word-wrap: break-word;
-    width: 1412px; //1280px (the one I guestimated)
-    justify-content: space-around;
-    column-gap: 160px;
-    height: 431px; //480px (my guestimation) 
-    align-items: center;
-    line-height: 48px;
+    justify-content: space-between;
+    background-color: var(--color-maroon);
+    padding: 100px 40px;
+
 
     .arrContainer {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 480px;
-        width: 128px;
-        position: absolute;
-    }
+        position: relative;
 
-    .arr {
-        color: #E7D3B8;
-        height: 80px;
-        width: 80px;
-        justify-content: center;
-        cursor: pointer;
+        .arr {
+            font-size: 5rem;
+            color: var(--color-beige);
+            cursor: pointer;
+            position: absolute;
+        }
     }
 
     .imageContainer {
+        height: 431px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        height: 480px;
-        width: 512px; //40% -> 512px 
     }
 
     .image {
         border-radius: 12px;
-        position: absolute;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        //position: absolute;
     }
 
     .slideText {
-        width: 512px;
-        height: 480px;
-        font-size: 1.875rem;
         display: flex;
         align-items: center;
+        justify-content: left;
+        height: 380;
+        width: 625px;
+        list-style-position: inside;
+        position: relative;
+        font-size: 2.25rem;
+    }
+
+    .textExcept {
+        font-size: 1.75rem;
+        height: 380;
+        width: 625px;
     }
 }

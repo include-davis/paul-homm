@@ -6,22 +6,22 @@ export default function Services() {
         <div className={styles.mainContainer}>
 
             <div className={styles.servicesContainer}>
-                <div className={styles.heading}>
-                    <h1> Our Services </h1>
+                <div>
+                    <h1 className={styles.pageHeading}>Our Services</h1>
                 </div>
 
-                <div className={styles.boxesContainer}>
+                <div className={styles.boxContainer}>
 
                     <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
 
-                        <h2> Primary Care Services </h2>
+                        <h3 className={styles.boxHeadingTop}> Primary Care Services </h3>
                         <p> Every Saturday </p>
 
                     </div>
 
                     <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
 
-                        <h2> Cancer Screenings </h2>
+                        <h3 className={styles.boxHeadingTop}> Cancer Screenings </h3>
                         <p> First Sunday monthly </p>
 
                     </div>
@@ -34,10 +34,10 @@ export default function Services() {
             </div>
 
             <div className={styles.servicesContainer}>
-                <div className={styles.boxesContainer}>
+                <div className={styles.boxContainer}>
                     <div className={`${styles.serviceBox} ${styles.bottomServiceBox}`}>
-                        <h2>Referrals</h2>
-                        <ul>
+                        <h2 className={styles.boxHeadingBottom}>Referrals</h2>
+                        <ul className={styles.desc}>
                             <li>Surgery with SPIRIT program</li>
                             <li>UCDMC</li>
                             <li>Primary Care Clinic</li>
@@ -45,8 +45,8 @@ export default function Services() {
                     </div>
 
                     <div className={`${styles.serviceBox} ${styles.bottomServiceBox}`}>
-                        <h2>Translators</h2>
-                        <ul className={styles.translatorsList}>
+                        <h2 className={styles.boxHeadingBottom}>Translators</h2>
+                        <ul className={`${styles.desc} ${styles.translatorsList}`}>
                             <li>Cantonese</li>
                             <li>Mandarin</li>
                             <li>Korean</li>
@@ -57,7 +57,6 @@ export default function Services() {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
-
