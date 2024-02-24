@@ -10,15 +10,14 @@
 .container {
     background-color: palevioletred;
     width: 100%;
-    height: calc(459/var(--frame_scale)*1px);
+    height: 459px;
     display: flex;
     flex-direction: row;
-    --frame_scale: 1; //"slide" keyframes had the frame_scale hardcoded into it; that must be changed whenever changing this variable
 }
 
-.frameContainer { //figma file sizes: width=1041px & height=459px
+.frameContainer {
     position: relative;
-    width: calc(1041 / var(--frame_scale)*1px);
+    width: 70%;
     height: 100%;
     background-color: #FFFBF0;
     overflow: hidden;
@@ -30,14 +29,13 @@
 .frame {
     position: absolute;
     width: 100%;
-    top: calc(-59 / var(--frame_scale)*1px);
     animation: slide;
     animation-duration: 2s;
     box-shadow: 0 0 8px 8px palevioletred inset;
 }
 
 .prev {
-    left: calc(-1041/var(--frame_scale)*1px);
+    left: -100%;
 }
 
 .curr {
@@ -46,7 +44,7 @@
 
 @keyframes slide {
     from {
-      transform: translateX(calc(1041/var(--frame_scale)*1px));
+      transform: translateX(100%);
     }
     to {
       transform: translateX(0px);
@@ -54,12 +52,13 @@
   }
 
 .nav {
-    background-color: purple;
     position: relative;
     bottom: 30px;   
     display: flex;
     flex-direction: row;
     z-index: 2000;
+    width: 10%;
+    justify-content: space-evenly;
 }
 
 .navBttn {
@@ -81,29 +80,32 @@
 
 .textContainer {
     position: relative;
-    width: calc(475 / var(--frame_scale)*1px);
-    height: calc(459/var(--frame_scale)*1px);
+    width: 30%;
+    height: 100%;
     background-color: #FFFBF0;
 }
 
 .blur {
     position: absolute;
-    width: calc(680 / var(--frame_scale)*1px);
-    height: calc(459/var(--frame_scale)*1px);
-    //background-color: plum;
-    //border-style: double;
+    width: 140%;
+    height: 100%;
     z-index: 1000;
-    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 25%);
+    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
 }
 
 .title {
-    width: 70%;
+    width: 80%;
     font-family: "Be Vietnam Pro", sans-serif;
     font-size: 2.8125rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     color: var(--Gold, #D79C1A);
+    margin-bottom: 4%;
 }
 
 .description {
@@ -114,5 +116,4 @@
     font-weight: 500;
     line-height: 2.65625rem;
     color: var(--maroon, #5B1110);
-    width: 70%;
 }
