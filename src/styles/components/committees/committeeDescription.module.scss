@@ -1,6 +1,8 @@
 .wrapper{
-    height: 100vh;
+    height: auto;
     background: var(--off-white, #FFFBF0);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .content{
@@ -12,34 +14,30 @@
 
     >h1{
         color: var(--maroon, #5B1110);
-        font-size: 55px;
+        font-size: 2rem;
         text-align: center;
-        font-style: normal;
         font-weight: 700;
         line-height: normal;
     }
 
     >h2{
-        font-size: 25px;
-        font-style: normal;
+        font-size: 1.25rem;
         text-align: center;
         font-weight: 500;
         line-height: 170%; /* 42.5px */
-        margin-top: 32px;
-        margin-left: 216px;
-        margin-right:  216px;
+    }
 
+    *{
+        padding-top: 1em;
+        width: 50%;
     }
 }
 
 .button {
-    margin-bottom: 60px; 
-    margin-right: 50px;
-    margin-left: 24px;
     border: none;
     background: none;
     color: #5B1110;
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: 600;
     padding-top: 56px;
     display: flex;
@@ -47,7 +45,7 @@
 }
 
 .buttonClass{
-    margin-left: 32px;
+    padding-left: 2em;
     padding-right: 100px;
     display: flex;
     flex-direction: row;
