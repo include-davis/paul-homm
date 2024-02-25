@@ -1,8 +1,7 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
+import YouTube from "react-youtube";
 import styles from "@/styles/pages/about/about.module.scss";
 //import styles 
-
-
 export default function About()
 {
     return(
@@ -32,6 +31,7 @@ export default function About()
             </div>
         </div>
     )
+    
 }
 
 About;

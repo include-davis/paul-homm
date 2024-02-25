@@ -1,7 +1,7 @@
 .wrapperClass{
   background-color: #FFFBF0;
   text-align: center;
-  height:100vh;
+  height:auto;
   padding-top: 40px;
 
   >*{
@@ -9,17 +9,17 @@
   }
 
   >h1{
-    font-size: 56px;
+    font-size: 2rem;
     color: #5B1110;
   }
 
   >h2{
-    font-size: 30px;
+    font-size: 1.5rem;
     color: #D79C1A;
   }
   >p{
-    padding-left: 160px;
-    padding-right: 160px;
+    padding-left:160px;
+    padding-right:160px;
   }
 }
 
@@ -43,10 +43,6 @@
   >ul{
     text-align:left;
     padding-left: 32px;
-    
-  }
-
-  >li{
-    margin: 12px;
   }
 }
+
