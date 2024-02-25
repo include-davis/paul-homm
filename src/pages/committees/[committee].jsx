@@ -1,4 +1,5 @@
 import CommitteeDescription from "@/components/committees/committeeDesription";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const data = {
