@@ -3,7 +3,9 @@
       "title": "Home",
       "description": "Testing internationalization."
     },
-  "coveredcalifornia":{
+"Committees":{
+  "CommitteeDescriptionComponent":{
+    "coveredcalifornia":{
       "title":"Covered California",
       "desc":"The Covered California Committee assists patients in signing up for affordable health insurance through Covered California, Medi-Cal and Medicare. All Covered California Co-Directors are certified enrollment counselors for Covered California and, therefore, are able to work with patients through the entirety of the insurance application. The Covered California Committee also provides assistance in SPIRIT referrals--where patients can potentially have their expensive surgeries paid for."
   },
@@ -43,5 +45,6 @@
       "title": "Neurology",
       "desc": "The Neurology Clinic assists patients with neurological issues, such as problems with memory, neuropathic pain (numb, tingling, or burning feet/hands), sleep, migraine, seizures, and any other issues related to the brain. We also offer dementia screening for patients who are older than 65 years of age and provide access to resources for patients, caretakers, and family members of individuals with memory loss issues."
   }
-
+    }
   }
+}
