@@ -14,7 +14,7 @@ export async function getStaticProps({ locale }) {
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
 export default function CommitteeDescription({ props }) {
-  const t = useTranslations(`Example.propsComponent.${props}`);
+  const t = useTranslations(`Committees.CommitteeDescriptionComponent.${props}`);
   const { title, desc } = props;
   return (
     <div className = {styles.wrapper}>
@@ -24,8 +24,8 @@ export default function CommitteeDescription({ props }) {
           </a>
       </div>
       <div className = {styles.content}>
-        <h1>{title}</h1>
-        <h2>{desc}</h2>
+        <h1>{t('title')}</h1>
+        <h2>{t('desc')}</h2>
       </div>
     </div>
   );
