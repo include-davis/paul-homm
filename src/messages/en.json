@@ -3,9 +3,9 @@
         "title": "Home",
         "mission": {
             "title": "Our Mission",
-            "p1": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.",
-            "p2": "At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.",
-            "p3": "Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services."
+            "paragraph1": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.",
+            "paragraph2": "At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.",
+            "paragraph3": "Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services."
         },
         "cards": {
             "visit": {

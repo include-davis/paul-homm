@@ -28,9 +28,9 @@ export default function Home() {
       <div className={styles.mission}>
         <div>
             <h1>{t('mission.title')}</h1>
-            <p>{t('mission.p1')}</p>
-            <p>{t('mission.p2')}</p>
-            <p>{t('mission.p3')}</p>
+            <p>{t('mission.paragraph1')}</p>
+            <p>{t('mission.paragraph2')}</p>
+            <p>{t('mission.paragraph3')}</p>
         </div>
         <Image
             src="/happy-doctors.png"
