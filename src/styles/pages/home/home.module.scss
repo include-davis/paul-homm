@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    justify-content: center;
+    column-gap: 48px;
     
     height: calc(8px * 86);
     
@@ -18,8 +20,8 @@
         line-height: 40px;
     }
     h1, p {
-        padding-left: calc(8px * 25);
-        width: calc(8px * 85);
+        // padding-left: calc(8px * 25);
+        width: calc(8px * 80);
         margin-bottom: var(--edge-spacer);
     }
 
