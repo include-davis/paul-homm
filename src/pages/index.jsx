@@ -32,13 +32,15 @@ export default function Home() {
             <p>{t('mission.paragraph2')}</p>
             <p>{t('mission.paragraph3')}</p>
         </div>
-        <Image
-            src="/happy-doctors.png"
-            width={592}
-            height={384}
-            alt={"Happy doctors"}
-            style={{borderRadius: '8px'}}
-        />
+        <div className={styles.doctors_image}>
+            <Image
+                src="/happy-doctors.png"
+                style={{ objectFit: "fill" }}
+                fill={true}
+                alt={"Happy doctors"}
+            />
+        </div>
+
       </div>
 
       {/* White Section with Info cards */}
@@ -93,13 +95,14 @@ export default function Home() {
                             <li key={index}>{t('cards.events.' + item)}</li>
                         ))}
                     </ul>
-                    <Image
-                        src="/events-img.png"
-                        width={408}
-                        height={264}
-                        alt={"People holding posters"}
-                        style={{borderRadius: '8px'}}
-                    />
+                    <div className={styles.events_image}>
+                        <Image
+                            src="/events-img.png"
+                            style={{ objectFit: "fill" }}
+                            fill={true}
+                            alt={"People holding posters"}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

@@ -38,6 +38,15 @@
     background-color: var(--color-white);
 }
 
+.doctors_image {
+    position: relative;
+    width: calc(8px * 74);
+    height: calc(8px * 48);
+    
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 // Styling for "Visit Us!" card. Requires some 
 .visit_card {
     display: flex;
@@ -158,6 +167,15 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+}
+
+.events_image {
+    position: relative;
+    width: calc(8px * 51);
+    height: calc(8px * 33);
+    
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
 // Add circular background behind icons
