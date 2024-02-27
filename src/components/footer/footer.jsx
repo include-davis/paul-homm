@@ -48,16 +48,16 @@ export default function Footer() {
             <div className={styles.contact}> 
                 <p>{t('contact.message')}</p>
                 <div className={styles.icons}>
-                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                    <a href="https://www.facebook.com/paulhomasianclinicatucdavis" target="_blank" className={styles.circle_frame}>
                         <MdFacebook className={styles.facebook}/> 
                     </a>
-                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                    <a href="https://www.instagram.com/paulhomasianclinic/?hl=en" target="_blank" className={styles.circle_frame}>
                         <AiOutlineInstagram/>
                     </a>
-                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                    <a href="tel: 916-736-3966" target="_blank" className={styles.circle_frame}>
                         <HiOutlinePhone/>
                     </a>
-                    <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                    <a href="mailto: clinic@vncares.org" className={styles.circle_frame}>
                         <MdOutlineMailOutline/>
                     </a>
                 </div>
