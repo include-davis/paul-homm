@@ -74,8 +74,8 @@ export default function Home() {
             <div className={styles.closure_card}>
                 <h1>{t('cards.closure.title')}</h1>
                 <ul>
-                    {dates.map((item) => {
-                        return <li>{t('cards.closure.' + item)}</li>
+                    {dates.map((item, index) => {
+                        return <li key={index}>{t('cards.closure.' + item)}</li>
                     })}
                 </ul>
             </div>
@@ -84,13 +84,13 @@ export default function Home() {
                 <h1>{t('cards.events.title')}</h1>
                 <div className={styles.events}>
                     <ul>
-                        {dates.map((item) => (
-                            <li>{t('cards.events.' + item)}</li>
+                        {dates.map((item, index) => (
+                            <li key={index}>{t('cards.events.' + item)}</li>
                         ))}
                     </ul>
                     <ul>
-                        {events.map((item) => (
-                            <li>{t('cards.events.' + item)}</li>
+                        {events.map((item, index) => (
+                            <li key={index}>{t('cards.events.' + item)}</li>
                         ))}
                     </ul>
                     <Image
