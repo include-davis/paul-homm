@@ -15,7 +15,6 @@ export async function getStaticProps({ locale }) {
 /* view and test it out by importing it to the respective page */
 export default function CommitteeDescription({ props }) {
   const t = useTranslations(`Committees.CommitteeDescriptionComponent.${props}`);
-  const { title, desc } = props;
   return (
     <div className = {styles.wrapper}>
       <div className = {styles.buttonClass}>
