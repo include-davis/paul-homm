@@ -67,13 +67,12 @@ export default function Footer() {
             {/* thank you message */}
             <div className={styles.sponsor}>
                 <p>{t('sponsor_pt1')}<br/>{t('sponsor_pt2')}</p>
-                <div>
+                <div className={styles.sponsor_image}>
                     <Image
                         src="/credit-union.png"
-                        width={280}
-                        height={100}
                         alt={"Safe Credit Union Logo"}
-                        style={{borderRadius: '12px'}}
+                        style={{ objectFit: "fill" }}
+                        fill={true}
                     />
                 </div>
             </div>
