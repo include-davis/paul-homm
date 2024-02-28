@@ -46,7 +46,7 @@ export default function Footer() {
         
             {/* contacts */}
             <div className={styles.contact}> 
-                <p>{t('contact.message')}</p>
+                <p className={styles.contact_us}>{t('contact.message')}</p>
                 <div className={styles.icons}>
                     <a href="https://www.facebook.com/paulhomasianclinicatucdavis" target="_blank" className={styles.circle_frame}>
                         <MdFacebook className={styles.facebook}/> 
@@ -61,12 +61,12 @@ export default function Footer() {
                         <MdOutlineMailOutline/>
                     </a>
                 </div>
-                <p>{t('contact.address_pt1')}<br/>{t('contact.address_pt2')}</p>
+                <p className={styles.address}>{t('contact.address')}</p>
             </div>
 
             {/* thank you message */}
             <div className={styles.sponsor}>
-                <p>{t('sponsor_pt1')}<br/>{t('sponsor_pt2')}</p>
+                <p>{t('sponsor')}</p>
                 <div className={styles.sponsor_image}>
                     <Image
                         src="/credit-union.png"
