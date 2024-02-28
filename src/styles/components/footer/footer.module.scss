@@ -1,3 +1,5 @@
+@use 'src/styles/mixins'; //THIS IS REQUIRED!!
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -8,8 +10,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 36px 146px;
+    padding: 36px 144px;
     color: var(--color-gold);
+
+    border: solid red 2px;
+    @include mixins.sm-desktop {
+        padding: 36px 112px;
+    }
 }
 
 .pages {
@@ -19,7 +26,7 @@
 
     font-weight: bold;
     font-size: 1rem;
-    gap: 22px;
+    gap: 24px;
     list-style: none;
 }
 
@@ -43,9 +50,13 @@
         justify-content: center;
     }
 
-    width: 25%;
+    width: 296px;
     font-size: 1rem;
-    gap: 5px;
+    gap: 8px;
+
+    @include mixins.sm-desktop {
+        width: 264px;
+    }
 
 }
 
@@ -63,16 +74,26 @@
     border-radius: 50%;
     background-color: var(--color-white);
     color: var(--color-maroon);
-    width: 63px;
-    height: 63px;
+    width: 64px;
+    height: 64px;
     font-size: 2.7rem;
     
     text-decoration: none;
     transition: margin 0.2s ease-in-out;
+
+    @include mixins.sm-desktop {
+        width: 56px;
+        height: 56px;
+        font-size: 2.3rem;
+    }
 }
 
 .facebook {
     font-size: 3.5rem;
+
+    @include mixins.sm-desktop {
+        font-size: 3.1rem;
+    }
 }
 
 .circle_frame:hover {
