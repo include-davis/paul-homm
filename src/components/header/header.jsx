@@ -2,7 +2,9 @@ import styles from "@/styles/components/header/header.module.scss";
 import { useTranslations } from 'next-intl';
 import Link from "next/link";
 import { useState } from "react";
-import Image from 'next/image'
+import Image from 'next/image';
+import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
+
 
 export async function getStaticProps({ locale }) {
     return {
@@ -13,11 +15,19 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Header() {
+    // use state for links
     const [activeLinks, setActiveLinks] = useState([false, false, false, false, false]);
-
-    const toggleActive = (index) => {
+    const toggleActiveLink = (index) => {
         setActiveLinks(activeLinks.map((value, i) => i === index));
     }
+
+    //use state for hamburger menu 
+    const [active, setActive] = useState(false)
+    const toggleActive = () => {
+      setActive(!active)
+    }
+
+    
 
     const links = [
         { href: '/', text: 'pages.page1' },
@@ -50,20 +60,26 @@ export default function Header() {
                     {/* placeholder div for language dropdown*/}
                 </div>
             </div>
-            <div className={styles.pages}>
+            
+                
+            <div className={`${styles.pages} ${active? styles.active : null}`}>
                 {links.map((link, index) => (
                     <li key = {index} className = {`${styles.page_link} ${activeLinks[index]? styles.active : null}`}>
                         <Link 
-                         
                             href={`${link.href}`} 
-                            onClick={() => toggleActive(index)}
-                        >
+                            onClick={() => toggleActiveLink(index)}>
                             {t(link.text)}
                         </Link>
-                     </li>
-                )
-            )}
+                    </li>
+                ))}
             </div>
+            
+            <button
+                className={styles.hamburger_menu}
+                onClick = {toggleActive}>
+                {active? <RxCross1/> : <RxHamburgerMenu/>}
+            </button>
+            
         </header>
     );
 }
