@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className={styles.doctors_image}>
             <Image
-                src="/happy-doctors.png"
+                src={t('mission.image')}
                 style={{ objectFit: "fill" }}
                 fill={true}
                 alt={"Happy doctors"}
@@ -97,7 +97,7 @@ export default function Home() {
                     </ul>
                     <div className={styles.events_image}>
                         <Image
-                            src="/events-img.png"
+                            src={t('cards.events.image')}
                             style={{ objectFit: "fill" }}
                             fill={true}
                             alt={"People holding posters"}
