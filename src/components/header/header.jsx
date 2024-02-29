@@ -69,6 +69,7 @@ export default function Header() {
                         <Link 
                             href={`${link.href}`} 
                             onClick={() => toggleActiveLink(index)}>
+                            {/* unsure if the on Click below is needed. */}
                             onClick = {toggleActive}
                             {t(link.text)}
                         </Link>
