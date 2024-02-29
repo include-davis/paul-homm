@@ -11,11 +11,17 @@
             "page4": "COMMITEES",
             "page5": "GET INVOLVED"
         },
+
         "contact": {
             "message": "CONTACT US",
             "address": "6341 Folsom Blvd Sacramento, CA 95819"
         },
-        "sponsor": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+
+        "sponsor": {
+            "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+            "image": "/images/footer/credit-union.png"
+        },
+
         "include": "Designed & Developed with 🤍 by #include @ Davis"
     }
   }
