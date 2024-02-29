@@ -3,7 +3,8 @@ import { useTranslations } from 'next-intl';
 import Link from "next/link";
 import { useState } from "react";
 import Image from 'next/image';
-import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
+import { RxCross1 } from 'react-icons/rx';
+import { IoMenuOutline } from "react-icons/io5";
 
 
 export async function getStaticProps({ locale }) {
@@ -68,6 +69,7 @@ export default function Header() {
                         <Link 
                             href={`${link.href}`} 
                             onClick={() => toggleActiveLink(index)}>
+                            onClick = {toggleActive}
                             {t(link.text)}
                         </Link>
                     </li>
@@ -77,7 +79,7 @@ export default function Header() {
             <button
                 className={styles.hamburger_menu}
                 onClick = {toggleActive}>
-                {active? <RxCross1/> : <RxHamburgerMenu/>}
+                {active? <RxCross1/> : <IoMenuOutline/>}
             </button>
             
         </header>
