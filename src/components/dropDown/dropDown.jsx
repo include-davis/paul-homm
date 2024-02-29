@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/dropDown.module.scss";
 import { LanguageContext } from "../../pages/index";
 import { RxDividerVertical } from "react-icons/rx";
-
-
+import i18n from 'i18next';
+import { useTranslation, initReactI18next  } from 'react-i18next';
 
 function DropDownTable({ tableState, clickLanguageFunct }) {
     let dropdownlist = ["English", "Chinese", "Korean", "Viet", "Hmong", "Spanish"];
@@ -48,34 +48,35 @@ export default function LangDropDown() {
         setDropDown(prevState => !prevState)
     }
     
-    function clickLanguage(lang_code) {
-        setLanguage(lang_code)
-        setDropDown(prevState => !prevState)
-    }
+    const clickLanguage = (event) => {
+            const lang = event.target.value;
+            setLanguage(lang.nativeName);
+            i18n.changeLanguage(lang)
+            setDropDown(prevState => !prevState)
+        }
+   
 
-    if (language=="en") {
-        selected = "English"
-    }
-    else if (language=="zh") {
-        selected = "中文"
-    }
-    else if (language=="ko") {
-        selected = "한국어"
-    }
-    else if (language=="vi") {
-        selected = "Tiếng Việt"
-    }
-    else if (language=="hmn") {
-        selected = "Hmoob"
-    }
-    else {
-        selected = "Español"
-    }
     
+    const lngs = {
+        1: {id:"en", nativeName:"English"},
+        2: {id:"zh", nativeName:"中文"},
+        3: {id:"ko", nativeName:"한국어"},
+        4: {id:"vi", nativeName:"Tiếng Việt"},
+        5: {id:"hmn", nativeName:"Hmoob"},
+        6: {id:"es", nativeName:"Español"},
+    };
+
   return (
     <div className={styles.container}>
         <div className={styles.header}>
-            <div className={styles.selected}>{ selected }</div>
+            
+            <div className={styles.selected}>
+                <select value={language} onChange={clickLanguage}>
+                { Object.keys(lngs).map((locale) => (
+                    <option key={lngs[locale].id} value={lngs[locale]}>{lngs[locale].nativeName}</option>
+                    )) }
+            </select>
+            </div>
             <RxDividerVertical className={styles.vDivider} />
             <img  src='/dropDown/translationIcon.svg' className={styles.translationIcon} alt="Translation Symbol"/>
             {arrow}
