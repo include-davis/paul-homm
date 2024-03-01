@@ -12,7 +12,7 @@ export async function getStaticProps({ locale }) {
 
 export default function About({ messages }) {
     const t = useTranslations('Flipping Cards');
-    const cards = Object.keys(messages).map((key) => messages[key]);
+    const cards = ["Card1", "Card2", "Card3", "Card4", "Card5"];
 
     const flippingCards = cards.map((card, index) => (
         <FlippingCard
