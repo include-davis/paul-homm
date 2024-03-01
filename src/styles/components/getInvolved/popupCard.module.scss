@@ -1,0 +1,50 @@
+.container {
+    background-color: var(--off-white, #FFFBF0);
+    height: 100vh;
+    //margin-top: 100px;
+    //padding: 40px;
+    // margin-bottom: 40px;
+    //flex: 1;
+    //width: 840px;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-inter);
+    border-radius: 12px;
+
+    >h1 {
+        width: 536px;
+        height: 64px;
+        flex-shrink: 0;
+        color: var(--maroon, #5B1110);
+        text-align: center;
+        font-family: Jost;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    >p {
+        color: var(--Off-Black, #333);
+        font-family: "Be Vietnam";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 170%;
+        text-align: center;
+        width: 731px;
+        justify-content: center;
+    }
+}
+
+.button {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    float: right;
+    font-size: 25px;
+    color: var(--color-maroonn);
+}
