@@ -16,6 +16,8 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     font-family: Jost;
+    //trying to improve the lag
+    transform: translateZ(0);
 }
 
 .FlipCard:hover .CardInner {
@@ -29,9 +31,16 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    //added padding as sugessted before 
+    padding: 20px;
+    box-sizing: border-box;
+    //tryring to improve the lag
+    transform: translateZ(0);
+
 }
 
 .FlipBack {
     background-color: (var, --color-beige);
-    transform: rotateY(180deg);
+    //trying to fix the lag 
+    transform: rotateY(180deg) translateZ(0);
 }
