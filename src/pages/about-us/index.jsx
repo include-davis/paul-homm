@@ -1,4 +1,36 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import FlippingCard from '@/components/about-us/FlippingCard';
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            messages: (await import(`@/messages/${locale}.json`)).default
+        }
+    };
+}
+
+export default function About({ messages }) {
+    const t = useTranslations('Flipping Cards');
+    const cards = Object.keys(messages).map((key) => messages[key]);
+
+    const flippingCards = cards.map((card, index) => (
+        <FlippingCard
+            key={index}
+            title={card.title}
+            content={card.content}
+            image={card.image}
+            alt={card.alt}
+        />
+    ));
+
+    return (
+        <div>
+            {flippingCards}
+        </div>
+    );
+}
+/*import React from 'react';
 import FlippingCard from '@/components/about-us/FlippingCard';
 //import FlippingCard from '@/src/components/about-us/FlippingCard';
 export async function getStaticProps({ locale }) {
@@ -23,6 +55,7 @@ export default function About({ messages }) {
         </div>
     );
 }
+*/
 
 /*export default function FlippingCard({ content, image, title, alt }) {
     const t = useTranslations('Flipping Cards');
