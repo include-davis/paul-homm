@@ -15,7 +15,7 @@ export default function PopupCard({ props }) {
   const { title, content } = props;
   return (
     <div className={styles.container}>
-      <button className={styles.button}>Close</button>
+      <button className={styles.button}></button>
       <div className={styles.buttonClass}><IoIosCloseCircleOutline />
       </div>
       <div className={styles.layout}>
