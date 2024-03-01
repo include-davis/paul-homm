@@ -117,3 +117,78 @@
     line-height: 2.65625rem;
     color: var(--maroon, #5B1110);
 }
+
+.left_blur {
+    display: none;
+}
+
+.right_blur {
+    display: none;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #D79C1A;
+}
+
+
+@media screen and (max-width:600px)  {
+    .nav {display: none;}
+    .title{display: none;}
+    .container{
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        height: 16rem;
+    }
+    .frameContainer{
+        width: 100%;
+    }
+    .textContainer{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 20%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        bottom: 0; 
+    }
+    .blur {
+        width: 100%;
+        position: relative;
+        background-image: none;
+        align-items: center;
+    }
+    .description {
+        width: 100%;
+        color: var(--Beige, var(--Committee-Color, #E7D3B8));
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .left_blur {
+        position: absolute;
+        display: flex;
+        z-index: 1500;
+        left: 0;
+        width: 10%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 0.5) 90%);
+    }
+
+    .right_blur {
+        position: absolute;
+        display: flex;
+        z-index: 1500;
+        right: 0;
+        width: 10%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255, 0.5) 90%);
+    }
+}

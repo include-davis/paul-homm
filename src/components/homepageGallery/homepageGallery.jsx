@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from "@/styles/components/homepageGallery/homepageGallery.module.scss";
 import { FaCircle } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 
 
@@ -22,6 +24,16 @@ export default function HomepageGallery() {
   function select_Frame(index) {
     setActiveImg(index);
   }
+
+  function select_Prev() {
+    if (activeImg!=0) {
+      setActiveImg(activeImg-1);
+      }
+    else {
+      setActiveImg(3);
+      }
+  }
+
 
   useEffect(() => {
     const autoPlay = setInterval(() => { go_nextFrame(); }, 7000);
@@ -57,8 +69,10 @@ export default function HomepageGallery() {
           <p div className={styles.description}>Quality clinical services for our local community</p></div>
         </div>
         <div key={activeImg} className={styles.frameContainer}>
+          <div className={styles.left_blur}><FaArrowCircleLeft className={styles.arrow} onClick={()=>{select_Prev()}} alt="Left Arrow"/></div>
           {prevFrame}
           {currFrame}
+          <div className={styles.right_blur}><FaArrowCircleRight className={styles.arrow} onClick={()=>{go_nextFrame()}} alt="Right Arrow"/></div>
         </div>
       </div>
       <div className={styles.nav}>
