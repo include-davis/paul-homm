@@ -19,23 +19,23 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     z-index: 100;
 }
 
 .selected {
-    color: #5B1110;
+    color: var(--color-maroon);
     text-align: center;
     font-family: Inter;
     font-size: 1.46669rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 45%;
+    width: 50%;
 }
 
 .table {
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,7 @@
     padding: 5px;
     margin-top: 3%;
     margin-bottom: 3%;
-    color: #5B1110;
+    color: var(--color-maroon);
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 1.46669rem;
@@ -68,8 +68,8 @@
 }
 
 .option_text:hover {
-    color: #D79C1A;
-    background-color:#5B1110;
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
 }
 
 @keyframes rollout {
@@ -112,22 +112,30 @@
 }
 
 .arrowIcon {
+    color: var(--color-maroon);
     width: 100%;
     height: 100%;
 }
 
 .translationIcon {
-    width: 9.29%;
-    margin-right: 5%;
+    display: block;
+    font-size: 2.4rem;
+    width: 13%;
+    margin-right: 2%;
+    color: var(--color-maroon);
 }
 
 .line {
     width: 90%;
+    height: 3px;
+    background-color: var(--color-gold);
+    border-radius: 10px;
 }
 
 .vDivider {
     font-size: 3rem;
-    color: #5B1110;
+    color: var(--color-maroon);
     margin-top: 3%;
     margin-bottom: 3%;
+    margin-right: -5%;
 }

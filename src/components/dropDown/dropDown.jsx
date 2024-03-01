@@ -1,8 +1,11 @@
 import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/dropDown.module.scss";
 import { RxDividerVertical } from "react-icons/rx";
-import '../../i18n.config';
+import { PiTranslate } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+
 
 const lngs = {
     "en": {nativeName:"English"},
@@ -17,7 +20,7 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
     let table;
     let options = [];
     for (var key in lngs) { 
-        options.push(<img  key={"l"+key} src='/dropDown/divider.svg' className={styles.line} alt="Divider"/>);
+        options.push(<div key={"l"+key} className={styles.line} alt="Divider"></div>);
         options.push(<div key={key} className={styles.option}><button id={key} onClick={(e) => clickLanguageFunct(e.currentTarget.getAttribute("id"))} className={styles.option_text}>{lngs[key].nativeName}</button></div>)
     }
     if (tableState==true) {
@@ -42,10 +45,10 @@ export default function LangDropDown() {
     const [language, setLanguage] = useState(lngs[i18n.language].nativeName)
     let arrow;
     if (dropDown==false) { //render downward arrow is list is closed
-        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><img  src='/dropDown/arrowDown.svg' className={styles.arrowIcon} alt="Down Arrow"/></button>
+        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><IoIosArrowDown preserveAspectRatio="none" className={styles.arrowIcon} alt="Down Arrow"/></button>
     }
     else {
-        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><img  src='/dropDown/arrowUp.svg' className={styles.arrowIcon} alt="Up Arrow"/></button>
+        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><IoIosArrowUp preserveAspectRatio="none" className={styles.arrowIcon} alt="Up Arrow"/></button>
     }
 
     function toggleDropDown() {
@@ -62,7 +65,7 @@ export default function LangDropDown() {
         <div className={styles.header}>
             <div className={styles.selected}>{language}</div>
             <RxDividerVertical className={styles.vDivider} />
-            <img  src='/dropDown/translationIcon.svg' className={styles.translationIcon} alt="Translation Symbol"/>
+            <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/>
             {arrow}
         </div>
         <DropDownTable tableState={ dropDown } clickLanguageFunct={ clickLanguage } />
