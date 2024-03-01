@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-//hardcoded width/height/radius/padding values in .container, .options, keyframe-rollout, .spOption
-//hardcoded animation speed in .enOption, .cnOption, .koOption, .vnOption, .hmOption, & .spOption
+//hardcoded width/height/radius/padding values in .container, .option_text, .option
+//hardcoded animation speed in .option, .table
 
 .container {
     background-color: transparent;
@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     background-color: #FFFBF0;
+    z-index: 100;
 }
 
 .selected {
@@ -50,7 +51,7 @@
     }
   }
 
-.options {
+.option_text {
     background-color: transparent;
     border-color: transparent;
     border-radius: 7px;
@@ -66,7 +67,7 @@
     line-height: normal;
 }
 
-.options:hover {
+.option_text:hover {
     color: #D79C1A;
     background-color:#5B1110;
 }
@@ -74,7 +75,7 @@
 @keyframes rollout {
     0% {
       transform: translateY(
-        calc(var(--list-num)*-1*60)
+        calc(-100%)
         );
     }
     100% {
@@ -82,63 +83,15 @@
     }
   }
 
-.enOption {
+.option {
     width: 100%;
     background-color: transparent;
-    //background-color: #FFFBF0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    --list-num: 1px;
     animation: .4s rollout;
 }
-.cnOption {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: transparent;
-    --list-num: 2px;
-    animation: .4s rollout;
-}
-.koOption {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: transparent;
-    --list-num: 3px;
-    animation: .4s rollout;
-}
-.vnOption {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: transparent;
-    --list-num: 4px;
-    animation: .4s rollout;
-}
-.hmOption {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: transparent;
-    --list-num: 5px;
-    animation: .4s rollout;
-}
-.spOption {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: transparent;
-    --list-num: 6px;
-    animation: .4s rollout;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
+
 
 
 .arrow {
@@ -170,30 +123,6 @@
 
 .line {
     width: 90%;
-}
-.line1 {
-    --list-num: 0.5px;
-    animation: .4s rollout;
-}
-.line2 {
-    --list-num: 1.5px;
-    animation: .4s rollout;
-}
-.line3 {
-    --list-num: 2.5px;
-    animation: .4s rollout;
-}
-.line4 {
-    --list-num: 3.5px;
-    animation: .4s rollout;
-}
-.line5 {
-    --list-num: 4.5px;
-    animation: .4s rollout;
-}
-.line6 {
-    --list-num: 5.5px;
-    animation: .4s rollout;
 }
 
 .vDivider {
