@@ -35,7 +35,7 @@ export default function ImageSlider() {
         <button className={currTab === 2 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(2)}>
           Hepatitis
         </button>
-        <button className={currTab === 3 ? `${styles.tab} ${styles.activeTab} ${styles.tabExcep}` : `${styles.tab} ${styles.tabExcep}`} onClick={() => toggleTab(3)}>
+        <button className={currTab === 3 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab} ${styles.tabExcep}`} onClick={() => toggleTab(3)}>
           Health Education & Preventative Measures
         </button>
         <button className={currTab === 4 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(4)}>
@@ -73,7 +73,7 @@ export default function ImageSlider() {
             <MdKeyboardArrowRight className={styles.arr} onClick={() => toggleTab(3)} />
           </div>
 
-          <div className={`${styles.slideText} ${styles.textExcept}`}>
+          <div className={`${styles.slideText}`}>
             <ul>
               <li>Liver cancer is often tied to Hepatitis B</li>
               <li>Transmission: blood, sex, mother-to-child; late diagnosis common</li>

@@ -1,4 +1,4 @@
-// This is Cristian, I will be adding the mobile responsiveness
+@use 'src/styles/mixins';
 
 .mainContainer {
     font-family: Arial; //import later 
@@ -18,8 +18,9 @@
 
     .pageHeading {
         font-size: 3.4375rem;
-        //font-family: "Be Vietnam";
     }
+
+
 }
 
 .boxContainer {
@@ -39,12 +40,11 @@
         row-gap: 65px;
         width: 402px;
         height: 300px;
+        justify-content: center;
 
-
-        .boxHeadingTop {
+        >h2 {
             font-size: 2.8125rem;
             text-align: center;
-            padding-top: 40px;
         }
 
         >p {
@@ -53,6 +53,7 @@
             font-weight: bold;
             text-align: center;
         }
+
     }
 
     .bottomServiceBox {
@@ -91,12 +92,13 @@
 .tabContainer {
     display: flex;
     flex-direction: row;
-    column-gap: 28px;
+    column-gap: 20px;
+    justify-content: center;
 }
 
 .tab {
-    width: 300px;
-    height: 80px;
+    width: 25%;
+    height: 97px; //80
     font-size: 1.875rem;
     color: var(--color-maroon);
     background-color: var(--color-beige);
@@ -104,18 +106,14 @@
     border-radius: 20px 20px 0 0;
     text-align: left;
     padding-left: 14px;
+    padding-right: 10px;
     justify-content: space-between;
     transition: all 0.2s ease;
-}
-
-.tabExcep {
-    font-size: 1.5625rem;
 }
 
 .tab:hover {
     color: var(--color-gold);
     background-color: var(--color-maroon);
-
 }
 
 .activeTab {
@@ -130,7 +128,7 @@
 .activeSlide {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: var(--color-maroon);
     padding: 100px 40px;
 
@@ -167,14 +165,100 @@
         justify-content: left;
         height: 380;
         width: 625px;
-        list-style-position: inside;
+        list-style-position: outside;
         position: relative;
         font-size: 2.25rem;
     }
+}
 
-    .textExcept {
-        font-size: 1.75rem;
-        height: 380;
-        width: 625px;
+@include mixins.phone {
+    .servicesContainer {
+        .pageHeading {
+            font-size: 1.5rem;
+            color: black;
+        }
+    }
+
+    .boxContainer {
+        .topServiceBox {
+            width: 168px;
+            height: 153px;
+            row-gap: 13px;
+
+            >h2 {
+                font-size: 1.25rem;
+            }
+
+            >p {
+                font-size: 1.125rem;
+            }
+
+        }
+
+        .bottomServiceBox {
+            width: 330px;
+            height: 131px;
+            row-gap: 13px;
+
+            >h2 {
+                font-size: 1.25rem;
+            }
+
+            .desc {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    .bottomBoxContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+@include mixins.tablet {
+    .servicesContainer {
+        .pageHeading {
+            font-size: 1.75rem;
+            color: black;
+        }
+    }
+
+    .boxContainer {
+        .topServiceBox {
+            width: 196px;
+            height: 178px;
+            row-gap: 15px;
+
+            >h2 {
+                font-size: 1.45rem;
+            }
+
+            >p {
+                font-size: 1.3125rem;
+            }
+
+        }
+
+        .bottomServiceBox {
+            width: 385px;
+            height: 152px;
+            row-gap: 15px;
+
+            >h2 {
+                font-size: 1.45rem;
+            }
+
+            .desc {
+                font-size: 1.3125rem;
+            }
+        }
+    }
+
+    .bottomBoxContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
     }
 }
