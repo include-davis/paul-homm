@@ -1,5 +1,8 @@
 import styles from "@/styles/pages/services/services.module.scss";
 import ImageSlider from '@/components/services/imageSlider.jsx';
+import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
+
+const slides = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
 
 export default function Services() {
     return (
@@ -30,7 +33,7 @@ export default function Services() {
             </div>
 
             <div>
-                <ImageSlider> </ImageSlider>
+                <ImageSliderMobile data={slides} />
             </div>
 
             <div className={styles.servicesContainer}>
