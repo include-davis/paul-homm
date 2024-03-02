@@ -8,13 +8,19 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 export default function HomepageGallery() { 
   const [activeImg, setActiveImg] = useState(0);
-  let prev = [<img  src='/homepageGallery/HomepageGalleryImage1.jpg' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage2.png' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage3.png' alt="Divider" className={styles.frame+' '+styles.prev}/>, <img  src='/homepageGallery/HomepageGalleryImage4.png' alt="Divider" className={styles.frame+' '+styles.prev}/>]
-  let curr = [<img  src='/homepageGallery/HomepageGalleryImage1.jpg' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage2.png' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage3.png' alt="Divider" className={styles.frame+' '+styles.curr}/>, <img  src='/homepageGallery/HomepageGalleryImage4.png' alt="Divider" className={styles.frame+' '+styles.curr}/>]
-  
+  let imgPaths = ['/homepageGallery/HomepageGalleryImage1.jpg', '/homepageGallery/HomepageGalleryImage2.png', '/homepageGallery/HomepageGalleryImage3.png', '/homepageGallery/HomepageGalleryImage4.png']
+  let prev = []
+  let curr = []
+  let select = []
+  for (const element of imgPaths) {
+    prev.push(<img  src={element} alt="Previous Gallery Image" className={styles.frame+' '+styles.prev}/>)
+    curr.push(<img  src={element} alt="Current Gallery Image" className={styles.frame+' '+styles.curr}/>)
+    select.push(<img  src={element} alt="Current Gallery Image" className={styles.selectedFrame}/>)
+  }
 
   function go_nextFrame() {
-    if (activeImg!=3) {
-      setActiveImg(activeImg+1);
+    if (activeImg%4!=3) {
+      setActiveImg(activeImg%4+1);
       }
     else {
       setActiveImg(0);
@@ -42,18 +48,24 @@ export default function HomepageGallery() {
     };
   }, [activeImg]);
 
-  let currFrame = curr[activeImg];
+  let currFrame;
   let prevFrame;
-  if (activeImg!=0) {
+  let selectedFrame;
+  if (activeImg>=4) {
+    selectedFrame = select[activeImg%4];
+  }
+  else if (activeImg!=0) {
+    currFrame = curr[activeImg%4];
     prevFrame = prev[activeImg-1];
     }
   else {
+    currFrame = curr[activeImg%4];
     prevFrame = prev[3];
     }
   
   let navDots = []
-  for (let i = 0; i < 4; i++) {
-    if (i==activeImg) {
+  for (let i = 4; i < 8; i++) {
+    if (i%4==activeImg%4) {
       navDots.push(<button className={styles.navBttn} onClick={()=>{select_Frame(i)}}><FaCircle className={styles.selected+' '+styles.circle}/></button>)
       }
     else {
@@ -72,6 +84,7 @@ export default function HomepageGallery() {
           <div className={styles.left_blur}><FaArrowCircleLeft className={styles.arrow} onClick={()=>{select_Prev()}} alt="Left Arrow"/></div>
           {prevFrame}
           {currFrame}
+          {selectedFrame}
           <div className={styles.right_blur}><FaArrowCircleRight className={styles.arrow} onClick={()=>{go_nextFrame()}} alt="Right Arrow"/></div>
         </div>
       </div>
