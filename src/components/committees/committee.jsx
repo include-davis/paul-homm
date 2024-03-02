@@ -16,17 +16,18 @@ export async function getStaticProps({ locale }) {
 export default function CommitteeCard({props}) {
     const t = useTranslations(`CommitteeCards.${props}`)
     return (
-        <div className={styles.committee_card}>
-            <Link href={t('path')}>
-                <Image
-                    src={t('image')}
-                    alt={t('name')}
-                    width={306}
-                    height={306}
-                />
-            </Link>
-            
-            <h3>{t('name')}</h3>
-        </div>
+        <Link href={t('path')}>
+            <div className={styles.committee_card}>
+                <div className={styles.image_container}>
+                    <Image
+                            src={t('image')}
+                            alt={t('name')}
+                            width={306}
+                            height={306}
+                    />
+                </div>
+                <h3>{t('name')}</h3>
+            </div>
+        </Link>
     )
 }
