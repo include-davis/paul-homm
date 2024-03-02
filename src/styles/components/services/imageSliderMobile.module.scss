@@ -33,9 +33,17 @@
     justify-content: center;
 }
 
-.viewport {
+.viewport_container {
     flex-grow: 1;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewport {
+    overflow: hidden;
+    width: 100%;
 }
 
 .content_belt {
@@ -43,17 +51,31 @@
     display: flex;
     flex-direction: row;
     transition: all 0.3s ease;
+    gap: 8px;
 }
 
 .frame {
-    width: 100%;
+    width: calc(calc(100% - 32px) / 3.8);
     flex-shrink: 0;
-    aspect-ratio: calc(16.0/9.0);
+    aspect-ratio: calc(16.0/11.0);
     background-color: var(--primary);
 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.frame.secondary {
+    margin: 0 calc(-1 * calc(100% - 32px) / 3.8 * 0.1);
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+.frame.tertiary {
+    margin: 0 calc(-1 * calc(100% - 32px) / 3.8 * 0.2);
+    transform: scale(0.6);
+    opacity: 0.6;
 }
 
 .frame_content {
@@ -75,4 +97,10 @@
 
 .dot.active {
     background-color: var(--secondary);
+}
+
+@media screen and (max-width: 1200px) {
+    .viewport {
+        width: calc(100% * 3.8/2.6);
+    }
 }
