@@ -1,29 +1,36 @@
 import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/dropDown.module.scss";
-import { LanguageContext } from "../../pages/index";
 import { RxDividerVertical } from "react-icons/rx";
+import { PiTranslate } from "react-icons/pi";
+import { useTranslation } from 'react-i18next';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 
 
+const lngs = {
+    "en": {nativeName:"English"},
+    "zh": {nativeName:"中文"},
+    "ko": {nativeName:"한국어"},
+    "vi": {nativeName:"Tiếng Việt"},
+    "hmn": {nativeName:"Hmoob"},
+    "es": {nativeName:"Español"},
+};
 
 function DropDownTable({ tableState, clickLanguageFunct }) {
-    let dropdownlist = ["English", "Chinese", "Korean", "Viet", "Hmong", "Spanish"];
     let table;
+    let options = [];
+    for (var key in lngs) { 
+        options.push(<div key={"l"+key} className={styles.line} alt="Divider"></div>);
+        options.push(<div key={key} className={styles.option}><button id={key} onClick={(e) => clickLanguageFunct(e.currentTarget.getAttribute("id"))} className={styles.option_text}>{lngs[key].nativeName}</button></div>)
+    }
     if (tableState==true) {
         table = <ul className={styles.table}>
-            <img  src='/dropDown/divider.svg' className={styles.line1 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.enOption}><button onClick={() => clickLanguageFunct("en")} className={styles.options}>{"English"}</button></div>
-            <img  src='/dropDown/divider.svg' className={styles.line2 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.cnOption}><button onClick={() => clickLanguageFunct("zh")} className={styles.options}>{"中文"}</button></div>
-            <img  src='/dropDown/divider.svg' className={styles.line3 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.koOption}><button onClick={() => clickLanguageFunct("ko")} className={styles.options}>{"한국어"}</button></div>
-            <img  src='/dropDown/divider.svg' className={styles.line4 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.vnOption}><button onClick={() => clickLanguageFunct("vi")} className={styles.options}>{"Tiếng Việt"}</button></div>
-            <img  src='/dropDown/divider.svg' className={styles.line5 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.hmOption}><button onClick={() => clickLanguageFunct("hmn")} className={styles.options}>{"Hmoob"}</button></div>
-            <img  src='/dropDown/divider.svg' className={styles.line6 + ' ' + styles.line} alt="Divider"/>
-            <div className={styles.spOption}><button onClick={() => clickLanguageFunct("es")} className={styles.options}>{"Español"}</button></div>
+            {options.map(item => (
+                item
+            ))}
             </ul>
     }
+
     return (
         <div>
         {table}
@@ -33,51 +40,32 @@ function DropDownTable({ tableState, clickLanguageFunct }) {
 }
 
 export default function LangDropDown() {
+    const { t, i18n } = useTranslation('Index')
     const [dropDown, setDropDown] = useState(false)
-    const {language, setLanguage} = useContext(LanguageContext)
-    let selected;
+    const [language, setLanguage] = useState(lngs[i18n.language].nativeName)
     let arrow;
     if (dropDown==false) { //render downward arrow is list is closed
-        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><img  src='/dropDown/arrowDown.svg' className={styles.arrowIcon} alt="Down Arrow"/></button>
+        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><IoIosArrowDown preserveAspectRatio="none" className={styles.arrowIcon} alt="Down Arrow"/></button>
     }
     else {
-        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><img  src='/dropDown/arrowUp.svg' className={styles.arrowIcon} alt="Up Arrow"/></button>
+        arrow = <button onClick={ toggleDropDown } className={styles.arrow}><IoIosArrowUp preserveAspectRatio="none" className={styles.arrowIcon} alt="Up Arrow"/></button>
     }
 
     function toggleDropDown() {
         setDropDown(prevState => !prevState)
     }
-    
-    function clickLanguage(lang_code) {
-        setLanguage(lang_code)
+    const clickLanguage = (lng) => {
+        setLanguage(lngs[lng].nativeName);
+        i18n.changeLanguage(lng);
         setDropDown(prevState => !prevState)
-    }
+        }
 
-    if (language=="en") {
-        selected = "English"
-    }
-    else if (language=="zh") {
-        selected = "中文"
-    }
-    else if (language=="ko") {
-        selected = "한국어"
-    }
-    else if (language=="vi") {
-        selected = "Tiếng Việt"
-    }
-    else if (language=="hmn") {
-        selected = "Hmoob"
-    }
-    else {
-        selected = "Español"
-    }
-    
   return (
     <div className={styles.container}>
         <div className={styles.header}>
-            <div className={styles.selected}>{ selected }</div>
+            <div className={styles.selected}>{language}</div>
             <RxDividerVertical className={styles.vDivider} />
-            <img  src='/dropDown/translationIcon.svg' className={styles.translationIcon} alt="Translation Symbol"/>
+            <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/>
             {arrow}
         </div>
         <DropDownTable tableState={ dropDown } clickLanguageFunct={ clickLanguage } />
