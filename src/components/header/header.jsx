@@ -28,7 +28,10 @@ export default function Header() {
       setActive(!active)
     }
 
-    
+    const toggleAll = (index) => {
+        toggleActiveLink(index);
+        toggleActive();
+    }
 
     const links = [
         { href: '/', text: 'pages.page1' },
@@ -68,9 +71,7 @@ export default function Header() {
                     <li key = {index} className = {`${styles.page_link} ${activeLinks[index]? styles.active : null}`}>
                         <Link 
                             href={`${link.href}`} 
-                            onClick={() => toggleActiveLink(index)}>
-                            {/* unsure if the on Click below is needed. */}
-                            onClick = {toggleActive}
+                            onClick={() => toggleAll(index)}>
                             {t(link.text)}
                         </Link>
                     </li>
