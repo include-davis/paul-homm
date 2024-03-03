@@ -7,6 +7,25 @@
       "centeredText3": "Sacramento, CA 95819",
       "centeredText4": " We thank you for your generoristy!"
     },
+    "GetInvolved":{
+        "pageTitle": "Get Involved",
+        "CardComponent": {
+          "Card1":{
+            "cardText": "Physicians & Residents",
+            "imgSrc": "/images/get-involved/physiciansAndResidents.png" 
+          },
+          "Card2":{
+            "cardText": "Undergrad. Patient Advocates",
+            "imgSrc": "/images/get-involved/undergrad.png"
+          },
+          "Card3":{
+            "cardText": "Health Professional Students",
+            "imgSrc": "/images/get-involved/clinics.png"
+          },
+          "details": "Details",
+          "signUp": "Sign Up"
+        }
+    },
     "Footer": {
         "pages": {
             "page1": "HOME",
