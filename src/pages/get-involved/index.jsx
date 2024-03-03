@@ -1,8 +1,7 @@
 import React from "react";
-import Card from "@/components/getInvolved/card";
 import styles from "@/styles/pages/get-involved/index.module.scss";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Card from "@/components/getInvolved/card";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -23,6 +22,14 @@ export default function GetInvolved() {
         {cardProps.map((cardProp, index) => (
           <Card key={index} cardProps={cardProp}/>
         ))}
+      </div>
+      <div className={styles.donateBoxContainer}>
+        <h3 className={styles.donateHeading}>{t('donateHeading')}</h3>
+        <p className={styles.donateText}>{t('donateText')}</p>
+        <div className={styles.centeredText}>
+          <p className={styles.address}>{t('address')}</p>
+          <p className={styles.donateText}>{t('donateText2')}</p>
+        </div>
       </div>
     </div>
   );
