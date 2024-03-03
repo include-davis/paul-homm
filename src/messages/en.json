@@ -56,7 +56,7 @@
         "committee2": {
           "name": "Covered California", 
           "image":"/images/committees/covered_california.png",
-          "path": "/committees/covered_california"
+          "path": "/committees/covered-california"
         }, 
         "committee3": {
           "name": "Dermatology", 
@@ -72,7 +72,7 @@
         "committee5": {
           "name": "Patient Assistance Program", 
           "image":"/images/committees/patient_assistance_program.png",
-          "path": "/committees/patient_assistance_program"
+          "path": "/committees/patient-assistance-program"
         },
         "committee6": {
           "name": "Hepatitis", 
@@ -87,7 +87,7 @@
         },
         "committee8": {
           "name": "Women's Health", 
-          "image":"/images/committees/womens_health.png",
+          "image":"/images/committees/womens-health.png",
           "path": "/committees/womens_health"
         },
         "committee9": {
