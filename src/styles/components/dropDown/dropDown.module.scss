@@ -17,28 +17,65 @@
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--color-white);
     z-index: 100;
+    padding: 8px 16px;
+    padding-bottom: 0px;
 }
 
-.selected {
+.header_icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.selected{
     color: var(--color-maroon);
     text-align: center;
     font-family: Inter;
-    font-size: 1.46669rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 50%;
+    width: 60%;
 }
 
-.table {
+.vDivider {
+    color: var(--color-maroon);
+    margin-right: -8px;
+}
+
+.translationIcon {
+    display: block;
+    font-weight: 400;
+    margin-right: 2%;
+    color: var(--color-maroon);
+}
+
+.arrow {
+    font-size: 2rem;
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-maroon);
+}
+
+.arrow:active {
+    transition: transform 0.3s;
+    transform: rotate(180deg);  
+}
+
+
+.table{
+    display: none;
+}
+
+.table.active {
     background-color: var(--color-white);
     display: flex;
     flex-direction: column;
-    align-items: center;
     animation: .3s drop;
 }
 
@@ -49,28 +86,35 @@
     100% {
       transform: translateY(0);
     }
-  }
+}
+
+.option {
+    padding: 4px 8px;
+    animation: .4s rollout;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .option_text {
-    background-color: transparent;
-    border-color: transparent;
-    border-radius: 7px;
-    padding: 5px;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    color: var(--color-maroon);
     text-align: center;
     font-family: 'Inter', sans-serif;
-    font-size: 1.46669rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    border-radius: 7px;
+    color: var(--color-maroon);
+    width: 50%;
+    padding: 4px 0px;
 }
 
 .option_text:hover {
     color: var(--color-gold);
     background-color: var(--color-maroon);
 }
+
 
 @keyframes rollout {
     0% {
@@ -81,61 +125,12 @@
     100% {
       transform: translateY(0);
     }
-  }
-
-.option {
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    animation: .4s rollout;
 }
 
-
-
-.arrow {
-    width: 9.67%;
-    height: 23.3%;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border-color: transparent;
-}
-
-.arrow:active {
-    transition: transform 0.3s;
-    transform: rotate(180deg);  
-}
-
-.arrowIcon {
-    color: var(--color-maroon);
-    width: 100%;
-    height: 100%;
-}
-
-.translationIcon {
-    display: block;
-    font-size: 2.4rem;
-    width: 13%;
-    margin-right: 2%;
-    color: var(--color-maroon);
-}
-
-.line {
+.divider {
     width: 90%;
-    height: 3px;
+    height: 2px;
+    margin-bottom: 8px;
     background-color: var(--color-gold);
     border-radius: 10px;
-}
-
-.vDivider {
-    font-size: 3rem;
-    color: var(--color-maroon);
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin-right: -5%;
 }
