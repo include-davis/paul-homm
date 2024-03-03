@@ -11,54 +11,22 @@
 }
 //TODO: figure out how to round images in cards and fix image compression
 .cardImg {
-  object-fit: cover;
-  border-radius: 12px;
-  overflow: hidden; // ensures Image component respects the border-radius (per stack overflow...)
-}
-// dead code
-/*
-.cardImg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
   width: 368px;
   height: 328px;
   border-radius: 12px;
-}
-
-.cardImg1 {
-  background: url(/images/get-involved/physiciansAndResidents.png); // from figma dev
-  background-size: cover; or "contain" 
-}
-
-.cardImg2 {
-  background: url(/images/get-involved/undergrad.png);
-  background-size: cover;
-  background-position: center center;
-}
-
-.cardImg3 {
-  background: url(/images/get-involved/clinics.png);
-  background-size: cover;
-  background-position: center center;
+  overflow: hidden; // ensures Image component respects the border-radius (per stack overflow...)
 }
 
 .cardText {
-  // text overlay
-  position: relative;
-  top: 5%;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
   border-radius: 0px 0px 12px 12px;
   background: rgba(27, 1, 1, 0.7);
-  color: #d4d0d0;
-  padding: 9px;
-  font-size: 1.25rem;
-  text-align: center;
-}
-*/
-
-.cardText {
-  position: relative;
-  bottom: 11%; // for overlay
-  border-radius: 0px 0px 12px 12px;
-  background: rgba(27, 1, 1, 0.7);
-  color: #d4d0d0;
+  color: var(--color-white);
   padding: 9px;
   font-size: 1.25rem;
   text-align: center;
@@ -69,9 +37,7 @@
 .signUpButton {
   height: 38px;
   width: 144px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 16px 8px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.25rem;

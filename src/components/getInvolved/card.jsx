@@ -12,23 +12,17 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Card({ cardProps, imgSrc }) {
+export default function Card({ cardProps }) {
   const t = useTranslations(`Get_Involved.${cardProps}`);
   return (
-    <div>
       <div className={styles.cardsContainer}>
         <div className={styles.card}>
-          {/* each card has an image and text (the overlay) */}
-          <div className={styles.cardImg}>
-            <Image src={imgSrc} alt={cardProps} width={368} height={328} />
-          </div>
-          <div className={styles.cardText}>
-            <p>{t("cardText")}</p>
+          <div className={styles.cardImg} style={{backgroundImage: `url(${t('imgSrc')})`}}>
+            <p className={styles.cardText}>{t("cardText")}</p>
           </div>
           <button className={styles.detailsButton}>Details</button>
           <button className={styles.signUpButton}>Sign Up</button>
         </div>
       </div>
-    </div>
   );
 }

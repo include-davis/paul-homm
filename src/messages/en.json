@@ -5,15 +5,15 @@
     "Get_Involved":{
       "Card1":{
         "cardText": "Physicians & Residents",
-        "selector": "cardImg1"
+        "imgSrc": "/images/get-involved/physiciansAndResidents.png" 
       },
       "Card2":{
         "cardText": "Undergrad. Patient Advocates",
-        "selector": "cardImg2"
+        "imgSrc": "/images/get-involved/undergrad.png"
       },
       "Card3":{
         "cardText": "Health Professional Students",
-        "selector": "cardImg3"
+        "imgSrc": "/images/get-involved/clinics.png"
       }
     }
     

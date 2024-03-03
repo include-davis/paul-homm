@@ -13,11 +13,6 @@ export async function getStaticProps({ locale }) {
 }
 
 const cardProps = ["Card1", "Card2", "Card3"];
-const images = [
-  "/images/get-involved/physiciansAndResidents.png",
-  "/images/get-involved/undergrad.png",
-  "/images/get-involved/clinics.png",
-];
 export default function GetInvolved() {
   // const t = useTranslations("Example");
 
@@ -26,9 +21,7 @@ export default function GetInvolved() {
       <h1 className={styles.sectionHeading}>Get Involved</h1>
       <div className={styles.cardContainer}>
         {cardProps.map((cardProp, index) => (
-          <div key={index}>
-            <Card cardProps={cardProp} imgSrc={images[index]} />
-          </div>
+          <Card key={index} cardProps={cardProp}/>
         ))}
       </div>
     </div>
