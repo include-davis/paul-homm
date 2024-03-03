@@ -140,5 +140,15 @@
 
 }
 
-    
 
+.language_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.language_dropdown > div {
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    z-index: 20;
+}

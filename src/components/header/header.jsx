@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from 'next/image';
 import { RxCross1 } from 'react-icons/rx';
 import { IoMenuOutline } from "react-icons/io5";
+import LangDropDown from "../dropDown/dropDown";
 
 
 export async function getStaticProps({ locale }) {
@@ -61,7 +62,7 @@ export default function Header() {
                 </div>
 
                 <div className={styles.language_dropdown}>
-                    {/* placeholder div for language dropdown*/}
+                    <LangDropDown/>
                 </div>
             </div>
             
