@@ -46,5 +46,22 @@
       "desc": "The Neurology Clinic assists patients with neurological issues, such as problems with memory, neuropathic pain (numb, tingling, or burning feet/hands), sleep, migraine, seizures, and any other issues related to the brain. We also offer dementia screening for patients who are older than 65 years of age and provide access to resources for patients, caretakers, and family members of individuals with memory loss issues."
   }
     }
+    },
+    "Footer": {
+        "pages": {
+            "page1": "HOME",
+            "page2": "ABOUT US",
+            "page3": "SERVICES",
+            "page4": "COMMITEES",
+            "page5": "GET INVOLVED"
+        },
+        "contact": {
+            "message": "CONTACT US",
+            "address_pt1": "6341 Folsom Blvd",
+            "address_pt2": "Sacramento, CA 95819"
+        },
+        "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
+        "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
+        "include": "Designed & Developed with 🤍 by #include @ Davis"
   }
 }
