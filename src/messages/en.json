@@ -1,25 +1,23 @@
 {
     "Index": {
-      "sectionHeading": "Get Involved"
+      "title": "Home",
+      "description": "Testing internationalization."
     },
-    "GetInvolved":{
-      "pageTitle": "Get Involved",
-      "CardComponent": {
-        "Card1":{
-          "cardText": "Physicians & Residents",
-          "imgSrc": "/images/get-involved/physiciansAndResidents.png" 
+    "Footer": {
+        "pages": {
+            "page1": "HOME",
+            "page2": "ABOUT US",
+            "page3": "SERVICES",
+            "page4": "COMMITEES",
+            "page5": "GET INVOLVED"
         },
-        "Card2":{
-          "cardText": "Undergrad. Patient Advocates",
-          "imgSrc": "/images/get-involved/undergrad.png"
+        "contact": {
+            "message": "CONTACT US",
+            "address_pt1": "6341 Folsom Blvd",
+            "address_pt2": "Sacramento, CA 95819"
         },
-        "Card3":{
-          "cardText": "Health Professional Students",
-          "imgSrc": "/images/get-involved/clinics.png"
-        },
-        "details": "Details",
-        "signUp": "Sign Up"
-      }
+        "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
+        "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
+        "include": "Designed & Developed with 🤍 by #include @ Davis"
     }
-    
   }
