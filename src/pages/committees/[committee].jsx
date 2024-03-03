@@ -3,15 +3,15 @@ import { useTranslations } from "next-intl";
 import React from "react";
 
 const data = [
-    'coveredcalifornia',
+    'covered-california',
     'cardiopulmonary',
-    'patientassistance',
+    'patient-assistance-program',
     'dermatology',
     'diabetes',
     'hlub',
     'hepatitis',
     'ophthalmology',
-    'womenshealth',
+    'womens-health',
     'neurology'
   ]
 
