@@ -10,12 +10,28 @@ import Link from "next/link";
 //import { HiOutlinePhone } from "react-icons/hi";
 
 const pages = [
-  { page: "pages.page1", route: "/" },
-  { page: "pages.page2", route: "/" },
-  { page: "pages.page3", route: "/" },
-  { page: "pages.page4", route: "/" },
-  { page: "pages.page5", route: "/" },
+    {page: 'pages.page1', route: "/"},
+    {page: 'pages.page2', route: "/about-us"},
+    {page: 'pages.page3', route: "/services"},
+    {page: 'pages.page4', route: "/committees"},
+    {page: 'pages.page5', route: "/get-involved"}
 ];
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        messages: (await import(`@/messages/${locale}.json`)).default
+      }
+    };
+  }
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        messages: (await import(`@/messages/${locale}.json`)).default
+      }
+    };
+  }
 
 export default function Footer() {
   const t = useTranslations("Footer");

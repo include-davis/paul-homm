@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import Navbar from "@/components/navBar/navBar";
 import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
@@ -23,12 +24,11 @@ export default function App({ Component, pageProps }) {
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}
-    >
-      <Navbar></Navbar>
-      <Donate></Donate>
+      className={`${inter.variable}`}>   
+      <Header></Header>  
       <Component {...pageProps} />
-      {/*<Footer></Footer>*/}
+      
+      <Footer></Footer>
     </NextIntlClientProvider>
   );
 }
