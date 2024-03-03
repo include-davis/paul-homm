@@ -27,6 +27,19 @@
         "donateText2": " We thank you for your generoristy!"
     },
 
+    "Header": {
+        "pages": {
+          "page1": "HOME", 
+          "page2": "ABOUT US", 
+          "page3": "SERVICES", 
+          "page4": "COMMITEES", 
+          "page5": "GET INVOLVED"
+        },
+        "title": {
+          "clinic_name": "Paul Hom Asian Clinic"
+        }
+    },
+
     "Footer": {
         "pages": {
             "page1": "HOME",
