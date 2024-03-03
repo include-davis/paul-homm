@@ -1,3 +1,5 @@
+@use 'src/styles/mixins';
+
 .sectionContainer {
   // display: flex;
   padding-top: 24px;
@@ -20,4 +22,33 @@
   justify-content: space-evenly; /* space-between, space-evenly, etc. */
   font-size: 1.5rem;
   padding: 0px;
+
+}
+
+@include mixins.sm-desktop{
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@include mixins.tablet{
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@include mixins.phone{
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@include mixins.sm-phone{
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }

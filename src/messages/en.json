@@ -2,18 +2,23 @@
     "Index": {
       "sectionHeading": "Get Involved"
     },
-    "Get_Involved":{
-      "Card1":{
-        "cardText": "Physicians & Residents",
-        "imgSrc": "/images/get-involved/physiciansAndResidents.png" 
-      },
-      "Card2":{
-        "cardText": "Undergrad. Patient Advocates",
-        "imgSrc": "/images/get-involved/undergrad.png"
-      },
-      "Card3":{
-        "cardText": "Health Professional Students",
-        "imgSrc": "/images/get-involved/clinics.png"
+    "GetInvolved":{
+      "pageTitle": "Get Involved",
+      "CardComponent": {
+        "Card1":{
+          "cardText": "Physicians & Residents",
+          "imgSrc": "/images/get-involved/physiciansAndResidents.png" 
+        },
+        "Card2":{
+          "cardText": "Undergrad. Patient Advocates",
+          "imgSrc": "/images/get-involved/undergrad.png"
+        },
+        "Card3":{
+          "cardText": "Health Professional Students",
+          "imgSrc": "/images/get-involved/clinics.png"
+        },
+        "details": "Details",
+        "signUp": "Sign Up"
       }
     }
     

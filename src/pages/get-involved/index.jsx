@@ -14,11 +14,11 @@ export async function getStaticProps({ locale }) {
 
 const cardProps = ["Card1", "Card2", "Card3"];
 export default function GetInvolved() {
-  // const t = useTranslations("Example");
-
+  const t = useTranslations("GetInvolved");
+  
   return (
     <div className={styles.sectionContainer}>
-      <h1 className={styles.sectionHeading}>Get Involved</h1>
+      <h1 className={styles.sectionHeading}>{t('pageTitle')}</h1>
       <div className={styles.cardContainer}>
         {cardProps.map((cardProp, index) => (
           <Card key={index} cardProps={cardProp}/>
