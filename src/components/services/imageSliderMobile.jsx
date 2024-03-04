@@ -1,9 +1,10 @@
 import styles from "@/styles/components/services/imageSliderMobile.module.scss"
+
 import Image from "next/image";
 import { useState } from "react";
 import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
-
 import { useTranslations } from 'next-intl';
+import DropDown from "@/components/dropDown/imageSliderDropdown.jsx"
 
 export async function getStaticProps({ locale }) {
     return {
@@ -13,6 +14,7 @@ export async function getStaticProps({ locale }) {
     };
 }
 
+// Calculates division of space based on number of frames shown
 function calcDividor(numFramesShown, primary, scaleDiff) {
     let sum = primary;
     let temp = sum;
@@ -61,71 +63,85 @@ function ImageSliderMobileFrame(props) {
     )
 }
 
+// Acutal image slider component
 export default function ImageSliderMobile({ images }) {
     const [activeIndex, setActiveIndex] = useState(0)
     const n = images.length
 
-    const imagesFront = images.slice(0, 2)
-    const imagesBack = images.slice(-2)
+    // Process images from array, concatenating from and back secondary images
+    const imagesFront = images.slice(0, 1)
+    const imagesBack = images.slice(-1)
     const processedImages = imagesBack.concat(images).concat(imagesFront)
+    
+    // Move left and right through images
     const subIndex = () => {
       setActiveIndex((activeIndex + n - 1) % n)
     }
-
     const addIndex = () => {
       setActiveIndex((activeIndex + 1) % n)
     }
 
     return (
-      <div className={styles.main_container}>
-        <div className={styles.window_container}>
-          
-          {/* Button to go left */}
-          <button className={styles.arrow} onClick={subIndex}>
-            <RxArrowLeft/>
-          </button>
-          
-          {/* Image Slider */}
-          <div className={styles.viewport_container}>
-            <div className={styles.viewport}>
-              <div 
-                className={styles.content_belt}
-                style={{transform: `translateX(calc(${-(activeIndex)} * ${shiftAmount}))`}}
-                >
-                { processedImages.map((frame, index) => {
-                    return (
-                      <ImageSliderMobileFrame 
-                        key={index} 
-                        selfIndex={index - 1} 
-                        activeIndex={activeIndex}
-                        image={frame}
-                      />
-                    )
-                  }) 
-                }
-              </div>
+        <div className={styles.main_container}>
+            {/* Dropdown */}
+            <div className={styles.dropdown}>
+                <DropDown/>
             </div>
-          </div>
+
+            {/* Image Carousel */}
+            <div className={styles.window_container}>
+                {/* Button to go left */}
+                <button className={styles.arrow} onClick={subIndex}>
+                    <RxArrowLeft/>
+                </button>
           
-          {/* Button to go right */}
-          <button className={styles.arrow} onClick={addIndex}>
-            <RxArrowRight/>
-          </button>
+                {/* Image Slider */}
+                <div className={styles.viewport_container}>
+                    <div className={styles.viewport}>
+                        <div 
+                            className={styles.content_belt}
+                            style={{transform: `translateX(calc(${-(activeIndex)} * ${shiftAmount}))`}}
+                            >
+                            { processedImages.map((frame, index) => {
+                                return (
+                                <ImageSliderMobileFrame 
+                                    key={index} 
+                                    selfIndex={index - 1} 
+                                    activeIndex={activeIndex}
+                                    image={frame}
+                                />
+                                )
+                            }) 
+                            }
+                        </div>
+                    </div>
+                </div>
+          
+                {/* Button to go right */}
+                <button className={styles.arrow} onClick={addIndex}>
+                    <RxArrowRight/>
+                </button>
            
+            </div>
+            
+            {/* Dots below slider */}
+            <div className={styles.dots}>
+                { images.map((frame, index) => {
+                    return (
+                        <div 
+                        key={index} 
+                        className={`${styles.dot} ${activeIndex === index ? styles.active : null}`}
+                        onClick={() => setActiveIndex(index)}
+                        ></div>
+                    )
+                    }) 
+                }
+            </div>
+            
+            {/* Text under corresponding image */}
+            <div>
+                
+            </div>
         </div>
-        
-        <div className={styles.dots}>
-          { images.map((frame, index) => {
-              return (
-                <div 
-                  key={index} 
-                  className={`${styles.dot} ${activeIndex === index ? styles.active : null}`}
-                  onClick={() => setActiveIndex(index)}
-                ></div>
-              )
-            }) 
-          }
-        </div>
-      </div>
     );
   }

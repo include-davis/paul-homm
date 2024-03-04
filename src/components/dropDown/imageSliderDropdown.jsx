@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import styles from "@/styles/components/dropDown/dropDown.module.scss";
+import styles from "@/styles/components/dropDown/imageSliderDropdown.module.scss";
 import { RxDividerVertical } from "react-icons/rx";
 import { PiTranslate } from "react-icons/pi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -15,7 +15,7 @@ const locales = [
     {name: "Español", code: "es"},
 ];
 
-export default function LangDropDown() {
+export default function imageSliderDropDown() {
     const currLocaleCode = useLocale();
     const currLocale = locales.find(lang => lang.code === currLocaleCode).name;
 

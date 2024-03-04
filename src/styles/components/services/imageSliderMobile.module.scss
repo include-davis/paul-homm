@@ -7,6 +7,15 @@
     background-color: var(--color-white);
 }
 
+.dropdown {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    padding: 16px 0px;
+    background-color: var(--color-maroon);
+}
+
 .window_container {
     width: 100%;
     display: flex;
