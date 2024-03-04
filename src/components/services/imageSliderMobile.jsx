@@ -12,43 +12,62 @@ export async function getStaticProps({ locale }) {
         }
     };
 }
+
+function calcDividor(numFramesShown, primary, scaleDiff) {
+    let sum = primary;
+    let temp = sum;
+    for(let i = 1; i < numFramesShown; i++) {
+        temp -= scaleDiff;
+        sum += temp;
+    }
+    return sum;
+}
+
 // Calculations
-const framesShown = 5
+const framesShown = 3
+const scaleDiff = 0.2;
+const dividor = calcDividor(framesShown, 1, scaleDiff);
+
 const g = '8px'
-const totalGap = `calc(${framesShown - 1} * ${g})` // 4 * g
-const contentSpace = `calc(100% - ${totalGap})` // space we can work with is W - 4g
-const x = `calc(${contentSpace} / 3.8)` // x = (W - 4g) / 3.8
-const shiftAmount = `calc(${x} * 0.6 + ${g})` 
+const totalGap = `calc(${framesShown - 1} * ${g})` // 2 * g
+const contentSpace = `calc(100% - ${totalGap})` // space we can work with is W - 2g
+const x = `calc(${contentSpace} / ${dividor})` // x = (W - 2g) / 2.6
+const shiftAmount = `calc(${x} * 0.74 + ${g})` 
 
 function ImageSliderMobileFrame(props) {
-  const { selfIndex, activeIndex, data } = props
+  const { selfIndex, activeIndex, image } = props
   const dist = Math.abs(selfIndex - activeIndex)
 
   function getSizeClass(dist) {
     switch(dist) {
       case 0:
         return styles.primary
-      case 1:
-        return styles.secondary
       default:
-        return styles.tertiary
+        return styles.secondary
+    //   default:
+    //     return styles.tertiary
     }
   }
 
   return (
       <div className={`${styles.frame} ${getSizeClass(dist)}`}>
-        <h1 className={styles.frame_content}>{data}</h1>
+        <Image src={image}
+            // className={styles.imageContainer}
+            style={{ objectFit: "fill" }}
+            fill={true}
+            alt="Insert alt"
+        />
       </div>
     )
 }
 
-export default function ImageSliderMobile({ data }) {
+export default function ImageSliderMobile({ images }) {
     const [activeIndex, setActiveIndex] = useState(0)
-    const n = data.length
+    const n = images.length
 
-    const dataFront = data.slice(0, 2)
-    const dataBack = data.slice(-2)
-    const processedData = dataBack.concat(data).concat(dataFront)
+    const imagesFront = images.slice(0, 2)
+    const imagesBack = images.slice(-2)
+    const processedImages = imagesBack.concat(images).concat(imagesFront)
     const subIndex = () => {
       setActiveIndex((activeIndex + n - 1) % n)
     }
@@ -60,22 +79,26 @@ export default function ImageSliderMobile({ data }) {
     return (
       <div className={styles.main_container}>
         <div className={styles.window_container}>
+          
+          {/* Button to go left */}
           <button className={styles.arrow} onClick={subIndex}>
             <RxArrowLeft/>
           </button>
+          
+          {/* Image Slider */}
           <div className={styles.viewport_container}>
             <div className={styles.viewport}>
               <div 
                 className={styles.content_belt}
                 style={{transform: `translateX(calc(${-(activeIndex)} * ${shiftAmount}))`}}
                 >
-                { processedData.map((frame, index) => {
+                { processedImages.map((frame, index) => {
                     return (
                       <ImageSliderMobileFrame 
                         key={index} 
-                        selfIndex={index - 2} 
+                        selfIndex={index - 1} 
                         activeIndex={activeIndex}
-                        data={frame}
+                        image={frame}
                       />
                     )
                   }) 
@@ -83,17 +106,20 @@ export default function ImageSliderMobile({ data }) {
               </div>
             </div>
           </div>
+          
+          {/* Button to go right */}
           <button className={styles.arrow} onClick={addIndex}>
             <RxArrowRight/>
           </button>
-          <div></div>
+           
         </div>
+        
         <div className={styles.dots}>
-          { data.map((frame, index) => {
+          { images.map((frame, index) => {
               return (
                 <div 
                   key={index} 
-                  className={`${styles.dot} ${activeIndex === index ? styles.active: null}`}
+                  className={`${styles.dot} ${activeIndex === index ? styles.active : null}`}
                   onClick={() => setActiveIndex(index)}
                 ></div>
               )

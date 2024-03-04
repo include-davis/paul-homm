@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 48px;
+    background-color: var(--color-white);
 }
 
 .window_container {
@@ -55,10 +56,13 @@
 }
 
 .frame {
-    width: calc(calc(100% - 32px) / 3.8);
+    width: calc(calc(100% - 16px) / 2.6);
     flex-shrink: 0;
     aspect-ratio: calc(16.0/11.0);
-    background-color: var(--primary);
+    
+    position: relative; // image settings
+    border-radius: 32px;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
@@ -67,16 +71,16 @@
 }
 
 .frame.secondary {
-    margin: 0 calc(-1 * calc(100% - 32px) / 3.8 * 0.1);
+    margin: 0 calc(-1 * calc(100% - 16px) / 2.6 * 0.1);
     transform: scale(0.8);
     opacity: 0.8;
 }
 
-.frame.tertiary {
-    margin: 0 calc(-1 * calc(100% - 32px) / 3.8 * 0.2);
-    transform: scale(0.6);
-    opacity: 0.6;
-}
+// .frame.tertiary {
+//     margin: 0 calc(-1 * calc(100% - 32px) / 3.8 * 0.2);
+//     transform: scale(0.6);
+//     opacity: 0.6;
+// }
 
 .frame_content {
     color: var(--text-light);
@@ -92,11 +96,11 @@
     width: 16px;
     aspect-ratio: 1;
     border-radius: 8px;
-    background-color: var(--primary);
+    background-color: var(--color-beige);
 }
 
 .dot.active {
-    background-color: var(--secondary);
+    background-color: var(--color-gold);
 }
 
 @media screen and (max-width: 1200px) {

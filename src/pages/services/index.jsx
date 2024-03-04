@@ -3,6 +3,7 @@ import ImageSlider from '@/components/services/imageSlider.jsx';
 import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 
 const slides = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
+const images = ["/images/services/healthEdu.png", "/images/services/hepatitis.png", "/images/services/specialtyClinics.png", "/images/services/vaccines.png"]
 
 export default function Services() {
     return (
@@ -33,7 +34,7 @@ export default function Services() {
             </div>
 
             <div>
-                <ImageSliderMobile data={slides} />
+                <ImageSliderMobile images={images} />
             </div>
 
             <div className={styles.servicesContainer}>
