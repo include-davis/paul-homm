@@ -135,7 +135,7 @@
     .title {
         margin-top: 0px;
         > *:first-child {
-            margin-left: 16px; 
+            margin-left: 24px; 
         }
     }
     .title_text {
@@ -150,7 +150,7 @@
 
     .hamburger_menu {
         display: flex;
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .pages {
@@ -181,5 +181,48 @@
 }
 
 @include mixins.phone {
+    .header {
+        height: var(--mobile-header-height);
+        .title {
+            a {
+                img {
+                    height: 48px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .title {
+      
+        > *:first-child {
+            margin-left: 12px; 
+        }
+    }
+
+    .title_text {
+        h1 {
+           font-size: 1.2rem; 
+
+        }
+    }
+
+    .hamburger_menu {
+        font-size: 1.6rem;
+    }
+
+    .pages {
+        top: var(--mobile-header-height);
+        height: calc(100vh - var(--mobile-header-height));
+        a {
+            font-size: 1.2rem;
+        }
+
+    }
+
+    .pages.active {
+        max-height: calc(100vh - var(--mobile-header-height));
+    }
+
 
 }
