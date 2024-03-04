@@ -64,7 +64,7 @@ function ImageSliderMobileFrame(props) {
 }
 
 // Acutal image slider component
-export default function ImageSliderMobile({ images }) {
+export default function ImageSliderMobile({ images, services }) {
     const [activeIndex, setActiveIndex] = useState(0)
     const n = images.length
 
@@ -85,7 +85,7 @@ export default function ImageSliderMobile({ images }) {
         <div className={styles.main_container}>
             {/* Dropdown */}
             <div className={styles.dropdown}>
-                <DropDown/>
+                <DropDown services={services} setImage={setActiveIndex} />
             </div>
 
             {/* Image Carousel */}

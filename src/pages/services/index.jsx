@@ -2,7 +2,7 @@ import styles from "@/styles/pages/services/services.module.scss";
 import ImageSlider from '@/components/services/imageSlider.jsx';
 import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 
-const slides = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
+const services = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
 const images = ["/images/services/healthEdu.png", "/images/services/hepatitis.png", "/images/services/specialtyClinics.png", "/images/services/vaccines.png"]
 
 export default function Services() {
@@ -34,7 +34,7 @@ export default function Services() {
             </div>
 
             <div>
-                <ImageSliderMobile images={images} />
+                <ImageSliderMobile images={images} services={services} />
             </div>
 
             <div className={styles.servicesContainer}>
