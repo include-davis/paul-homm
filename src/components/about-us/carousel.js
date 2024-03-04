@@ -29,7 +29,7 @@ export default function PracticeCarouselExample({ data }) {
               { data.map((frame, index) => {
                   return (
                     <div key={index} className={styles.frame}>
-                      <h1 className={styles.frame_content}>{frame}</h1>
+                      <img src={frame} unoptimized={true}></img>
                     </div>
                   )
                 }) 
