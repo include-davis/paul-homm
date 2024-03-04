@@ -1,6 +1,6 @@
 import styles from "@/styles/components/footer/footer.module.scss";
 
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,8 +26,7 @@ export async function getStaticProps({ locale }) {
   }
 
 export default function Footer() {
-
-  const t = useTranslations('Footer');
+  const t = useTranslations("Footer");
 
   // Function creates a page link list element from the parameters
   function createPageLink(page, route, index) {
@@ -82,6 +81,5 @@ export default function Footer() {
         <div className={styles.subfooter}>{t('include')}</div>
 
     </footer>
-    
   );
 }
