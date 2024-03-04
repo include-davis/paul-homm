@@ -10,17 +10,19 @@ export async function getStaticProps({ locale }) {
     };
 }
 
-export default function About({ messages }) {
+export default function About({ }) {
     const t = useTranslations('Flipping Cards');
     const cards = ["Card1", "Card2", "Card3", "Card4", "Card5"];
+    console.log(cards);
+
 
     const flippingCards = cards.map((card, index) => (
         <FlippingCard
             key={index}
-            title={card.title}
-            content={card.content}
-            image={card.image}
-            alt={card.alt}
+            title={t(`${card}.title`)}
+            content={t(`${card}.content`)}
+            image={t(`${card}.image`)}
+            alt={t(`${card}.alt`)}
         />
     ));
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import styles from "@/styles/components/about-us/flippingCard.module.scss";
 
-const FlippingCard = ({ title, content, image, alt }) => {
+export default function FlippingCard ({ title, content, image, alt }) {
     return (
         <div className={styles.container}>
             <h1>{title}</h1>
@@ -19,7 +19,6 @@ const FlippingCard = ({ title, content, image, alt }) => {
     );
 }
 
-export default FlippingCard;
 
 /*import { useTranslations } from 'next-intl';
 import React from 'react';
