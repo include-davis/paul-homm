@@ -19,8 +19,6 @@
     .pageHeading {
         font-size: 3.4375rem;
     }
-
-
 }
 
 .boxContainer {
@@ -61,6 +59,7 @@
         height: 338px;
         row-gap: 26px;
         justify-content: center;
+        align-items: center;
 
         >h2 {
             text-align: center;
@@ -71,7 +70,6 @@
             font-size: 2rem;
             color: black;
             list-style-position: inside;
-            padding-left: 27px;
         }
 
         .translatorsList {
@@ -106,7 +104,7 @@
     border-radius: 20px 20px 0 0;
     text-align: left;
     padding-left: 14px;
-    padding-right: 10px;
+    padding-right: 90px;
     justify-content: space-between;
     transition: all 0.2s ease;
 }

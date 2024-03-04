@@ -22,7 +22,7 @@
     },
     "Services": {
         "heading": "Our Services",
-        "services1": {
+        "topServices": {
             "service1": {
                 "heading": "Primary Care Services",
                 "desc": "Every Saturday"
@@ -75,7 +75,7 @@
                 }
             }
         },
-        "services2": {
+        "bottomServices": {
             "service1": {
                 "heading": "Referrals",
                 "list": {
