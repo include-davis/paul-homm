@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Jost:wght@200..900');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-maroon);
+    height: 226px;
+    justify-content: space-around;
+    
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    column-gap: 11px;
+    margin-top: 8px;
+    align-items: center;
+
+    > *:first-child {
+        margin-left: 34px; 
+    }
+}
+
+.title_text {
+    color: var(--color-white);
+    h1 {
+        font-family: "Malayalam MN";
+        font-size: 2.8125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    h2 {
+        font-family: "Be Vietnam";
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    a {
+        color: var(--color-gold);
+        text-align: center;
+        font-family: Jost;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-decoration: none;
+        transition: border-bottom 0.3s ease;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        &:hover {
+            border-bottom: 2px solid var(--color-gold);
+        }
+
+    }
+
+   
+    
+}
+
+.page_link.active {
+    // change how the active link appears here!!
+    border-radius: 5px;
+    background-color: var(--color-gold);
+    
+    
+    a {
+        color: var(--color-maroon);
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+        
+    }
+
+.language_dropdown{
+    position: relative;
+    display: inline-block;
+
+    >div {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
