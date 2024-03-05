@@ -66,6 +66,7 @@ function ImageSliderMobileFrame(props) {
 // Acutal image slider component
 export default function ImageSliderMobile({ images, services }) {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [service, setService] = useState(services[0]);
     const n = images.length
 
     // Process images from array, concatenating from and back secondary images
@@ -73,19 +74,27 @@ export default function ImageSliderMobile({ images, services }) {
     const imagesBack = images.slice(-1)
     const processedImages = imagesBack.concat(images).concat(imagesFront)
     
-    // Move left and right through images
+    // Move left and right through images and change dropdown title
+    const changeService = (index) => {
+        setActiveIndex(index)
+        setService(services[index])
+    }
     const subIndex = () => {
-      setActiveIndex((activeIndex + n - 1) % n)
+      const left = (activeIndex + n - 1) % n
+      changeService(left)
     }
     const addIndex = () => {
-      setActiveIndex((activeIndex + 1) % n)
+      const right = (activeIndex + 1) % n
+      changeService(right)
     }
 
+
+    // For dropdown
     return (
         <div className={styles.main_container}>
             {/* Dropdown */}
             <div className={styles.dropdown}>
-                <DropDown services={services} setImage={setActiveIndex} />
+                <DropDown services={services} setImage={setActiveIndex} currService={service} setService={setService}/>
             </div>
 
             {/* Image Carousel */}
@@ -131,7 +140,7 @@ export default function ImageSliderMobile({ images, services }) {
                         <div 
                         key={index} 
                         className={`${styles.dot} ${activeIndex === index ? styles.active : null}`}
-                        onClick={() => setActiveIndex(index)}
+                        onClick={() => changeService(index)} // Set dropdown and image index
                         ></div>
                     )
                     }) 

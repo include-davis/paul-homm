@@ -15,13 +15,13 @@ import { useLocale } from 'next-intl';
 //     {name: "Español", code: "es"},
 // ];
 
-export default function imageSliderDropDown({ services, setImage }) {
+export default function imageSliderDropDown({ services, setImage, currService, setService }) {
     // const currLocaleCode = useLocale();
     // const currLocale = locales.find(lang => lang.code === currLocaleCode).name;
 
-    const router = useRouter();
+    // const router = useRouter();
     const [dropDown, setDropDown] = useState(false)
-    const [service, setService] = useState(services[0]);
+    // const [service, setService] = useState(services[0])
 
     function toggleDropDown() {
         setDropDown(!dropDown);
@@ -36,7 +36,7 @@ export default function imageSliderDropDown({ services, setImage }) {
   return (
     <div className={styles.container}>
         <div className={styles.header}>
-            <div className={styles.selected}>{service}</div>
+            <div className={styles.selected}>{currService}</div>
             <div className={styles.header_icons}>
                 {/* <RxDividerVertical className={styles.vDivider} /> */}
                 {/* <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/> */}
