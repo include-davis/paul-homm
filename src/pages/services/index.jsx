@@ -1,28 +1,38 @@
 import styles from "@/styles/pages/services/services.module.scss";
-import ImageSlider from '@/components/services/imageSlider.jsx';
+import ImageSlider from "@/components/services/imageSlider.jsx";
+import { useTranslations } from "next-intl";
+
+export async function getStaticPropts({ locale }) {
+    return {
+        props: {
+            messages: (await import(`@/messages/${locale}.json`)).default
+        }
+    };
+}
 
 export default function Services() {
+    const t = useTranslations('Services');
     return (
         <div className={styles.mainContainer}>
 
             <div className={styles.servicesContainer}>
                 <div>
-                    <h1 className={styles.pageHeading}>Our Services</h1>
+                    <h1 className={styles.pageHeading}>{t('heading')}</h1>
                 </div>
 
                 <div className={styles.boxContainer}>
 
                     <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
 
-                        <h2> Primary Care Services </h2>
-                        <p> Every Saturday </p>
+                        <h2> {t('topServices.service1.heading')}</h2>
+                        <p>{t('topServices.service1.desc')}</p>
 
                     </div>
 
                     <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
 
-                        <h2> Cancer Screenings </h2>
-                        <p> First Sunday monthly </p>
+                        <h2>{t('topServices.service2.heading')}</h2>
+                        <p>{t('topServices.service2.desc')}</p>
 
                     </div>
 
