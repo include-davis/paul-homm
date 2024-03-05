@@ -1,0 +1,64 @@
+.container {
+    max-width: 1080px;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    background-color: var(--off-white, #FFFBF0);
+    border-radius: 12px;
+    border: 2px solid red;
+}
+
+.button {
+    margin-left: auto;
+    width: 144px;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    border: none;
+    background: transparent;
+    color: var(--color-maroonn);
+
+    .button_svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    p {
+        font-size: 2.188rem;
+    }
+
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-inter);
+    padding: 48px;
+
+
+    >h1 {
+        color: var(--maroon, #5B1110);
+        text-align: center;
+        font-family: Jost;
+        font-size: 2.813rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+
+    >p {
+        color: var(--Off-Black, #333);
+        font-family: "Be Vietnam";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 170%;
+        width: 731px;
+        justify-content: center;
+    }
+}
