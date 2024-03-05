@@ -1,6 +1,8 @@
 import React from 'react';
 import FlippingCardMobile from "@/components/about-us/flippingcard-mobile"
 import styles from'@/styles/pages/about/about.module.scss'
+import { useState } from 'react';
+import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
 
 
 export async function getStaticProps({ locale }) {
@@ -15,14 +17,45 @@ const data = ["card1", "card2","card3","card4","card5"]
 
 export default function About()
 {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const n = data.length
+    const subIndex = () => {
+      setActiveIndex((activeIndex + n - 1) % n)
+    }
+
+    const addIndex = () => {
+      setActiveIndex((activeIndex + 1) % n)
+    }
+
     return(
-        <div className={styles.flipping_cards}>
-                {data.map((card, index) => (
-                    <div key={index}> 
-                        <FlippingCardMobile props = {card}/>
+        <div className={styles.main_container}>
+            <div className={styles.window_container}>
+                <button className={styles.arrow} onClick={subIndex}>
+                    <RxArrowLeft/>
+                </button>
+
+
+
+                <button className={styles.arrow} onClick={addIndex}>
+                    <RxArrowRight/>
+                </button>
+
+                <div className={styles.viewport}> 
+                    <div className={styles.content_belt}
+                    style={{transform: `translateX(calc(${-activeIndex} * 100%))`}}>
+                        <div className={styles.flipping_cards}>
+                            {data.map((card, index) => (
+                                <div key={index} className={styles.frame}> 
+                                    <FlippingCardMobile props = {card}/>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                ))}
+                </div>
+                
             </div>
+        </div>
+        
     )
 }
 

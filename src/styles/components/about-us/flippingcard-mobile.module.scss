@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
+
+.flipping_card{
+    background-color: var(--color-beige);
+    border: 3px solid var(--color-maroon);
+    border-radius: 12px;
+    width: 340px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        font-family: "Be Vietnam";
+        text-align: center;
+        color: var(--text-black);
+        padding: 24px 20px;
+    }
+    
+}
+
+.image_container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    
+
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+}
