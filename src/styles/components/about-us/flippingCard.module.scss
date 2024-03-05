@@ -1,17 +1,20 @@
 .container {
-    background-color: (var, --color-beige);
-    border-radius: 12px;
+    width: 432px;
+    height: 506px;
+    position: relative;
+    text-align: center;
 }
 
 .FlipCard {
+    width: 100%;
+    height: 100%;
     background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 2px solid red;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-beige);
 }
 
 .CardInner {
-    position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.8s;
@@ -27,21 +30,31 @@
 
 .CardFront,
 .FlipBack {
+    >img {
+        width: 100%;
+        height: 100%;
+    }
+
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    //added padding as sugessted before 
     padding: 20px;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     //tryring to improve the lag
-    transform: translateZ(0);
+    // transform: translateZ(0);
 
 }
 
 .FlipBack {
-    background-color: (var, --color-beige);
+    background-color: var(--color-beige);
     //trying to fix the lag 
     transform: rotateY(180deg) translateZ(0);
+    padding: 60px 24px;
+
+    p {
+        font-size: 1.375rem;
+        text-align: left;
+
+    }
 }
