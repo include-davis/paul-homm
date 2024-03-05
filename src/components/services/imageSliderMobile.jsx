@@ -65,6 +65,8 @@ function ImageSliderMobileFrame(props) {
 
 // Acutal image slider component
 export default function ImageSliderMobile({ images, services }) {
+    const t = useTranslations("Services");
+
     const [activeIndex, setActiveIndex] = useState(0)
     const [service, setService] = useState(services[0]);
     const n = images.length
@@ -148,9 +150,11 @@ export default function ImageSliderMobile({ images, services }) {
             </div>
             
             {/* Text under corresponding image */}
-            <div>
-                
-            </div>
+            {/* <ul className={styles.info}>
+                { serviceOptions.map((item, index) => (
+                    <li key={index}>{t(item)}</li>
+                ))}
+            </ul> */}
         </div>
     );
   }

@@ -157,6 +157,32 @@
                     "item6": "Hmong"
                 }
             }
+        },
+        "mobile": {
+            "Specialty Clinics": {
+                "bullet1": "Muskuloskeletal Clinic (MSK)",
+                "bullet2": "Dermatology",
+                "bullet3": "Ophthalmology Clinic",
+                "bullet4": "Cardiopulmonary Clinic",
+                "bullet5": "Liver Clinic"
+            },
+            "Hepatitis": {
+                "bullet1": "Liver cancer is often tied to Hepatitis B",
+                "bullet2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+                "bullet3": "Asians more vulnerable, higher infection rates, mortality",
+                "bullet4": "Screening, vaccination, treatments available",
+                "bullet5": "Free vaccinations"
+            },
+            "Health Education and Preventative Measures": {
+                "bullet1": "Hypertension Workshops",
+                "bullet2": "Nutrition Counseling",
+                "bullet3": "Health Fair"
+            },
+            "Vaccines": {
+                "bullet1": "Hepatitis",
+                "bullet2": "Annual flu-shots",
+                "bullet3": "Health Fair"
+            }
         }
     }
 }
