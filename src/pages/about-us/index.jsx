@@ -3,10 +3,11 @@ import YoutubeEmbed from "@/components/about-us/YoutubeEmbed";
 //import YouTube from "react-youtube";
 import styles from "@/styles/pages/about/about.module.scss";
 import Carousel from "@/components/about-us/carousel";
+
 //import styles 
 export default function About()
 {
-    const carouselData = ['frame1', 'frame2', 'frame3', /* Add more frames as needed */];
+    const carouselData = ["/images/aboutUs/frame1.png", '/images/aboutUs/frame2.png', '/images/aboutUs/frame3.png', '/images/aboutUs/frame4.png', '/images/aboutUs/frame5.png', '/images/aboutUs/frame6.png', '/images/aboutUs/frame7.png'/* Add more frames as needed */];
     return(
         <div className={styles.wrapperClass}>
             <h1>The Legacy of Paul Hom</h1>
