@@ -1,6 +1,7 @@
 import styles from "@/styles/pages/services/services.module.scss";
-import ImageSlider from "@/components/services/imageSlider.jsx";
 import { useTranslations } from "next-intl";
+import ImageSlider from '@/components/services/imageSlider.jsx';
+import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 
 export async function getStaticPropts({ locale }) {
     return {
@@ -9,8 +10,6 @@ export async function getStaticPropts({ locale }) {
         }
     };
 }
-import ImageSlider from '@/components/services/imageSlider.jsx';
-import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 
 const services = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
 const images = ["/images/services/healthEdu.png", "/images/services/hepatitis.png", "/images/services/specialtyClinics.png", "/images/services/vaccines.png"]
