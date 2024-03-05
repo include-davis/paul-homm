@@ -64,11 +64,6 @@
         width: 100%;
         padding-bottom: 8px;
     }
-
-    @include mixins.phone {
-        width: 100%;
-        padding-bottom: 0px;
-    }
 }
 
 .contact_us {
@@ -81,12 +76,10 @@
     
     @include mixins.phone {
         font-size: 2.0rem;
-        font-weight: bolder;
     }
 
     @include mixins.sm-phone {
         font-size: 1.5rem;
-        font-weight: bolder;
     }
 }
 
