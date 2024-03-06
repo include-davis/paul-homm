@@ -3,7 +3,7 @@ import styles from "@/styles/components/services/imageSliderMobile.module.scss"
 import Image from "next/image";
 import { useState } from "react";
 import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
-import { useTranslations } from 'next-intl';
+import { useTranslations, useMessages } from 'next-intl';
 import DropDown from "@/components/dropDown/imageSliderDropdown.jsx"
 
 export async function getStaticProps({ locale }) {
@@ -70,6 +70,8 @@ export default function ImageSliderMobile({ images, services }) {
     const [activeIndex, setActiveIndex] = useState(0)
     const [service, setService] = useState(services[0]);
     const n = images.length
+    
+    const messages = useMessages()
 
     // Process images from array, concatenating from and back secondary images
     const imagesFront = images.slice(0, 1)
@@ -150,11 +152,11 @@ export default function ImageSliderMobile({ images, services }) {
             </div>
             
             {/* Text under corresponding image */}
-            {/* <ul className={styles.info}>
-                { serviceOptions.map((item, index) => (
+            <ul className={styles.info}>
+                { Object.entries(t(`mobile.${service}`)).map((item, index) => (
                     <li key={index}>{t(item)}</li>
                 ))}
-            </ul> */}
+            </ul>
         </div>
     );
   }
