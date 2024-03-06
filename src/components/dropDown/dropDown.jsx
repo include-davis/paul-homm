@@ -3,6 +3,7 @@ import styles from "@/styles/components/dropDown/dropDown.module.scss";
 import { RxDividerVertical } from "react-icons/rx";
 import { PiTranslate } from "react-icons/pi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { BsTranslate } from "react-icons/bs";
 import { useRouter } from 'next/router';
 import { useLocale } from 'next-intl';
 
@@ -32,9 +33,7 @@ export default function LangDropDown() {
         toggleDropDown();
     }
 
-  return (
-    <div className={styles.container}>
-        <div className={styles.header}>
+    let defaultHeader = <div className={styles.defaultHeader}>
             <div className={styles.selected}>{language}</div>
             <div className={styles.header_icons}>
                 <RxDividerVertical className={styles.vDivider} />
@@ -44,6 +43,20 @@ export default function LangDropDown() {
                 { dropDown ? <IoIosArrowUp/>: <IoIosArrowDown/>}
             </button>
         </div>
+    let mobileHeader = <div className={styles.mobileHeader}>
+        <button onClick={ toggleDropDown } className={styles.mobile_headerText}>
+            <div className={styles.selected}>{language}</div>
+        </button>
+        <div className={styles.header_icons}>
+            <RxDividerVertical className={styles.vDivider} />
+            <BsTranslate preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/>
+        </div>
+        </div>
+
+  return (
+    <div className={styles.container}>
+        {defaultHeader}
+        {mobileHeader}
         <div className={`${styles.table} ${dropDown? styles.active : null}`}>
             {locales.map((language, index) => (
                 <div key = {index} className={styles.option}>
