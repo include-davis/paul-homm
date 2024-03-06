@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
+
 .main_container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  background-color: var(--color-white);
 }
 
 .window_container {
@@ -13,19 +15,22 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 16px;
-  //gap: 8px;
+  gap: 8px;
+  background-color: var(--color-maroon);
+  height: 48px;
 }
 
 .arrow {
   height: 48px;
   aspect-ratio: 1;
-  border-radius: 24px;
   border: none;
+  background: transparent;
   flex-grow: 0;
+  color: var(--color-gold);
 
   text-align: center;
   font-size: 1.6rem;
-  color: var(--text-light);
+
 
   display: flex;
   align-items: center;
@@ -55,8 +60,15 @@
   align-items: center;
 }
 
+.frame_content {
+  color: var(--color-gold);
+  font-family: "Be Vietnam";
+  font-size: 1.4rem;
+}
+
 
 .flipping_cards {
   display: flex;
   align-items: center;
+  
 }
