@@ -18,6 +18,11 @@
 
     .pageHeading {
         font-size: 3.4375rem;
+
+        @include mixins.phone {
+            font-size: 1.75rem;
+            color: black;
+        }
     }
 }
 
@@ -40,9 +45,19 @@
         height: 300px;
         justify-content: center;
 
+        @include mixins.phone {
+            width: 196px;
+            height: 178px;
+            row-gap: 15px;
+        }
+
         >h2 {
             font-size: 2.8125rem;
             text-align: center;
+
+            @include mixins.phone {
+                font-size: 1.45rem;
+            }
         }
 
         >p {
@@ -50,9 +65,13 @@
             color: black;
             font-weight: bold;
             text-align: center;
-        }
 
+            @include mixins.phone {
+                font-size: 1.3125rem;
+            }
+        }
     }
+
 
     .bottomServiceBox {
         width: 492px;
@@ -60,9 +79,19 @@
         row-gap: 26px;
         justify-content: center;
 
+        @include mixins.tablet {
+            width: 385px;
+            height: 152px;
+            row-gap: 15px;
+        }
+
         >h2 {
             text-align: center;
             font-size: 2.5rem;
+
+            @include mixins.tablet {
+                font-size: 1.45rem;
+            }
         }
 
         .desc {
@@ -70,6 +99,10 @@
             color: black;
             list-style-position: inside;
             padding-left: 27px;
+
+            @include mixins.tablet {
+                font-size: 1.3125rem;
+            }
         }
 
         .translatorsList {
@@ -78,8 +111,28 @@
     }
 }
 
+.bottomBoxContainer {
+    @mixin sm-desktop {
+        //1280
+    }
 
-// Slider code 
+    @include mixins.tablet {
+        //1048
+    }
+
+    @include mixins.phone {
+        //720
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    @include mixins.sm-phone {
+        //540
+    }
+}
+
+
 .slideContainer {
     background-color: var(--color-white);
     display: flex;
@@ -96,8 +149,8 @@
 
 .tab {
     width: 25%;
-    height: 97px; //80
-    font-size: 1.875rem;
+    height: 97px;
+    font-size: 1.5rem; //1.875rem
     color: var(--color-maroon);
     background-color: var(--color-beige);
     border: none;
@@ -127,9 +180,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    column-gap: 100px;
     background-color: var(--color-maroon);
     padding: 100px 40px;
-
 
     .arrContainer {
         display: flex;
@@ -169,94 +222,6 @@
     }
 }
 
-@include mixins.phone {
-    .servicesContainer {
-        .pageHeading {
-            font-size: 1.5rem;
-            color: black;
-        }
-    }
-
-    .boxContainer {
-        .topServiceBox {
-            width: 168px;
-            height: 153px;
-            row-gap: 13px;
-
-            >h2 {
-                font-size: 1.25rem;
-            }
-
-            >p {
-                font-size: 1.125rem;
-            }
-
-        }
-
-        .bottomServiceBox {
-            width: 330px;
-            height: 131px;
-            row-gap: 13px;
-
-            >h2 {
-                font-size: 1.25rem;
-            }
-
-            .desc {
-                font-size: 1.125rem;
-            }
-        }
-    }
-
-    .bottomBoxContainer {
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-    }
-}
-
-@include mixins.tablet {
-    .servicesContainer {
-        .pageHeading {
-            font-size: 1.75rem;
-            color: black;
-        }
-    }
-
-    .boxContainer {
-        .topServiceBox {
-            width: 196px;
-            height: 178px;
-            row-gap: 15px;
-
-            >h2 {
-                font-size: 1.45rem;
-            }
-
-            >p {
-                font-size: 1.3125rem;
-            }
-
-        }
-
-        .bottomServiceBox {
-            width: 385px;
-            height: 152px;
-            row-gap: 15px;
-
-            >h2 {
-                font-size: 1.45rem;
-            }
-
-            .desc {
-                font-size: 1.3125rem;
-            }
-        }
-    }
-
-    .bottomBoxContainer {
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-    }
-}
+//review ALL MIXINS DONE SO FAR
+// made a mistake and mixed up phone and tablet mixins 
+//so double check thos  
