@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import styles from '@/styles/components/getInvolved/mobilepopupCard.module.scss';
+import styles from '@/styles/components/get-involved/mobilepopupCard.module.scss';
 
 export async function getStaticProps({ locale }) {
   return {

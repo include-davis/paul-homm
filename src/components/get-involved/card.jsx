@@ -1,6 +1,6 @@
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
-import styles from "@/styles/pages/get-involved/cards.module.scss";
+import styles from "@/styles/components/get-involved/mobilepopupCard.module.scss";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
