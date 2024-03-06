@@ -19,9 +19,21 @@
     .pageHeading {
         font-size: 3.4375rem;
 
+        @include mixins.sm-desktop {
+            color: black;
+            font-size: 3rem;
+        }
+
+        @include mixins.tablet {
+            font-size: 2.5rem;
+        }
+
         @include mixins.phone {
             font-size: 1.75rem;
-            color: black;
+        }
+
+        @include mixins.sm-phone {
+            font-size: 1.3125rem;
         }
     }
 }
@@ -45,9 +57,27 @@
         height: 300px;
         justify-content: center;
 
+        @include mixins.sm-desktop {
+            width: 348px;
+            height: 316px;
+            row-gap: 15px;
+        }
+
+        @include mixins.tablet {
+            width: 285px;
+            height: 260px;
+            row-gap: 15px;
+        }
+
         @include mixins.phone {
             width: 196px;
             height: 178px;
+            row-gap: 15px;
+        }
+
+        @include mixins.sm-phone {
+            width: 147px;
+            height: 134px;
             row-gap: 15px;
         }
 
@@ -55,8 +85,20 @@
             font-size: 2.8125rem;
             text-align: center;
 
+            @include mixins.sm-desktop {
+                font-size: 2.6rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 2rem;
+            }
+
             @include mixins.phone {
                 font-size: 1.45rem;
+            }
+
+            @include mixins.sm-phone {
+                font-size: 1.2rem;
             }
         }
 
@@ -66,8 +108,20 @@
             font-weight: bold;
             text-align: center;
 
+            @include mixins.sm-desktop {
+                font-size: 2rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 1.64rem;
+            }
+
             @include mixins.phone {
-                font-size: 1.3125rem;
+                font-size: 1.13rem;
+            }
+
+            @include mixins.sm-phone {
+                font-size: 0.8rem;
             }
         }
     }
@@ -89,8 +143,16 @@
             text-align: center;
             font-size: 2.5rem;
 
+            @include mixins.sm-desktop {
+                font-size: 2.2rem;
+            }
+
             @include mixins.tablet {
-                font-size: 1.45rem;
+                font-size: 1.4rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.25rem;
             }
         }
 
@@ -100,8 +162,16 @@
             list-style-position: inside;
             padding-left: 27px;
 
+            @include mixins.sm-desktop {
+                font-size: 2rem;
+            }
+
             @include mixins.tablet {
-                font-size: 1.3125rem;
+                font-size: 1.3rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.13rem;
             }
         }
 
@@ -112,23 +182,20 @@
 }
 
 .bottomBoxContainer {
-    @mixin sm-desktop {
+
+    @include mixins.sm-desktop {
         //1280
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
     }
 
-    @include mixins.tablet {
-        //1048
-    }
 
     @include mixins.phone {
         //720
         display: flex;
         flex-direction: column;
         row-gap: 20px;
-    }
-
-    @include mixins.sm-phone {
-        //540
     }
 }
 
@@ -221,7 +288,3 @@
         font-size: 2.25rem;
     }
 }
-
-//review ALL MIXINS DONE SO FAR
-// made a mistake and mixed up phone and tablet mixins 
-//so double check thos  
