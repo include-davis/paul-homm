@@ -21,11 +21,16 @@ export default function LangDropDown() {
     const currLocale = locales.find(lang => lang.code === currLocaleCode).name;
 
     const router = useRouter();
-    const [dropDown, setDropDown] = useState(false)
+    const [dropDown, setDropDown] = useState(false);
     const [language, setLanguage] = useState(currLocale);
+    const [headerVisibility, showHeader] = useState(false);
 
     function toggleDropDown() {
         setDropDown(!dropDown);
+    }
+    function toggleHeader() {
+        showHeader(!headerVisibility)
+        setDropDown(false);
     }
     const clickLanguage = (code, name) => {
         setLanguage(name);
@@ -44,12 +49,13 @@ export default function LangDropDown() {
             </button>
         </div>
     let mobileHeader = <div className={styles.mobileHeader}>
+        { headerVisibility ? 
         <button onClick={ toggleDropDown } className={styles.mobile_headerText}>
             <div className={styles.selected}>{language}</div>
-        </button>
+        </button>  : null }
         <div className={styles.header_icons}>
-            <RxDividerVertical className={styles.vDivider} />
-            <BsTranslate preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/>
+            { headerVisibility ? <RxDividerVertical className={styles.vDivider} /> : null }
+            <BsTranslate onClick={ toggleHeader } preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/>
         </div>
         </div>
 
