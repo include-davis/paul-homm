@@ -20,24 +20,30 @@
             },
             "closure": {
                 "title": "Closure Dates",
-                "date1": "Feb. 10, 2024",
-                "date2": "Mar. 30, 2024",
-                "date3": "May 25, 2024",
-                "date4": "Jul. 6, 2024",
-                "date5": "Aug 31, 2024"
+                "dates": [
+                    "Feb. 10, 2024",
+                    "Mar. 30, 2024",
+                    "May 25, 2024",
+                    "Jul. 6, 2024",
+                    "Aug 31, 2024"
+                ]
             },
             "events": {
                 "title": "Upcoming Events",
-                "date1": "Jan. 7, 2023",
-                "date2": "Jan. 8, 2023",
-                "date3": "Jan. 14, 2023",
-                "date4": "Jan. 15, 2023",
-                "date5": "Jan. 29, 2023",
-                "event1": "Musculoskeletal Clinic",
-                "event2": "VN Cares Cancer Screening",
-                "event3": "Psychiatry Clinic",
-                "event4": "Hepatitis Vaccination",
-                "event5": "Dermatology Clinic",
+                "dates": [
+                    "Jan. 7, 2023",
+                    "Jan. 8, 2023",
+                    "Jan. 14, 2023",
+                    "Jan. 15, 2023",
+                    "Jan. 29, 2023"
+                ],
+                "events": [
+                    "Musculoskeletal Clinic",
+                    "VN Cares Cancer Screening",
+                    "Psychiatry Clinic",
+                    "Hepatitis Vaccination",
+                    "Dermatology Clinic"
+                ],
                 "image": "/images/home-page/events-img.png"
             }
         }
@@ -63,14 +69,14 @@
         "donateHeading": "Donate Today!",
         "donateText": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
         "address": "Paul Home Asian Clinic\n6341 Folsom Blvd\nSacramento, CA 95819",
-        "donateText2": " We thank you for your generoristy!"
+        "donateText2": " We thank you for your generosity!"
     },
     "Footer": {
         "pages": {
             "page1": "HOME",
             "page2": "ABOUT US",
             "page3": "SERVICES",
-            "page4": "COMMITEES",
+            "page4": "COMMITTEES",
             "page5": "GET INVOLVED"
         },
         "contact": {
@@ -78,8 +84,26 @@
             "address_pt1": "6341 Folsom Blvd",
             "address_pt2": "Sacramento, CA 95819"
         },
-        "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
-        "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT",
+        "sponsors": {
+            "sponsor_pt1": "THANK YOU TO OUR SPONSORS",
+            "sponsor_pt2": "FOR THEIR GENEROUS SUPPORT"
+        },
         "include": "Designed & Developed with 🤍 by #include @ Davis"
+    },
+    "PopupCard": {
+        "Card1": {
+            "title": "Physicians and Residents",
+            "content": "Physicians and residents are a valuable component to our clinic because they serve as teachers and mentors to health professional students and undergrad patient advocates.",
+            "content2": "Any physician and resident, primary care and specialty alike, is welcomed and appreciated in our clinic! If you are interested in volunteering as a preceptor please contact our physician scheduling team at phac.physician.scheduler@gmail.com"
+        },
+        "Card2": {
+            "title": "Health Professionals",
+            "content": "Health professional students are exposed to a variety of clinical responsibilities, such as interviewing patients, conducting physical exams, and performing laboratory procedures (blood draw, pap smears, vaccination, etc.). In addition, students also learn more about working with the underserved Asian population. To volunteer at our clinic, please sign up on the Inter-clinic Google Doc. Dress code: business-casual with white coat and badge"
+        },
+        "Card3": {
+            "title": "Undergraduate Patient Advocates",
+            "content": "The term Patient Advocate aptly describes an undergraduate volunteer at the Paul Hom Asian Clinic. Patient Advocates mainly act as interpreters for predominantly Cantonese, Mandarin, and Vietnamese patients who visit the clinic. They also have a variety of responsibilities such as in taking vital signs, assisting in the dispensing of medications, and assisting medical students with patient care.",
+            "content2": "They continue to play an important role as patient educators and interpreters for our clinic. In addition, they have the opportunity to learn more about providing social services to the underserved."
+        }
     }
 }

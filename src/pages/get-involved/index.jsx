@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "@/styles/pages/get-involved/index.module.scss";
 import { useTranslations } from "next-intl";
-import Card from "@/components/get-involved/card";
+import PopupCard from "@/components/get-involved/mobilepopupCard";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -10,28 +9,24 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+// I tried rendering this
 
-const cardProps = ["Card1", "Card2", "Card3"];
-export default function GetInvolved() {
-  const t = useTranslations("GetInvolved");
-
+//const cardProps = ["Card1", "Card2", "Card3"];
+export default function PopupCard() {
+  const t = useTranslations("PopupCard");
+  const cards = ["Card1"];
+  const popupCard = cards.map((card, index) => (
+    <PopupCard
+      key={index}
+      title={t(`${card}.title`)}
+      content={t(`${card}.content`)}
+      content2={t(`${card}.content2`)}
+    />
+  ));
   return (
-    <div className={styles.sectionContainer}>
-      <h1 className={styles.sectionHeading}>{t('pageTitle')}</h1>
-      <div className={styles.cardContainer}>
-        {cardProps.map((cardProp, index) => (
-          <Card key={index} cardProps={cardProp} />
-        ))}
-      </div>
-      <div className={styles.donateBoxContainer}>
-        <h3 className={styles.donateHeading}>{t('donateHeading')}</h3>
-        <p className={styles.donateText}>{t('donateText')}</p>
-        <div className={styles.centeredText}>
-          <p className={styles.address}>{t('address')}</p>
-          <p className={styles.donateText}>{t('donateText2')}</p>
-        </div>
-      </div>
+    <div>
+      {PopupCard}
     </div>
   );
 }
-GetInvolved;
+PopupCard;
