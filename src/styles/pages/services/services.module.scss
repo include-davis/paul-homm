@@ -6,6 +6,20 @@
     flex-direction: column;
 }
 
+.mobile {
+    display: none;
+
+    @include mixins.tablet {
+        display: block;
+    }
+}
+
+.desktop {
+    @include mixins.tablet {
+        display: none;
+    }
+}
+
 .servicesContainer {
     background-color: var(--color-white);
     color: var(--color-maroon);
