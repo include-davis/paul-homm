@@ -3,6 +3,15 @@
 //hardcoded width/height/radius/padding values in .container, .option_text, .option
 //hardcoded animation speed in .option, .table
 
+.background {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    padding: 16px 0px;
+    background-color: var(--color-maroon);
+}
+
 .container {
     background-color: transparent;
     width: 70%;
@@ -17,40 +26,21 @@
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    // justify-content: space-between;
     align-items: center;
     background-color: var(--color-beige);
+    z-index: 100;
     padding: 8px 16px;
-}
-
-.header_icons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 2rem;
 }
 
 .selected {
     color: var(--color-maroon);
     text-align: center;
-    font-family: Inter;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 60%;
-}
-
-.vDivider {
-    color: var(--color-maroon);
-    margin-right: -8px;
-}
-
-.translationIcon {
-    display: block;
-    font-weight: 400;
-    margin-right: 2%;
-    color: var(--color-maroon);
+    width: 90%;
 }
 
 .arrow {
@@ -58,13 +48,13 @@
     background-color: transparent;
     border-color: transparent;
     color: var(--color-maroon);
+    width: 10%;
 }
 
 .arrow:active {
     transition: transform 0.3s;
     transform: rotate(180deg);  
 }
-
 
 .table{
     display: none;
@@ -96,16 +86,13 @@
 }
 
 .option_text {
-    text-align: center;
-    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
     font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border-radius: 7px;
+    border-radius: 8px;
     color: var(--color-maroon);
-    width: 50%;
-    padding: 4px 0px;
+    width: 90%;
+    padding: 8px 0px;
 }
 
 .option_text:hover {

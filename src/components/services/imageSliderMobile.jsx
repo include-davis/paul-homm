@@ -2,7 +2,7 @@ import styles from "@/styles/components/services/imageSliderMobile.module.scss"
 
 import Image from "next/image";
 import { useState } from "react";
-import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
+import { MdArrowForwardIos, MdArrowBackIos} from "react-icons/md";
 import { useTranslations } from 'next-intl';
 import DropDown from "@/components/dropDown/imageSliderDropdown.jsx"
 
@@ -107,7 +107,7 @@ export default function ImageSliderMobile() {
             <div className={styles.window_container}>
                 {/* Button to go left */}
                 <button className={styles.arrow} onClick={subIndex}>
-                    <RxArrowLeft/>
+                    <MdArrowBackIos/>
                 </button>
           
                 {/* Image Slider */}
@@ -134,7 +134,7 @@ export default function ImageSliderMobile() {
           
                 {/* Button to go right */}
                 <button className={styles.arrow} onClick={addIndex}>
-                    <RxArrowRight/>
+                    <MdArrowForwardIos/>
                 </button>
            
             </div>
@@ -154,13 +154,16 @@ export default function ImageSliderMobile() {
             </div>
             
             {/* Text under corresponding image */}
-            <ul className={styles.info}>
-                { bullets.map((bullet, index) => {
-                    return (
-                        <li key={index}>{t(`${service}.bullet${bullet + 1}`)}</li>
-                    )
-                })}
-            </ul>
+            <div className={styles.info}>
+                <ul className={styles.info_items}>
+                    { bullets.map((bullet, index) => {
+                        return (
+                            <li className={styles.info_item} key={index}>{t(`${service}.bullet${bullet + 1}`)}</li>
+                        )
+                    })}
+                </ul>
+            </div>
+            
         </div>
     );
   }
