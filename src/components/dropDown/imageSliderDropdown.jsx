@@ -6,22 +6,8 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useRouter } from 'next/router';
 import { useLocale } from 'next-intl';
 
-// const locales = [
-//     {name: "English", code: "en"},
-//     {name: "中文", code: "zh"},
-//     {name: "한국어", code: "ko"},
-//     {name: "Tiếng Việt", code: "vi"},
-//     {name: "Hmoob", code: "hmn"},
-//     {name: "Español", code: "es"},
-// ];
-
 export default function imageSliderDropDown({ services, setImage, currService, setService }) {
-    // const currLocaleCode = useLocale();
-    // const currLocale = locales.find(lang => lang.code === currLocaleCode).name;
-
-    // const router = useRouter();
     const [dropDown, setDropDown] = useState(false)
-    // const [service, setService] = useState(services[0])
 
     function toggleDropDown() {
         setDropDown(!dropDown);
@@ -29,7 +15,6 @@ export default function imageSliderDropDown({ services, setImage, currService, s
     const clickService = (service, index) => {
         setService(service);
         setImage(index)
-        // router.push(router.pathname, router.asPath, {locale: code});
         toggleDropDown();
     }
 
@@ -37,10 +22,6 @@ export default function imageSliderDropDown({ services, setImage, currService, s
     <div className={styles.container}>
         <div className={styles.header}>
             <div className={styles.selected}>{currService}</div>
-            <div className={styles.header_icons}>
-                {/* <RxDividerVertical className={styles.vDivider} /> */}
-                {/* <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/> */}
-            </div>
             <button onClick={ toggleDropDown } className={styles.arrow}>
                 { dropDown ? <IoIosArrowUp/>: <IoIosArrowDown/>}
             </button>

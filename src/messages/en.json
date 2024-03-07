@@ -176,13 +176,13 @@
                 "bullet5": "Free vaccinations"
             },
             "Health Education and Preventative Measures": {
-                "bulletCount": "5",
+                "bulletCount": "3",
                 "bullet1": "Hypertension Workshops",
                 "bullet2": "Nutrition Counseling",
                 "bullet3": "Health Fair"
             },
             "Vaccines": {
-                "bulletCount": "5",
+                "bulletCount": "3",
                 "bullet1": "Hepatitis",
                 "bullet2": "Annual flu-shots",
                 "bullet3": "Health Fair"

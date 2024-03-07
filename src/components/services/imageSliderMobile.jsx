@@ -46,15 +46,12 @@ function ImageSliderMobileFrame(props) {
         return styles.primary
       default:
         return styles.secondary
-    //   default:
-    //     return styles.tertiary
     }
   }
 
   return (
       <div className={`${styles.frame} ${getSizeClass(dist)}`}>
         <Image src={image}
-            // className={styles.imageContainer}
             style={{ objectFit: "fill" }}
             fill={true}
             alt="Insert alt"
@@ -90,8 +87,7 @@ export default function ImageSliderMobile({ images, services }) {
       changeService(right)
     }
     
-    // console.log((t(`${service}.bulletNum`)))
-    const bulletCount = 5 // This is here for now because next-intl is not working properly
+    const bulletCount = parseInt(t(`${service}.bulletCount`))
     const bullets = [...Array(bulletCount).keys()];;
 
     // For dropdown
