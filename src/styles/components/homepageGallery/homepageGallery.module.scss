@@ -10,8 +10,7 @@
 .container {
     background-color: palevioletred;
     width: 100%;
-    height: 459px;
-    //height: fit-content;
+    aspect-ratio: 3.357 / 1;
     display: flex;
     flex-direction: row;
 }
@@ -29,9 +28,8 @@
 
 .frame {
     position: absolute;
-    min-width: 100%;
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     animation: slide;
     animation-duration: 2s;
     box-shadow: 0 0 8px 8px palevioletred inset;
@@ -49,20 +47,10 @@
     right: -100%;
 }
 
-
-.selectedFrame {
-    position: absolute;
-    min-width: 100%;
-    width: auto;
-    height: 100%;
-    box-shadow: 0 0 8px 8px palevioletred inset;
-}
-
 .frameR {
     position: absolute;
-    min-width: 100%;
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     animation: slideR;
     animation-duration: 2s;
     box-shadow: 0 0 8px 8px palevioletred inset;
@@ -159,22 +147,30 @@
     color: #D79C1A;
 }
 
+@media screen and (max-width:1048px) {
+    .title {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1rem;
+        line-height: normal;
+    }
+}
 
-@media screen and (max-width:600px)  {
+@media screen and (max-width:720px) {
     .nav {display: none;}
     .title{display: none;}
     .container{
         position: relative;
         flex-direction: column;
         align-items: center;
-        height: 16rem;
+        aspect-ratio: 1.7 / 1;
     }
     .frameContainer{
         width: 100%;
     }
     .textContainer{
         position: absolute;
-        bottom: 0px;
         width: 100%;
         height: 20%;
         background-color: rgba(0, 0, 0, 0.5);
@@ -186,8 +182,12 @@
         position: relative;
         background-image: none;
         align-items: center;
+        padding: 0;
     }
     .description {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         width: 100%;
         color: var(--Beige, var(--Committee-Color, #E7D3B8));
         font-size: 1rem;
