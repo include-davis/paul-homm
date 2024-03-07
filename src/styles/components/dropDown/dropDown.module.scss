@@ -15,22 +15,37 @@
     overflow: hidden;
 }
 
-
 .mobileHeader {
-    display: none;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--color-white);
+    width: 100%;
+}
+
+.mobileExpandedHeader {
+    display: none;
+    flex-direction: row;
+    height: 1.4rem;
+    justify-content: flex-end;
+    align-items: center;
     z-index: 100;
     padding-bottom: 0px;
     background-color: var(--color-beige);
 }
 
-.mobile_headerText {
-    width: 80%;
+.mobileCollapsedHeader {
+    display: none;
     height: 1.4rem;
-//    height: auto;
-    left: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+    padding-bottom: 0px;
+}
+
+.mobile_headerText {
+    width: 70%;
+    height: 100%;
     margin-right: 0;
     display: flex;
     flex-direction: row;
@@ -38,13 +53,30 @@
     align-items: center;
     background-color: transparent;
     border-color: transparent;
+    z-index: 102;
+    animation: .3s expandLeft;
 }
 
 .toggleIcon {
+    position: relative;
     width: auto;
     color: var(--color-maroon);
 }
 
+.toggle_button {
+    position: relative;
+    width: 1.7rem;
+    height: 1.4rem;
+    background-color: var(--color-beige);
+    margin-right: 4px;
+    border-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 103;
+}
 
 .defaultHeader {
     display: none;
@@ -59,7 +91,10 @@
 
 @media screen and (min-width: 601px){
     .defaultHeader { display:flex; }
-    .mobileHeader {
+    .mobileExpandedHeader {
+        display: none;
+    }
+    .mobileCollapsedHeader {
         display: none;
     }
 }
@@ -70,7 +105,10 @@
         border-radius: 10px;
     }
     .defaultHeader { display:none; }
-    .mobileHeader {
+    .mobileExpandedHeader {
+        display: flex;
+    }
+    .mobileCollapsedHeader {
         display: flex;
     }
 }
@@ -187,9 +225,18 @@
     border-radius: 10px;
 }
 
+@keyframes expandLeft {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
 @media screen and (max-width: 600px){
     .selected {
-        width: 80%;
+        width: 85%;
         color: var(--color-maroon);
         white-space: nowrap;
         overflow: hidden;
@@ -201,7 +248,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
     }
 
     .table.active {
@@ -242,7 +289,7 @@
     }
 
     .vDivider {
-        margin-right: -4px;
-        margin-left: -15px;
+        z-index: 104;
+        margin-left: -8px;
     }
 }

@@ -48,14 +48,15 @@ export default function LangDropDown() {
                 { dropDown ? <IoIosArrowUp/>: <IoIosArrowDown/>}
             </button>
         </div>
-    let mobileHeader = <div className={styles.mobileHeader}>
+        
+    let mobileHeader = <div className={`${headerVisibility? styles.mobileExpandedHeader : styles.mobileCollapsedHeader}`}>
         { headerVisibility ? 
         <button onClick={ toggleDropDown } className={styles.mobile_headerText}>
             <div className={styles.selected}>{language}</div>
         </button>  : null }
         <div className={styles.header_icons}>
             { headerVisibility ? <RxDividerVertical className={styles.vDivider} /> : null }
-            <BsTranslate onClick={ toggleHeader } preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/>
+            <button onClick={ toggleHeader } className={styles.toggle_button}><BsTranslate preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/></button>
         </div>
         </div>
 
