@@ -1,26 +1,64 @@
 .scroll {
-    width: 24.5625rem;
+    width: 21.375rem;
     height: 2.625rem;
     flex-shrink: 0;
     background-color: var(--color-maroon);
+    //align-items: center;
+    //justify-content: space-between;
+
+    h1 {
+        color: #D79C1A;
+        text-align: center;
+        font-family: "Be Vietnam";
+        font-size: 1.375rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 170%;
+    }
+
+    button {
+        //margin-left: auto;
+        position: absolute;
+        top: 24%;
+        left: 10%;
+        transform: translateY(-30%);
+        width: 144px;
+        display: flex;
+        column-gap: 16px;
+        border: none;
+        justify-content: space-between;
+        background: transparent;
+        color: var(--color-maroonn);
+
+        .button_svg {
+            width: 20px;
+            height: 20px;
+            color: #D79C1A;
+            background-color: transparent;
+
+        }
+    }
 }
 
-.button_svg {
-    width: 35px;
-    height: 35px;
-    color: #D79C1A;
+/*.button {
+    margin-left: auto;
+    width: 144px;
+    display: flex;
+    column-gap: 16px;
+    border: none;
+    justify-content: space-between;
+    background: transparent;
+    color: var(--color-maroonn);
+
+    .button_svg {
+        width: 35px;
+        height: 35px;
+        color: #D79C1A;
+        background-color: transparent;
+    }
 }
 
-.title {
-    color: #D79C1A;
-    text-align: center;
-    font-family: "Be Vietnam";
-    font-size: 1.375rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 170%;
-}
-
+*/
 
 
 .card {
