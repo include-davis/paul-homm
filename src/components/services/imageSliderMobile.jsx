@@ -3,7 +3,7 @@ import styles from "@/styles/components/services/imageSliderMobile.module.scss"
 import Image from "next/image";
 import { useState } from "react";
 import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
-import { useTranslations, useMessages } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import DropDown from "@/components/dropDown/imageSliderDropdown.jsx"
 
 export async function getStaticProps({ locale }) {
@@ -65,15 +65,13 @@ function ImageSliderMobileFrame(props) {
 
 // Acutal image slider component
 export default function ImageSliderMobile({ images, services }) {
-    const t = useTranslations("Services");
+    const t = useTranslations("Services.mobile");
 
     const [activeIndex, setActiveIndex] = useState(0)
-    const [service, setService] = useState(services[0]);
-    const n = images.length
-    
-    const messages = useMessages()
+    const [service, setService] = useState(services[0])
 
     // Process images from array, concatenating from and back secondary images
+    const n = images.length
     const imagesFront = images.slice(0, 1)
     const imagesBack = images.slice(-1)
     const processedImages = imagesBack.concat(images).concat(imagesFront)
@@ -91,7 +89,10 @@ export default function ImageSliderMobile({ images, services }) {
       const right = (activeIndex + 1) % n
       changeService(right)
     }
-
+    
+    // console.log((t(`${service}.bulletNum`)))
+    const bulletCount = 5 // This is here for now because next-intl is not working properly
+    const bullets = [...Array(bulletCount).keys()];;
 
     // For dropdown
     return (
@@ -153,9 +154,11 @@ export default function ImageSliderMobile({ images, services }) {
             
             {/* Text under corresponding image */}
             <ul className={styles.info}>
-                { Object.entries(t(`mobile.${service}`)).map((item, index) => (
-                    <li key={index}>{t(item)}</li>
-                ))}
+                { bullets.map((bullet, index) => {
+                    return (
+                        <li key={index}>{t(`${service}.bullet${bullet + 1}`)}</li>
+                    )
+                })}
             </ul>
         </div>
     );
