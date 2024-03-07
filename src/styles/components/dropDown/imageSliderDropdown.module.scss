@@ -5,7 +5,7 @@
 
 .container {
     background-color: transparent;
-    width: 269px;
+    width: 70%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -20,9 +20,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--color-beige);
-    z-index: 100;
     padding: 8px 16px;
-    padding-bottom: 0px;
 }
 
 .header_icons{
@@ -32,7 +30,7 @@
     font-size: 2rem;
 }
 
-.selected{
+.selected {
     color: var(--color-maroon);
     text-align: center;
     font-family: Inter;

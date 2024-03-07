@@ -61,8 +61,12 @@ function ImageSliderMobileFrame(props) {
 }
 
 // Acutal image slider component
-export default function ImageSliderMobile({ images, services }) {
+export default function ImageSliderMobile() {
     const t = useTranslations("Services.mobile");
+
+    // Images and services
+    const services = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
+    const images = ["/images/services/healthEdu.png", "/images/services/hepatitis.png", "/images/services/specialtyClinics.png", "/images/services/vaccines.png"]
 
     const [activeIndex, setActiveIndex] = useState(0)
     const [service, setService] = useState(services[0])
@@ -87,6 +91,7 @@ export default function ImageSliderMobile({ images, services }) {
       changeService(right)
     }
     
+    // Keep track of bullets below images
     const bulletCount = parseInt(t(`${service}.bulletCount`))
     const bullets = [...Array(bulletCount).keys()];;
 
