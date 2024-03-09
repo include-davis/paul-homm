@@ -24,7 +24,7 @@ export default function About()
                 <div className = {styles.defaultClass}>
                 <h3>Our Sister Clinics</h3>
                 <ul>
-                    <li>VN Cares</li>
+                    <li>VN Care</li>
                     <li>HLUB</li>
                 </ul>
                 </div>
