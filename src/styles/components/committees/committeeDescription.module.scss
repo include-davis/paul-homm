@@ -2,7 +2,8 @@
     height: auto;
     background: var(--off-white, #FFFBF0);
     padding-bottom: 32px;
-    margin: 0 auto; /* Centering horizontally */
+    width: 100%;
+    margin: 0 auto; 
     text-align: center; 
 }
 
@@ -58,3 +59,15 @@
 .linkStyle{
     text-decoration: none;
 }
+
+@media only screen and (max-width: 768px) {
+    .content {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .buttonClass {
+        padding-top: 1em;
+    }
+} 
