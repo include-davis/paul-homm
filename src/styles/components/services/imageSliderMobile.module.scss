@@ -1,5 +1,6 @@
-@use 'src/styles/mixins'; //THIS IS REQUIRED!!
+@use 'src/styles/mixins';
 
+// Container to hold it all together
 .main_container {
     width: 100%;
     display: flex;
@@ -9,6 +10,7 @@
     background-color: var(--color-white);
 }
 
+// Styling around the dropdown component
 .dropdown {
     display: flex;
     justify-content: center;
@@ -18,6 +20,7 @@
     background-color: var(--color-maroon);
 }
 
+// Container that holds the image sliding carousel
 .window_container {
     width: 100%;
     display: flex;
@@ -31,7 +34,7 @@
 .arrow {
     height: 48px;
     aspect-ratio: 1;
-    background-color: var(--secondary);
+    background-color: var(--color-white);
     border-radius: 24px;
     border: none;
     flex-grow: 0;
@@ -54,6 +57,7 @@
     }
 }
 
+// Viewport for the sliding images
 .viewport_container {
     flex-grow: 1;
     overflow: hidden;
@@ -75,6 +79,7 @@
     gap: 8px;
 }
 
+// Frame that holds each image
 .frame {
     width: calc(calc(100% - 16px) / 2.6);
     flex-shrink: 0;
@@ -90,16 +95,14 @@
     transition: all 0.3s ease;
 }
 
+// Images that sit behind frontal image
 .frame.secondary {
     margin: 0 calc(-1 * calc(100% - 16px) / 2.6 * 0.1);
     transform: scale(0.8);
     opacity: 0.8;
 }
 
-.frame_content {
-    color: var(--text-light);
-}
-
+// Dots that indicate image index
 .dots {
     display: flex;
     flex-direction: row;
@@ -131,6 +134,7 @@
     }
 }
 
+// Info below the image carousel
 .info {
     display: flex;
     justify-content: center;

@@ -8,7 +8,7 @@ export default function imageSliderDropDown({ services, setImage, currService, s
     function toggleDropDown() {
         setDropDown(!dropDown);
     }
-    const clickService = (service, index) => {
+    const clickService = (service, index) => { // Changes service
         setService(service);
         setImage(index)
         toggleDropDown();

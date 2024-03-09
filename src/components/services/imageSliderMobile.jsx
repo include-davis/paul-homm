@@ -27,14 +27,14 @@ function calcDividor(numFramesShown, primary, scaleDiff) {
 
 // Calculations
 const framesShown = 3
-const scaleDiff = 0.2;
-const dividor = calcDividor(framesShown, 1, scaleDiff);
+const scaleDiff = 0.2; // This is how much I want to scale secondary images compared to first
+const dividor = calcDividor(framesShown, 1, scaleDiff); // Calculates factor by which I divide total width to get avg frame size
 
 const g = '8px'
 const totalGap = `calc(${framesShown - 1} * ${g})` // 2 * g
 const contentSpace = `calc(100% - ${totalGap})` // space we can work with is W - 2g
 const x = `calc(${contentSpace} / ${dividor})` // x = (W - 2g) / 2.6
-const shiftAmount = `calc(${x} * 0.74 + ${g})` 
+const shiftAmount = `calc(${x} * 0.74 + ${g})` // amount that slider shifts when service changes
 
 function ImageSliderMobileFrame(props) {
   const { selfIndex, activeIndex, image } = props
@@ -77,16 +77,16 @@ export default function ImageSliderMobile() {
     const imagesBack = images.slice(-1)
     const processedImages = imagesBack.concat(images).concat(imagesFront)
     
-    // Move left and right through images and change dropdown title
+    // Move left and right through images AND change dropdown title
     const changeService = (index) => {
         setActiveIndex(index)
         setService(services[index])
     }
-    const subIndex = () => {
+    const subIndex = () => { // Move left
       const left = (activeIndex + n - 1) % n
       changeService(left)
     }
-    const addIndex = () => {
+    const addIndex = () => { // Move right
       const right = (activeIndex + 1) % n
       changeService(right)
     }
@@ -95,7 +95,6 @@ export default function ImageSliderMobile() {
     const bulletCount = parseInt(t(`${service}.bulletCount`))
     const bullets = [...Array(bulletCount).keys()];;
 
-    // For dropdown
     return (
         <div className={styles.main_container}>
             {/* Dropdown */}
@@ -113,18 +112,20 @@ export default function ImageSliderMobile() {
                 {/* Image Slider */}
                 <div className={styles.viewport_container}>
                     <div className={styles.viewport}>
+                        
+                        {/* Embeds processed images each into ImageSliderMobileFrame */}
                         <div 
                             className={styles.content_belt}
                             style={{transform: `translateX(calc(${-(activeIndex)} * ${shiftAmount}))`}}
-                            >
+                        >
                             { processedImages.map((frame, index) => {
                                 return (
-                                <ImageSliderMobileFrame 
-                                    key={index} 
-                                    selfIndex={index - 1} 
-                                    activeIndex={activeIndex}
-                                    image={frame}
-                                />
+                                    <ImageSliderMobileFrame 
+                                        key={index} 
+                                        selfIndex={index - 1} 
+                                        activeIndex={activeIndex}
+                                        image={frame}
+                                    />
                                 )
                             }) 
                             }
