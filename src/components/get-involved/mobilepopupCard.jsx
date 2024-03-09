@@ -1,10 +1,10 @@
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
 import { useTranslations } from 'next-intl';
-import React from 'react';
 import React, { useState } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import styles from '@/styles/components/get-involved/mobilepopupCard.module.scss';
+import GetInvolved from '@/pages/get-involved';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -14,34 +14,40 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function PopupCard({ title, content }) {
-  const t = useTranslations('Popup Card');
-  const MultiContentCard = () => {
-    const [showFirstContent, setShowFirstContent] = useState(true);
-    const toggleContent = () => {
-      setShowFirstContent(!showFirstContent);
-    };
-  }
+export default function PopupCard({ card }) {
+  console.log(card);
+  const t = useTranslations(`GetInvolved.PopupCard.${card}`);
+  const [showFirstContent, setShowFirstContent] = useState(true);
+  const toggleContent = () => {
+    setShowFirstContent(!showFirstContent);
+  };
+
   return (
     <div className={styles.multicontentcard}>
-      <h2>{title}</h2>
       <div className={styles.layout}>
+        <h2>{t('title')}</h2>
         {showFirstContent ? (
           <div>
-            <p>{content}</p>
+            <p>{t('content')}</p>
           </div>
         ) : (
           <div>
-            <p>{content2}</p>
+            <p>{t('content2')}</p>
           </div>
         )}
       </div>
-      <button onClick={toggleContent}>
-        {showFirstContent ? content : content2}
+      {/* Button with styling */}
+      <button className={styles.button} onClick={toggleContent}>
+        {showFirstContent ? ('1/2') : ('2/2')}
       </button>
     </div>
   );
-};
+}
+
+/*
+  title={t(`${card}.title`)}
+  //   // content={t(`${card}.content`)}
+  //   // content2={t(`${card}.content2`)}
 /*      </div>
     </div>
     <div className={styles.container}>

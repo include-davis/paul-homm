@@ -1,64 +1,70 @@
-.container {
-    max-width: 1080px;
-    padding: 30px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-
-    background-color: var(--off-white, #FFFBF0);
-    border-radius: 12px;
-    border: 2px solid red;
-}
-
-.button {
-    margin-left: auto;
-    width: 144px;
+/*.multicontentcard {
     display: flex;
     align-items: center;
-    column-gap: 16px;
-    border: none;
-    background: transparent;
-    color: var(--color-maroonn);
-
-    .button_svg {
-        width: 45px;
-        height: 45px;
-    }
-
-    p {
-        font-size: 2.188rem;
-    }
-
+    font-family: var(--font-inter);
+    border-radius: 12px;
+    background-color: var(--off-white, #FFFBF0);
+    //height: 100vh;
 }
+*/
 
 .layout {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     font-family: var(--font-inter);
-    padding: 48px;
-
+    border-radius: 12px;
+    border-radius: 12px;
+    background-color: var(--off-white, #FFFBF0);
+    //height: 100vh;
+    width: 19.625rem;
+    height: 36.8125rem;
 
     >h1 {
+        /*width: 536px;
+        height: 64px;
+        flex-shrink: 0;
         color: var(--maroon, #5B1110);
         text-align: center;
         font-family: Jost;
-        font-size: 2.813rem;
+        font-size: 45px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        margin-bottom: 20px;
+        */
+        color: var(--maroon, #5B1110);
+        text-align: center;
+        font-family: Jost;
+        font-size: 45px;
+        width: 15.3125rem;
+        height: 1.875rem;
+        flex-shrink: 0;
     }
 
     >p {
-        color: var(--Off-Black, #333);
+        /*color: var(--Off-Black, #333);
         font-family: "Be Vietnam";
         font-size: 25px;
         font-style: normal;
         font-weight: 500;
         line-height: 170%;
+        text-align: center;
         width: 731px;
         justify-content: center;
+        */
+        font-family: "Be Vietnam";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 170%;
+        text-align: center;
+        width: 13.6875rem;
+        height: 27.625rem;
+        flex-shrink: 0;
+
+        .button {
+            color: var(--maroon, #5B1110);
+            background-color: transparent;
+            float: right;
+        }
     }
 }
