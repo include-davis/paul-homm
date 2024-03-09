@@ -53,9 +53,9 @@ export default function About()
                 <button className={styles.arrow} onClick={addIndex}>
                     <IoIosArrowForward />
                 </button>
-
             </div>
 
+            <div className={styles.cards_container}>
                 <div className={styles.viewport}> 
                     <div className={styles.content_belt}
                     style={{transform: `translateX(calc(${-activeIndex} * 100%))`}}>
@@ -68,6 +68,7 @@ export default function About()
                         </div>
                     </div>
                 </div>
+            </div>
                 
             
         </div>
