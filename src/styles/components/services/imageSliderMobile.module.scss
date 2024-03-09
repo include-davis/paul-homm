@@ -1,3 +1,5 @@
+@use 'src/styles/mixins'; //THIS IS REQUIRED!!
+
 .main_container {
     width: 100%;
     display: flex;
@@ -36,11 +38,20 @@
 
     text-align: center;
     font-size: 1.6rem;
-    color: var(--text-light);
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include mixins.phone {
+        font-size: 1rem;
+        aspect-ratio: 0.6;
+    }
+    
+    @include mixins.sm-phone {
+        font-size: 0.8rem;
+        aspect-ratio: 0.3;
+    }
 }
 
 .viewport_container {
@@ -100,6 +111,14 @@
     aspect-ratio: 1;
     border-radius: 8px;
     background-color: var(--color-beige);
+
+    @include mixins.phone {
+        width: 12px;
+    }
+
+    @include mixins.sm-phone {
+        width: 8px;
+    }
 }
 
 .dot.active {
@@ -121,14 +140,39 @@
     background-color: var(--color-maroon);
 
     width: 100%;
+
+    @include mixins.phone {
+        justify-content: flex-start;
+        padding-left: 104px;
+
+    }
+    
+    @include mixins.sm-phone {
+        padding: 16px 0px;
+        padding-left: 96px;
+    }
+ 
 }
 
 .info_items {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    @include mixins.phone {
+        width: 70%;
+    }
 }
 
 .info_item {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 170%;
+
+    @include mixins.phone {
+        font-size: 1.2rem;
+    }
+
+    @include mixins.sm-phone {
+        font-size: 1.1rem;
+    }
 }
