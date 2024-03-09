@@ -26,15 +26,13 @@ export default function PopupCard({ card }) {
     <div className={styles.multicontentcard}>
       <div className={styles.layout}>
         <h2>{t('title')}</h2>
-        {showFirstContent ? (
-          <div>
+        <div>
+          {showFirstContent ? (
             <p>{t('content')}</p>
-          </div>
-        ) : (
-          <div>
+          ) : (
             <p>{t('content2')}</p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       {/* Button with styling */}
       <button className={styles.button} onClick={toggleContent}>
@@ -43,6 +41,7 @@ export default function PopupCard({ card }) {
     </div>
   );
 }
+
 
 /*
   title={t(`${card}.title`)}

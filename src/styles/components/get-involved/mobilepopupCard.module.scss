@@ -10,49 +10,27 @@
 
 .layout {
     display: flex;
+    flex-direction: column;
     align-items: center;
     font-family: var(--font-inter);
     border-radius: 12px;
-    border-radius: 12px;
     background-color: var(--off-white, #FFFBF0);
-    //height: 100vh;
     width: 19.625rem;
     height: 36.8125rem;
 
-    >h1 {
-        /*width: 536px;
-        height: 64px;
-        flex-shrink: 0;
+    h1 {
         color: var(--maroon, #5B1110);
         text-align: center;
         font-family: Jost;
-        font-size: 45px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        */
-        color: var(--maroon, #5B1110);
-        text-align: center;
-        font-family: Jost;
-        font-size: 45px;
+        font-size: 25px;
         width: 15.3125rem;
         height: 1.875rem;
         flex-shrink: 0;
     }
 
-    >p {
-        /*color: var(--Off-Black, #333);
+    p {
         font-family: "Be Vietnam";
-        font-size: 25px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 170%;
-        text-align: center;
-        width: 731px;
-        justify-content: center;
-        */
-        font-family: "Be Vietnam";
-        font-size: 25px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 500;
         line-height: 170%;
@@ -60,11 +38,11 @@
         width: 13.6875rem;
         height: 27.625rem;
         flex-shrink: 0;
+    }
 
-        .button {
-            color: var(--maroon, #5B1110);
-            background-color: transparent;
-            float: right;
-        }
+    .button {
+        color: var(--maroon, #5B1110);
+        background-color: transparent;
+        float: right;
     }
 }
