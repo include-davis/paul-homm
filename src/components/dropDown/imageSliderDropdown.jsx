@@ -1,10 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/imageSliderDropdown.module.scss";
-import { RxDividerVertical } from "react-icons/rx";
-import { PiTranslate } from "react-icons/pi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useRouter } from 'next/router';
-import { useLocale } from 'next-intl';
 
 export default function imageSliderDropDown({ services, setImage, currService, setService }) {
     const [dropDown, setDropDown] = useState(false)
