@@ -87,10 +87,11 @@
 }
 
 
+
 .page_link.active {
     border-radius: 5px;
     background-color: var(--color-gold);
-
+    
     a {
         color: var(--color-maroon);
 
@@ -100,6 +101,8 @@
     }
         
 }
+
+
 
 .language_dropdown {
     position: absolute;
@@ -151,6 +154,7 @@
     .hamburger_menu {
         display: flex;
         font-size: 2rem;
+        
     }
 
     .pages {
@@ -167,9 +171,11 @@
         align-items: center;
         transition: all 0.3s ease-in-out;
         gap: 0;
+        z-index: 15;
 
         a {
             font-size: 1.3rem;
+            
         }
 
     }
@@ -177,6 +183,12 @@
     .pages.active {
         max-height: calc(100vh - var(--tablet-header-height));
     }
+
+    .link_wrapper {
+        width: 100%; 
+    }
+
+   
 
 }
 
@@ -223,6 +235,8 @@
     .pages.active {
         max-height: calc(100vh - var(--mobile-header-height));
     }
+
+    
 
 
 }

@@ -70,11 +70,16 @@ export default function Header() {
             <div className={`${styles.pages} ${active? styles.active : null}`}>
                 {links.map((link, index) => (
                     <li key = {index} className = {`${styles.page_link} ${activeLinks[index]? styles.active : null}`}>
-                        <Link 
-                            href={`${link.href}`} 
-                            onClick={() => toggleAll(index)}>
-                            {t(link.text)}
-                        </Link>
+                        <div className={styles.link_wrapper}>
+                            <Link 
+                                href={`${link.href}`} 
+                                onClick={() => toggleAll(index)}>
+                                
+
+                                    {t(link.text)}
+                                
+                            </Link>
+                        </div>
                     </li>
                 ))}
             </div>
