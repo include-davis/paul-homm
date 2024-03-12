@@ -55,6 +55,8 @@ function ImageSliderMobileFrame(props) {
             style={{ objectFit: "fill" }}
             fill={true}
             alt="Insert alt"
+            sizes={"(max-width: 1048px) 100vw"}
+            priority={image === "healthEdu.png" || image === "vaccines.png" ? "true" : "false"} // check for LCP elements
         />
       </div>
     )
@@ -66,7 +68,7 @@ export default function ImageSliderMobile() {
 
     // Images and services
     const services = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
-    const images = ["/images/services/healthEdu.png", "/images/services/hepatitis.png", "/images/services/specialtyClinics.png", "/images/services/vaccines.png"]
+    const images = ["healthEdu.png", "hepatitis.png", "specialtyClinics.png", "vaccines.png"]
 
     const [activeIndex, setActiveIndex] = useState(0)
     const [service, setService] = useState(services[0])
@@ -124,7 +126,7 @@ export default function ImageSliderMobile() {
                                         key={index} 
                                         selfIndex={index - 1} 
                                         activeIndex={activeIndex}
-                                        image={frame}
+                                        image={`/images/services/${frame}`}
                                     />
                                 )
                             }) 
