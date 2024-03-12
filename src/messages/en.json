@@ -1,61 +1,56 @@
 {
-    "Index": {
-      "title": "Home",
-      "description": "Testing internationalization."
-    }, 
-
-    "CommitteeCards": {
-      "committee1": {
-        "name": "Cardiopulmonary", 
-        "image":"/images/committees/cardiopulmonary.png",
-        "path": "/committees/cardiopulmonary"
-      },
-      "committee2": {
-        "name": "Covered California", 
-        "image":"/images/committees/covered_california.png",
-        "path": "/committees/covered_california"
-      }, 
-      "committee3": {
-        "name": "Dermatology", 
-        "image":"/images/committees/dermatology.png",
-        "path": "/committees/dermatology"
-      },
-
-      "committee4": {
-        "name": "Diabetes", 
-        "image":"/images/committees/diabetes.png",
-        "path": "/committees/diabetes"
-      },
-      "committee5": {
-        "name": "Patient Assistance Program", 
-        "image":"/images/committees/patient_assistance_program.png",
-        "path": "/committees/patient_assistance_program"
-      },
-      "committee6": {
-        "name": "Hepatitis", 
-        "image":"/images/committees/hepatitis.png",
-        "path": "/committees/hepatitis"
-      },
-      
-      "committee7": {
-        "name": "Neurology", 
-        "image":"/images/committees/neurology.png",
-        "path": "/committees/neurology"
-      },
-      "committee8": {
-        "name": "Women's Health", 
-        "image":"/images/committees/womens_health.png",
-        "path": "/committees/womens_health"
-      },
-      "committee9": {
-        "name": "Ophthalmology", 
-        "image":"/images/committees/ophthalmology.png",
-        "path": "/committees/ophthalmology"
-      }
+  "Index": {
+    "title": "Home",
+    "description": "Testing internationalization."
+  },
+  "CommitteeCards": {
+    "committee1": {
+      "name": "Cardiopulmonary",
+      "image": "/images/committees/cardiopulmonary.png",
+      "path": "/committees/cardiopulmonary"
     },
-
-    "CommitteesPage": {
-      "meetOurCommittees": "Meet Our Committees!"
+    "committee2": {
+      "name": "Covered California",
+      "image": "/images/committees/covered_california.png",
+      "path": "/committees/covered_california"
+    },
+    "committee3": {
+      "name": "Dermatology",
+      "image": "/images/committees/dermatology.png",
+      "path": "/committees/dermatology"
+    },
+    "committee4": {
+      "name": "Diabetes",
+      "image": "/images/committees/diabetes.png",
+      "path": "/committees/diabetes"
+    },
+    "committee5": {
+      "name": "Patient Assistance Program",
+      "image": "/images/committees/patient_assistance_program.png",
+      "path": "/committees/patient_assistance_program"
+    },
+    "committee6": {
+      "name": "Hepatitis",
+      "image": "/images/committees/hepatitis.png",
+      "path": "/committees/hepatitis"
+    },
+    "committee7": {
+      "name": "Neurology",
+      "image": "/images/committees/neurology.png",
+      "path": "/committees/neurology"
+    },
+    "committee8": {
+      "name": "Women's Health",
+      "image": "/images/committees/womens_health.png",
+      "path": "/committees/womens_health"
+    },
+    "committee9": {
+      "name": "Ophthalmology",
+      "image": "/images/committees/ophthalmology.png",
+      "path": "/committees/ophthalmology"
     }
-
+  },
+  "CommitteesPage": {
+    "meetOurCommittees": "Meet Our Committees!"
   }
+}

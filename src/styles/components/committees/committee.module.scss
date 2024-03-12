@@ -1,23 +1,23 @@
+@use 'src/styles/mixins';
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
 
 .committee_card {
     position: relative;
-    width: 306px; 
+    width: 306px;
     height: 306px;
 }
-  
+
 .committee_card h3 {
-position: absolute;
-top: 50%; 
-left: 50%; 
-transform: translate(-50%, -50%); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-color:var(--color-maroon);
-font-family: "Be Vietnam";
-font-size: 1.875rem;
-font-style: normal;
-font-weight: 700;
-text-align: center; 
-width: 100%;
+    color: var(--color-maroon);
+    font-family: "Be Vietnam";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
 }
-
