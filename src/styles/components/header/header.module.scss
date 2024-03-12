@@ -8,7 +8,7 @@
     background-color: var(--color-maroon);
     height: var(--desktop-header-height);
     justify-content: space-around;
-    
+
 }
 
 .title {
@@ -19,16 +19,17 @@
     align-items: center;
     width: 100%;
     position: relative;
-    
 
-    > *:first-child {
-        margin-left: 32px; 
+
+    >*:first-child {
+        margin-left: 32px;
     }
 
 }
 
 .title_text {
     color: var(--color-white);
+
     h1 {
         font-family: "Malayalam MN";
         font-size: 2.8125rem;
@@ -52,7 +53,7 @@
     list-style: none;
     justify-content: space-evenly;
     align-items: center;
-    
+
     a {
         color: var(--color-gold);
         text-align: center;
@@ -65,13 +66,22 @@
         transition: border-bottom 0.3s ease;
         padding-left: 16px;
         padding-right: 16px;
+        /* ADDED: helps prevent the slight shift of elements when going from no border to a border*/
+        border-bottom: 2px solid transparent;
 
         &:hover {
             border-bottom: 2px solid var(--color-gold);
         }
 
+        /* ADDED: styling to ensure inline-block would allow for width modifications & prevent small shifts when transitioning from border to no border*/
+        .link_text {
+            display: inline-block;
+            box-sizing: border-box;
+            border-bottom: 2px solid transparent;
+        }
+
     }
- 
+
 }
 
 .hamburger_menu {
@@ -83,40 +93,38 @@
     font-size: 4rem;
     color: var(--color-gold);
     padding-right: 16px;
-    
-}
 
+}
 
 
 .page_link.active {
     border-radius: 5px;
     background-color: var(--color-gold);
-    
+
     a {
         color: var(--color-maroon);
 
         &:hover {
-            border-bottom: none;
+            /* ADDED: prevents element shift*/
+            border-bottom: 2px solid transparent;
         }
     }
-        
+
 }
-
-
 
 .language_dropdown {
     position: absolute;
     display: inline-block;
     right: 320px;
     top: 24px;
-    
+
 }
 
-.language_dropdown > div {
-    position: absolute; 
-    top: 100%; 
+.language_dropdown>div {
+    position: absolute;
+    top: 100%;
     left: 0;
-    z-index: 20; 
+    z-index: 20;
 }
 
 @include mixins.tablet {
@@ -125,6 +133,7 @@
         flex-direction: row;
         justify-content: space-between;
         height: var(--tablet-header-height);
+
         .title {
             a {
                 img {
@@ -137,15 +146,18 @@
 
     .title {
         margin-top: 0px;
-        > *:first-child {
-            margin-left: 24px; 
+
+        >*:first-child {
+            margin-left: 24px;
         }
     }
+
     .title_text {
         h1 {
-           font-size: 1.8rem; 
+            font-size: 1.8rem;
 
         }
+
         h2 {
             display: none;
         }
@@ -154,7 +166,6 @@
     .hamburger_menu {
         display: flex;
         font-size: 2rem;
-        
     }
 
     .pages {
@@ -171,30 +182,53 @@
         align-items: center;
         transition: all 0.3s ease-in-out;
         gap: 0;
-        z-index: 15;
 
         a {
             font-size: 1.3rem;
-            
+            /* ADDED: ensures link will work anywhere within the menu area*/
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* ADDED: ensures correct coloring and alignment on hover */
+        a:hover {
+            border-bottom: 2px solid transparent;
+
+            .link_text {
+                border-bottom: 2px solid var(--color-gold);
+            }
+        }
+
+        /* ADDED: modifies styling from desktop */
+        .page_link {
+            width: 100%;
+            border-bottom: none;
+        }
+
+        /* ADDED: ensures correct coloring, just need to change these values */
+        .page_link.active {
+            background-color: transparent;
+
+            .link_text {
+                background-color: var(--color-gold);
+                border-bottom: 2px solid transparent;
+            }
         }
 
     }
 
     .pages.active {
         max-height: calc(100vh - var(--tablet-header-height));
-    }
 
-    .link_wrapper {
-        width: 100%; 
-    }
 
-   
+    }
 
 }
 
 @include mixins.phone {
     .header {
         height: var(--mobile-header-height);
+
         .title {
             a {
                 img {
@@ -206,15 +240,15 @@
     }
 
     .title {
-      
-        > *:first-child {
-            margin-left: 12px; 
+
+        >*:first-child {
+            margin-left: 12px;
         }
     }
 
     .title_text {
         h1 {
-           font-size: 1.2rem; 
+            font-size: 1.2rem;
 
         }
     }
@@ -226,6 +260,7 @@
     .pages {
         top: var(--mobile-header-height);
         height: calc(100vh - var(--mobile-header-height));
+
         a {
             font-size: 1.2rem;
         }
@@ -235,8 +270,6 @@
     .pages.active {
         max-height: calc(100vh - var(--mobile-header-height));
     }
-
-    
 
 
 }

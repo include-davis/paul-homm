@@ -10,9 +10,9 @@ import LangDropDown from "../dropDown/dropDown";
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
+        props: {
+            messages: (await import(`@/messages/${locale}.json`)).default
+        }
     };
 }
 
@@ -26,7 +26,7 @@ export default function Header() {
     //use state for hamburger menu 
     const [active, setActive] = useState(false)
     const toggleActive = () => {
-      setActive(!active)
+        setActive(!active)
     }
 
     const toggleAll = (index) => {
@@ -47,13 +47,13 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.title}>
-                <a href = '/'>
+                <a href='/'>
                     <Image
                         src="/images/header/paul_hom_logo.png"
                         width={110}
                         height={110}
                         alt="Paul Hom logo"
-                        href = '/'
+                        href='/'
                     />
                 </a>
                 <div className={styles.title_text}>
@@ -62,34 +62,33 @@ export default function Header() {
                 </div>
 
                 <div className={styles.language_dropdown}>
-                    <LangDropDown/>
+                    <LangDropDown />
                 </div>
             </div>
-            
-                
-            <div className={`${styles.pages} ${active? styles.active : null}`}>
-                {links.map((link, index) => (
-                    <li key = {index} className = {`${styles.page_link} ${activeLinks[index]? styles.active : null}`}>
-                        <div className={styles.link_wrapper}>
-                            <Link 
-                                href={`${link.href}`} 
-                                onClick={() => toggleAll(index)}>
-                                
 
-                                    {t(link.text)}
-                                
+
+            <div className={`${styles.pages} ${active ? styles.active : null}`}>
+                {links.map((link, index) => (
+                    <li key={index} className={`${styles.page_link} ${activeLinks[index] ? styles.active : null}`}>
+                        <div className={styles.link_wrapper}>
+                            <Link
+
+                                href={`${link.href}`}
+                                onClick={() => toggleAll(index)}>
+                                <p className={styles.link_text}>{t(link.text)}</p>
+
                             </Link>
                         </div>
                     </li>
                 ))}
             </div>
-            
+
             <button
                 className={styles.hamburger_menu}
-                onClick = {toggleActive}>
-                {active? <RxCross1/> : <IoMenuOutline/>}
+                onClick={toggleActive}>
+                {active ? <RxCross1 /> : <IoMenuOutline />}
             </button>
-            
+
         </header>
     );
 }
