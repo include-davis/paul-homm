@@ -11,13 +11,57 @@
 }
 
 // Styling around the dropdown component
-.dropdown {
+.dropdown_oneline {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: calc(16 * 8px);
 
-    padding: 16px 0px;
     background-color: var(--color-maroon);
+
+    position: relative;
+
+    > div {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+    }
+    
+    @include mixins.phone {
+        height: 80px;
+    }
+
+    @include mixins.sm-phone {
+        height: 64px;
+    }
+}
+
+.dropdown_twolines { // if header message is too long, then we have this styling due to absolute nature
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(22 * 8px);
+
+    background-color: var(--color-maroon);
+
+    position: relative;
+
+    > div {
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+    }
+    
+    @include mixins.phone {
+        height: calc(15 * 8px);
+    }
+
+    @include mixins.sm-phone {
+        > div {
+            top: 17%;
+        }
+        height: calc(11 * 8px);
+    }
 }
 
 // Container that holds the image sliding carousel

@@ -101,7 +101,7 @@ export default function ImageSliderMobile() {
     return (
         <div className={styles.main_container}>
             {/* Dropdown */}
-            <div className={styles.dropdown}>
+            <div className={service.length < 25 ? styles.dropdown_oneline : styles.dropdown_twolines}>
                 <DropDown services={services} setImage={setActiveIndex} currService={service} setService={setService}/>
             </div>
 
