@@ -68,7 +68,8 @@ export default function ImageSliderMobile() {
 
     // Images and services
     const services = ["Specialty Clinics", "Hepatitis", "Health Education and Preventative Measures", "Vaccines"];
-    const images = ["healthEdu.png", "hepatitis.png", "specialtyClinics.png", "vaccines.png"]
+    const images = services.map((service) => t(`${service}.image`));
+    // const images = [t(services[0].image), "hepatitis.png", "specialtyClinics.png", "vaccines.png"]
 
     const [activeIndex, setActiveIndex] = useState(0)
     const [service, setService] = useState(services[0])
@@ -126,7 +127,7 @@ export default function ImageSliderMobile() {
                                         key={index} 
                                         selfIndex={index - 1} 
                                         activeIndex={activeIndex}
-                                        image={`/images/services/${frame}`}
+                                        image={frame}
                                     />
                                 )
                             }) 
