@@ -29,9 +29,10 @@ export default function Home() {
         getClosures();
         getEvents();
     }, [])
-    
+
     const getClosures = async () => {
         try{
+
             const res = await fetch('/api/closures', {
                 method: 'GET',
                 headers: {
@@ -42,15 +43,18 @@ export default function Home() {
             const data = await res.json();
             const resDates = data.data;
             const formattedDates = resDates.map((dateString)=>{
-                console.log(dateString);
-                const date = new Date(dateString.date);
-                
-                return format.dateTime(date, {
+                const now = new Date();
+                const date = new Date(now.getTimezoneOffset() > 420 ?  `${dateString.date}T00:00:00-08:00` : `${dateString.date}T00:00:00-07:00` );
+                const formattedDate = format.dateTime(date, {
                     year: "numeric",
                     month: "short",
                     day: "numeric"
                 });
+                return formattedDate;
             })
+            // 5 upcoming dates rendered at most
+            formattedDates.sort();
+            formattedDates.length = formattedDates.length > 5 ? 5 : formattedDates.length;
             setDates(formattedDates);
         }
         catch(e){
@@ -73,19 +77,33 @@ export default function Home() {
             const data = await res.json();
             const resEvents = data.data;
             const formattedEvents = resEvents.map((event)=>{
-                console.log(event);
-                const date = new Date(event.event_date);
-                const fixedDate = format.dateTime(date, {
+                const now = new Date();
+                const date = new Date(now.getTimezoneOffset() > 420 ?  `${event.event_date}T00:00:00-08:00` : `${event.event_date}T00:00:00-07:00` );
+                const formattedDate = format.dateTime(date, {
                     year: "numeric",
                     month: "short",
                     day: "numeric"
                 })
                 return { 
                     title: event.event_title,
-                    date: fixedDate
+                    date: formattedDate
                 };
-
             })
+
+            const cmpDate = (a,b) => {
+                const d1 = new Date(a.date).getTime();
+                const d2 = new Date(b.date).getTime();
+
+                if(d1 > d2){
+                    return 1;
+                } else if (d1 < d2){
+                    return -1;
+                } else{
+                    return 0;
+                }
+            }
+            formattedEvents.sort(cmpDate);
+            formattedEvents.length = formattedEvents.length > 5 ? 5 : formattedEvents.length;
             setEvents(formattedEvents);
         }
         catch(e){

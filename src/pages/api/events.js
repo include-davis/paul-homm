@@ -1,15 +1,9 @@
-/*
-1. include check for if future date
-2. send only 5 upcoming dates  (format all future dates, sort increasing, if len>5 dates.splice(5)
-3. check for locale received in post request
-4. change hmn to ha
-*/
-
 export default async function getEvents(req, res){
     if(req.method==='POST' && req.body.locale){
         const locale = req.body.locale === 'hmn'? 'ha': req.body.locale;
+        const today = new Date().toISOString().split('T')[0];        // future events only
         try{
-            const body = await fetch(`${process.env.CMS_BASE_URL}/upcoming-events?locale=${locale}&populate=*`, 
+            const body = await fetch(`${process.env.CMS_BASE_URL}/upcoming-events?locale=${locale}&populate=*&publicationState=live&filters[$and][0][event_date][$gte]=${today}`, 
             {
                 method: 'GET',
                 headers: {
@@ -17,7 +11,6 @@ export default async function getEvents(req, res){
                     `Bearer ${process.env.CMS_ADMIN_KEY}`,
             }})
             const resssss = await body.json();
-            console.log(resssss.data);
             if(resssss.data){
                 const events = resssss.data
                 res.send({
