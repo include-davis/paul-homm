@@ -1,13 +1,3 @@
-/*.multicontentcard {
-    display: flex;
-    align-items: center;
-    font-family: var(--font-inter);
-    border-radius: 12px;
-    background-color: var(--off-white, #FFFBF0);
-    //height: 100vh;
-}
-*/
-
 .layout {
     display: flex;
     flex-direction: column;
@@ -22,10 +12,12 @@
         color: var(--maroon, #5B1110);
         text-align: center;
         font-family: Jost;
-        font-size: 25px;
+        //font-size: 25px;
+        //font-size: 70px;
         width: 15.3125rem;
         height: 1.875rem;
         flex-shrink: 0;
+        padding-bottom: 40px;
     }
 
     p {
@@ -34,15 +26,23 @@
         font-style: normal;
         font-weight: 500;
         line-height: 170%;
-        text-align: center;
+        white-space: pre-line;
+        //text-align: center;
         width: 13.6875rem;
         height: 27.625rem;
-        flex-shrink: 0;
+        flex-shrink: 0
     }
 
     .button {
         color: var(--maroon, #5B1110);
         background-color: transparent;
-        float: right;
+        position: absolute;
+        align-self: flex-end;
+        border: none;
+
+        .button_svg {
+            width: 45px;
+            height: 45px;
+        }
     }
 }

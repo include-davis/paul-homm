@@ -2,9 +2,9 @@
 /* view and test it out by importing it to the respective page */
 import { useTranslations } from 'next-intl';
 import React, { useState } from "react";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import styles from '@/styles/components/get-involved/mobilepopupCard.module.scss';
-import GetInvolved from '@/pages/get-involved';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -24,6 +24,9 @@ export default function PopupCard({ card }) {
 
   return (
     <div className={styles.multicontentcard}>
+      <button className={styles.button1}>
+        <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
+      </button>
       <div className={styles.layout}>
         <h2>{t('title')}</h2>
         <div>
@@ -32,32 +35,16 @@ export default function PopupCard({ card }) {
           ) : (
             <p>{t('content2')}</p>
           )}
+          {/* Button with styling */}
+          <button className={styles.button} onClick={toggleContent}>
+            {showFirstContent ? (
+              <>1/2 <MdKeyboardArrowRight /></>
+            ) : (
+              <> <MdKeyboardArrowLeft />2/2 </>
+            )}
+          </button>
         </div>
       </div>
-      {/* Button with styling */}
-      <button className={styles.button} onClick={toggleContent}>
-        {showFirstContent ? ('1/2') : ('2/2')}
-      </button>
     </div>
   );
 }
-
-
-/*
-  title={t(`${card}.title`)}
-  //   // content={t(`${card}.content`)}
-  //   // content2={t(`${card}.content2`)}
-/*      </div>
-    </div>
-    <div className={styles.container}>
-      <button className={styles.button}>
-        <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
-      </button>
-      <div className={styles.layout}>
-        <h1>{title}</h1>
-        <p>{content}</p>
-      </div>
-    </div>
-  )
-}
-*/
