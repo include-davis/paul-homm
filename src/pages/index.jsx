@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { useTranslations, useFormatter } from 'next-intl';
+import { useTranslations, useFormatter, useLocale } from 'next-intl';
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
@@ -19,12 +19,15 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
     const t = useTranslations('Index');
-
     const format = useFormatter();
+    const locale = useLocale();
+ 
     const [dates, setDates] = useState([]);
-
+    const [events, setEvents] = useState([]);    
+    
     useEffect(() => {
         getClosures();
+        getEvents();
     }, [])
     
     const getClosures = async () => {
@@ -51,14 +54,51 @@ export default function Home() {
             setDates(formattedDates);
         }
         catch(e){
-            console.error('error:', e);
+            console.log('error:', e);
         }
     }
+
+    const getEvents = async () => {
+        try{
+            const res = await fetch('/api/events', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": 'application/json',
+                },
+                body: JSON.stringify({
+                    locale: locale,
+                })
+            })
+
+            const data = await res.json();
+            const resEvents = data.data;
+            const formattedEvents = resEvents.map((event)=>{
+                console.log(event);
+                const date = new Date(event.event_date);
+                const fixedDate = format.dateTime(date, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                })
+                return { 
+                    title: event.event_title,
+                    date: fixedDate
+                };
+
+            })
+            setEvents(formattedEvents);
+        }
+        catch(e){
+            console.log(e);
+        }
+    }
+
     
     console.log(dates);
+    console.log(events);
 
     // const dates = ["date1", "date2", "date3", "date4", "date5"]
-    const events = ["event1", "event2", "event3", "event4", "event5"]
+    // const events = ["event1", "event2", "event3", "event4", "event5"]
 
     return (
         <div>
@@ -124,13 +164,13 @@ export default function Home() {
                         <h1>{t('cards.events.title')}</h1>
                         <div className={styles.events}>
                             <ul>
-                                {dates.map((item, index) => (
-                                    <li key={index}>{t('cards.events.' + item)}</li>
+                                {events.map((item, index) => (
+                                    <li key={index}>{item.date}</li>
                                 ))}
                             </ul>
                             <ul>
                                 {events.map((item, index) => (
-                                    <li key={index}>{t('cards.events.' + item)}</li>
+                                    <li key={index}>{item.title}</li>
                                 ))}
                             </ul>
                             <div className={styles.events_image}>
