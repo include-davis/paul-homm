@@ -362,108 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiClosureDateClosureDate extends Schema.CollectionType {
-  collectionName: 'closure_dates';
-  info: {
-    singularName: 'closure-date';
-    pluralName: 'closure-dates';
-    displayName: 'Closure Date';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    date: Attribute.Date &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::closure-date.closure-date',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::closure-date.closure-date',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::closure-date.closure-date',
-      'oneToMany',
-      'api::closure-date.closure-date'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiUpcomingEventUpcomingEvent extends Schema.CollectionType {
-  collectionName: 'upcoming_events';
-  info: {
-    singularName: 'upcoming-event';
-    pluralName: 'upcoming-events';
-    displayName: 'Upcoming Event';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    event_date: Attribute.Date &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    event_title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::upcoming-event.upcoming-event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::upcoming-event.upcoming-event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::upcoming-event.upcoming-event',
-      'oneToMany',
-      'api::upcoming-event.upcoming-event'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -890,6 +788,90 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiClosureDateClosureDate extends Schema.CollectionType {
+  collectionName: 'closure_dates';
+  info: {
+    singularName: 'closure-date';
+    pluralName: 'closure-dates';
+    displayName: 'Closure Date';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    closure_date: Attribute.Date & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::closure-date.closure-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::closure-date.closure-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUpcomingEventUpcomingEvent extends Schema.CollectionType {
+  collectionName: 'upcoming_events';
+  info: {
+    singularName: 'upcoming-event';
+    pluralName: 'upcoming-events';
+    displayName: 'Upcoming Event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    event_date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    event_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::upcoming-event.upcoming-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::upcoming-event.upcoming-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::upcoming-event.upcoming-event',
+      'oneToMany',
+      'api::upcoming-event.upcoming-event'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -900,8 +882,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::closure-date.closure-date': ApiClosureDateClosureDate;
-      'api::upcoming-event.upcoming-event': ApiUpcomingEventUpcomingEvent;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -910,6 +890,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::closure-date.closure-date': ApiClosureDateClosureDate;
+      'api::upcoming-event.upcoming-event': ApiUpcomingEventUpcomingEvent;
     }
   }
 }

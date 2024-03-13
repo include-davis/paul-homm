@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
-import { useTranslations } from "next-intl";
+import { useTranslations, useFormatter } from 'next-intl';
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
 import { BiSolidMessage } from "react-icons/bi";
@@ -7,7 +8,6 @@ import { BiSolidMessage } from "react-icons/bi";
 import styles from "@/styles/pages/home/home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 export async function getStaticProps({ locale }) {
     return {
@@ -20,7 +20,44 @@ export async function getStaticProps({ locale }) {
 export default function Home() {
     const t = useTranslations('Index');
 
-    const dates = ["date1", "date2", "date3", "date4", "date5"]
+    const format = useFormatter();
+    const [dates, setDates] = useState([]);
+
+    useEffect(() => {
+        getClosures();
+    }, [])
+    
+    const getClosures = async () => {
+        try{
+            const res = await fetch('/api/closures', {
+                method: 'GET',
+                headers: {
+                    "Content-Type": 'application/json',
+                }
+            })
+
+            const data = await res.json();
+            const resDates = data.data;
+            const formattedDates = resDates.map((dateString)=>{
+                console.log(dateString);
+                const date = new Date(dateString.date);
+                
+                return format.dateTime(date, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                });
+            })
+            setDates(formattedDates);
+        }
+        catch(e){
+            console.error('error:', e);
+        }
+    }
+    
+    console.log(dates);
+
+    // const dates = ["date1", "date2", "date3", "date4", "date5"]
     const events = ["event1", "event2", "event3", "event4", "event5"]
 
     return (
@@ -78,7 +115,7 @@ export default function Home() {
                         <h1>{t('cards.closure.title')}</h1>
                         <ul>
                             {dates.map((item, index) => {
-                                return <li key={index}>{t('cards.closure.' + item)}</li>
+                                return <li key={index}>{item}</li>
                             })}
                         </ul>
                     </div>

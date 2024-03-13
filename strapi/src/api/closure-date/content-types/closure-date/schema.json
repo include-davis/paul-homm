@@ -9,18 +9,9 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
-    "date": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+    "closure_date": {
       "type": "date",
       "required": true,
       "unique": true
