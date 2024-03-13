@@ -2,19 +2,18 @@ import styles from "@/styles/pages/services/services.module.scss";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-/* add and import styles */
-/* view and test it out by importing it to the respective page */
 
-/* images go in public folder */
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: (await import(`@/messages/${locale}.json`)).default
+    }
+  };
+}
 
-/*
-Used this video to make the tab component! 
-  https://www.youtube.com/watch?v=WkREeDy2WQ4&ab_channel=TheWebSchool. 
 
-Used this to figure out the class naming convention to use for multiple classes 
-  https://stackoverflow.com/questions/65912413/how-to-add-multiple-classnames-to-nextjs-elements 
-*/
 
 export default function ImageSlider() {
   const [currTab, setCurrTab] = useState(1);
@@ -25,21 +24,23 @@ export default function ImageSlider() {
 
   const slideOneText = ["Musculoskeletal Clinic (MSK)", "Dermatology", "Cardiopulmonary Clinic", "Liver Clinic"];
 
+  const t = useTranslations('Services');
+
   return (
     <div className={styles.slideContainer}>
 
       <div className={styles.tabContainer}>
         <button className={currTab === 1 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(1)}>
-          Specialty Clinics
+          {t('tabs.tab1')}
         </button>
         <button className={currTab === 2 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(2)}>
-          Hepatitis
+          {t('tabs.tab2')}
         </button>
         <button className={currTab === 3 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab} ${styles.tabExcep}`} onClick={() => toggleTab(3)}>
-          Health Education & Preventative Measures
+          {t('tabs.tab3')}
         </button>
         <button className={currTab === 4 ? `${styles.tab} ${styles.activeTab}` : `${styles.tab}`} onClick={() => toggleTab(4)}>
-          Vaccines
+          {t('tabs.tab4')}
         </button>
       </div>
 
@@ -56,10 +57,10 @@ export default function ImageSlider() {
 
           <div className={styles.slideText}>
             <ul>
-              <li>Musculoskeletal Clinic (MSK)</li>
-              <li>Dermatology</li>
-              <li>Cardiopulmonary Clinic</li>
-              <li>Liver Clinic</li>
+              <li>{t('slides.slide1.list.item1')}</li>
+              <li>{t('slides.slide1.list.item2')}</li>
+              <li>{t('slides.slide1.list.item3')}</li>
+              <li>{t('slides.slide1.list.item4')}</li>
             </ul>
           </div>
         </div>
@@ -75,11 +76,11 @@ export default function ImageSlider() {
 
           <div className={`${styles.slideText}`}>
             <ul>
-              <li>Liver cancer is often tied to Hepatitis B</li>
-              <li>Transmission: blood, sex, mother-to-child; late diagnosis common</li>
-              <li>Asians more vulnerable, higher infection rates, mortality</li>
-              <li>Screening, vaccination, tratments available</li>
-              <li>Free vaccines</li>
+              <li>{t('slides.slide2.list.item1')}</li>
+              <li>{t('slides.slide2.list.item2')}</li>
+              <li>{t('slides.slide2.list.item3')}</li>
+              <li>{t('slides.slide2.list.item4')}</li>
+              <li>{t('slides.slide2.list.item5')}</li>
             </ul>
           </div>
         </div>
@@ -95,9 +96,9 @@ export default function ImageSlider() {
 
           <div className={styles.slideText}>
             <ul>
-              <li>Hypertension Workshops</li>
-              <li>Nutrition Counseling</li>
-              <li>Health Fair</li>
+              <li>{t('slides.slide3.list.item1')}</li>
+              <li>{t('slides.slide3.list.item2')}</li>
+              <li>{t('slides.slide3.list.item3')}</li>
             </ul>
           </div>
         </div>
@@ -113,9 +114,9 @@ export default function ImageSlider() {
 
           <div className={styles.slideText}>
             <ul>
-              <li>Hepatitis</li>
-              <li>Annual flu-shots</li>
-              <li>Health Fair</li>
+              <li>{t('slides.slide4.list.item1')}</li>
+              <li>{t('slides.slide4.list.item2')}</li>
+              <li>{t('slides.slide4.list.item3')}</li>
             </ul>
           </div>
 
