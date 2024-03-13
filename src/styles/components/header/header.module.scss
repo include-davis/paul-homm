@@ -71,7 +71,6 @@
     
 }
 
-
 .page_link.active {
     // change how the active link appears here!!
     border-radius: 5px;
@@ -88,5 +87,13 @@
         
     }
 
-    
+.language_dropdown{
+    position: relative;
+    display: inline-block;
 
+    >div {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}

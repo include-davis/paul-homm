@@ -1,6 +1,6 @@
 import styles from "@/styles/components/footer/footer.module.scss";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,8 +26,7 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Footer() {
-
-    const t = useTranslations('Footer');
+    const t = useTranslations("Footer");
 
     // Function creates a page link list element from the parameters
     function createPageLink(page, route, index) {
@@ -46,34 +45,33 @@ export default function Footer() {
 
                 {/* contacts */}
                 <div className={styles.contact}>
-                    <p>{t('contact.message')}</p>
+                    <p className={styles.contact_us}>{t('contact.message')}</p>
                     <div className={styles.icons}>
-                        <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <a href="https://www.facebook.com/paulhomasianclinicatucdavis" target="_blank" className={styles.circle_frame}>
                             <MdFacebook className={styles.facebook} />
                         </a>
-                        <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <a href="https://www.instagram.com/paulhomasianclinic/?hl=en" target="_blank" className={styles.circle_frame}>
                             <AiOutlineInstagram />
                         </a>
-                        <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <a href="tel: 916-736-3966" target="_blank" className={styles.circle_frame}>
                             <HiOutlinePhone />
                         </a>
-                        <a href="https://includedavis.com" target="_blank" className={styles.circle_frame}>
+                        <a href="mailto: clinic@vncares.org" className={styles.circle_frame}>
                             <MdOutlineMailOutline />
                         </a>
                     </div>
-                    <p>{t('contact.address_pt1')}<br />{t('contact.address_pt2')}</p>
+                    <p className={styles.address}>{t('contact.address')}</p>
                 </div>
 
                 {/* thank you message */}
                 <div className={styles.sponsor}>
-                    <p>{t('sponsor_pt1')}<br />{t('sponsor_pt2')}</p>
-                    <div>
+                    <p>{t('sponsor.message')}</p>
+                    <div className={styles.sponsor_image}>
                         <Image
-                            src="/credit-union.png"
-                            width={280}
-                            height={100}
+                            src={t('sponsor.image')}
                             alt={"Safe Credit Union Logo"}
-                            style={{ borderRadius: '12px' }}
+                            style={{ objectFit: "fill" }}
+                            fill={true}
                         />
                     </div>
                 </div>
@@ -83,6 +81,5 @@ export default function Footer() {
             <div className={styles.subfooter}>{t('include')}</div>
 
         </footer>
-
     );
 }
