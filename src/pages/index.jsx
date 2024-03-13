@@ -93,10 +93,6 @@ export default function Home() {
         }
     }
 
-    
-    console.log(dates);
-    console.log(events);
-
     // const dates = ["date1", "date2", "date3", "date4", "date5"]
     // const events = ["event1", "event2", "event3", "event4", "event5"]
 
