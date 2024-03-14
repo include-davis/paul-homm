@@ -15,6 +15,13 @@ export async function getStaticProps({ locale }) {
 }
 
 const data = ["card1", "card2","card3","card4","card5"]
+const dimensions = [
+    ["220px", "168px"],
+    ["226px", "199px"],
+    ["186px", "289px"],
+    ["195px", "291px"],
+    ["212px", "291px"]
+]
 
 export default function About()
 {
@@ -62,7 +69,8 @@ export default function About()
                         <div className={styles.flipping_cards}>
                             {data.map((card, index) => (
                                 <div key={index} className={styles.frame}> 
-                                    <FlippingCardMobile props = {card}/>
+                                    <FlippingCardMobile props = {card} dimensions =
+                                    {dimensions[index]} />
                                 </div>
                             ))}
                         </div>

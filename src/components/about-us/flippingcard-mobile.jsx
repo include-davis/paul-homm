@@ -11,16 +11,18 @@ export async function getStaticProps({ locale }) {
     };
 }
 
-export default function FlippingCardMobile({props}) {
+export default function FlippingCardMobile({props, dimensions}) {
     const t = useTranslations(`FlippingCards.${props}`)
+    const [height, width] = dimensions;
     return (
         <div className={styles.flipping_card}>
             <p>{t('content')}</p>
-            <div className={styles.image_container}>
+            <div className={styles.image_container}
+                style={{height: height, width: width}}>
                 <Image
                     src={t('image')}
                     alt={t('alt')}
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "cover" }}
                     fill={true}
                 />
             </div>
