@@ -1,26 +1,34 @@
-.layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: var(--font-inter);
-    border-radius: 12px;
-    background-color: var(--off-white, #FFFBF0);
-    width: 19.625rem;
-    height: 36.8125rem;
+.multicontentcard {
+    .layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-inter);
+        border-radius: 12px;
+        background-color: var(--off-white, #FFFBF0);
+        width: 19.625rem;
+        height: 36.8125rem;
+        padding: 30px;
+        position: relative;
+    }
 
-    h1 {
+    .title {
         color: var(--maroon, #5B1110);
         text-align: center;
         font-family: Jost;
-        //font-size: 25px;
+        font-size: 25px;
+        align-items: center;
         //font-size: 70px;
         width: 15.3125rem;
         height: 1.875rem;
         flex-shrink: 0;
-        padding-bottom: 40px;
+        padding: 40px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
-    p {
+    .layout p {
         font-family: "Be Vietnam";
         font-size: 15px;
         font-style: normal;
@@ -30,19 +38,48 @@
         //text-align: center;
         width: 13.6875rem;
         height: 27.625rem;
-        flex-shrink: 0
+        flex-shrink: 0;
+        padding: 5px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        margin-top: 20px;
     }
 
     .button {
         color: var(--maroon, #5B1110);
         background-color: transparent;
-        position: absolute;
+        //position: absolute;
         align-self: flex-end;
         border: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
 
-        .button_svg {
-            width: 45px;
-            height: 45px;
-        }
+
+    .button1 {
+        margin-left: auto;
+        top: 2px;
+        right: 10px;
+        width: 144px;
+        /* Adjust as needed */
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        border: none;
+        background: transparent;
+        color: var(--color-maroonn);
+        align-self: flex-end;
+    }
+
+    .button1 .button_svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .button1 p {
+        font-size: 1.09rem;
+        /* Adjust as needed */
     }
 }

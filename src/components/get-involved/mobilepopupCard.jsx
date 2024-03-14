@@ -24,9 +24,6 @@ export default function PopupCard({ card }) {
 
   return (
     <div className={styles.multicontentcard}>
-      <button className={styles.button1}>
-        <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
-      </button>
       <div className={styles.layout}>
         <h2>{t('title')}</h2>
         <div>
@@ -35,6 +32,7 @@ export default function PopupCard({ card }) {
           ) : (
             <p>{t('content2')}</p>
           )}
+
           {/* Button with styling */}
           <button className={styles.button} onClick={toggleContent}>
             {showFirstContent ? (
@@ -42,6 +40,9 @@ export default function PopupCard({ card }) {
             ) : (
               <> <MdKeyboardArrowLeft />2/2 </>
             )}
+          </button>
+          <button className={styles.button1}>
+            <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
           </button>
         </div>
       </div>
