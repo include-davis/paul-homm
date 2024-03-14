@@ -25,6 +25,9 @@ export default function PopupCard({ card }) {
   return (
     <div className={styles.multicontentcard}>
       <div className={styles.layout}>
+        <button className={styles.button1}>
+          <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
+        </button>
         <h2>{t('title')}</h2>
         <div>
           {showFirstContent ? (
@@ -40,9 +43,6 @@ export default function PopupCard({ card }) {
             ) : (
               <> <MdKeyboardArrowLeft />2/2 </>
             )}
-          </button>
-          <button className={styles.button1}>
-            <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
           </button>
         </div>
       </div>

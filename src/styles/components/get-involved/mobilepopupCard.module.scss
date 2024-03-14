@@ -1,69 +1,13 @@
-.multicontentcard {
-    .layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-family: var(--font-inter);
-        border-radius: 12px;
-        background-color: var(--off-white, #FFFBF0);
-        width: 19.625rem;
-        height: 36.8125rem;
-        padding: 30px;
-        position: relative;
-    }
-
-    .title {
-        color: var(--maroon, #5B1110);
-        text-align: center;
-        font-family: Jost;
-        font-size: 25px;
-        align-items: center;
-        //font-size: 70px;
-        width: 15.3125rem;
-        height: 1.875rem;
-        flex-shrink: 0;
-        padding: 40px;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    .layout p {
-        font-family: "Be Vietnam";
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 170%;
-        white-space: pre-line;
-        //text-align: center;
-        width: 13.6875rem;
-        height: 27.625rem;
-        flex-shrink: 0;
-        padding: 5px;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        margin-top: 20px;
-    }
-
-    .button {
-        color: var(--maroon, #5B1110);
-        background-color: transparent;
-        //position: absolute;
-        align-self: flex-end;
-        border: none;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-    }
-
+/*.multicontentcard {
+    position: relative;
+    padding: 20px;
 
     .button1 {
+        position: absolute;
         margin-left: auto;
-        top: 2px;
+        top: 10px;
         right: 10px;
         width: 144px;
-        /* Adjust as needed */
         display: flex;
         align-items: center;
         column-gap: 16px;
@@ -71,6 +15,97 @@
         background: transparent;
         color: var(--color-maroonn);
         align-self: flex-end;
+        color: var(--maroon, #5B1110);
+    }
+
+    .button1 .button_svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .button1 p {
+        font-size: 1.09rem;
+    }
+}
+
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-inter);
+    //border-radius: 12px;
+    background-color: var(--off-white, #FFFBF0);
+    width: 19.625rem;
+    height: 36.8125rem;
+    padding: 30px;
+    position: relative;
+}
+
+.title {
+    color: var(--maroon, #5B1110);
+    text-align: center;
+    font-family: Jost;
+    font-size: 25px;
+    align-items: center;
+    //font-size: 70px;
+    width: 15.3125rem;
+    height: 1.875rem;
+    flex-shrink: 0;
+    padding: 40px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.layout p {
+    font-family: "Be Vietnam";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 170%;
+    white-space: pre-line;
+    //text-align: center;
+    width: 13.6875rem;
+    height: 27.625rem;
+    flex-shrink: 0;
+    padding: 5px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-top: 20px;
+}
+
+.button {
+    color: var(--maroon, #5B1110);
+    background-color: transparent;
+    //position: absolute;
+    align-self: flex-end;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+*/
+
+.multicontentcard {
+    position: relative;
+    padding: 30px;
+
+    .button1 {
+        position: absolute;
+        margin-left: auto;
+        top: -15px;
+        right: 10px;
+        width: 144px;
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        border: none;
+        background: transparent;
+        color: var(--color-maroonn);
+        align-self: flex-end;
+        color: var(--maroon, #5B1110);
     }
 
     .button1 .button_svg {
@@ -79,7 +114,67 @@
     }
 
     .button1 p {
-        font-size: 1.09rem;
-        /* Adjust as needed */
+        font-size: .85rem;
     }
+}
+
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-inter);
+    background-color: var(--off-white, #FFFBF0);
+    width: 313px;
+    /* Converted from 19.625rem */
+    height: 590px;
+    /* Converted from 36.8125rem */
+    padding: 30px;
+    position: relative;
+}
+
+.title {
+    color: var(--maroon, #5B1110);
+    text-align: center;
+    font-family: Jost;
+    font-size: 25px;
+    align-items: center;
+    width: 241px;
+    /* Converted from 15.3125rem */
+    height: 30px;
+    /* Converted from 1.875rem */
+    flex-shrink: 0;
+    padding: 40px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.layout p {
+    font-family: "Be Vietnam";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 170%;
+    white-space: pre-line;
+    width: 219px;
+    /* Converted from 13.6875rem */
+    height: 445px;
+    /* Converted from 27.625rem */
+    flex-shrink: 0;
+    padding: 5px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-top: 20px;
+}
+
+.button {
+    color: var(--maroon, #5B1110);
+    background-color: transparent;
+    align-self: flex-end;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
