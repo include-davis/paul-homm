@@ -11,27 +11,27 @@ const data = {
     }
 }
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
     const committees = Object.keys(data);
     const paths = committees.map((committee) => ({
         params: { committee }
     }));
-    return { paths, fallback: false};
+    return { paths, fallback: false };
 };
 
 export async function getStaticProps({ params }) {
     const committeeData = data[params.committee];
     return {
-      props: {
-        committeeData,
-      },
+        props: {
+            committeeData,
+        },
     };
 }
 
-export default function CommitteePage({ committeeData }){
-    return(
+export default function CommitteePage({ committeeData }) {
+    return (
         <div>
-            <CommitteeDescription props={committeeData}/>
+            <CommitteeDescription props={committeeData} />
         </div>
     )
 };
