@@ -5,7 +5,7 @@
 //hardcoded animation speed in .option, .table, .mobile_headerText
 
 .container {
-    background-color: transparent;
+    background-color: var(--color-beige);
     width: 256px;
     height: auto;
     display: flex;
@@ -117,11 +117,6 @@
     padding: 4px 0px;
 }
 
-.option_text:hover {
-    color: var(--color-gold);
-    background-color: var(--color-maroon);
-}
-
 @keyframes rollout {
     0% {
       transform: translateY(
@@ -133,12 +128,23 @@
     }
 }
 
+.option_text:hover {
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
+}
+
 .divider {
     width: 90%;
     height: 2px;
     margin-bottom: 8px;
     background-color: var(--color-gold);
     border-radius: 10px;
+}
+
+@include mixins.tablet{
+    .container{
+        width: 216px;
+    }
 }
 
 @include mixins.phone{
@@ -203,11 +209,7 @@
           transform: translateY(0);
         }
     }
-
-    .table.active {
-        background-color: var(--color-beige);
-    }
-
+    
     .option {
         padding: 0;
         padding-bottom: 2px;
