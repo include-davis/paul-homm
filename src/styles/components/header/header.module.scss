@@ -92,7 +92,7 @@
     border: none;
     font-size: 4rem;
     color: var(--color-gold);
-    padding-right: 16px;
+    padding-right: 8px;
 
 }
 
@@ -117,7 +117,6 @@
     display: inline-block;
     right: 320px;
     top: 24px;
-
 }
 
 .language_dropdown>div {
@@ -230,6 +229,11 @@
 
     }
 
+    
+    .language_dropdown{
+        top: 40px;
+        right: 240px;
+    }
 }
 
 @include mixins.phone {
@@ -278,5 +282,13 @@
         max-height: calc(100vh - var(--mobile-header-height));
     }
 
+    .language_dropdown{
+        position: static;
+    }
 
+    .language_dropdown>div{
+        top: calc(var(--mobile-header-height)/2 - 0.7rem);
+        left: auto;
+        right: 4px;
+    }
 }
