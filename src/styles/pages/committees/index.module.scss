@@ -38,8 +38,26 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-left: 170px;
-    padding-right: 170px;
+
+    padding: 0px 170px;
+
+    @include mixins.sm-desktop {
+        padding: 0px 104px;
+        column-gap: 8px;
+    }
+
+    @include mixins.tablet {
+        column-gap: 16px;
+        padding: 0px 96px;
+    }
+
+    @include mixins.phone {
+        padding: 0px 32px;
+    }
+
+    @include mixins.sm-phone {
+        padding: 0px;
+    }
 }
 
 .committees_cards>div {
@@ -48,23 +66,5 @@
     justify-content: center;
     padding-bottom: 64.85px;
 
-    @include mixins.sm-desktop {
-        //1280
-        flex-basis: 33.33%;
-    }
 
-    @include mixins.tablet {
-        //1048 
-        flex-basis: 50.00%;
-    }
-
-    @include mixins.phone {
-        //720
-        flex-basis: 50.00%;
-    }
-
-    @include mixins.sm-phone {
-        //540 
-        flex-basis: 50.00%;
-    }
 }

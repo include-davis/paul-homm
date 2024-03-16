@@ -6,23 +6,24 @@ import Link from 'next/link';
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
+        props: {
+            messages: (await import(`@/messages/${locale}.json`)).default
+        }
     };
 }
 
-export default function CommitteeCard({props}) {
+export default function CommitteeCard({ props }) {
     const t = useTranslations(`CommitteesPage.CommitteeCards.${props}`)
     return (
         <Link href={t('path')}>
             <div className={styles.committee_card}>
                 <div className={styles.image_container}>
                     <Image
-                            src={t('image')}
-                            alt={t('name')}
-                            width={306}
-                            height={306}
+                        src={t('image')}
+                        alt={t('name')}
+                        style={{ objectFit: "fill" }}
+                        fill={true}
+                        priority={true}
                     />
                 </div>
                 <h3>{t('name')}</h3>
