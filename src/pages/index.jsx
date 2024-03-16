@@ -24,10 +24,10 @@ export default function Home() {
     const events = ["event1", "event2", "event3", "event4", "event5"]
 
     return (
-        <div>
+        <div className={styles.container}>
             {/* Red "Our Mission" Section */}
             <div className={styles.mission}>
-                <div>
+                <div className={styles.mission_text}>
                     <h1>{t('mission.title')}</h1>
                     <p>{t('mission.paragraph1')}</p>
                     <p>{t('mission.paragraph2')}</p>
@@ -86,16 +86,18 @@ export default function Home() {
                     <div className={styles.events_card}>
                         <h1>{t('cards.events.title')}</h1>
                         <div className={styles.events}>
-                            <ul>
-                                {dates.map((item, index) => (
-                                    <li key={index}>{t('cards.events.' + item)}</li>
-                                ))}
-                            </ul>
-                            <ul>
-                                {events.map((item, index) => (
-                                    <li key={index}>{t('cards.events.' + item)}</li>
-                                ))}
-                            </ul>
+                            <div className={styles.data_title_container}>
+                                <ul>
+                                    {dates.map((item, index) => (
+                                        <li key={index}>{t('cards.events.' + item)}</li>
+                                    ))}
+                                </ul>
+                                <ul>
+                                    {events.map((item, index) => (
+                                        <li key={index}>{t('cards.events.' + item)}</li>
+                                    ))}
+                                </ul>
+                            </div>
                             <div className={styles.events_image}>
                                 <Image
                                     src={t('cards.events.image')}

@@ -1,20 +1,35 @@
 @use 'src/styles/mixins';
 
+.container {
+    font-family: 'Be Vietnam';
+}
+
 // Mission statement and paragraph
 .mission {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 32px;
-    justify-content: center;
-    column-gap: 48px;
+    justify-content: space-around;
+    column-gap: 16px;
+    padding: 32px;
 
-    height: calc(8px * 86);
+    //  height: calc(8px * 86);
 
     background-color: var(--color-maroon);
     color: var(--color-beige);
 
     @include mixins.sm-desktop {
+        padding: 24px;
+    }
+
+    @include mixins.tablet {
         flex-direction: column-reverse;
+    }
+
+    @include mixins.sm-phone {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     h1 {
@@ -23,6 +38,10 @@
 
         @include mixins.sm-desktop {
             font-size: 2.5rem;
+        }
+
+        @include mixins.tablet {
+            font-size: 2.0rem;
         }
 
         @include mixins.phone {
@@ -36,19 +55,43 @@
         line-height: 40px;
 
         @include mixins.sm-desktop {
-            font-size: 2rem;
+            font-size: 1.25rem;
+        }
+
+        @include mixins.tablet {
+            line-height: normal;
         }
 
         @include mixins.phone {
             font-size: 1.125rem;
         }
+
     }
 
     h1,
     p {
-        // padding-left: calc(8px * 25);
-        width: calc(8px * 80);
-        margin-bottom: var(--edge-spacer);
+        margin-bottom: 24px;
+
+        @include mixins.tablet {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.mission_text {
+    max-width: 640px;
+
+    @include mixins.sm-desktop {
+        max-width: 526px;
+    }
+
+    @include mixins.phone {
+        max-width: 353px;
+    }
+
+    @include mixins.sm-phone {
+        max-width: 328px;
+        min-width: 240px;
     }
 }
 
@@ -65,21 +108,28 @@
 
 .doctors_image {
     position: relative;
-    width: calc(8px * 74);
-    height: calc(8px * 48);
+    width: 560px;
+    height: 352px;
 
     border-radius: 8px;
     overflow: hidden;
+    aspect-ratio: auto;
 
     @include mixins.sm-desktop {
-        height: 80%;
-        width: 80%;
+        width: 480px;
+        height: 272px;
     }
 
     @include mixins.phone {
-        height: 80%;
-        width: 80%;
+        width: 353px;
+        height: 214px;
     }
+
+    @include mixins.sm-phone {
+        width: 328px;
+        max-width: 100%;
+    }
+
 }
 
 // Styling for "Visit Us!" card. Requires some 
@@ -146,6 +196,11 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
+
+    @include mixins.sm-phone {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 // Styling for "Closure Dates" card
@@ -191,6 +246,12 @@
         padding: 16px 32px 32px 32px;
         color: var(--color-maroon);
         font-size: 2.5rem;
+
+        @include mixins.sm-phone {
+            font-size: 1.375rem;
+            order: 1;
+        }
+
     }
 
     ul {
@@ -200,16 +261,28 @@
     li {
         margin-bottom: var(--edge-spacer);
         font-size: 1.5rem;
+
+        @include mixins.sm-phone {
+            font-size: 1.125rem;
+        }
     }
 
     width: calc(8px * 128);
     height: calc(8px * 48);
+
+
 }
 
 .events {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+
+    @include mixins.sm-phone {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
 }
 
 .events_image {
@@ -219,6 +292,23 @@
 
     border-radius: 8px;
     overflow: hidden;
+
+    @include mixins.sm-phone {
+        width: 499px;
+        height: 231px;
+        order: 3;
+    }
+
+
+}
+
+.data_title_container {
+    display: flex;
+    column-gap: 24px;
+
+    @include mixins.sm-phone {
+        order: 2;
+    }
 }
 
 // Add circular background behind icons
