@@ -1,56 +1,163 @@
 {
   "Index": {
     "title": "Home",
-    "description": "Testing internationalization."
-  },
-  "CommitteeCards": {
-    "committee1": {
-      "name": "Cardiopulmonary",
-      "image": "/images/committees/cardiopulmonary.png",
-      "path": "/committees/cardiopulmonary"
+    "mission": {
+      "title": "Our Mission",
+      "paragraph1": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.",
+      "paragraph2": "At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.",
+      "paragraph3": "Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.",
+      "image": "/images/home-page/happy-doctors.png"
     },
-    "committee2": {
-      "name": "Covered California",
-      "image": "/images/committees/covered_california.png",
-      "path": "/committees/covered_california"
-    },
-    "committee3": {
-      "name": "Dermatology",
-      "image": "/images/committees/dermatology.png",
-      "path": "/committees/dermatology"
-    },
-    "committee4": {
-      "name": "Diabetes",
-      "image": "/images/committees/diabetes.png",
-      "path": "/committees/diabetes"
-    },
-    "committee5": {
-      "name": "Patient Assistance Program",
-      "image": "/images/committees/patient_assistance_program.png",
-      "path": "/committees/patient_assistance_program"
-    },
-    "committee6": {
-      "name": "Hepatitis",
-      "image": "/images/committees/hepatitis.png",
-      "path": "/committees/hepatitis"
-    },
-    "committee7": {
-      "name": "Neurology",
-      "image": "/images/committees/neurology.png",
-      "path": "/committees/neurology"
-    },
-    "committee8": {
-      "name": "Women's Health",
-      "image": "/images/committees/womens_health.png",
-      "path": "/committees/womens_health"
-    },
-    "committee9": {
-      "name": "Ophthalmology",
-      "image": "/images/committees/ophthalmology.png",
-      "path": "/committees/ophthalmology"
+    "cards": {
+      "visit": {
+        "title": "Visit Us!",
+        "description": "Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.",
+        "contact": {
+          "phone": "(916) 736-3966",
+          "msg": "Message",
+          "address": "6341 Folsom Blvd Sacramento, CA 95819"
+        }
+      },
+      "closure": {
+        "title": "Closure Dates",
+        "date1": "Feb. 10, 2024",
+        "date2": "Mar. 30, 2024",
+        "date3": "May 25, 2024",
+        "date4": "Jul. 6, 2024",
+        "date5": "Aug 31, 2024"
+      },
+      "events": {
+        "title": "Upcoming Events",
+        "date1": "Jan. 7, 2023",
+        "date2": "Jan. 8, 2023",
+        "date3": "Jan. 14, 2023",
+        "date4": "Jan. 15, 2023",
+        "date5": "Jan. 29, 2023",
+        "event1": "Musculoskeletal Clinic",
+        "event2": "VN Cares Cancer Screening",
+        "event3": "Psychiatry Clinic",
+        "event4": "Hepatitis Vaccination",
+        "event5": "Dermatology Clinic",
+        "image": "/images/home-page/events-img.png"
+      }
     }
   },
-  "CommitteesPage": {
-    "meetOurCommittees": "Meet Our Committees!"
+  "GetInvolved": {
+    "pageTitle": "Get Involved",
+    "CardComponent": {
+      "Card1": {
+        "cardText": "Physicians & Residents",
+        "imgSrc": "/images/get-involved/physiciansAndResidents.png"
+      },
+      "Card2": {
+        "cardText": "Undergrad. Patient Advocates",
+        "imgSrc": "/images/get-involved/undergrad.png"
+      },
+      "Card3": {
+        "cardText": "Health Professional Students",
+        "imgSrc": "/images/get-involved/clinics.png"
+      },
+      "details": "Details",
+      "signUp": "Sign Up"
+    },
+    "donateHeading": "Donate Today!",
+    "donateText": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
+    "address": "Paul Home Asian Clinic\n6341 Folsom Blvd\nSacramento, CA 95819",
+    "donateText2": " We thank you for your generoristy!"
+  },
+  "Footer": {
+    "pages": {
+      "page1": "HOME",
+      "page2": "ABOUT US",
+      "page3": "SERVICES",
+      "page4": "COMMITEES",
+      "page5": "GET INVOLVED"
+    },
+    "contact": {
+      "message": "CONTACT US",
+      "address": "6341 Folsom Blvd Sacramento, CA 95819"
+    },
+    "sponsor": {
+      "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+      "image": "/images/footer/credit-union.png"
+    },
+    "include": "Designed & Developed with 🤍 by #include @ Davis"
+  },
+  "Services": {
+    "heading": "Our Services",
+    "topServices": {
+      "service1": {
+        "heading": "Primary Care Services",
+        "desc": "Every Saturday"
+      },
+      "service2": {
+        "heading": "Cancer Screenings",
+        "desc": "First Sunday Monthly"
+      }
+    },
+    "tabs": {
+      "tab1": "Specialty Clinics",
+      "tab2": "Hepatitis",
+      "tab3": "Health Education & Preventative Measures",
+      "tab4": "Vaccines"
+    },
+    "slides": {
+      "slide1": {
+        "image": "/images/services/specialtyClinics.png",
+        "list": {
+          "item1": "Musculoskeletal Clinic (MSK)",
+          "item2": "Dermatology",
+          "item3": "Cardiopulmonary Clinic",
+          "item4": "Liver Clinic"
+        }
+      },
+      "slide2": {
+        "image": "/images/services/hepatitis.png",
+        "list": {
+          "item1": "Liver cancer is often tied to Hepatitis B",
+          "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+          "item3": "Asians more vulnerable, higher infection rates, mortality",
+          "item4": "Screening, vaccination, tratments available",
+          "item5": "Free vaccines"
+        }
+      },
+      "slide3": {
+        "image": "/images/services/healthEdu.png",
+        "list": {
+          "item1": "Hypertension Workshops",
+          "item2": "Nutrition Counseling",
+          "item3": "Health Fair"
+        }
+      },
+      "slide4": {
+        "image4": "/images/services/vaccines.png",
+        "list": {
+          "item1": "Hepatitis",
+          "item2": "Annual flu-shots",
+          "item3": "Health Fair"
+        }
+      }
+    },
+    "bottomServices": {
+      "service1": {
+        "heading": "Referrals",
+        "list": {
+          "item1": "Surgery with SPIRIT program",
+          "item2": "UCDMC",
+          "item3": "Primary Care Clinic"
+        }
+      },
+      "service2": {
+        "heading": "Translators",
+        "list": {
+          "item1": "Cantonese",
+          "item2": "Mandarin",
+          "item3": "Korean",
+          "item4": "Taishanese",
+          "item5": "Vietnamese",
+          "item6": "Hmong"
+        }
+      }
+    }
   }
 }
