@@ -31,7 +31,8 @@
         text-align: center;
         font-weight: 500;
         line-height: 32px;
-        white-space: pre-wrap;
+        white-space: pre-wrap; 
+
     }
 }
 
@@ -46,14 +47,49 @@
     flex-direction: row;
 }
 
+.mobile_arrow{
+    display: none;
+}
+
 .buttonClass{
-    padding-left: 2em;
-    padding-right: 100px;
+    padding-left: 32px;
     display: flex;
     flex-direction: row;
-    
 }
 
 .linkStyle{
     text-decoration: none;
+}
+
+@include mixins.tablet {
+    .desktop_arrow{
+        display: none;
+    }
+
+    .mobile_arrow{
+        display: block;
+    }
+
+    .content{
+        width: 60%;
+    }
+
+    .button{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@include mixins.phone {
+    .content {
+        width: 80%;
+    }
+    
+    .button{
+        padding-top: 16px;
+    }
+
+    .buttonClass{
+        padding-left: 16px;
+    }
 }
