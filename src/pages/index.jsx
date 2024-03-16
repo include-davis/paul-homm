@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 export async function getStaticProps({ locale }) {
   return {
@@ -14,10 +13,9 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
   const t = useTranslations('Index');
-  
   return (
     <>
-      <p>{t('title')}</p>
+      Home yay
     </>
   );
 }
