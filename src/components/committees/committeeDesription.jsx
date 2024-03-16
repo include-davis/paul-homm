@@ -1,5 +1,5 @@
 import styles from "@/styles/components/committees/committeeDescription.module.scss"
-import { IoArrowBack } from "react-icons/io5";
+import { IoArrowBack, IoChevronBack } from "react-icons/io5";
 import React from "react";
 import { useTranslations } from "next-intl";
 
@@ -19,7 +19,10 @@ export default function CommitteeDescription({ props }) {
     <div className = {styles.wrapper}>
       <div className = {styles.buttonClass}>
         <a href="/committees" className = {styles.linkStyle}>
-          <button className = {styles.button}><IoArrowBack /><p>Back to committees</p></button> 
+          <button className = {styles.button}>
+            <IoArrowBack className={styles.desktop_arrow}/> 
+            <IoChevronBack className={styles.mobile_arrow}/>
+            Back to committees</button> 
           </a>
       </div>
       <div className = {styles.content}>

@@ -1,6 +1,7 @@
+@use '../../mixins.scss';
+
 .wrapper{
-    height: auto;
-    background: var(--off-white, #FFFBF0);
+    background: var(--color-white);
     padding-bottom: 32px;
     width: 100%;
     margin: 0 auto; 
@@ -20,7 +21,7 @@
     }
 
     >h1{
-        color: var(--maroon, #5B1110);
+        color: var(--color-maroon);
         font-size: 2rem;
         text-align: center;
         font-weight: 700;
@@ -40,7 +41,7 @@
 .button {
     border: none;
     background: none;
-    color: #5B1110;
+    color: var(--color-maroon);
     font-size: 1.5rem;
     font-weight: 600;
     padding-top: 56px;
@@ -48,26 +49,49 @@
     flex-direction: row;
 }
 
+.mobile_arrow{
+    display: none;
+}
+
 .buttonClass{
-    padding-left: 2em;
-    padding-right: 100px;
+    padding-left: 32px;
     display: flex;
     flex-direction: row;
-    
 }
 
 .linkStyle{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .content {
-        max-width: 100%;
+@include mixins.tablet {
+    .desktop_arrow{
+        display: none;
+    }
+
+    .mobile_arrow{
+        display: block;
+    }
+
+    .content{
+        width: 60%;
+    }
+
+    .button{
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .buttonClass {
-        padding-top: 1em;
+@include mixins.phone {
+    .content {
+        width: 80%;
     }
-} 
+    
+    .button{
+        padding-top: 16px;
+    }
+
+    .buttonClass{
+        padding-left: 16px;
+    }
+}
