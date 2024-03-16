@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "@/styles/pages/get-involved/index.module.scss";
 import { useTranslations } from "next-intl";
 import Card from "@/components/getInvolved/card";
 import PopupCard from "@/components/getInvolved/popupCard";
@@ -11,8 +10,9 @@ export async function getStaticProps({ locale }) {
         },
     };
 }
+// I tried rendering this
 
-const cardProps = ["Card1", "Card2", "Card3"];
+const cardPopup = ["Card1", "Card2", "Card3"];
 export default function GetInvolved() {
     const t = useTranslations("GetInvolved");
 

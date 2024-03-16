@@ -1,15 +1,17 @@
-import styles from "@/styles/components/flippingCard/flippingCard.module.scss";
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            messages: (await import(`@/messages/${locale}.json`)).default
-        }
-    };
-}
-
-export default function flippingCard() {
-    const t = useTranslations('Index');
-    return (
-        <div> please work </div>
-    );
-}
+import { useTranslations } from 'next-intl';
+import React from 'react';
+import styles from "@/styles/components/aboutus/flippingCard.module.scss";
+return (
+    <div className={styles.container}>
+        <h1>{title}</h1>
+        <div className={styles.FlipCard}>
+            <div className={styles.CardInner}></div>
+            <div className={styles.CardFront}>
+                <img src={image} alt={alt} />
+            </div>
+            <div className={styles.FlipBack}>
+                <p>{content}</p>
+            </div>
+        </div>
+    </div>
+);
