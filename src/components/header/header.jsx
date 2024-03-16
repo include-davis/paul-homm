@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import Link from "next/link";
 import { useState } from "react";
 import Image from 'next/image'
+import LangDropDown from "../dropDown/dropDown";
 
 export default function Header() {
     const [activeLinks, setActiveLinks] = useState([false, false, false, false, false]);
@@ -37,7 +38,7 @@ export default function Header() {
                 </div>
 
                 <div className={styles.language_dropdown}>
-                    {/* placeholder div for language dropdown*/}
+                    <LangDropDown/>
                 </div>
             </div>
             <div className={styles.pages}>

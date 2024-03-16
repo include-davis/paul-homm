@@ -8,6 +8,7 @@ import styles from "@/styles/pages/home/home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export async function getStaticProps({ locale }) {
     return {
         props: {
