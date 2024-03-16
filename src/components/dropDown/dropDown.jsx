@@ -23,58 +23,48 @@ export default function LangDropDown() {
     const router = useRouter();
     const [dropDown, setDropDown] = useState(false);
     const [language, setLanguage] = useState(currLocale);
-    const [headerVisibility, showHeader] = useState(false);
+    const [mobileExpanded, setMobileExpanded] = useState(false); //NEW
 
     function toggleDropDown() {
         setDropDown(!dropDown);
     }
-    function toggleHeader() {
-        showHeader(!headerVisibility)
+    function toggleMobileExpanded() { //NEW
+        setMobileExpanded(!mobileExpanded)
         setDropDown(false);
     }
     const clickLanguage = (code, name) => {
         setLanguage(name);
         router.push(router.pathname, router.asPath, {locale: code});
         toggleDropDown();
+        if(mobileExpanded){
+            toggleMobileExpanded();
+        }
     }
 
-    let defaultHeader = <div className={styles.defaultHeader}>
-            <div className={styles.selected}>{language}</div>
-            <div className={styles.header_icons}>
-                <RxDividerVertical className={styles.vDivider} />
-                <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/>
-            </div>
-            <button onClick={ toggleDropDown } className={styles.arrow}>
-                { dropDown ? <IoIosArrowUp/>: <IoIosArrowDown/>}
-            </button>
-        </div>
-        
-    let mobileHeader = <div className={`${headerVisibility? styles.mobileExpandedHeader : styles.mobileCollapsedHeader}`}>
-        { headerVisibility ? 
-        <button onClick={ toggleDropDown } className={styles.mobile_headerText}>
-            <div className={styles.selected}>{language}</div>
-        </button>  : null }
-        <div className={styles.header_icons}>
-            { headerVisibility ? <RxDividerVertical className={styles.vDivider} /> : null }
-            <button onClick={ toggleHeader } className={styles.toggle_button}><BsTranslate preserveAspectRatio="none" className={styles.toggleIcon} alt="Translation Symbol"/></button>
-        </div>
-        </div>
-
-  return (
-    <div className={styles.container}>
-        {defaultHeader}
-        {mobileHeader}
-        <div className={`${styles.table} ${dropDown? styles.active : null}`}>
-            {locales.map((language, index) => (
-                <div key = {index} className={styles.option}>
-                    <div className={styles.divider} alt="Divider"></div>
-                    <option className={styles.option_text} value={language.code}  onClick={() => clickLanguage(language.code, language.name)}>
-                        {language.name}
-                    </option>
+    return (
+        <div className={styles.container}>
+            <div className={`${styles.header} ${mobileExpanded ? styles.expanded : null}`}>
+                <div className={styles.selected} onClick={mobileExpanded ? toggleDropDown : null}>{language}</div>
+                <div className={styles.header_icons}>
+                    <RxDividerVertical className={styles.vDivider} />
+                    <PiTranslate preserveAspectRatio="none" className={styles.translationIcon} alt="Translation Symbol"/>
                 </div>
-            ))}
+                <BsTranslate preserveAspectRatio="none" className={styles.translationIconMobile} alt="Translation Symbol" onClick={toggleMobileExpanded}/>
+                <button onClick={ toggleDropDown } className={styles.arrow}>
+                    { dropDown ? <IoIosArrowUp/>: <IoIosArrowDown/>}
+                </button>
+            </div>
+            <div className={`${styles.table} ${dropDown? styles.active : null}`}>
+                {locales.map((language, index) => (
+                    <div key = {index} className={styles.option}>
+                        <div className={styles.divider} alt="Divider"></div>
+                        <option className={styles.option_text} value={language.code}  onClick={() => clickLanguage(language.code, language.name)}>
+                            {language.name}
+                        </option>
+                    </div>
+                ))}
+            </div>
         </div>
-    </div>
+    );
 
-  );
 }
