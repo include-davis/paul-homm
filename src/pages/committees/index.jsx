@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "@/styles/pages/committees/index.module.scss"
+import styles from "@/styles/pages/committees/committees.module.scss"
 import { useTranslations } from "next-intl";
 import CommitteeCard from "@/components/committees/committee"
 
@@ -16,8 +16,8 @@ const data = ["committee1", "committee2", "committee3",
     "committee7", "committee8", "committee9"]
 
 
-export default function committees() {
-    const t = useTranslations(`CommitteesPage`)
+export default function Committees() {
+    const t = useTranslations(`Committees`)
     return (
         <div className={styles.committees_page}>
             <h1>{t('meetOurCommittees')}</h1>

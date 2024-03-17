@@ -13,7 +13,7 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function CommitteeCard({ props }) {
-    const t = useTranslations(`CommitteesPage.CommitteeCards.${props}`)
+    const t = useTranslations(`Committees.CommitteeCards.${props}`)
     return (
         <Link href={t('path')}>
             <div className={styles.committee_card}>
