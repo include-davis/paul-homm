@@ -1,7 +1,8 @@
-import { useTranslations } from 'next-intl';
-import React from 'react';
+import {React, useState} from 'react';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import styles from '@/styles/components/getInvolved/popupCard.module.scss';
+import { useTranslations } from 'next-intl';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -11,8 +12,13 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function PopupCard({ title, content, onClose }) {
-  const t = useTranslations('Popup Card');
+export default function PopupCard({ card, onClose }) {
+  const t = useTranslations(`GetInvolved.CardComponent.${card}`)
+
+  const [showFullContent, setShowFullContent] = useState(true);
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
 
   return (
     <div className={styles.container}>
@@ -20,8 +26,24 @@ export default function PopupCard({ title, content, onClose }) {
         Close<IoIosCloseCircleOutline className={styles.button_svg} />
       </button>
       <div className={styles.layout}>
-        <h1>{title}</h1>
-        <p>{content}</p>
+        <h1>{t('title')}</h1>
+        {showFullContent ? (
+          <div>
+            <p className={styles.content}>{`${t('content1')} ${t('content2')}`}</p>
+            <p className={styles.contentMobile}>{t('content1')}</p>
+          </div>
+          ) : (
+            <p className={styles.contentMobile}>{t('content2')}</p>
+          )}
+
+        {/* Button with styling */}
+        <button className={styles.paginationButton} onClick={toggleContent}>
+          {showFullContent ? (
+            <> 1/2 <MdKeyboardArrowRight/></>
+          ) : (
+            <> <MdKeyboardArrowLeft/>2/2 </>
+          )}
+        </button>
       </div>
     </div>
   )

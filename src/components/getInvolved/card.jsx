@@ -1,6 +1,6 @@
 /* add and import styles */
 /* view and test it out by importing it to the respective page */
-import styles from "@/styles/pages/get-involved/cards.module.scss";
+import styles from "@/styles/components/getInvolved/cards.module.scss";
 import { useTranslations } from "next-intl";
 import PopupCard from "./popupCard";
 import { useState } from "react";
@@ -25,12 +25,12 @@ export default function Card({ cardProps }) {
       <div className={styles.cardsContainer}>
         <div className={styles.card}>
           <div className={styles.cardImg} style={{backgroundImage: `url(${t(`${cardProps}.imgSrc`)})`}}>
-            <p className={styles.cardText}>{t(`${cardProps}.cardText`)}</p>
+            <p className={styles.cardText}>{t(`${cardProps}.titleShort`)}</p>
           </div>
           <button className={styles.detailsButton} onClick={togglePopup}>{t('details')}</button>
           <button className={styles.signUpButton}>{t('signUp')}</button>
         </div>
-        {popup && <PopupCard title={t(`${cardProps}.cardText`)} content={t(`${cardProps}.content`)} onClose={togglePopup}/>}
+        {popup && <PopupCard card={cardProps} onClose={togglePopup}/>}
       </div>
   );
 }
