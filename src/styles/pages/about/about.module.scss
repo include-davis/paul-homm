@@ -1,3 +1,51 @@
-.div {
-  background-color: blue;
+.wrapperClass{
+  background-color: #FFFBF0;
+  text-align: center;
+  height:auto;
+  padding-top: 40px;
+
+  >*{
+      padding: 24px;
+  }
+
+  >h1{
+    font-size: 2rem;
+    color: #5B1110;
+  }
+
+  >h2{
+    font-size: 1.75rem;
+    color: #D79C1A;
+  }
+  >p{
+    margin: 0 auto;
+    width: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 32px;
+    font-size: 1.25rem;
+  }
 }
+
+.listClass{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.defaultClass{
+  padding-bottom: 16px;
+  >h3{
+    color: #5B1110;
+    font-size: 24px;
+  }
+
+  > ul > li {
+    margin: 16px;
+    list-style-type: none;
+    text-align: center;
+  }
+}
+
