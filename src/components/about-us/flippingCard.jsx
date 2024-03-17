@@ -1,15 +1,27 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import styles from "@/styles/components/about-us/flippingCard.module.scss";
+import Image from 'next/image';
 
-export default function FlippingCard({ title, content, image, alt }) {
+export default function FlippingCard({ title, content, image, alt, dims }) {
+    const [width, height] = dims;
     return (
         < div className={styles.container}>
             <h1>{title}</h1>
-            <div className={styles.FlipCard} >
+            <div className={styles.FlipCard}
+                style={{ width: width, height: height }} >
                 <div className={styles.CardInner}>
                     <div className={styles.CardFront}>
-                        <img src={image} alt={alt} />
+                        <div className={styles.image_container}
+                        >
+                            <Image
+                                src={image}
+                                alt={alt}
+                                style={{ objectFit: "fill" }}
+                                fill={true}
+                                priority={true}
+                            />
+                        </div>
                     </div>
                     <div className={styles.FlipBack}>
                         <p>{content}</p>

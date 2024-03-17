@@ -28,6 +28,10 @@
     transform: rotateY(180deg);
 }
 
+.CardFront {
+    padding: 24px;
+}
+
 .CardFront,
 .FlipBack {
     >img {

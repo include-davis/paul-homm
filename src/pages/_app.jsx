@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
       className={`${inter.variable}`}>
       <Header></Header>
       <Component {...pageProps} />
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </NextIntlClientProvider>
   );
 }
