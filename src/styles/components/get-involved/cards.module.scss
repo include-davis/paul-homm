@@ -1,5 +1,6 @@
+@use '../../mixins.scss';
+
 .cardsContainer {
-  // display: flex;
   background-color: var(--color-white);
   font-family: var(--font-inter);
   padding-left: var(--edge-spacer);
@@ -9,7 +10,7 @@
   font-size: 1.5rem;
   text-align: center;
 }
-//TODO: figure out how to round images in cards and fix image compression
+
 .cardImg {
   position: relative;
   background-size: cover;
@@ -32,7 +33,6 @@
   text-align: center;
 }
 
-//TODO: buttons are lower than wanted?? too spaced out from cards
 .detailsButton,
 .signUpButton {
   height: 38px;
@@ -56,4 +56,27 @@
   color: var(--color-gold);
   background-color: var(--color-maroon);
   border: none;
+}
+
+@include mixins.phone{
+  .cardImg{
+    width: 320px;
+    height: 285px;
+  }
+}
+
+@include mixins.v-sm-phone{
+  .cardsContainer >div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .detailsButton, .signUpButton{
+    margin: 8px;
+    margin-bottom: 4px;
+  }
+  .cardImg{
+    width: 240px;
+    height: 215px;
+  }
 }

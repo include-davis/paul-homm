@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
+import Header from "@/components/header/header";
 
 const inter = Inter({
   weight: ["400", "700"],

@@ -1,37 +1,42 @@
 import CommitteeDescription from "@/components/committees/committeeDesription";
+import { useTranslations } from "next-intl";
+import React from "react";
 
-const data = {
-    cardiac: {
-        title: "Cardiac Committee",
-        desc: "heart stuff"
-    },
-    neuro: {
-        title: "Neuro Committee",
-        desc: "brain stuff"
-    }
-}
+const data = [
+    'covered-california',
+    'cardiopulmonary',
+    'patient-assistance-program',
+    'dermatology',
+    'diabetes',
+    'hlub',
+    'hepatitis',
+    'ophthalmology',
+    'womens-health',
+    'neurology'
+  ]
 
 export async function getStaticPaths(){
-    const committees = Object.keys(data);
+    const committees = data;
     const paths = committees.map((committee) => ({
         params: { committee }
     }));
-    return { paths, fallback: false};
+    return { paths, fallback: false };
 };
 
-export async function getStaticProps({ params }) {
-    const committeeData = data[params.committee];
+export async function getStaticProps({ params, locale }) {
+    const committeeNames = params.committee;
     return {
       props: {
-        committeeData,
+        committeeNames,
+        messages: (await import(`@/messages/${locale}.json`)).default
       },
     };
 }
 
-export default function CommitteePage({ committeeData }){
+export default function CommitteePage({ committeeNames }){
     return(
         <div>
-            <CommitteeDescription props={committeeData}/>
+            <CommitteeDescription props={committeeNames}/>
         </div>
     )
 };
