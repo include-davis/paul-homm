@@ -9,7 +9,6 @@
 }
 
 .container {
-    background-color: palevioletred;
     width: 100%;
     aspect-ratio: 3.357 / 1;
     display: flex;
@@ -20,7 +19,6 @@
     position: relative;
     width: 70%;
     height: 100%;
-    background-color: #fde7aa;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -33,7 +31,6 @@
     height: auto;
     animation: slide;
     animation-duration: 2s;
-    box-shadow: 0 0 8px 8px palevioletred inset;
 }
 
 .prev {
@@ -54,7 +51,6 @@
     height: auto;
     animation: slideR;
     animation-duration: 2s;
-    box-shadow: 0 0 8px 8px palevioletred inset;
 }
 
 @keyframes slide {
@@ -88,26 +84,27 @@
 
 .circle {
     font-size: 1rem;
-    color:#FFFBF0;
+    color: var(--color-white);
 }
 
 .selected {
-    color:#D79C1A;
+    color: var(--color-gold);
 }
 
 .textContainer {
     position: relative;
     width: 30%;
     height: 100%;
-    background-color: #FFFBF0;
+    background-color: var(--color-white);
+
 }
 
 .blur {
     position: absolute;
     width: 140%;
     height: 100%;
-    z-index: 1000;
-    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 20%);
+    z-index: 100;
+    background-image: linear-gradient(to left, rgba(251,251,240,0), rgba(251,251,240, 1) 20%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +118,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    color: var(--Gold, #D79C1A);
+    color: var(--color-gold);
     margin-bottom: 4%;
 }
 
@@ -132,7 +129,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 2.65625rem;
-    color: var(--maroon, #5B1110);
+    color: var(--color-maroon);
 }
 
 .left_blur {
@@ -145,7 +142,7 @@
 
 .arrow {
     font-size: 2rem;
-    color: #D79C1A;
+    color:  var(--color-gold);
 }
 
 @media screen and (max-width:1048px) {
@@ -174,7 +171,6 @@
         position: absolute;
         width: 100%;
         height: 20%;
-        background-color: rgba(0, 0, 0, 0.5);
         z-index: 2000;
         bottom: 0; 
     }
@@ -190,7 +186,7 @@
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        color: var(--Beige, var(--Committee-Color, #E7D3B8));
+        color: var(--color-beige);
         font-size: 1rem;
         line-height: 1rem;
     }
@@ -205,7 +201,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 0.5) 90%);
+        background-image: linear-gradient(to left, rgba(251,251,240,0), rgba(251,251,240, 0.5) 90%);
     }
 
     .right_blur {
@@ -218,6 +214,6 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255, 0.5) 90%);
+        background-image: linear-gradient(to right, rgba(251,251,240,0), rgba(251,251,240, 0.5) 90%);
     }
 }
