@@ -30,7 +30,7 @@ export default function Footer() {
 
     // Function creates a page link list element from the parameters
     function createPageLink(page, route, index) {
-        return <li key={index}> <Link className={styles.link} href={route}>{t(page)}</Link> </li>
+        return <li> <Link className={styles.link} href={route} key={index}>{t(page)}</Link> </li>
     }
 
     return (
@@ -71,12 +71,12 @@ export default function Footer() {
                             src={t('sponsor.image')}
                             alt={"Safe Credit Union Logo"}
                             style={{ objectFit: "fill" }}
-                            sizes={"(max-width: 1280): 100vw"}
                             fill={true}
                         />
                     </div>
                 </div>
             </div>
+
             {/* Subfooter: Include developer message */}
             <div className={styles.subfooter}>{t('include')}</div>
 
