@@ -5,7 +5,7 @@
 //hardcoded animation speed in .option, .table, .mobile_headerText
 
 .container {
-    background-color: var(--color-beige);
+    background-color: var(--color-white);
     width: 256px;
     height: auto;
     display: flex;
@@ -20,7 +20,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--color-beige);
+    background-color: var(--color-white);
     z-index: 100;
     padding: 8px 16px;
     padding-bottom: 0px;
@@ -80,7 +80,7 @@
 }
 
 .table.active {
-    background-color: var(--color-beige);
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     animation: .3s drop;
@@ -151,6 +151,7 @@
 
     .container {
         width: fit-content;
+        background-color: var(--color-beige);
     }
     
     .header {
@@ -162,12 +163,13 @@
         border-radius: 30%;
         padding: 4px 4px;
         width: 100%;
-
+        background-color: var(--color-beige);
+        
         .translationIconMobile {
             display: block;
             color: var(--color-maroon);
         }
-
+        
         .selected, .vDivider, .translationIcon, .arrow{
             display: none;
         }
@@ -203,18 +205,22 @@
     
     @keyframes expandLeft {
         0% {
-          transform: translateX(50%);
+            transform: translateX(50%);
         }
         100% {
-          transform: translateY(0);
+            transform: translateY(0);
         }
     }
     
+    .table.active {
+        background-color: var(--color-beige);
+    }
+
     .option {
         padding: 0;
         padding-bottom: 2px;
     }
-
+    
     .option_text {
         color: var(--color-maroon);
         font-family: "Sora", sans-serif;
@@ -226,7 +232,7 @@
         padding: 0;
         border-radius: 4px;
     }
-
+    
     .divider {
         height: 1px;
         margin-bottom: 2px;
