@@ -1,6 +1,7 @@
 import styles from "@/styles/pages/services/services.module.scss";
-import ImageSlider from "@/components/services/imageSlider.jsx";
 import { useTranslations } from "next-intl";
+import ImageSlider from '@/components/services/imageSlider.jsx';
+import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 
 export async function getStaticProps({ locale }) {
     return {
@@ -39,8 +40,11 @@ export default function Services() {
                 </div>
             </div>
 
-            <div>
-                <ImageSlider> </ImageSlider>
+            <div className={styles.desktop}>
+                <ImageSlider/>
+            </div>
+            <div className={styles.mobile}>
+                <ImageSliderMobile/>
             </div>
 
             <div className={styles.servicesContainer}>
