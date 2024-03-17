@@ -1,0 +1,202 @@
+// Mission statement and paragraph
+.mission {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-content: center;
+    column-gap: 48px;
+    
+    height: calc(8px * 86);
+    
+    background-color: var(--color-maroon);
+    color: var(--color-beige);
+
+    h1 {
+        color: var(--color-gold);
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+    h1, p {
+        // padding-left: calc(8px * 25);
+        width: calc(8px * 80);
+        margin-bottom: var(--edge-spacer);
+    }
+
+}
+
+// White section with info cards
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc(8px * 113);
+
+    background-color: var(--color-white);
+}
+
+.doctors_image {
+    position: relative;
+    width: calc(8px * 74);
+    height: calc(8px * 48);
+    
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// Styling for "Visit Us!" card. Requires some 
+.visit_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    
+    background-color: var(--color-beige);
+    color: var(--text-black);
+    font-size: 1.75rem;
+    line-height: 40px;
+
+    padding: 0px 40px;
+
+    h1 {
+        padding: 24px 32px 16px 32px;
+        color: var(--color-maroon);
+        font-size: 2.5rem;
+    }
+    
+    width: calc(8px * 117);
+    height: calc(8px * 48);
+    
+}
+
+.visit { // section with icons and contact info/addreass
+    display: flex;
+    justify-content: space-evenly;
+    gap: 32px;
+    
+    font-size: 2rem;
+    color: var(--color-maroon);
+
+    padding-top: 40px;
+}
+
+.row_icons { // styling of icon + "contact info"
+    display: flex;
+    gap: 16px;
+}
+
+.contact { // divides lower "visit us" section into two sections. This is left section (phone # and "message")
+    display: flex;
+    flex-direction: column;
+    gap: var(--edge-spacer);
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    
+    p {
+        width: calc(8px * 31);
+    }
+}
+
+.dates { // This is to style lower two cards
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+// Styling for "Closure Dates" card
+.closure_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    
+    background-color: var(--color-beige);
+    color: var(--text-black);
+
+    h1 {
+        padding: 16px 32px 32px 32px;
+        color: var(--color-maroon);
+        font-size: 2.5rem;
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        margin-bottom: var(--edge-spacer);
+        font-size: 1.5rem;
+    }
+
+    width: calc(8px * 45);
+    height: calc(8px * 48);
+}
+
+// Styling for "Upcoming Events" card
+.events_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+
+    background-color: var(--color-beige);
+    color: var(--text-black);
+    
+    h1 {
+        padding: 16px 32px 32px 32px;
+        color: var(--color-maroon);
+        font-size: 2.5rem;
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        margin-bottom: var(--edge-spacer);
+        font-size: 1.5rem;
+    }
+
+    width: calc(8px * 128);
+    height: calc(8px * 48);
+}
+
+.events {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.events_image {
+    position: relative;
+    width: calc(8px * 51);
+    height: calc(8px * 33);
+    
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+// Add circular background behind icons
+.circle_frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    color: var(--color-maroon);
+    width: 56px;
+    height: 56px;
+    font-size: 2.0rem;
+    
+    text-decoration: none;
+    transition: margin 0.2s ease-in-out;
+}
+
+.circle_frame:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 8px var(--color-maroon);
+    text-shadow: 0 0 8px var(--color-maroon);
+}

@@ -274,3 +274,8 @@
         font-size: 0.875rem;
     }
 }
+
+    @include mixins.sm-phone {
+        font-size: 0.875rem;
+    }
+}
