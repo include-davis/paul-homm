@@ -11,32 +11,33 @@
 }
 
 // Styling around the dropdown component
-.dropdown_oneline {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: calc(16 * 8px);
+// .dropdown_oneline {
+//     display: flex;
+//     justify-content: center;
+//     width: 100%;
+//     height: calc(16 * 8px);
 
-    background-color: var(--color-maroon);
+//     background-color: var(--color-maroon);
 
-    position: relative;
+//     position: relative;
 
-    > div {
-        position: absolute;
-        z-index: 1;
-        top: 20%;
-    }
-    
-    @include mixins.phone {
-        height: 80px;
-    }
+//     > div {
+//         position: absolute;
+//         z-index: 1;
+//         top: 20%;
+//     }
 
-    @include mixins.sm-phone {
-        height: 64px;
-    }
-}
+//     @include mixins.phone {
+//         height: 80px;
+//     }
 
-.dropdown_twolines { // if header message is too long, then we have this styling due to absolute nature
+//     @include mixins.sm-phone {
+//         height: 64px;
+//     }
+// }
+
+.dropdown_twolines {
+    // if header message is too long, then we have this styling due to absolute nature
     display: flex;
     justify-content: center;
     width: 100%;
@@ -46,20 +47,21 @@
 
     position: relative;
 
-    > div {
+    >div {
         position: absolute;
         z-index: 1;
         top: 15%;
     }
-    
+
     @include mixins.phone {
         height: calc(15 * 8px);
     }
 
     @include mixins.sm-phone {
-        > div {
+        >div {
             top: 17%;
         }
+
         height: calc(11 * 8px);
     }
 }
@@ -94,7 +96,7 @@
         font-size: 1rem;
         aspect-ratio: 0.6;
     }
-    
+
     @include mixins.sm-phone {
         font-size: 0.8rem;
         aspect-ratio: 0.3;
@@ -128,7 +130,7 @@
     width: calc(calc(100% - 16px) / 2.6);
     flex-shrink: 0;
     aspect-ratio: calc(16.0/11.0);
-    
+
     position: relative; // image settings
     border-radius: 32px;
     overflow: hidden;
@@ -181,30 +183,35 @@
 // Info below the image carousel
 .info {
     display: flex;
-    justify-content: center;
     padding: 24px 0px;
-    
+
     color: var(--color-gold);
     background-color: var(--color-maroon);
-
+    height: 264px;
     width: 100%;
 
     @include mixins.phone {
+        height: 336px;
+        align-items: center;
         justify-content: flex-start;
         padding-left: 104px;
 
     }
-    
+
     @include mixins.sm-phone {
+        height: 400px;
         padding: 16px 0px;
         padding-left: 96px;
     }
- 
+
+
+
 }
 
 .info_items {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 8px;
 
     @include mixins.phone {
@@ -213,7 +220,7 @@
 }
 
 .info_item {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 170%;
 
     @include mixins.phone {

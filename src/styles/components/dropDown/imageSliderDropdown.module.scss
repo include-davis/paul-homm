@@ -29,16 +29,20 @@
 }
 
 .header {
+    height: 96px;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: var(--color-beige);
     z-index: 100;
-    padding: 16px 16px;
-    
+    padding: 20px;
+    // padding: 16px 16px;
+
     @include mixins.phone {
+        height: 64px;
         padding: 8px 16px;
     }
+    
 }
 
 .selected {
@@ -77,10 +81,10 @@
 
 .arrow:active {
     transition: transform 0.3s;
-    transform: rotate(180deg);  
+    transform: rotate(180deg);
 }
 
-.table{
+.table {
     display: none;
 }
 
@@ -93,10 +97,11 @@
 
 @keyframes drop {
     0% {
-      transform: translateY(-110%);
+        transform: translateY(-110%);
     }
+
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -137,12 +142,11 @@
 
 @keyframes rollout {
     0% {
-      transform: translateY(
-        calc(-100%)
-        );
+        transform: translateY(calc(-100%));
     }
+
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
