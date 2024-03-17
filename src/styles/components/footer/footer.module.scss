@@ -19,6 +19,7 @@
 
     @include mixins.tablet {
         flex-direction: column; // Now it's in column format
+        // justify-content: space-between;
         gap: 16px;
         align-items: center;
         padding: 24px 0px;
@@ -58,6 +59,7 @@
 
     width: 35%;
     gap: 8px;
+    // border: red solid 2px;
 
     @include mixins.tablet {
         width: 100%;
@@ -212,6 +214,7 @@
         font-size: 1.4rem;
         font-weight: normal;
         gap: 8px;
+        // border: red 2px solid;
     }
 
     @include mixins.phone {

@@ -21,9 +21,3 @@
     @content;
   }
 }
-
-@mixin v-sm-phone {
-  @media screen and (max-width: 390px) {
-    @content;
-  }
-}

@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
-import HomepageGallery from "@/components/homepage/homepageGallery";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
 import { BiSolidMessage } from "react-icons/bi";
@@ -8,6 +7,7 @@ import { BiSolidMessage } from "react-icons/bi";
 import styles from "@/styles/pages/home/home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export async function getStaticProps({ locale }) {
     return {
@@ -24,11 +24,10 @@ export default function Home() {
     const events = ["event1", "event2", "event3", "event4", "event5"]
 
     return (
-        <div className={styles.container}>
-            <HomepageGallery/>
+        <div>
             {/* Red "Our Mission" Section */}
             <div className={styles.mission}>
-                <div className={styles.mission_text}>
+                <div>
                     <h1>{t('mission.title')}</h1>
                     <p>{t('mission.paragraph1')}</p>
                     <p>{t('mission.paragraph2')}</p>
@@ -85,28 +84,18 @@ export default function Home() {
                     </div>
                     {/* Upcoming Events Section */}
                     <div className={styles.events_card}>
-                        <div className={styles.events_image_mobile}>
-                            <Image
-                                src={t('cards.events.image')}
-                                style={{ objectFit: "fill" }}
-                                fill={true}
-                                alt={"People holding posters"}
-                            />
-                        </div>
                         <h1>{t('cards.events.title')}</h1>
                         <div className={styles.events}>
-                            <div className={styles.date_container}>
-                                <ul>
-                                    {dates.map((item, index) => (
-                                        <li key={index}>{t('cards.events.' + item)}</li>
-                                    ))}
-                                </ul>
-                                <ul>
-                                    {events.map((item, index) => (
-                                        <li key={index}>{t('cards.events.' + item)}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <ul>
+                                {dates.map((item, index) => (
+                                    <li key={index}>{t('cards.events.' + item)}</li>
+                                ))}
+                            </ul>
+                            <ul>
+                                {events.map((item, index) => (
+                                    <li key={index}>{t('cards.events.' + item)}</li>
+                                ))}
+                            </ul>
                             <div className={styles.events_image}>
                                 <Image
                                     src={t('cards.events.image')}
