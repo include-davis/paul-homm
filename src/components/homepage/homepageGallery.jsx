@@ -4,7 +4,13 @@ import { FaCircle } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 
-
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: (await import(`@/messages/${locale}.json`)).default
+    }
+  };
+}
 
 export default function HomepageGallery() { 
   const [activeImg, setActiveImg] = useState(0); // activeImg can hold values 0-7 indicating which image from the lists below to use at each render
