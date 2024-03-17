@@ -8,7 +8,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 export default function HomepageGallery() { 
   const [activeImg, setActiveImg] = useState(0); // activeImg can hold values 0-7 indicating which image from the lists below to use at each render
-  let imgPaths = ['/homepageGallery/HomepageGalleryImage1.jpg', '/homepageGallery/HomepageGalleryImage2.png', '/homepageGallery/HomepageGalleryImage3.png', '/homepageGallery/HomepageGalleryImage4.png']
+  let imgPaths = ['/images/homepage/HomepageGalleryImage1.jpg', '/images/homepage/HomepageGalleryImage2.png', '/images/homepage/HomepageGalleryImage3.png', '/images/homepage/HomepageGalleryImage4.png']
   // for each image, hold a version of the image with different css stylings corresponding to possible roles it can take on each rerender, whether it is the previously shown image in the gallery or the currently shown image in the gallery 
   let prev = []
   let curr = []

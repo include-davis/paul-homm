@@ -1,3 +1,4 @@
+@use 'src/styles/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fredoka:wght@300..700&display=swap');
 
 .gallery {
@@ -144,17 +145,17 @@
     color:  var(--color-gold);
 }
 
-@media screen and (max-width:1048px) {
+@include mixins.tablet {
     .title {
         font-size: 2rem;
     }
     .description {
-        font-size: 1rem;
+        font-size: 1.5rem;
         line-height: normal;
     }
 }
 
-@media screen and (max-width:720px) {
+@include mixins.phone {
     .nav {display: none;}
     .title{display: none;}
     .container{
@@ -170,30 +171,27 @@
         position: absolute;
         width: 100%;
         height: 20%;
-        z-index: 2000;
+        z-index: 200;
         bottom: 0; 
+        background-color: black;
+        opacity: 0.75;
+        text-align: center;
     }
     .blur {
         width: 100%;
-        position: relative;
-        background-image: none;
-        align-items: center;
+        background: transparent;
         padding: 0;
     }
     .description {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
         width: 100%;
-        color: var(--color-beige);
+        color: var(--color-white);
         font-size: 1rem;
-        line-height: 1rem;
     }
 
     .left_blur {
         position: absolute;
         display: flex;
-        z-index: 1500;
+        z-index: 150;
         left: 0;
         width: 10%;
         height: 100%;
@@ -206,7 +204,7 @@
     .right_blur {
         position: absolute;
         display: flex;
-        z-index: 1500;
+        z-index: 150;
         right: 0;
         width: 10%;
         height: 100%;
@@ -214,5 +212,11 @@
         justify-content: center;
         align-items: center;
         background-image: linear-gradient(to right, rgba(251,251,240,0), rgba(251,251,240, 0.5) 90%);
+    }
+}
+
+@include mixins.v-sm-phone{
+    .description{
+        font-size: 0.8rem;
     }
 }
