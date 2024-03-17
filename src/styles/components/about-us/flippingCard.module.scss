@@ -1,0 +1,60 @@
+.container {
+    width: 432px;
+    height: 506px;
+    position: relative;
+    text-align: center;
+}
+
+.FlipCard {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-beige);
+}
+
+.CardInner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    font-family: Jost;
+    //trying to improve the lag
+    transform: translateZ(0);
+}
+
+.FlipCard:hover .CardInner {
+    transform: rotateY(180deg);
+}
+
+.CardFront,
+.FlipBack {
+    >img {
+        width: 100%;
+        height: 100%;
+    }
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px;
+    // box-sizing: border-box;
+    //tryring to improve the lag
+    // transform: translateZ(0);
+
+}
+
+.FlipBack {
+    background-color: var(--color-beige);
+    //trying to fix the lag 
+    transform: rotateY(180deg) translateZ(0);
+    padding: 60px 24px;
+
+    p {
+        font-size: 1.375rem;
+        text-align: left;
+
+    }
+}

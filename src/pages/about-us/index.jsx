@@ -40,4 +40,24 @@ export default function About()
     
 }
 
+export default function About() {
+    const t = useTranslations('Flipping Cards');
+    // const cards = ["Card1", "Card2", "Card3", "Card4", "Card5"];
+    const cards = ["Card1"];
+    const flippingCards = cards.map((card, index) => (
+        <FlippingCard
+            key={index}
+            title={t(`${card}.title`)}
+            content={t(`${card}.content`)}
+            image={t(`${card}.image`)}
+            alt={t(`${card}.alt`)}
+        />
+    ));
+
+    return (
+        <div>
+            {flippingCards}
+        </div>
+    );
+}
 About;
