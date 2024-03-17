@@ -68,7 +68,7 @@ export default function Footer() {
                     <p>{t('sponsor.message')}</p>
                     <div className={styles.sponsor_image}>
                         <Image
-                            src={t('sponsor.image')}
+                            src="/images/footer/credit-union.png"
                             alt={"Safe Credit Union Logo"}
                             style={{ objectFit: "fill" }}
                             sizes={"(max-width: 1280): 100vw"}
