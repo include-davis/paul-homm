@@ -20,7 +20,7 @@ export async function getStaticPaths(){
     const paths = committees.map((committee) => ({
         params: { committee }
     }));
-    return { paths, fallback: false};
+    return { paths, fallback: false };
 };
 
 export async function getStaticProps({ params, locale }) {
