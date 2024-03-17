@@ -35,4 +35,5 @@ export default function GetInvolved() {
         </div>
     );
 }
+
 GetInvolved;
