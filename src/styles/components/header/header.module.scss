@@ -123,7 +123,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 20;
+    z-index: 350;
 }
 
 @include mixins.tablet {
@@ -181,7 +181,7 @@
         align-items: center;
         transition: all 0.3s ease-in-out;
         gap: 0;
-        z-index: 15;
+        z-index: 340;
 
         a {
             font-size: 1.3rem;
