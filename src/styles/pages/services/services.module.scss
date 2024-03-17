@@ -1,7 +1,7 @@
 @use 'src/styles/mixins';
 
 .mainContainer {
-    font-family: Arial;
+    font-family: Jost;
     display: flex;
     flex-direction: column;
 }
@@ -32,6 +32,7 @@
 
     .pageHeading {
         font-size: 3.4375rem;
+        font-family: 'Be Vietnam';
 
         @include mixins.sm-desktop {
             color: black;
@@ -58,6 +59,14 @@
     column-gap: 40px;
     justify-content: center;
 
+    @include mixins.sm-phone {
+        column-gap: 24px;
+    }
+
+    @include mixins.v-sm-phone {
+        column-gap: 8px;
+    }
+
     .serviceBox {
         background-color: var(--color-beige);
         border-radius: 12px;
@@ -66,6 +75,7 @@
     }
 
     .topServiceBox {
+        font-family: 'Be Vietnam';
         row-gap: 65px;
         width: 402px;
         height: 300px;
@@ -93,6 +103,10 @@
             width: 147px;
             height: 134px;
             row-gap: 15px;
+        }
+
+        @include mixins.v-sm-phone {
+            width: 136px;
         }
 
         >h2 {
@@ -158,6 +172,10 @@
             width: 320px;
         }
 
+        @include mixins.v-sm-phone {
+            width: 260px;
+        }
+
         >h2 {
             text-align: center;
             font-size: 2.5rem;
@@ -191,6 +209,10 @@
 
             @include mixins.phone {
                 font-size: 1.13rem;
+            }
+
+            @include mixins.v-sm-phone {
+                font-size: 0.95rem;
             }
         }
 
@@ -241,8 +263,7 @@
     border: none;
     border-radius: 20px 20px 0 0;
     text-align: left;
-    padding-left: 14px;
-    padding-right: 90px;
+    padding-left: 24px;
     justify-content: space-between;
     transition: all 0.2s ease;
 }
@@ -262,6 +283,7 @@
 }
 
 .activeSlide {
+    height: 640px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -296,6 +318,7 @@
     }
 
     .slideText {
+        font-family: 'Be Vietnam';
         display: flex;
         align-items: center;
         justify-content: left;
@@ -304,5 +327,9 @@
         list-style-position: outside;
         position: relative;
         font-size: 2.25rem;
+
+        @include mixins.sm-desktop {
+            font-size: 1.85rem;
+        }
     }
 }
