@@ -1,0 +1,65 @@
+@use 'src/styles/mixins';
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
+
+.image_container {
+    position: relative;
+    width: 306px;
+    height: 306px;
+
+    @include mixins.sm-desktop {
+        width: 280px;
+        height: 280px;
+    }
+
+    @include mixins.tablet {
+        width: 250px;
+        height: 250px;
+    }
+
+    @include mixins.phone {
+        width: 232px;
+        height: 232px;
+
+    }
+
+    @include mixins.sm-phone {
+        height: 160px;
+        width: 160px;
+    }
+
+}
+
+.committee_card {
+    position: relative;
+}
+
+.committee_card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--color-maroon);
+    font-family: "Be Vietnam";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+
+    @include mixins.sm-desktop {
+        font-size: 1.65rem
+    }
+
+    @include mixins.tablet {
+        font-size: 1.5rem;
+    }
+
+    @include mixins.phone {
+        font-size: 1.25rem;
+    }
+
+    @include mixins.sm-phone {
+        font-size: 0.9rem;
+    }
+}

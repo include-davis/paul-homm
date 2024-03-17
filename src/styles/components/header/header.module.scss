@@ -1,3 +1,4 @@
+@use 'src/styles/mixins';
 @import url('https://fonts.googleapis.com/css?family=Jost:wght@200..900');
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
 
@@ -5,9 +6,9 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-maroon);
-    height: 226px;
+    height: var(--desktop-header-height);
     justify-content: space-around;
-    
+
 }
 
 .title {
@@ -16,14 +17,19 @@
     column-gap: 11px;
     margin-top: 8px;
     align-items: center;
+    width: 100%;
+    position: relative;
 
-    > *:first-child {
-        margin-left: 34px; 
+
+    >*:first-child {
+        margin-left: 32px;
     }
+
 }
 
 .title_text {
     color: var(--color-white);
+
     h1 {
         font-family: "Malayalam MN";
         font-size: 2.8125rem;
@@ -47,7 +53,7 @@
     list-style: none;
     justify-content: space-evenly;
     align-items: center;
-    
+
     a {
         color: var(--color-gold);
         text-align: center;
@@ -60,40 +66,229 @@
         transition: border-bottom 0.3s ease;
         padding-left: 16px;
         padding-right: 16px;
+        /* ADDED: helps prevent the slight shift of elements when going from no border to a border*/
+        border-bottom: 2px solid transparent;
 
         &:hover {
             border-bottom: 2px solid var(--color-gold);
         }
 
+        /* ADDED: styling to ensure inline-block would allow for width modifications & prevent small shifts when transitioning from border to no border*/
+        .link_text {
+            display: inline-block;
+            box-sizing: border-box;
+            border-bottom: 2px solid transparent;
+        }
+
     }
 
-   
-    
 }
 
+.hamburger_menu {
+    display: none;
+
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    color: var(--color-gold);
+    padding-right: 8px;
+
+}
+
+
 .page_link.active {
-    // change how the active link appears here!!
     border-radius: 5px;
     background-color: var(--color-gold);
-    
-    
+
     a {
         color: var(--color-maroon);
 
         &:hover {
-            border-bottom: none;
+            /* ADDED: prevents element shift*/
+            border-bottom: 2px solid transparent;
         }
     }
-        
+
+}
+
+.language_dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 320px;
+    top: 24px;
+}
+
+.language_dropdown>div {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+}
+
+@include mixins.tablet {
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        height: var(--tablet-header-height);
+
+        .title {
+            a {
+                img {
+                    height: 64px;
+                    width: 100%;
+                }
+            }
+        }
     }
 
-.language_dropdown{
-    position: relative;
-    display: inline-block;
+    .title {
+        margin-top: 0px;
 
-    >div {
+        >*:first-child {
+            margin-left: 24px;
+        }
+    }
+
+    .title_text {
+        h1 {
+            font-size: 1.8rem;
+
+        }
+
+        h2 {
+            display: none;
+        }
+    }
+
+    .hamburger_menu {
+        display: flex;
+        font-size: 2rem;
+    }
+
+    .pages {
         position: absolute;
-        top: 100%;
+        top: var(--tablet-header-height);
         left: 0;
+        width: 100%;
+        height: calc(100vh - var(--tablet-header-height));
+        max-height: 0;
+        overflow: hidden;
+
+        background-color: var(--color-maroon);
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        gap: 0;
+        z-index: 15;
+
+        a {
+            font-size: 1.3rem;
+            /* ADDED: ensures link will work anywhere within the menu area*/
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* ADDED: ensures correct coloring and alignment on hover */
+        a:hover {
+            border-bottom: 2px solid transparent;
+           
+            .link_text {
+                border-bottom: 2px solid var(--color-gold);
+                transition: border-bottom 0.3s ease;
+
+            }
+        }
+
+        /* ADDED: modifies styling from desktop */
+        .page_link {
+            width: 100%;
+            border-bottom: none;
+        }
+
+        /* ADDED: ensures correct coloring, just need to change these values */
+        .page_link.active {
+            background-color: transparent;
+            
+
+            .link_text {
+                background-color: var(--color-gold);
+                border-bottom: 2px solid transparent;
+                border-radius: 5px;
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+        }
+
+    }
+
+    .pages.active {
+        max-height: calc(100vh - var(--tablet-header-height));
+
+
+    }
+
+    
+    .language_dropdown{
+        top: 40px;
+        right: 240px;
+    }
+}
+
+@include mixins.phone {
+    .header {
+        height: var(--mobile-header-height);
+
+        .title {
+            a {
+                img {
+                    height: 48px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .title {
+
+        >*:first-child {
+            margin-left: 12px;
+        }
+    }
+
+    .title_text {
+        h1 {
+            font-size: 1.2rem;
+
+        }
+    }
+
+    .hamburger_menu {
+        font-size: 1.6rem;
+    }
+
+    .pages {
+        top: var(--mobile-header-height);
+        height: calc(100vh - var(--mobile-header-height));
+
+        a {
+            font-size: 1.2rem;
+        }
+
+    }
+
+    .pages.active {
+        max-height: calc(100vh - var(--mobile-header-height));
+    }
+
+    .language_dropdown{
+        position: static;
+    }
+
+    .language_dropdown>div{
+        top: calc(var(--mobile-header-height)/2 - 0.7rem);
+        left: auto;
+        right: 4px;
     }
 }
