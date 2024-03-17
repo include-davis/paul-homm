@@ -11,12 +11,13 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function PopupCard({ title, content }) {
+export default function PopupCard({ title, content, onClose }) {
   const t = useTranslations('Popup Card');
+
   return (
     <div className={styles.container}>
-      <button className={styles.button}>
-        <p>Close</p><IoIosCloseCircleOutline className={styles.button_svg} />
+      <button className={styles.button} onClick={onClose}>
+        Close<IoIosCloseCircleOutline className={styles.button_svg} />
       </button>
       <div className={styles.layout}>
         <h1>{title}</h1>
