@@ -15,12 +15,12 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   return (
-    <NextIntlClientProvider 
+    <NextIntlClientProvider
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}>    
-      <Header></Header>  
+      className={`${inter.variable}`}>
+      <Header></Header>
       <Component {...pageProps} />
       <Footer></Footer>
     </NextIntlClientProvider>
