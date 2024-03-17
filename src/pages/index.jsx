@@ -84,9 +84,17 @@ export default function Home() {
                     </div>
                     {/* Upcoming Events Section */}
                     <div className={styles.events_card}>
+                        <div className={styles.events_image_mobile}>
+                            <Image
+                                src={t('cards.events.image')}
+                                style={{ objectFit: "fill" }}
+                                fill={true}
+                                alt={"People holding posters"}
+                            />
+                        </div>
                         <h1>{t('cards.events.title')}</h1>
                         <div className={styles.events}>
-                            <div className={styles.data_title_container}>
+                            <div className={styles.date_container}>
                                 <ul>
                                     {dates.map((item, index) => (
                                         <li key={index}>{t('cards.events.' + item)}</li>

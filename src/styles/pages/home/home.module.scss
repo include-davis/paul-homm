@@ -1,7 +1,9 @@
 @use 'src/styles/mixins';
 
 .container {
-    font-family: 'Be Vietnam';
+    >* {
+        font-family: 'Be Vietnam';
+    }
 }
 
 // Mission statement and paragraph
@@ -100,8 +102,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: calc(8px * 113);
+    //height: calc(8px * 113);
     background-color: var(--color-white);
     padding: 24px;
 }
@@ -142,7 +143,6 @@
     color: var(--text-black);
     font-size: 1.5rem;
     line-height: 40px;
-
     padding: 0px 40px;
 
     h1 {
@@ -172,10 +172,17 @@
     }
 
     @include mixins.phone {
-        max-width: none;
+        h1 {
+            font-size: 1.375rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
         height: fit-content;
-        width: 353px;
-        padding: 8px 12px;
+        width: 328px;
+        padding: 0px 12px 24px;
     }
 
 }
@@ -185,7 +192,6 @@
     display: flex;
     justify-content: space-evenly;
     gap: 32px;
-
     font-size: 1.875rem;
     color: var(--color-maroon);
 
@@ -194,12 +200,27 @@
     @include mixins.tablet {
         flex-direction: column;
     }
+
+    @include mixins.phone {
+
+        h1 {
+            font-size: 1.375rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
+    }
+
 }
 
 .row_icons {
     // styling of icon + "contact info"
     display: flex;
     gap: 16px;
+
+
 }
 
 .contact {
@@ -207,6 +228,8 @@
     display: flex;
     flex-direction: column;
     gap: var(--edge-spacer);
+
+
 }
 
 .address {
@@ -216,35 +239,50 @@
     p {
         width: 250px;
     }
+
+    @include mixins.phone {
+        p {
+            width: 200px;
+        }
+    }
 }
 
 .dates {
     // This is to style lower two cards
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    align-items: center;
+    column-gap: 32px;
+    margin: 64px 0px;
+    max-width: 100%;
 
-    @include mixins.sm-phone {
+    @include mixins.tablet {
         flex-direction: column;
-        align-items: center;
+        margin: 32px;
     }
+
+
+
 }
 
 // Styling for "Closure Dates" card
 .closure_card {
+    width: 362px;
+    height: 384px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 16px;
+    justify-content: space-around;
     padding: 8px;
+    border-radius: 16px;
 
     background-color: var(--color-beige);
     color: var(--text-black);
 
     h1 {
-        padding: 16px 32px 32px 32px;
+        text-align: center;
         color: var(--color-maroon);
         font-size: 2.5rem;
+
     }
 
     ul {
@@ -256,14 +294,52 @@
         font-size: 1.5rem;
     }
 
-    // width: calc(8px * 45);
-    // height: calc(8px * 48);
+    @include mixins.sm-desktop {
+        width: 300px;
+        height: 400px;
+
+        li {
+            font-size: 1.15rem;
+        }
+    }
+
+    @include mixins.tablet {
+        h1 {
+            font-size: 2.0rem;
+        }
+
+        margin-bottom: 32px;
+    }
+
+    @include mixins.phone {
+        h1 {
+            font-size: 1.375rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
+        width: 328px;
+        height: 296px;
+        padding-top: 24px;
+
+    }
+
+    @include mixins.sm-phone {
+        font-size: 1.375rem;
+    }
+
 }
 
 // Styling for "Upcoming Events" card
 .events_card {
+    width: 1024px;
+    height: 384px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 16px;
 
@@ -271,14 +347,11 @@
     color: var(--text-black);
 
     h1 {
-        padding: 16px 32px 32px 32px;
+        padding: 0px 32px 32px 32px;
         color: var(--color-maroon);
         font-size: 2.5rem;
 
-        @include mixins.sm-phone {
-            font-size: 1.375rem;
-            order: 1;
-        }
+
 
     }
 
@@ -295,9 +368,35 @@
         }
     }
 
-    width: calc(8px * 128);
-    height: calc(8px * 48);
 
+
+    @include mixins.sm-desktop {
+        width: 700px;
+        height: 400px;
+
+        li {
+            font-size: 1.15rem;
+        }
+    }
+
+    @include mixins.tablet {
+        max-width: 100%;
+        // width: 640px;
+        height: 616px;
+        padding: 24px 0px 0px;
+
+        h1 {
+            font-size: 2.0rem;
+        }
+    }
+
+    @include mixins.phone {
+        h1 {
+            font-size: 1.35rem;
+        }
+
+        width: 328px;
+    }
 
 }
 
@@ -305,38 +404,60 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    align-items: center;
 
-    @include mixins.sm-phone {
-        flex-direction: column-reverse;
-        align-items: center;
+    @include mixins.phone {
+        padding: 0px 8px;
+    }
+}
+
+.events_image_mobile {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+
+    @include mixins.tablet {
+        display: block;
     }
 
+    @include mixins.phone {
+        width: 320px;
+        height: 231px;
+    }
+
+    @include mixins.sm-phone {
+        width: 250px;
+    }
 }
 
 .events_image {
     position: relative;
-    width: calc(8px * 51);
-    height: calc(8px * 33);
+    width: 320px;
+    height: 200px;
 
     border-radius: 8px;
     overflow: hidden;
 
-    @include mixins.sm-phone {
-        width: 499px;
-        height: 231px;
-        order: 3;
+    @include mixins.sm-desktop {
+        width: 280px;
+        height: 160px;
     }
+
+    @include mixins.tablet {
+        display: none;
+    }
+
+
 
 
 }
 
-.data_title_container {
+.date_container {
     display: flex;
     column-gap: 24px;
-
-    @include mixins.sm-phone {
-        order: 2;
-    }
 }
 
 // Add circular background behind icons
