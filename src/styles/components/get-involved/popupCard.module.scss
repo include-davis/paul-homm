@@ -1,50 +1,147 @@
+@use '../../mixins.scss';
+
 .container {
-    background-color: var(--off-white, #FFFBF0);
-    height: 100vh;
-    //margin-top: 100px;
-    //padding: 40px;
-    // margin-bottom: 40px;
-    //flex: 1;
-    //width: 840px;
+    max-width: 1080px;
+    width: 75%;
+    height: 90vh;
+    padding: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 250;
+
+    background-color: var(--color-white);
+    border-radius: 12px;
+}
+
+.button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    border: none;
+    background: transparent;
+    color: var(--color-maroon);
+    font-size: 1.8rem;
 }
 
 .layout {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     font-family: var(--font-inter);
-    border-radius: 12px;
+    padding: 48px;
 
     >h1 {
-        width: 536px;
-        height: 64px;
-        flex-shrink: 0;
-        color: var(--maroon, #5B1110);
+        color: var(--color-maroon);
         text-align: center;
         font-family: Jost;
-        font-size: 45px;
+        font-size: 2.8rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-    }
-
-    >p {
-        color: var(--Off-Black, #333);
-        font-family: "Be Vietnam";
-        font-size: 25px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 170%;
-        text-align: center;
-        width: 731px;
-        justify-content: center;
+        margin-bottom: 16px;
     }
 }
 
-.button {
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-    float: right;
-    font-size: 25px;
-    color: var(--color-maroonn);
+.content {
+    color: var(--text-black);
+    font-family: "Be Vietnam";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 170%;
+    width: 100%;
+    justify-content: center;
+}
+
+.contentMobile, .paginationButton{
+    display: none;
+}
+
+@include mixins.sm-desktop{
+    .content{
+        font-size: 1.5rem;
+    }
+}
+
+@include mixins.tablet{
+    .content{
+        font-size: 1.3rem;
+    }
+    .button{
+        font-size: 1.5rem;
+    }
+    .layout{
+        padding: 24px;
+        > h1{
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+    }   
+}
+
+@include mixins.phone{
+    .container{
+        width: 80%;
+    }
+    .button{
+        font-size: 1.5rem;
+    }
+    .layout{
+        padding: 16px;
+        position: relative;
+        height: calc(100% - 24px);
+        >h1{
+            font-size: 1.5rem;
+        }
+    }
+    .content{
+        display: none;
+    }
+    .contentMobile{
+        display: block;
+        color: var(--text-black);
+        font-family: "Be Vietnam";
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 170%;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 32px;
+
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .paginationButton{
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        font-size: 1.5rem;
+        color: var(--color-maroon);
+        background-color: transparent;
+        border: none;
+    }
+}
+
+@include mixins.v-sm-phone{
+    .button{
+        font-size: 1rem;
+    }
+    .layout{
+        padding: 8px;
+        >h1{
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+    }
+    .contentMobile{
+        font-size: 1rem;
+    }
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "@/styles/pages/get-involved/index.module.scss";
+import styles from "@/styles/pages/get-involved/get-involved.module.scss";
 import { useTranslations } from "next-intl";
-import Card from "@/components/getInvolved/card";
+import Card from "@/components/get-involved/card";
 
 export async function getStaticProps({ locale }) {
     return {
