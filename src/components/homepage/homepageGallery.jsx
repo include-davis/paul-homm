@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from "@/styles/components/homepageGallery/homepageGallery.module.scss";
+import styles from "@/styles/components/homepage/homepageGallery.module.scss";
 import { FaCircle } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";

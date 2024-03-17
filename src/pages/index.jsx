@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
-import HomepageGallery from "@/components/homepageGallery/homepageGallery";
+import HomepageGallery from "@/components/homepage/homepageGallery";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
 import { BiSolidMessage } from "react-icons/bi";
@@ -25,6 +25,7 @@ export default function Home() {
 
     return (
         <div>
+            <HomepageGallery/>
             {/* Red "Our Mission" Section */}
             <div className={styles.mission}>
                 <div>
