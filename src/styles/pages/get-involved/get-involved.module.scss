@@ -52,7 +52,6 @@
   line-height: normal;
 }
 
-
 @include mixins.sm-desktop{
   .cardContainer {
     flex-direction: column;
@@ -60,23 +59,14 @@
   }
 }
 
-@include mixins.tablet{
-  .cardContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 @include mixins.phone{
-  .cardContainer {
-    flex-direction: column;
-    align-items: center;
+  .donateBoxContainer{
+    min-width: 320px;
   }
 }
 
-@include mixins.sm-phone{
-  .cardContainer {
-    flex-direction: column;
-    align-items: center;
+@include mixins.v-sm-phone{
+  .donateBoxContainer{
+    min-width: 240px;
   }
 }
