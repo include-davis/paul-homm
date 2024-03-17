@@ -102,8 +102,8 @@
     align-items: center;
     justify-content: space-evenly;
     height: calc(8px * 113);
-
     background-color: var(--color-white);
+    padding: 24px;
 }
 
 .doctors_image {
@@ -132,7 +132,6 @@
 
 }
 
-// Styling for "Visit Us!" card. Requires some 
 .visit_card {
     display: flex;
     flex-direction: column;
@@ -141,7 +140,7 @@
 
     background-color: var(--color-beige);
     color: var(--text-black);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 40px;
 
     padding: 0px 40px;
@@ -152,8 +151,32 @@
         font-size: 2.5rem;
     }
 
-    width: calc(8px * 117);
-    height: calc(8px * 48);
+    width: 936px;
+    height: 384px;
+
+    @include mixins.sm-desktop {
+        width: 720px;
+
+        >p {
+            font-size: 1.25rem;
+        }
+    }
+
+    @include mixins.tablet {
+        max-width: 100%;
+        height: 536px;
+
+        >p {
+            text-align: center;
+        }
+    }
+
+    @include mixins.phone {
+        max-width: none;
+        height: fit-content;
+        width: 353px;
+        padding: 8px 12px;
+    }
 
 }
 
@@ -163,10 +186,14 @@
     justify-content: space-evenly;
     gap: 32px;
 
-    font-size: 2rem;
+    font-size: 1.875rem;
     color: var(--color-maroon);
 
     padding-top: 40px;
+
+    @include mixins.tablet {
+        flex-direction: column;
+    }
 }
 
 .row_icons {
@@ -187,7 +214,7 @@
     flex-direction: column;
 
     p {
-        width: calc(8px * 31);
+        width: 250px;
     }
 }
 
@@ -209,6 +236,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 16px;
+    padding: 8px;
 
     background-color: var(--color-beige);
     color: var(--text-black);
@@ -228,8 +256,8 @@
         font-size: 1.5rem;
     }
 
-    width: calc(8px * 45);
-    height: calc(8px * 48);
+    // width: calc(8px * 45);
+    // height: calc(8px * 48);
 }
 
 // Styling for "Upcoming Events" card
