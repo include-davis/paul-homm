@@ -1,0 +1,335 @@
+@use 'src/styles/mixins';
+
+.mainContainer {
+    font-family: Jost;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile {
+    display: none;
+
+    @include mixins.tablet {
+        display: block;
+    }
+}
+
+.desktop {
+    @include mixins.tablet {
+        display: none;
+    }
+}
+
+.servicesContainer {
+    background-color: var(--color-white);
+    color: var(--color-maroon);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    row-gap: 40px;
+    justify-content: space-around;
+
+    .pageHeading {
+        font-size: 3.4375rem;
+        font-family: 'Be Vietnam';
+
+        @include mixins.sm-desktop {
+            color: black;
+            font-size: 3rem;
+        }
+
+        @include mixins.tablet {
+            font-size: 2.5rem;
+        }
+
+        @include mixins.phone {
+            font-size: 1.75rem;
+        }
+
+        @include mixins.sm-phone {
+            font-size: 1.3125rem;
+        }
+    }
+}
+
+.boxContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    justify-content: center;
+
+    @include mixins.sm-phone {
+        column-gap: 24px;
+    }
+
+    @include mixins.v-sm-phone {
+        column-gap: 8px;
+    }
+
+    .serviceBox {
+        background-color: var(--color-beige);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topServiceBox {
+        font-family: 'Be Vietnam';
+        row-gap: 65px;
+        width: 402px;
+        height: 300px;
+        justify-content: center;
+
+        @include mixins.sm-desktop {
+            width: 348px;
+            height: 316px;
+            row-gap: 15px;
+        }
+
+        @include mixins.tablet {
+            width: 285px;
+            height: 260px;
+            row-gap: 15px;
+        }
+
+        @include mixins.phone {
+            width: 196px;
+            height: 178px;
+            row-gap: 15px;
+        }
+
+        @include mixins.sm-phone {
+            width: 147px;
+            height: 134px;
+            row-gap: 15px;
+        }
+
+        @include mixins.v-sm-phone {
+            width: 136px;
+        }
+
+        >h2 {
+            font-size: 2.8125rem;
+            text-align: center;
+
+            @include mixins.sm-desktop {
+                font-size: 2.6rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 2rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.45rem;
+            }
+
+            @include mixins.sm-phone {
+                font-size: 1.2rem;
+            }
+        }
+
+        >p {
+            font-size: 1.875rem;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+
+            @include mixins.sm-desktop {
+                font-size: 2rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 1.64rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.13rem;
+            }
+
+            @include mixins.sm-phone {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+
+    .bottomServiceBox {
+        padding: 8px;
+        width: 504px;
+        height: 338px;
+        row-gap: 26px;
+        justify-content: center;
+
+        @include mixins.tablet {
+            width: 385px;
+            height: 152px;
+            row-gap: 15px;
+        }
+
+        @include mixins.phone {
+            width: 320px;
+        }
+
+        @include mixins.v-sm-phone {
+            width: 260px;
+        }
+
+        >h2 {
+            text-align: center;
+            font-size: 2.5rem;
+
+            @include mixins.sm-desktop {
+                font-size: 2.2rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 1.4rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.25rem;
+            }
+        }
+
+        .desc {
+            font-size: 2rem;
+            color: black;
+            list-style-position: inside;
+            padding-left: 27px;
+
+            @include mixins.sm-desktop {
+                font-size: 2rem;
+            }
+
+            @include mixins.tablet {
+                font-size: 1.3rem;
+            }
+
+            @include mixins.phone {
+                font-size: 1.13rem;
+            }
+
+            @include mixins.v-sm-phone {
+                font-size: 0.95rem;
+            }
+        }
+
+        .translatorsList {
+            columns: 2;
+        }
+    }
+}
+
+.bottomBoxContainer {
+
+    @include mixins.sm-desktop {
+        //1280
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+
+    @include mixins.phone {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+
+.slideContainer {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    color: var(--color-gold);
+}
+
+.tabContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.tab {
+    width: 25%;
+    height: 97px;
+    font-size: 1.5rem; //1.875rem
+    color: var(--color-maroon);
+    background-color: var(--color-beige);
+    border: none;
+    border-radius: 20px 20px 0 0;
+    text-align: left;
+    padding-left: 24px;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
+}
+
+.activeTab {
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
+}
+
+.inactiveSlide {
+    display: none;
+}
+
+.activeSlide {
+    height: 640px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 100px;
+    background-color: var(--color-maroon);
+    padding: 100px 40px;
+
+    .arrContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .arr {
+            font-size: 5rem;
+            color: var(--color-beige);
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+
+    .imageContainer {
+        height: 431px;
+        display: flex;
+        align-items: center;
+    }
+
+    .image {
+        border-radius: 12px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        //position: absolute;
+    }
+
+    .slideText {
+        font-family: 'Be Vietnam';
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        height: 380;
+        width: 625px;
+        list-style-position: outside;
+        position: relative;
+        font-size: 2.25rem;
+
+        @include mixins.sm-desktop {
+            font-size: 1.85rem;
+        }
+    }
+}

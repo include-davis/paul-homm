@@ -3,13 +3,16 @@
 :root {
   // colors: rgba/hex
   --color-maroon: #5b1110;
-  --color-gold: #d79c1a;
-  --color-white: #fffbf0;
+  --color-gold: #d79c1A;
+  --color-white: #fffBf0;
   --color-beige: #e7d3b8;
   --text-black: #333333;
 
   // spacers: px
   --edge-spacer: 24px;
+  --desktop-header-height:226px;
+  --tablet-header-height: 120px;
+  --mobile-header-height:72px;
 
   // font sizes: ALWAYS IN REM
 }
@@ -22,6 +25,7 @@
 }
 
 /* Desktop Styles */
+
 
 button {
   cursor: pointer;
