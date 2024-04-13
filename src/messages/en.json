@@ -46,7 +46,19 @@
         "title": "The Legacy of Paul Hom",
         "subtitle": "We are the oldest Asian clinic in the United States.",
         "description": "Dr. Paul Hom had an untiring commitment to the clinic and to its purpose in serving patients of all ages in the Asian community who lack adequate healthcare due to cultural, linguistic, or economic barriers. Healthcare continues to be provided at no charge to all patients.",
-        "UCDClinics:": {
+        "sisterClinics": {
+            "count": "2",
+            "title": "Our Sister Clinics",
+            "clinic1": {
+                "name": "VN Cares",
+                "link": "https://www.vncares.org/"
+            },
+            "clinic2": {
+                "name": "HLUB",
+                "link": "https://hlubclinic.wordpress.com/"
+            }
+        },
+        "ucDavisClinics": {
             "count": "6",
             "title": "UC Davis Student-Run Clinics",
             "clinic1": {
@@ -72,18 +84,6 @@
             "clinic6": {
                 "name": "Willow Clinic",
                 "link": "https://www.willowclinic.org/"
-            }
-        },
-        "sisterClinics": {
-            "count": "2",
-            "title": "Our Sister Clinics",
-            "clinic1": {
-                "name": "VN Cares",
-                "link": "https://www.vncares.org/"
-            },
-            "clinic2": {
-                "name": "HLUB",
-                "link": "https://hlubclinic.wordpress.com/"
             }
         }
     },

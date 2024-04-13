@@ -30,9 +30,9 @@ export default function About() {
 
     const ucdClinics = [];
     const sisterClinics = [];
-    for (let i = 1; i <= t('UCDClinics.count'); i++) {
+    for (let i = 1; i <= t('ucDavisClinics.count'); i++) {
         ucdClinics.push(<li key={i}>
-            <a href={t(`UCDClinics.clinic${i}.link`)} target="__blank">{t(`UCDClinics.clinic${i}.name`)}</a>
+            <a href={t(`ucDavisClinics.clinic${i}.link`)} target="__blank">{t(`ucDavisClinics.clinic${i}.name`)}</a>
         </li>);
     }
     for (let i = 1; i <= t('sisterClinics.count'); i++) {
@@ -71,7 +71,7 @@ export default function About() {
             <YoutubeEmbed embedId="UUguG3tATJE" />
             <div className={styles.listClass}>
                 <div className={styles.defaultClass}>
-                    <h3>{t('UCDClinics.title')}</h3>
+                    <h3>{t('ucDavisClinics.title')}</h3>
                     <ul>
                         {ucdClinics}
                     </ul>
