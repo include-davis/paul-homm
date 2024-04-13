@@ -68,7 +68,7 @@ export default function About() {
 
 
             <p>{t('description')}</p>
-            {/* <YoutubeEmbed embedId="UUguG3tATJE" /> */}
+            <YoutubeEmbed embedId="UUguG3tATJE" />
             <div className={styles.listClass}>
                 <div className={styles.defaultClass}>
                     <h3>{t('ucDavisClinics.title')}</h3>
