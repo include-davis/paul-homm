@@ -42,6 +42,51 @@
             }
         }
     },
+    "About": {
+        "title": "The Legacy of Paul Hom",
+        "subtitle": "We are the oldest Asian clinic in the United States.",
+        "description": "Dr. Paul Hom had an untiring commitment to the clinic and to its purpose in serving patients of all ages in the Asian community who lack adequate healthcare due to cultural, linguistic, or economic barriers. Healthcare continues to be provided at no charge to all patients.",
+        "UCDClinics:": {
+            "count": "6",
+            "title": "UC Davis Student-Run Clinics",
+            "clinic1": {
+                "name": "Bayanihan",
+                "link": "https://www.bayanihanclinic.com/"
+            },
+            "clinic2": {
+                "name": "Clinica Tepati",
+                "link": "https://clinicatepati.com/"
+            },
+            "clinic3": {
+                "name": "Imani clinic",
+                "link": "https://www.imaniclinic.org/"
+            },
+            "clinic4": {
+                "name": "Joan Viteri Memorial Clinic",
+                "link": "https://www.jvmclinic.com/"
+            },
+            "clinic5": {
+                "name": "Shifa Clinic",
+                "link": "https://shifaclinic.org/"
+            },
+            "clinic6": {
+                "name": "Willow Clinic",
+                "link": "https://www.willowclinic.org/"
+            }
+        },
+        "sisterClinics": {
+            "count": "2",
+            "title": "Our Sister Clinics",
+            "clinic1": {
+                "name": "VN Cares",
+                "link": "https://www.vncares.org/"
+            },
+            "clinic2": {
+                "name": "HLUB",
+                "link": "https://hlubclinic.wordpress.com/"
+            }
+        }
+    },
     "GetInvolved": {
         "pageTitle": "Get Involved",
         "CardComponent": {

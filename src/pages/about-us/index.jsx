@@ -15,7 +15,9 @@ export async function getStaticProps({ locale }) {
 }
 
 //import styles 
+
 export default function About() {
+    const t = useTranslations("About");
     const carouselData = ["/images/aboutUs/frame1.png", '/images/aboutUs/frame2.png', '/images/aboutUs/frame3.png', '/images/aboutUs/frame4.png', '/images/aboutUs/frame5.png', '/images/aboutUs/frame6.png', '/images/aboutUs/frame7.png'/* Add more frames as needed */];
     const cards = ["1", "2", "3", "4", "5"];
     const dims = [
@@ -25,7 +27,20 @@ export default function About() {
         ["624px", "405px"],
         ["586px", "426px"]
     ]
-    const t = useTranslations('Flipping Cards');
+
+    const ucdClinics = [];
+    const sisterClinics = [];
+    for (let i = 1; i <= t('UCDClinics.count'); i++) {
+        ucdClinics.push(<li key={i}>
+            <a href={t(`UCDClinics.clinic${i}.link`)}>{t(`UCDClinics.clinic${i}.name`)}</a>
+        </li>);
+    }
+    for (let i = 1; i <= t('sisterClinics.count'); i++) {
+        sisterClinics.push(<li key={i}>
+            <a href={t(`sisterClinics.clinic${i}.link`)}>{t(`sisterClinics.clinic${i}.name`)}</a>
+        </li>);
+    }
+    //const t = useTranslations('Flipping Cards');
 
     const getFlippingCard = (num) => {
         return (
@@ -40,8 +55,8 @@ export default function About() {
     }
     return (
         <div className={styles.wrapperClass}>
-            <h1>The Legacy of Paul Hom</h1>
-            <h2>We are the oldest Asian clinic in the United States.</h2>
+            <h1>{t('title')}</h1>
+            <h2>{t('subtitle')}</h2>
             <Carousel data={carouselData} />
 
             {/* <div>{getFlippingCard(cards[0])}</div>
@@ -52,25 +67,19 @@ export default function About() {
 
 
 
-            <p>Dr. Paul Hom had an untiring commitment to the clinic and to its purpose in serving patients of all ages in the Asian community who lack adequate healthcare due to cultural, linguistic, or economic barriers. Healthcare continues to be provided at no charge to all patients. </p>
+            <p>{t('description')}</p>
             <YoutubeEmbed embedId="UUguG3tATJE" />
             <div className={styles.listClass}>
                 <div className={styles.defaultClass}>
-                    <h3>UC Davis Student-Run Clinics</h3>
+                    <h3>{t('UCDClinics.title')}</h3>
                     <ul>
-                        <li>Bayanihan</li>
-                        <li>Clinica Tepati</li>
-                        <li> Imani clinic</li>
-                        <li> Joan Viteri Memorial Clinic</li>
-                        <li> Shifa Clinic</li>
-                        <li> Willow Clinic</li>
+                        {ucdClinics}
                     </ul>
                 </div>
                 <div className={styles.defaultClass}>
-                    <h3>Our Sister Clinics</h3>
+                    <h3>{t('sisterClinics.title')}</h3>
                     <ul>
-                        <li>VN Cares</li>
-                        <li>HLUB</li>
+                        {sisterClinics}
                     </ul>
                 </div>
             </div>
@@ -86,10 +95,10 @@ export default function About() {
 //     const flippingCards = cards.map((card, index) => (
 //         <FlippingCard
 //             key={index}
-//             title={t(`${card}.title`)}
-//             content={t(`${card}.content`)}
-//             image={t(`${card}.image`)}
-//             alt={t(`${card}.alt`)}
+//             title={t(`${ card }.title`)}
+//             content={t(`${ card }.content`)}
+//             image={t(`${ card }.image`)}
+//             alt={t(`${ card }.alt`)}
 //         />
 //     ));
 
