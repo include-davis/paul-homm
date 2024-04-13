@@ -1,23 +1,25 @@
-.wrapperClass{
+.wrapperClass {
+  font-family: 'Be Vietnam';
   background-color: #FFFBF0;
   text-align: center;
-  height:auto;
+  height: auto;
   padding-top: 40px;
 
-  >*{
-      padding: 24px;
+  >* {
+    padding: 24px;
   }
 
-  >h1{
+  >h1 {
     font-size: 2rem;
     color: #5B1110;
   }
 
-  >h2{
+  >h2 {
     font-size: 1.75rem;
     color: #D79C1A;
   }
-  >p{
+
+  >p {
     margin: 0 auto;
     width: auto;
     padding-left: 80px;
@@ -27,25 +29,24 @@
   }
 }
 
-.listClass{
+.listClass {
+  padding: 50px 80px;
   display: flex;
-  flex-direction: column;
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  column-gap: 48px;
 }
 
-.defaultClass{
+.defaultClass {
   padding-bottom: 16px;
-  >h3{
+
+  >h3 {
     color: #5B1110;
     font-size: 24px;
   }
 
-  > ul > li {
+  >ul>li {
     margin: 16px;
-    list-style-type: none;
-    text-align: center;
+    text-align: left;
   }
 }
-
