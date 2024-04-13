@@ -48,5 +48,20 @@
   >ul>li {
     margin: 16px;
     text-align: left;
+
+    a {
+      padding: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: black;
+    }
+
+    a:hover {
+      background-color: #5b11102d;
+    }
   }
+
 }

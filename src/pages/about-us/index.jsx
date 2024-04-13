@@ -32,12 +32,12 @@ export default function About() {
     const sisterClinics = [];
     for (let i = 1; i <= t('UCDClinics.count'); i++) {
         ucdClinics.push(<li key={i}>
-            <a href={t(`UCDClinics.clinic${i}.link`)}>{t(`UCDClinics.clinic${i}.name`)}</a>
+            <a href={t(`UCDClinics.clinic${i}.link`)} target="__blank">{t(`UCDClinics.clinic${i}.name`)}</a>
         </li>);
     }
     for (let i = 1; i <= t('sisterClinics.count'); i++) {
         sisterClinics.push(<li key={i}>
-            <a href={t(`sisterClinics.clinic${i}.link`)}>{t(`sisterClinics.clinic${i}.name`)}</a>
+            <a href={t(`sisterClinics.clinic${i}.link`)} target="__blank">{t(`sisterClinics.clinic${i}.name`)}</a>
         </li>);
     }
     //const t = useTranslations('Flipping Cards');
