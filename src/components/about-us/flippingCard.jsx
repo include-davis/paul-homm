@@ -3,6 +3,14 @@ import { useTranslations } from 'next-intl';
 import styles from "@/styles/components/about-us/flippingCard.module.scss";
 import Image from 'next/image';
 
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        messages: (await import(`@/messages/${locale}.json`)).default
+      }
+    };
+  }
+
 export default function FlippingCard({ title, content, image, alt, dims }) {
     const [width, height] = dims;
     return (

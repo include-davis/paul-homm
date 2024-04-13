@@ -4,7 +4,13 @@ import { FaCircle } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 
-
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: (await import(`@/messages/${locale}.json`)).default
+    }
+  };
+}
 
 export default function HomepageGallery() { 
   const [activeImg, setActiveImg] = useState(0); // activeImg can hold values 0-7 indicating which image from the lists below to use at each render
@@ -85,8 +91,8 @@ export default function HomepageGallery() {
       <div className={styles.container}>
 
         <div className={styles.textContainer}><div className={styles.blur}>
-          <h2 div className={styles.title}>A Passion to Serve</h2>
-          <p div className={styles.description}>Quality clinical services for our local community</p></div>
+          <h2 className={styles.title}>A Passion to Serve</h2>
+          <p className={styles.description}>Quality clinical services for our local community</p></div>
         </div>
         <div key={activeImg} className={styles.frameContainer}>
           <div className={styles.left_blur}><FaArrowCircleLeft className={styles.arrow} onClick={()=>{select_Prev()}} alt="Left Arrow"/></div>
