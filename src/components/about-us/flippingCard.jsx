@@ -25,7 +25,7 @@ export default function FlippingCard({ title, content, image, alt, dims }) {
                             <Image
                                 src={image}
                                 alt={alt}
-                                style={{ objectFit: "fill" }}
+                                style={{ objectFit: "scale-down" }}
                                 fill={true}
                                 priority={true}
                             />

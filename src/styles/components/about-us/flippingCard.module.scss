@@ -1,6 +1,7 @@
 .container {
-    width: 432px;
-    height: 506px;
+    //width: 432px;
+    // height: 506px;
+    width: fit-content;
     position: relative;
     text-align: center;
 }
@@ -54,10 +55,10 @@
     background-color: var(--color-beige);
     //trying to fix the lag 
     transform: rotateY(180deg) translateZ(0);
-    padding: 60px 24px;
+    padding: 60px 44px;
 
     p {
-        font-size: 1.375rem;
+        font-size: 1.3rem;
         text-align: left;
 
     }

@@ -21,11 +21,11 @@ export default function About() {
     const carouselData = ["/images/aboutUs/frame1.png", '/images/aboutUs/frame2.png', '/images/aboutUs/frame3.png', '/images/aboutUs/frame4.png', '/images/aboutUs/frame5.png', '/images/aboutUs/frame6.png', '/images/aboutUs/frame7.png'/* Add more frames as needed */];
     const cards = ["1", "2", "3", "4", "5"];
     const dims = [
-        ["354px", "430px"],
-        ["339px", "455px"],
-        ["634px, 382px"],
-        ["624px", "405px"],
-        ["586px", "426px"]
+        ["432px", "506px"],
+        ["427px", "507px"],
+        ["701px", "483px"],
+        ["701px", "483px"],
+        ["701px", "507px"]
     ]
 
     const ucdClinics = [];
@@ -40,15 +40,16 @@ export default function About() {
             <a href={t(`sisterClinics.clinic${i}.link`)} target="__blank">{t(`sisterClinics.clinic${i}.name`)}</a>
         </li>);
     }
-    //const t = useTranslations('Flipping Cards');
+
 
     const getFlippingCard = (num) => {
+        const x = useTranslations('Flipping Cards');
         return (
             <FlippingCard
-                title={t(`Card${num}.title`)}
-                content={t(`Card${num}.content`)}
-                image={t(`Card${num}.image`)}
-                alt={t(`Card${num}.alt`)}
+                title={x(`Card${num}.title`)}
+                content={x(`Card${num}.content`)}
+                image={x(`Card${num}.image`)}
+                alt={x(`Card${num}.alt`)}
                 dims={dims[num - 1]}
             />
         )
@@ -59,11 +60,11 @@ export default function About() {
             <h2>{t('subtitle')}</h2>
             {/* <Carousel data={carouselData} /> */}
 
-            {/* <div>{getFlippingCard(cards[0])}</div>
+            <div>{getFlippingCard(cards[0])}</div>
             <div>{getFlippingCard(cards[1])}</div>
             <div>{getFlippingCard(cards[2])}</div>
             <div>{getFlippingCard(cards[3])}</div>
-            <div>{getFlippingCard(cards[4])}</div> */}
+            <div>{getFlippingCard(cards[4])}</div>
 
 
 
