@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
+        props: {
+            messages: (await import(`@/messages/${locale}.json`)).default
+        }
     };
-  }
+}
 
 export default function FlippingCard({ title, content, image, alt, dims }) {
     const [width, height] = dims;

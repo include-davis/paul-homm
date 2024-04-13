@@ -72,6 +72,15 @@
   }
 }
 
+.cardContainer {
+  display: flex;
+  padding: 64px 176px;
+}
+
+.alternateStyle {
+  justify-content: flex-end;
+}
+
 .listClass {
   padding: 50px 80px;
   display: flex;

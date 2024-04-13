@@ -59,12 +59,13 @@ export default function About() {
             <h1>{t('title')}</h1>
             <h2>{t('subtitle')}</h2>
             {/* <Carousel data={carouselData} /> */}
+            {cards.map((elem, index) => <div className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.alternateStyle : ''}`}>{getFlippingCard(cards[elem - 1])}</div>)}
 
-            <div>{getFlippingCard(cards[0])}</div>
+            {/* <div>{getFlippingCard(cards[0])}</div>
             <div>{getFlippingCard(cards[1])}</div>
             <div>{getFlippingCard(cards[2])}</div>
             <div>{getFlippingCard(cards[3])}</div>
-            <div>{getFlippingCard(cards[4])}</div>
+            <div>{getFlippingCard(cards[4])}</div> */}
 
 
 
