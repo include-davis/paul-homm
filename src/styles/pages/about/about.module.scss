@@ -1,3 +1,5 @@
+@use 'src/styles/mixins';
+
 .wrapperClass {
   font-family: 'Be Vietnam';
   background-color: #FFFBF0;
@@ -5,18 +7,43 @@
   height: auto;
   padding-top: 40px;
 
+  @include mixins.phone {
+    padding-top: 20px;
+
+  }
+
   >* {
     padding: 24px;
   }
 
   >h1 {
-    font-size: 2rem;
+    font-size: 3.2rem;
     color: #5B1110;
+
+    @include mixins.tablet {
+      font-size: 2.8rem;
+    }
+
+    @include mixins.phone {
+      font-size: 2.4rem;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 2rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1.5rem;
+    }
   }
 
   >h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     color: #D79C1A;
+
+    @include mixins.tablet {
+      display: none;
+    }
   }
 
   >p {
@@ -25,7 +52,23 @@
     padding-left: 80px;
     padding-right: 80px;
     padding-bottom: 32px;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+
+    @include mixins.tablet {
+      font-size: 1.25rem;
+    }
+
+    @include mixins.phone {
+      padding: 0px 24px;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -35,6 +78,14 @@
   text-align: center;
   justify-content: space-around;
   column-gap: 48px;
+
+  @include mixins.tablet {
+    flex-direction: column;
+  }
+
+  @include mixins.phone {
+    padding: 24px;
+  }
 }
 
 .defaultClass {
@@ -42,10 +93,16 @@
 
   >h3 {
     color: #5B1110;
-    font-size: 24px;
+    font-size: 2rem;
+
+    @include mixins.sm-phone {
+      font-size: 1.375rem;
+
+    }
   }
 
   >ul>li {
+    font-size: 1rem;
     margin: 16px;
     text-align: left;
 
@@ -63,6 +120,23 @@
 
       background-color: #5b11102d;
     }
-  }
 
+    @include mixins.tablet {
+      list-style-type: none;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    @include mixins.phone {
+      padding: 0px 24px;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1rem;
+    }
+  }
 }

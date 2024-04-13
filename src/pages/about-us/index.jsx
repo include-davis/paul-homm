@@ -57,7 +57,7 @@ export default function About() {
         <div className={styles.wrapperClass}>
             <h1>{t('title')}</h1>
             <h2>{t('subtitle')}</h2>
-            <Carousel data={carouselData} />
+            {/* <Carousel data={carouselData} /> */}
 
             {/* <div>{getFlippingCard(cards[0])}</div>
             <div>{getFlippingCard(cards[1])}</div>
@@ -68,7 +68,7 @@ export default function About() {
 
 
             <p>{t('description')}</p>
-            <YoutubeEmbed embedId="UUguG3tATJE" />
+            {/* <YoutubeEmbed embedId="UUguG3tATJE" /> */}
             <div className={styles.listClass}>
                 <div className={styles.defaultClass}>
                     <h3>{t('ucDavisClinics.title')}</h3>
