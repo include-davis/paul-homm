@@ -6,6 +6,9 @@
   text-align: center;
   height: auto;
   padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include mixins.phone {
     padding-top: 20px;
@@ -70,19 +73,51 @@
       font-size: 1rem;
     }
   }
+
+  .cardsDiv {
+    width: 80%;
+    padding: 64px 174px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 180px;
+  }
 }
 
 .cardContainer {
   display: flex;
-  padding: 64px 176px;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 400px;
+  }
+
+  @include mixins.sm-desktop {
+    padding: 64px 174px;
+  }
 }
 
-.alternateStyle {
+
+
+.path {
+  img {
+    height: 400px;
+    left: 30%;
+    top: 80%;
+  }
+}
+
+.altPath {
   justify-content: flex-end;
+
+  img {
+    left: 45%;
+    top: 110%;
+  }
 }
 
 .listClass {
-  padding: 50px 80px;
+  padding: 50px 8px;
   display: flex;
   text-align: center;
   justify-content: space-around;

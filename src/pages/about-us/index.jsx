@@ -5,6 +5,7 @@ import styles from "@/styles/pages/about/about.module.scss";
 import Carousel from "@/components/about-us/carousel";
 import FlippingCard from '@/components/about-us/flippingCard';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -14,10 +15,15 @@ export async function getStaticProps({ locale }) {
     };
 }
 
-//import styles 
+/* TODO
+- map the correct svgs to each element
+- fix positioning for svgs
+- carousel
+*/
 
 export default function About() {
     const t = useTranslations("About");
+    const svg = useTranslations("Flipping Cards");
     const carouselData = ["/images/aboutUs/frame1.png", '/images/aboutUs/frame2.png', '/images/aboutUs/frame3.png', '/images/aboutUs/frame4.png', '/images/aboutUs/frame5.png', '/images/aboutUs/frame6.png', '/images/aboutUs/frame7.png'/* Add more frames as needed */];
     const cards = ["1", "2", "3", "4", "5"];
     const dims = [
@@ -59,16 +65,18 @@ export default function About() {
             <h1>{t('title')}</h1>
             <h2>{t('subtitle')}</h2>
             {/* <Carousel data={carouselData} /> */}
-            {cards.map((elem, index) => <div className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.alternateStyle : ''}`}>{getFlippingCard(cards[elem - 1])}</div>)}
+            <div className={styles.cardsDiv}>
+                {cards.map((elem, index) => <div className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index == 0 ? styles.topPath : ''}`} >{getFlippingCard(cards[elem - 1])}
+                    {index !== cards.length - 1 && ( // Render SVG for all but the last card
+                        <img
+                            src={svg(`Card${elem}.svg`)}
+                            alt='Dotted path leading to proceeding image'
 
-            {/* <div>{getFlippingCard(cards[0])}</div>
-            <div>{getFlippingCard(cards[1])}</div>
-            <div>{getFlippingCard(cards[2])}</div>
-            <div>{getFlippingCard(cards[3])}</div>
-            <div>{getFlippingCard(cards[4])}</div> */}
+                        />
+                    )}
 
-
-
+                </div>)}
+            </div>
             <p>{t('description')}</p>
             <YoutubeEmbed embedId="UUguG3tATJE" />
             <div className={styles.listClass}>
