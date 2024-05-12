@@ -52,9 +52,7 @@
   >p {
     margin: 0 auto;
     width: auto;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 32px;
+    padding: 0px 174px 32px;
     font-size: 1.35rem;
 
     @include mixins.tablet {
@@ -117,10 +115,11 @@
 }
 
 .listClass {
+  width: 1024px;
   padding: 50px 8px;
   display: flex;
   text-align: center;
-  justify-content: space-around;
+  justify-content: space-between;
   column-gap: 48px;
 
   @include mixins.tablet {
