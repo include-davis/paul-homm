@@ -183,6 +183,7 @@
     }
   }
 }
+
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
 
 
@@ -192,13 +193,13 @@
 
 .main_container {
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--color-white);
-  
-  
+
+
 }
 
 .window_container {
@@ -211,7 +212,7 @@
   gap: 8px;
   background-color: var(--color-maroon);
   height: 48px;
-  
+
 }
 
 
@@ -236,7 +237,7 @@
 .viewport {
   flex-grow: 1;
   overflow: hidden;
-  
+
 }
 
 .content_belt {
@@ -245,7 +246,7 @@
   flex-direction: row;
   transition: all 0.3s ease;
   justify-content: center;
-  
+
 }
 
 .frame {
@@ -253,44 +254,80 @@
   flex-shrink: 0;
   //aspect-ratio: calc(16.0/9.0);
   height: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 16px;
-  
+
 }
 
 .frame_content {
   color: var(--color-gold);
   font-family: "Be Vietnam";
   font-size: 1.4rem;
-  
-  
+
+
 }
 
 
 .flipping_cards {
   display: flex;
   align-items: flex-start;
-  
+
   width: 100%
 }
 
+.mobile {
+  display: none;
+}
+
+@include mixins.med-desktop {
+  .cardContainer {
+    // background-color: blue;
+
+
+  }
+
+  .path,
+  .altPath {
+    img {
+      width: 275px;
+    }
+  }
+
+  .altPath {
+    img {
+      left: 35%;
+      top: 110%;
+    }
+  }
+}
+
+@include mixins.sm-desktop {
+  .path,
+  .altPath {
+    .svg {
+      display: none;
+    }
+  }
+
+  .cardContainer {
+    //background-color: red;
+    justify-content: center;
+    padding: 0;
+  }
+
+}
+
 @include mixins.tablet {
-  .main_container {
-    //background-color: aqua;
-  }
-}
 
-@include mixins.phone {
-  .main_container {
-    //background-color: palevioletred;
-  }
-}
 
-@include mixins.sm-phone {
-  .main_container {
-    //background-color:blue;
+  .mobile {
+    display: block;
+  }
+
+  .cardContainer {
+    display: none;
   }
 }

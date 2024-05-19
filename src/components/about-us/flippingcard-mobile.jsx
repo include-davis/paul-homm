@@ -12,7 +12,7 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function FlippingCardMobile({props, dimensions}) {
-    const t = useTranslations(`FlippingCards.${props}`)
+    const t = useTranslations(`Flipping Cards.${props}`)
     const [height, width] = dimensions;
     return (
         <div className={styles.flipping_card}>

@@ -7,107 +7,28 @@ import FlippingCard from '@/components/about-us/flippingCard';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
+import FlippingCardMobile from "@/components/about-us/flippingcard-mobile"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 export async function getStaticProps({ locale }) {
     return {
         props: {
             messages: (await import(`@/messages/${locale}.json`)).default
         }
     };
-import React from 'react';
-import FlippingCardMobile from "@/components/about-us/flippingcard-mobile"
-import styles from'@/styles/pages/about/about.module.scss'
-import { useState } from 'react';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useTranslations } from "next-intl";
-
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
-    };
 }
 
-const data = ["card1", "card2","card3","card4","card5"]
+const data = ["Card1", "Card2", "Card3", "Card4", "Card5"]
 const dimensions = [
     ["220px", "168px"],
     ["226px", "199px"],
     ["186px", "289px"],
     ["195px", "291px"],
     ["212px", "291px"]
-]
-
-export default function About()
-{
-    const [activeIndex, setActiveIndex] = useState(0)
-    const n = data.length
-    const subIndex = () => {
-      setActiveIndex((activeIndex + n - 1) % n)
-    }
-
-    const addIndex = () => {
-      setActiveIndex((activeIndex + 1) % n)
-    }
-
-    const t = useTranslations(`FlippingCards`)
-
-    return(
-        <div className={styles.main_container}>
-            <div className={styles.window_container}>
-                <button className={styles.arrow} onClick={subIndex}>
-                    <IoIosArrowBack/>
-                </button>
-
-                <div className={styles.viewport}> 
-                    <div className={styles.content_belt}
-                    style={{transform: `translateX(calc(${-activeIndex} * 100%))`}}>
-                        <div className={styles.flipping_cards}>
-                            {data.map((card, index) => (
-                                <div key={index} className={styles.frame}> 
-                                    <h1 className={styles.frame_content}>{t(`${card}.title`)}</h1>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                <button className={styles.arrow} onClick={addIndex}>
-                    <IoIosArrowForward />
-                </button>
-            </div>
-
-            <div className={styles.cards_container}>
-                <div className={styles.viewport}> 
-                    <div className={styles.content_belt}
-                    style={{transform: `translateX(calc(${-activeIndex} * 100%))`}}>
-                        <div className={styles.flipping_cards}>
-                            {data.map((card, index) => (
-                                <div key={index} className={styles.frame}> 
-                                    <FlippingCardMobile props = {card} dimensions =
-                                    {dimensions[index]} />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-            
-        </div>
-        
-    )
-}
-
-/* TODO
-- map the correct svgs to each element
-- fix positioning for svgs
-- carousel
-*/
-
+];
 export default function About() {
     const t = useTranslations("About");
-    const svg = useTranslations("Flipping Cards");
+    const flip = useTranslations("Flipping Cards");
     const carouselData = ["/images/aboutUs/frame1.png", '/images/aboutUs/frame2.png', '/images/aboutUs/frame3.png', '/images/aboutUs/frame4.png', '/images/aboutUs/frame5.png', '/images/aboutUs/frame6.png', '/images/aboutUs/frame7.png'/* Add more frames as needed */];
     const cards = ["1", "2", "3", "4", "5"];
     const dims = [
@@ -117,6 +38,21 @@ export default function About() {
         ["701px", "483px"],
         ["701px", "507px"]
     ]
+
+    /* Mobile Flipping Cards */
+    const [activeIndex, setActiveIndex] = useState(0)
+    const n = data.length
+    const subIndex = () => {
+        setActiveIndex((activeIndex + n - 1) % n)
+    }
+
+    const addIndex = () => {
+        setActiveIndex((activeIndex + 1) % n)
+    }
+
+
+    /* Mobile Flipping Cards */
+
 
     const ucdClinics = [];
     const sisterClinics = [];
@@ -145,17 +81,60 @@ export default function About() {
         )
     }
     return (
+
         <div className={styles.wrapperClass}>
+
+
             <h1>{t('title')}</h1>
             <h2>{t('subtitle')}</h2>
-            {/* <Carousel data={carouselData} /> */}
-            <div className={styles.cardsDiv}>
+            <Carousel data={carouselData} />
+            <div className={`${styles.main_container} ${styles.mobile}`}>
+                <div className={styles.window_container}>
+                    <button className={styles.arrow} onClick={subIndex}>
+                        <IoIosArrowBack />
+                    </button>
+
+                    <div className={styles.viewport}>
+                        <div className={styles.content_belt}
+                            style={{ transform: `translateX(calc(${-activeIndex} * 100%))` }}>
+                            <div className={styles.flipping_cards}>
+                                {data.map((card, index) => (
+                                    <div key={index} className={styles.frame}>
+                                        <h1 className={styles.frame_content}>{flip(`${card}.title`)}</h1>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <button className={styles.arrow} onClick={addIndex}>
+                        <IoIosArrowForward />
+                    </button>
+                </div>
+
+                <div className={styles.cards_container}>
+                    <div className={styles.viewport}>
+                        <div className={styles.content_belt}
+                            style={{ transform: `translateX(calc(${-activeIndex} * 100%))` }}>
+                            <div className={styles.flipping_cards}>
+                                {data.map((card, index) => (
+                                    <div key={index} className={styles.frame}>
+                                        <FlippingCardMobile props={card} dimensions=
+                                            {dimensions[index]} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={`${styles.cardsDiv} ${styles.desktop}`}>
                 {cards.map((elem, index) => <div className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index == 0 ? styles.topPath : ''}`} >{getFlippingCard(cards[elem - 1])}
                     {index !== cards.length - 1 && ( // Render SVG for all but the last card
                         <img
-                            src={svg(`Card${elem}.svg`)}
+                            className={styles.svg}
+                            src={flip(`Card${elem}.svg`)}
                             alt='Dotted path leading to proceeding image'
-
                         />
                     )}
 
