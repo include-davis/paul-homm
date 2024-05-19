@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
 import styles from "@/styles/pages/about/carousel.module.scss";
 
@@ -14,6 +14,8 @@ export async function getStaticProps({ locale }) {
 // data = ['frame1', 'frame2', frame3', ...]
 export default function PracticeCarouselExample({ data }) {
     const [activeIndex, setActiveIndex] = useState(0)
+    const startXRef = useRef(0);
+    const endXRef = useRef(0);
     const n = data.length
     const subIndex = () => {
       setActiveIndex((activeIndex + n - 1) % n)
@@ -22,7 +24,22 @@ export default function PracticeCarouselExample({ data }) {
     const addIndex = () => {
       setActiveIndex((activeIndex + 1) % n)
     }
+const handleTouchStart = (e) => {
+    startXRef.current = e.touches[0].clientX;
+  };
 
+  const handleTouchMove = (e) => {
+    endXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const threshold = 50; // Minimum distance to be considered a swipe
+    if (startXRef.current - endXRef.current > threshold) {
+      addIndex();
+    } else if (endXRef.current - startXRef.current > threshold) {
+      subIndex();
+    }
+  };
     return (
       <div className={styles.main_container}>
         <div className={styles.window_container}>
@@ -30,19 +47,19 @@ export default function PracticeCarouselExample({ data }) {
             <RxArrowLeft/>
           </button>
           <div className={styles.viewport}>
-            <div 
-              className={styles.content_belt}
-              style={{transform: `translateX(calc(${-activeIndex} * 100%))`}}
-              >
-              { data.map((frame, index) => {
-                  return (
-                    <div key={index} className={styles.frame}>
-                      <img src={frame} unoptimized={true}></img>
-                    </div>
-                  )
-                }) 
-              }
-            </div>
+            <div
+            className={styles.content_belt}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {data.map((frame, index) => (
+              <div key={index} className={styles.frame}>
+                <img src={frame} alt={`frame ${index}`} />
+              </div>
+            ))}
+          </div>
           </div>
           <button className={styles.arrow} onClick={addIndex}>
             <RxArrowRight/>
