@@ -115,7 +115,7 @@
 }
 
 .listClass {
-  width: 1024px;
+  max-width: 1024px;
   padding: 50px 8px;
   display: flex;
   text-align: center;
@@ -252,7 +252,6 @@
 .frame {
   width: 100%;
   flex-shrink: 0;
-  //aspect-ratio: calc(16.0/9.0);
   height: 100%;
 
   display: flex;
@@ -266,6 +265,16 @@
   color: var(--color-gold);
   font-family: "Be Vietnam";
   font-size: 1.4rem;
+
+  @include mixins.phone {}
+
+  @include mixins.sm-phone {
+    font-size: 1.05rem;
+  }
+
+  @include mixins.v-sm-phone {
+    font-size: 0.875rem;
+  }
 
 
 }
@@ -283,11 +292,6 @@
 }
 
 @include mixins.med-desktop {
-  .cardContainer {
-    // background-color: blue;
-
-
-  }
 
   .path,
   .altPath {
@@ -305,6 +309,7 @@
 }
 
 @include mixins.sm-desktop {
+
   .path,
   .altPath {
     .svg {
@@ -313,10 +318,10 @@
   }
 
   .cardContainer {
-    //background-color: red;
     justify-content: center;
-    padding: 0;
   }
+
+
 
 }
 
@@ -325,9 +330,12 @@
 
   .mobile {
     display: block;
+    margin-bottom: -96px;
   }
 
   .cardContainer {
     display: none;
   }
+
+
 }
