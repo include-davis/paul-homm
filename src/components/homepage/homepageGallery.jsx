@@ -91,8 +91,8 @@ export default function HomepageGallery() {
       <div className={styles.container}>
 
         <div className={styles.textContainer}><div className={styles.blur}>
-          <h2 className={styles.title}>A Passion to Serve</h2>
-          <p className={styles.description}>Quality clinical services for our local community</p></div>
+          <h2 div className={styles.title}>A Passion to Serve</h2>
+          <p div className={styles.description}>Quality clinical services for our local community</p></div>
         </div>
         <div key={activeImg} className={styles.frameContainer}>
           <div className={styles.left_blur}><FaArrowCircleLeft className={styles.arrow} onClick={()=>{select_Prev()}} alt="Left Arrow"/></div>
