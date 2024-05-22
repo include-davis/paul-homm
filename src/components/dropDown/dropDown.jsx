@@ -7,14 +7,6 @@ import { BsTranslate } from "react-icons/bs";
 import { useRouter } from 'next/router';
 import { useLocale } from 'next-intl';
 
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
-    };
-}
-
 const locales = [
     {name: "English", code: "en"},
     {name: "中文", code: "zh"},
