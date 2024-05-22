@@ -87,7 +87,8 @@
       "address": "6341 Folsom Blvd Sacramento, CA 95819"
     },
     "sponsor": {
-      "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT"
+      "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+      "image": "/images/footer/credit-union.png"
     },
     "include": "Designed & Developed with 🤍 by #include @ Davis"
   },
