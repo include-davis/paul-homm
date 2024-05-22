@@ -2,15 +2,6 @@ import React,{ useState, useEffect, useRef } from 'react';
 import YouTube from "react-youtube";
 import styles from "@/styles/pages/about/about.module.scss";
 //import styles 
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
-    };
-  }
-  
 export default function About()
 {
     return(

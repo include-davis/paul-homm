@@ -2,14 +2,6 @@ import React, { useState, useContext } from 'react';
 import styles from "@/styles/components/dropDown/imageSliderDropdown.module.scss";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        messages: (await import(`@/messages/${locale}.json`)).default
-      }
-    };
-}
-
 export default function imageSliderDropDown({ services, setImage, currService, setService }) {
     const [dropDown, setDropDown] = useState(false)
 

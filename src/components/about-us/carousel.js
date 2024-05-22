@@ -2,14 +2,6 @@ import { useState } from 'react';
 import { RxArrowLeft, RxArrowRight } from 'react-icons/rx'
 import styles from "@/styles/pages/about/carousel.module.scss";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default
-    }
-  };
-}
-
 // data is passed in as an array of strings as of now
 // data = ['frame1', 'frame2', frame3', ...]
 export default function PracticeCarouselExample({ data }) {
