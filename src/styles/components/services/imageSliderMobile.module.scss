@@ -1,0 +1,218 @@
+@use 'src/styles/mixins';
+
+// Container to hold it all together
+.main_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--color-white);
+}
+
+.dropdown_twolines {
+    // if header message is too long, then we have this styling due to absolute nature
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(22 * 8px);
+
+    background-color: var(--color-maroon);
+
+    position: relative;
+
+    >div {
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+    }
+
+    @include mixins.phone {
+        height: calc(15 * 8px);
+    }
+
+    @include mixins.sm-phone {
+        >div {
+            top: 17%;
+        }
+
+        height: calc(11 * 8px);
+    }
+}
+
+// Container that holds the image sliding carousel
+.window_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+    gap: 8px;
+}
+
+.arrow {
+    height: 48px;
+    aspect-ratio: 1;
+    background-color: var(--color-white);
+    border-radius: 24px;
+    border: none;
+    flex-grow: 0;
+
+    text-align: center;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mixins.phone {
+        font-size: 1rem;
+        aspect-ratio: 0.6;
+    }
+
+    @include mixins.sm-phone {
+        font-size: 0.8rem;
+        aspect-ratio: 0.3;
+    }
+}
+
+// Viewport for the sliding images
+.viewport_container {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.content_belt {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.3s ease;
+    gap: 8px;
+}
+
+// Frame that holds each image
+.frame {
+    width: calc(calc(100% - 16px) / 2.6);
+    flex-shrink: 0;
+    aspect-ratio: calc(16.0/11.0);
+
+    position: relative; // image settings
+    border-radius: 32px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+// Images that sit behind frontal image
+.frame.secondary {
+    margin: 0 calc(-1 * calc(100% - 16px) / 2.6 * 0.1);
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+// Dots that indicate image index
+.dots {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.dot {
+    width: 16px;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background-color: var(--color-beige);
+
+    @include mixins.phone {
+        width: 12px;
+    }
+
+    @include mixins.sm-phone {
+        width: 8px;
+    }
+}
+
+.dot.active {
+    background-color: var(--color-gold);
+}
+
+@media screen and (max-width: 1200px) {
+    .viewport {
+        width: calc(100% * 3.8/2.6);
+    }
+}
+
+// Info below the image carousel
+.info {
+    display: flex;
+    padding: 24px 0px;
+    padding-left: 104px;
+
+
+    color: var(--color-gold);
+    background-color: var(--color-maroon);
+    height: 264px;
+    width: 100%;
+
+    @include mixins.phone {
+        height: 336px;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 104px;
+
+    }
+
+    @include mixins.sm-phone {
+        height: 400px;
+        padding: 16px 0px;
+        padding-left: 96px;
+    }
+
+    @include mixins.v-sm-phone {
+        height: 440px;
+        padding-left: 48px;
+    }
+
+
+
+}
+
+.info_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    @include mixins.phone {
+        width: 70%;
+    }
+
+    @include mixins.v-sm-phone {
+        width: 100%;
+    }
+}
+
+.info_item {
+    font-size: 1.5rem;
+    line-height: 170%;
+
+    @include mixins.phone {
+        font-size: 1.2rem;
+    }
+
+    @include mixins.sm-phone {
+        font-size: 1.1rem;
+    }
+}
