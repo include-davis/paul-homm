@@ -1,21 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import YoutubeEmbed from "@/components/about-us/YoutubeEmbed";
-//import YouTube from "react-youtube";
-import styles from "@/styles/pages/about/about.module.scss";
-import Carousel from "@/components/about-us/carousel";
-import FlippingCard from '@/components/about-us/flippingCard';
-import { useTranslations } from 'next-intl';
+import PageLayout from "@/components/layout";
+import React from "react";
+//import styles
 import Image from 'next/image';
 
 import FlippingCardMobile from "@/components/about-us/flippingcard-mobile"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            messages: (await import(`@/messages/${locale}.json`)).default
-        }
-    };
+  return {
+    props: {
+      messages: (await import(`@/messages/${locale}.json`)).default,
+    },
+  };
 }
 
 const data = ["Card1", "Card2", "Card3", "Card4", "Card5"]
