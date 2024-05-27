@@ -19,10 +19,11 @@ export default function App({ Component, pageProps }) {
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}>
-      <Header></Header>
+      className={`${inter.variable}`}
+    >
+      <Header />
       <Component {...pageProps} />
-      <Footer></Footer>
+      <Footer />
     </NextIntlClientProvider>
   );
 }

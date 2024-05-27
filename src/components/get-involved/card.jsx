@@ -14,23 +14,28 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Card({ cardProps }) {
-  const t = useTranslations('GetInvolved.CardComponent');
+  const t = useTranslations("GetInvolved.CardComponent");
   const [popup, setPopup] = useState(false);
 
   const togglePopup = () => {
     setPopup(!popup);
-  }
+  };
 
   return (
-      <div className={styles.cardsContainer}>
-        <div className={styles.card}>
-          <div className={styles.cardImg} style={{backgroundImage: `url(${t(`${cardProps}.imgSrc`)})`}}>
-            <p className={styles.cardText}>{t(`${cardProps}.titleShort`)}</p>
-          </div>
-          <button className={styles.detailsButton} onClick={togglePopup}>{t('details')}</button>
-          <button className={styles.signUpButton}>{t('signUp')}</button>
+    <div className={styles.cardsContainer}>
+      <div className={styles.card}>
+        <div
+          className={styles.cardImg}
+          style={{ backgroundImage: `url(${t(`${cardProps}.imgSrc`)})` }}
+        >
+          <p className={styles.cardText}>{t(`${cardProps}.titleShort`)}</p>
         </div>
-        {popup && <PopupCard card={cardProps} onClose={togglePopup}/>}
+        <button className={styles.detailsButton} onClick={togglePopup}>
+          {t("details")}
+        </button>
+        <button className={styles.signUpButton}>{t("signUp")}</button>
       </div>
+      {popup && <PopupCard card={cardProps} onClose={togglePopup} />}
+    </div>
   );
 }
