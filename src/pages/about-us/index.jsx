@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
+
 import styles from "@/styles/pages/about/about.module.scss";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -40,6 +42,7 @@ const svgDims = [
 export default function About() {
   const t = useTranslations("About");
   const flip = useTranslations("Flipping Cards");
+
   const carouselData = [
     "/images/aboutUs/frame1.png",
     "/images/aboutUs/frame2.png",
@@ -47,6 +50,7 @@ export default function About() {
     "/images/aboutUs/frame4.png",
     "/images/aboutUs/frame5.png",
     "/images/aboutUs/frame6.png",
+    "/images/aboutUs/frame7.png",
   ];
   const cards = ["1", "2", "3", "4", "5"];
   const dims = [
@@ -67,29 +71,10 @@ export default function About() {
   const addIndex = () => {
     setActiveIndex((activeIndex + 1) % n);
   };
-
   /* Mobile Flipping Cards */
 
-  const ucdClinics = [];
-  const sisterClinics = [];
-  for (let i = 1; i <= t("ucDavisClinics.count"); i++) {
-    ucdClinics.push(
-      <li key={i}>
-        <a href={t(`ucDavisClinics.clinic${i}.link`)} target="__blank">
-          {t(`ucDavisClinics.clinic${i}.name`)}
-        </a>
-      </li>
-    );
-  }
-  for (let i = 1; i <= t("sisterClinics.count"); i++) {
-    sisterClinics.push(
-      <li key={i}>
-        <a href={t(`sisterClinics.clinic${i}.link`)} target="__blank">
-          {t(`sisterClinics.clinic${i}.name`)}
-        </a>
-      </li>
-    );
-  }
+  const ucdClinics = [...Array(Number(t("ucDavisClinics.count"))).keys()];
+  const sisterClinics = [...Array(Number(t("sisterClinics.count"))).keys()];
 
   const getFlippingCard = (num) => {
     return (
@@ -185,11 +170,39 @@ export default function About() {
         <div className={styles.listClass}>
           <div className={styles.defaultClass}>
             <h3>{t("ucDavisClinics.title")}</h3>
-            <ul>{ucdClinics}</ul>
+            <ul>
+              {ucdClinics.map((i) => {
+                return (
+                  <li key={i}>
+                    <Link
+                      href={t(`ucDavisClinics.clinic${i + 1}.link`)}
+                      target="__blank"
+                      className={styles.link}
+                    >
+                      {t(`ucDavisClinics.clinic${i + 1}.name`)}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <div className={styles.defaultClass}>
             <h3>{t("sisterClinics.title")}</h3>
-            <ul>{sisterClinics}</ul>
+            <ul>
+              {sisterClinics.map((i) => {
+                return (
+                  <li key={i}>
+                    <Link
+                      href={t(`sisterClinics.clinic${i + 1}.link`)}
+                      target="__blank"
+                      className={styles.link}
+                    >
+                      {t(`sisterClinics.clinic${i + 1}.name`)}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
