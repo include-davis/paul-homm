@@ -1,0 +1,31 @@
+@use 'src/styles/mixins';
+
+.videoResponsive {
+    display: flex;
+    justify-content: center;
+}
+
+.videoResponsive>iframe {
+    width: 853px;
+    height: 480px;
+
+    @include mixins.tablet {
+        width: 700px;
+        height: 400px;
+    }
+
+    @include mixins.phone {
+        width: 520px;
+        height: 300px;
+    }
+
+    @include mixins.sm-phone {
+        width: 380px;
+        height: 240px;
+    }
+
+    @include mixins.v-sm-phone {
+        width: 250px;
+        height: 180px;
+    }
+}

@@ -1,3 +1,343 @@
-.div {
-  background-color: blue;
+@use 'src/styles/mixins';
+
+.wrapperClass {
+  font-family: 'Be Vietnam';
+  background-color: #FFFBF0;
+  text-align: center;
+  height: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mixins.phone {
+    padding-top: 20px;
+
+  }
+
+  >* {
+    padding: 24px;
+  }
+
+  >h1 {
+    font-size: 3.2rem;
+    color: #5B1110;
+
+    @include mixins.tablet {
+      font-size: 2.8rem;
+    }
+
+    @include mixins.phone {
+      font-size: 2.25rem;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 1.5rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1.25rem;
+    }
+  }
+
+  >h2 {
+    font-size: 2rem;
+    color: #D79C1A;
+
+    @include mixins.tablet {
+      display: none;
+    }
+  }
+
+  >p {
+    margin: 0 auto;
+    width: auto;
+    padding: 0px 174px 32px;
+    font-size: 1.35rem;
+
+    @include mixins.tablet {
+      font-size: 1.25rem;
+    }
+
+    @include mixins.phone {
+      padding: 0px 24px;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1rem;
+    }
+  }
+
+  .cardsDiv {
+    width: 80%;
+    padding: 64px 174px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 180px;
+
+    @include mixins.sm-desktop {
+      row-gap: 0px;
+    }
+  }
+
+}
+
+.cardContainer {
+  display: flex;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 400px;
+  }
+
+  @include mixins.sm-desktop {
+    padding: 64px 174px;
+  }
+}
+
+
+
+.path {
+  img {
+    height: 400px;
+    left: 30%;
+    top: 80%;
+  }
+}
+
+.altPath {
+  justify-content: flex-end;
+
+  img {
+    left: 45%;
+    top: 110%;
+  }
+}
+
+.listClass {
+  max-width: 1024px;
+  padding: 50px 8px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  column-gap: 48px;
+
+  @include mixins.tablet {
+    flex-direction: column;
+  }
+
+  @include mixins.phone {
+    padding: 24px;
+  }
+}
+
+.defaultClass {
+  padding-bottom: 16px;
+
+  >h3 {
+    color: #5B1110;
+    font-size: 2rem;
+
+    @include mixins.sm-phone {
+      font-size: 1.375rem;
+
+    }
+  }
+
+  >ul>li {
+    font-size: 1rem;
+    margin: 16px;
+    text-align: left;
+
+    a {
+      padding: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: black;
+    }
+
+    a:hover {
+
+      background-color: #5b11102d;
+    }
+
+    @include mixins.tablet {
+      list-style-type: none;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    @include mixins.phone {
+      padding: 0px 24px;
+    }
+
+    @include mixins.sm-phone {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.v-sm-phone {
+      font-size: 1rem;
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:wght@200..900');
+
+
+// variable height container for the cards?
+// minor styling: why does border radius not apply evenly 
+// minor styling: padding not working? struggling with image styling
+
+.main_container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-white);
+
+
+}
+
+.window_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+  gap: 8px;
+  background-color: var(--color-maroon);
+  height: 48px;
+
+}
+
+
+
+.arrow {
+  height: 48px;
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  flex-grow: 0;
+  color: var(--color-gold);
+
+  text-align: center;
+  font-size: 1.6rem;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewport {
+  flex-grow: 1;
+  overflow: hidden;
+
+}
+
+.content_belt {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+  justify-content: center;
+
+}
+
+.frame {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+}
+
+.frame_content {
+  color: var(--color-gold);
+  font-family: "Be Vietnam";
+  font-size: 1.4rem;
+
+  @include mixins.phone {}
+
+  @include mixins.sm-phone {
+    font-size: 1.05rem;
+  }
+
+  @include mixins.v-sm-phone {
+    font-size: 0.875rem;
+  }
+
+
+}
+
+
+.flipping_cards {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%
+}
+
+.mobile {
+  display: none;
+}
+
+@include mixins.med-desktop {
+
+  .path,
+  .altPath {
+    img {
+      width: 275px;
+    }
+  }
+
+  .altPath {
+    img {
+      left: 35%;
+      top: 110%;
+    }
+  }
+}
+
+@include mixins.sm-desktop {
+
+  .path,
+  .altPath {
+    .svg {
+      display: none;
+    }
+  }
+
+  .cardContainer {
+    justify-content: center;
+  }
+}
+
+@include mixins.tablet {
+
+
+  .mobile {
+    display: block;
+    margin-bottom: -96px;
+  }
+
+  .cardContainer {
+    display: none;
+  }
+
+
 }
