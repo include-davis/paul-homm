@@ -30,6 +30,13 @@ const dimensions = [
   ["212px", "291px"],
 ];
 
+const svgDims = [
+  [375, 162],
+  [455, 40],
+  [454, 41],
+  [322, 110],
+];
+
 export default function About() {
   const t = useTranslations("About");
   const flip = useTranslations("Flipping Cards");
@@ -166,7 +173,8 @@ export default function About() {
                   className={styles.svg}
                   src={flip(`Card${elem}.svg`)}
                   alt="Dotted path leading to proceeding image"
-                  fill={true}
+                  width={svgDims[index][0]}
+                  height={svgDims[index][1]}
                 />
               )}
             </div>
