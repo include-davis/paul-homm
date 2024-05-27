@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import YoutubeEmbed from "@/components/about-us/YoutubeEmbed";
-//import YouTube from "react-youtube";
-import styles from "@/styles/pages/about/about.module.scss";
-import Carousel from "@/components/about-us/carousel";
-import FlippingCard from "@/components/about-us/flippingCard";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import styles from "@/styles/pages/about/about.module.scss";
 
-import FlippingCardMobile from "@/components/about-us/flippingcard-mobile";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+import YoutubeEmbed from "@/components/about-us/YoutubeEmbed";
+import Carousel from "@/components/about-us/carousel";
+import FlippingCard from "@/components/about-us/flippingCard";
+import FlippingCardMobile from "@/components/about-us/flippingcard-mobile";
+
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
@@ -20,6 +21,7 @@ export async function getStaticProps({ locale }) {
 }
 
 const data = ["Card1", "Card2", "Card3", "Card4", "Card5"];
+
 const dimensions = [
   ["220px", "168px"],
   ["226px", "199px"],
@@ -27,6 +29,7 @@ const dimensions = [
   ["195px", "291px"],
   ["212px", "291px"],
 ];
+
 export default function About() {
   const t = useTranslations("About");
   const flip = useTranslations("Flipping Cards");
@@ -37,7 +40,6 @@ export default function About() {
     "/images/aboutUs/frame4.png",
     "/images/aboutUs/frame5.png",
     "/images/aboutUs/frame6.png",
-    "/images/aboutUs/frame7.png" /* Add more frames as needed */,
   ];
   const cards = ["1", "2", "3", "4", "5"];
   const dims = [
