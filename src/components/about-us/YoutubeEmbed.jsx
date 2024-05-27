@@ -5,8 +5,8 @@ import styles from "@/styles/pages/about/youtube.module.scss";
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      messages: (await import(`@/messages/${locale}.json`)).default
-    }
+      messages: (await import(`@/messages/${locale}.json`)).default,
+    },
   };
 }
 
@@ -22,7 +22,7 @@ const YoutubeEmbed = ({ embedId }) => (
 );
 
 YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired
+  embedId: PropTypes.string.isRequired,
 };
 
 export default YoutubeEmbed;

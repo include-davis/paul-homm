@@ -388,5 +388,9 @@
             "image": "/Today.png",
             "alt": "Current Student-Run Clinic Team in a group picture, smiling"
         }
+    },
+    "404page" : {
+      "PageNotFound": "Error 404: Page not found",
+      "BackToHome": "Back to home"
     }
 }
