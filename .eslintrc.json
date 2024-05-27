@@ -6,9 +6,8 @@
 {
   "root": true,
   "extends": [
-    "eslint:recommended",
-    "plugin:@next/next/recommended",
-    "next",
+    "next/babel",
+    "next/core-web-vitals",
     "prettier"
   ],
   "plugins": [
@@ -40,15 +39,6 @@
     "eqeqeq": [
       "error",
       "always"
-    ],
-    "no-unused-vars": [
-        "error",
-        { 
-          "vars": "all", 
-          "varsIgnorePattern": "^_*$",
-          "argsIgnorePattern": "^_*$",
-          "destructuredArrayIgnorePattern": "^_*$"
-        }
-      ]
+    ]
   }
 }
