@@ -110,7 +110,7 @@ export default function Home() {
         }
     }
 
-    // const dates = ["date1", "date2", "date3", "date4", "date5"];
+  // const dates = ["date1", "date2", "date3", "date4", "date5"];
   // const events = ["event1", "event2", "event3", "event4", "event5"];
 
   return (
@@ -172,7 +172,7 @@ export default function Home() {
               <h1>{t("cards.closure.title")}</h1>
               <ul>
                 {dates.map((item, index) => {
-                  return <li key={index}>{t("cards.closure." + item)}</li>;
+                  return <li key={index}>{item}</li>
                 })}
               </ul>
             </div>
@@ -186,20 +186,21 @@ export default function Home() {
                   alt={"People holding posters"}
                 />
               </div>
-              <h1>{t("cards.events.title")}</h1>
+
+              <h1>{t('cards.events.title')}</h1>
+
               <div className={styles.events}>
-                <div className={styles.date_container}>
                   <ul>
-                    {dates.map((item, index) => (
-                      <li key={index}>{t("cards.events." + item)}</li>
-                    ))}
+                      {events.map((item, index) => (
+                          <li key={index}>{item.date}</li>
+                      ))}
                   </ul>
                   <ul>
-                    {events.map((item, index) => (
-                      <li key={index}>{t("cards.events." + item)}</li>
-                    ))}
+                      {events.map((item, index) => (
+                          <li key={index}>{item.title}</li>
+                      ))}
                   </ul>
-                </div>
+
                 <div className={styles.events_image}>
                   <Image
                     src={t("cards.events.image")}
