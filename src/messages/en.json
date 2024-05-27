@@ -274,5 +274,13 @@
       "clinic_name": "Paul Hom Asian Clinic",
       "subtitle": "A Student-Run Clinic at UC Davis"
     }
+  },
+  "404page" : {
+    "PageNotFound": "Error 404: Page not found",
+    "BackToHome": "Back to home"
+  },
+  "500page": {
+    "InternalServerError": "Error 500: Internal Server Error",
+    "BackToHome": "Back to home"
   }
 }
