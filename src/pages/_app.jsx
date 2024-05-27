@@ -1,6 +1,4 @@
 import { Inter } from "next/font/google";
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import "@/styles/globals.scss";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
@@ -19,10 +17,9 @@ export default function App({ Component, pageProps }) {
       locale={router.locale}
       timeZone="PST"
       messages={pageProps.messages}
-      className={`${inter.variable}`}>   
-      <Header></Header>  
+      className={`${inter.variable}`}
+    >
       <Component {...pageProps} />
-      <Footer></Footer>
     </NextIntlClientProvider>
   );
 }

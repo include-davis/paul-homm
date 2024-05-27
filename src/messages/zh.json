@@ -1,6 +1,396 @@
 {
-    "Index": {
-      "title": "家",
-      "description": "测试国际化"
-    }
+  "Index": {
+      "title": "Home",
+      "mission": {
+          "title": "Our Mission",
+          "paragraph1": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.",
+          "paragraph2": "At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.",
+          "paragraph3": "Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.",
+          "image": "/images/home-page/happy-doctors.png"
+      },
+      "cards": {
+          "visit": {
+              "title": "Visit Us!",
+              "description": "Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.",
+              "contact": {
+                  "phone": "(916) 736-3966",
+                  "msg": "Message",
+                  "address": "6341 Folsom Blvd Sacramento, CA 95819"
+              }
+          },
+          "closure": {
+              "title": "Closure Dates",
+              "date1": "Feb. 10, 2024",
+              "date2": "Mar. 30, 2024",
+              "date3": "May 25, 2024",
+              "date4": "Jul. 6, 2024",
+              "date5": "Aug 31, 2024"
+          },
+          "events": {
+              "title": "Upcoming Events",
+              "date1": "Jan. 7, 2023",
+              "date2": "Jan. 8, 2023",
+              "date3": "Jan. 14, 2023",
+              "date4": "Jan. 15, 2023",
+              "date5": "Jan. 29, 2023",
+              "event1": "Musculoskeletal Clinic",
+              "event2": "VN Cares Cancer Screening",
+              "event3": "Psychiatry Clinic",
+              "event4": "Hepatitis Vaccination",
+              "event5": "Dermatology Clinic",
+              "image": "/images/home-page/events-img.png"
+          }
+      }
+  },
+  "About": {
+      "title": "The Legacy of Paul Hom",
+      "subtitle": "We are the oldest Asian clinic in the United States.",
+      "description": "Dr. Paul Hom had an untiring commitment to the clinic and to its purpose in serving patients of all ages in the Asian community who lack adequate healthcare due to cultural, linguistic, or economic barriers. Healthcare continues to be provided at no charge to all patients.",
+      "sisterClinics": {
+          "count": "2",
+          "title": "Our Sister Clinics",
+          "clinic1": {
+              "name": "VN Cares",
+              "link": "https://www.vncares.org/"
+          },
+          "clinic2": {
+              "name": "HLUB",
+              "link": "https://hlubclinic.wordpress.com/"
+          }
+      },
+      "ucDavisClinics": {
+          "count": "6",
+          "title": "UC Davis Student-Run Clinics",
+          "clinic1": {
+              "name": "Bayanihan",
+              "link": "https://www.bayanihanclinic.com/"
+          },
+          "clinic2": {
+              "name": "Clinica Tepati",
+              "link": "https://clinicatepati.com/"
+          },
+          "clinic3": {
+              "name": "Imani clinic",
+              "link": "https://www.imaniclinic.org/"
+          },
+          "clinic4": {
+              "name": "Joan Viteri Memorial Clinic",
+              "link": "https://www.jvmclinic.com/"
+          },
+          "clinic5": {
+              "name": "Shifa Clinic",
+              "link": "https://shifaclinic.org/"
+          },
+          "clinic6": {
+              "name": "Willow Clinic",
+              "link": "https://www.willowclinic.org/"
+          }
+      }
+  },
+  "GetInvolved": {
+      "pageTitle": "Get Involved",
+      "CardComponent": {
+          "Card1": {
+              "titleShort": "Physicians & Residents",
+              "imgSrc": "/images/get-involved/physiciansAndResidents.png",
+              "title": "Physicians and Residents",
+              "content1": "Physicians and residents are a valuable component to our clinic because they serve as teachers and mentors to health professional students and undergrad patient advocates. They help facilitate the clinical process, such as guiding medical students in making a correct diagnosis, writing prescriptions for our patients, and providing medical services and advice.",
+              "content2": "Any physician and resident, primary care and specialty alike, is welcomed and appreciated in our clinic! If you are interested in volunteering as a preceptor please contact our physician scheduling team at: \n phac.physician.scheduler@gmail.com"
+          },
+          "Card2": {
+              "titleShort": "Undergrad. Patient Advocates",
+              "imgSrc": "/images/get-involved/undergrad.png",
+              "title": "Undergraduate Patient Advocates",
+              "content1": "The term Patient Advocate aptly describes an undergraduate volunteer at the Paul Hom Asian Clinic. Patient Advocates mainly act as interpreters for predominantly Cantonese, Mandarin, and Vietnamese patients who visit the clinic. They also have a variety of responsibilities such as in taking vital signs, assisting in the dispensing of medications, and assisting medical students with patient care.",
+              "content2": "They continue to play an important role as patient educators and interpreters for our clinic. In addition, they have the opportunity to learn more about providing social services to the underserved. Our Fall 2023 undergraduate application is currently open!! If you have any additional questions, please contact phacugco-d@ucdavis.edu"
+          },
+          "Card3": {
+              "titleShort": "Health Professional Students",
+              "imgSrc": "/images/get-involved/clinics.png",
+              "title": "Health Professional Students",
+              "content1": "Health professional students are exposed to a variety of clinical responsibilities, such as interviewing patients, conducting physical exams, and performing laboratory procedures (blood draw, pap smears, vaccination, etc.). In addition, students also learn more about working with the underserved Asian population. To volunteer at our clinic, please sign up on the Inter-clinic Google Doc.",
+              "content2": "Dress code: business-casual with white coat and badge"
+          },
+          "details": "Details",
+          "signUp": "Sign Up"
+      },
+      "donateHeading": "Donate Today!",
+      "donateText": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
+      "address": "Paul Home Asian Clinic\n6341 Folsom Blvd\nSacramento, CA 95819",
+      "donateText2": "We thank you for your generoristy!"
+  },
+  "Footer": {
+      "pages": {
+          "page1": "HOME",
+          "page2": "ABOUT US",
+          "page3": "SERVICES",
+          "page4": "COMMITEES",
+          "page5": "GET INVOLVED"
+      },
+      "contact": {
+          "message": "CONTACT US",
+          "address": "6341 Folsom Blvd Sacramento, CA 95819"
+      },
+      "sponsor": {
+          "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+          "image": "/images/footer/credit-union.png"
+      },
+      "include": "Designed & Developed with 🤍 by #include @ Davis"
+  },
+  "Services": {
+      "heading": "Our Services",
+      "topServices": {
+          "service1": {
+              "heading": "Primary Care Services",
+              "desc": "Every Saturday"
+          },
+          "service2": {
+              "heading": "Cancer Screenings",
+              "desc": "First Sunday Monthly"
+          }
+      },
+      "tabs": {
+          "tab1": "Specialty Clinics",
+          "tab2": "Hepatitis",
+          "tab3": "Health Education & Preventative Measures",
+          "tab4": "Vaccines"
+      },
+      "slides": {
+          "slide1": {
+              "image": "/images/services/specialtyClinics.png",
+              "list": {
+                  "item1": "Musculoskeletal Clinic (MSK)",
+                  "item2": "Dermatology",
+                  "item3": "Cardiopulmonary Clinic",
+                  "item4": "Liver Clinic"
+              }
+          },
+          "slide2": {
+              "image": "/images/services/hepatitis.png",
+              "list": {
+                  "item1": "Liver cancer is often tied to Hepatitis B",
+                  "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+                  "item3": "Asians more vulnerable, higher infection rates, mortality",
+                  "item4": "Screening, vaccination, tratments available",
+                  "item5": "Free vaccines"
+              }
+          },
+          "slide3": {
+              "image": "/images/services/healthEdu.png",
+              "list": {
+                  "item1": "Hypertension Workshops",
+                  "item2": "Nutrition Counseling",
+                  "item3": "Health Fair"
+              }
+          },
+          "slide4": {
+              "image4": "/images/services/vaccines.png",
+              "list": {
+                  "item1": "Hepatitis",
+                  "item2": "Annual flu-shots",
+                  "item3": "Health Fair"
+              }
+          }
+      },
+      "bottomServices": {
+          "service1": {
+              "heading": "Referrals",
+              "list": {
+                  "item1": "Surgery with SPIRIT program",
+                  "item2": "UCDMC",
+                  "item3": "Primary Care Clinic"
+              }
+          },
+          "service2": {
+              "heading": "Translators",
+              "list": {
+                  "item1": "Cantonese",
+                  "item2": "Mandaring",
+                  "item3": "Korean",
+                  "item4": "Taishanese",
+                  "item5": "Vietnamese",
+                  "item6": "Hmong"
+              }
+          }
+      },
+      "mobile": {
+          "Specialty Clinics": {
+              "image": "/images/services/healthEdu.png",
+              "bulletCount": "5",
+              "bullet1": "Muskuloskeletal Clinic (MSK)",
+              "bullet2": "Dermatology",
+              "bullet3": "Ophthalmology Clinic",
+              "bullet4": "Cardiopulmonary Clinic",
+              "bullet5": "Liver Clinic"
+          },
+          "Hepatitis": {
+              "image": "/images/services/hepatitis.png",
+              "bulletCount": "5",
+              "bullet1": "Liver cancer is often tied to Hepatitis B",
+              "bullet2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+              "bullet3": "Asians more vulnerable, higher infection rates, mortality",
+              "bullet4": "Screening, vaccination, treatments available",
+              "bullet5": "Free vaccinations"
+          },
+          "Health Education and Preventative Measures": {
+              "image": "/images/services/specialtyClinics.png",
+              "bulletCount": "3",
+              "bullet1": "Hypertension Workshops",
+              "bullet2": "Nutrition Counseling",
+              "bullet3": "Health Fair"
+          },
+          "Vaccines": {
+              "image": "/images/services/vaccines.png",
+              "bulletCount": "3",
+              "bullet1": "Hepatitis",
+              "bullet2": "Annual flu-shots",
+              "bullet3": "Health Fair"
+          }
+      }
+  },
+  "Committees": {
+      "meetOurCommittees": "Meet Our Committees!",
+      "CommitteeCards": {
+          "committee1": {
+              "name": "Cardiopulmonary",
+              "image": "/images/committees/cardiopulmonary.png",
+              "path": "/committees/cardiopulmonary"
+          },
+          "committee2": {
+              "name": "Covered California",
+              "image": "/images/committees/covered_california.png",
+              "path": "/committees/covered-california"
+          },
+          "committee3": {
+              "name": "Dermatology",
+              "image": "/images/committees/dermatology.png",
+              "path": "/committees/dermatology"
+          },
+          "committee4": {
+              "name": "Diabetes",
+              "image": "/images/committees/diabetes.png",
+              "path": "/committees/diabetes"
+          },
+          "committee5": {
+              "name": "Patient Assistance Program",
+              "image": "/images/committees/patient_assistance_program.png",
+              "path": "/committees/patient-assistance-program"
+          },
+          "committee6": {
+              "name": "Hepatitis",
+              "image": "/images/committees/hepatitis.png",
+              "path": "/committees/hepatitis"
+          },
+          "committee7": {
+              "name": "Neurology",
+              "image": "/images/committees/neurology.png",
+              "path": "/committees/neurology"
+          },
+          "committee8": {
+              "name": "Women's Health",
+              "image": "/images/committees/womens_health.png",
+              "path": "/committees/womens-health"
+          },
+          "committee9": {
+              "name": "Ophthalmology",
+              "image": "/images/committees/ophthalmology.png",
+              "path": "/committees/ophthalmology"
+          }
+      },
+      "CommitteeDescriptionComponent": {
+          "covered-california": {
+              "title": "Covered California",
+              "desc": "The Covered California Committee assists patients in signing up for affordable health insurance through Covered California, Medi-Cal and Medicare. All Covered California Co-Directors are certified enrollment counselors for Covered California and, therefore, are able to work with patients through the entirety of the insurance application. The Covered California Committee also provides assistance in SPIRIT referrals--where patients can potentially have their expensive surgeries paid for."
+          },
+          "cardiopulmonary": {
+              "title": "Cardiopulmonary",
+              "desc": "The Cardiopulmonary Committee educates patients about cardiovascular, pulmonary, and heart-related diseases. We assist patients who are at risk or already addicted to nicotine by providing free cessation resources. The Cardiopulmonary Committee holds monthly specialty clinics that offer electrocardiogram (EKG) strips, ankle brachial index (ABI) tests, and spirometry tests. \n  \n Next Cardiopulmonary Clinic: Sunday, November 20, 2022"
+          },
+          "patient-assistance-program": {
+              "title": "Patient Assistance Program",
+              "desc": "The Patient Assistance Program (PAP) Committee enrolls low-income and uninsured/underinsured patients to receive brand-name medications at no cost from participating pharmaceutical companies. On average, we help patients save $130,000 a year on the medication cost. In addition, we have been leading various projects that provide patients free resources such as: accessories for injectable medications (syringes, needles, sharps containers, and needle clippers) and medication-related infographics. Recently, we have started collaborating with GoodRx to provide qualified patients monthly pre-paid debit cards for their chronic generic medications. Furthermore, the PAP Committee works closely with Dr. Jan and Dr. Pauly to monitor patients’ medication compliance, ​effectiveness, and safety, and to accommodate patients' other special needs on a case-by-case basis."
+          },
+          "dermatology": {
+              "title": "Dermatology",
+              "desc": "The Dermatology committee is trained and educated to provide quality healthcare to patients experiencing simple to complex skin disorders. Some of the more common conditions that we screen for are eczema, psoriasis, pemphigus, rosacea, acne vulgaris, and all types of cancers. We provide free consultations for skin care and can even perform skin biopsies to rule out concerns for malignancies. Our team is dedicated to help you feel better about your own skin and how you wear it. We look forward to meeting you!\n \n Dermatology Clinics on Sunday, 9/25, 10/16, 12/11"
+          },
+          "diabetes": {
+              "title": "Diabetes",
+              "desc": "The Diabetes Committee improves the health of patients by screening all patients for diabetes and conducting follow ups with prediabetic and diabetic patients. We also offer nutrition and diet counseling, show exercise demonstrations, and provide free glucometer kits and HgA1c blood tests. The committee holds annual patient education seminars and events to help patients feel equipped to manage their diabetes and overall health."
+          },
+          "hlub": {
+              "title": "HLUB",
+              "desc": "Hmong Lifting Underserved Barriers (H.L.U.B.) is a free student-run clinic consisting of pre-health undergraduate students from University of California, Davis and California State University, Sacramento, along with UC Davis School of Medicine medical students and medical practitioners. H.L.U.B. Clinic aims to provide free healthcare services to the underserved Hmong Community as well as lifting the language and cultural barriers that exist between the Hmong Community and the western healthcare system."
+          },
+          "hepatitis": {
+              "title": "Hepatitis",
+              "desc": "Hepatitis is one of the leading causes of liver cancer, and the Asian population is at a significantly greater risk for having the disease. As a result, the Hepatitis Committee is devoted to identifying and treating this high-risk, underserved and uninsured Asian population in the Sacramento region. We currently provide free screening, vaccinations, and liver ultrasounds to patients. The Hepatitis Committee strives to educate our patients regarding Hepatitis B and encourage everyone to be screened and vaccinated."
+          },
+          "ophthalmology": {
+              "title": "Ophthalmology",
+              "desc": "The Ophthalmology Committee monitors our patients’ history for eye conditions and provides patients with an assessment and follow-up care plan if needed. The committee conducts pupillary exams, intraocular pressure exams, visual acuity exams, slit lamp exams, and retinal exams during our clinic hours. Ophthalmology clinics are held quarterly on Sundays from 8:30am to 12pm. Depending on a patient’s insurance status and visual acuity, the Ophthalmology Committee can provide a VSP voucher which patients can use at a local optometrist’s office to obtain free-of-charge eyeglass frames and lenses and eye exams."
+          },
+          "womens-health": {
+              "title": "Women's Health",
+              "desc": "The Women’s Health Committee ensures patients have access to preventative cancer screenings available to them and hosts health events to educate patients about breast and cervical cancers--topics that are avoided in many Asian families. Some services this committee provides are: referrals to Planned Parenthood for mammograms; enrollment into the Every Woman Counts program for uninsured patients along with follow ups; and scheduling patients for OB/GYN clinics, PAP smears, and clinical breast exams (CBEs)."
+          },
+          "neurology": {
+              "title": "Neurology",
+              "desc": "The Neurology Clinic assists patients with neurological issues, such as problems with memory, neuropathic pain (numb, tingling, or burning feet/hands), sleep, migraine, seizures, and any other issues related to the brain. We also offer dementia screening for patients who are older than 65 years of age and provide access to resources for patients, caretakers, and family members of individuals with memory loss issues."
+          }
+      }
+  },
+  "Header": {
+      "pages": {
+          "page1": "HOME",
+          "page2": "ABOUT US",
+          "page3": "SERVICES",
+          "page4": "COMMITEES",
+          "page5": "GET INVOLVED"
+      },
+      "title": {
+          "clinic_name": "Paul Hom Asian Clinic",
+          "subtitle": "A Student-Run Clinic at UC Davis"
+      }
+  },
+  "Flipping Cards": {
+      "Card1": {
+          "title": "1971 Our Beginning",
+          "content": "In 1971, a group of UC Davis medical students led by Paul Hom held meetings with a group of activist undergraduate students from the California State University of Sacramento to discuss improving health care for elderly Asians and new immigrant families who were struggling to obtain adequate health care due to socioeconomic and language barriers. They decided to start a free clinic to target this problem.",
+          "image": "/1971image.png",
+          "alt": "portrait of the founder, Paul Hom",
+          "svg": "/images/aboutUs/vector1.svg"
+      },
+      "Card2": {
+          "title": "Creating a Team",
+          "content": "Paul Hom approached Dr. Lindy Kumagai, one of the few Asian medical faculty members at UC Davis School of Medicine, and asked if he would be the medical director of the clinic. Dr. Lindy Kumagai was an advocate for the Civil Rights Movement and underserved Asian communities. He accepted the position and worked with Paul Hom and UC Davis medical students for the next 30 years.",
+          "image": "/creatingateam.png",
+          "alt": "portrait of Dr.Lindy Kumagai",
+          "svg": "/images/aboutUs/vector2.svg"
+      },
+      "Card3": {
+          "title": "Early Operations",
+          "content": "The ‘Asian Clinic’, as it was called before being renamed to the Paul Hom Asian Clinic, operated out of the back of a bookstore providing primary care services to about 9-10 patients every Saturday. After some time, the community closed the bookstore and the clinic moved to the Sacramento Projects in New Helvecia (low income housing). The clinic later moved to its current location at the Safe Credit Union on Folsom Boulevard.",
+          "image": "/earlyoperations.png",
+          "alt": "Picture of former clinic",
+          "svg": "/images/aboutUs/vector3.svg"
+      },
+      "Card4": {
+          "title": "Continuing the Legacy",
+          "content": "After serving for 30 years, Dr. Lindy Kumagai passed on his position as medical director to Dr. Ronald Guy Jan. Dr. Jan had been volunteering for the clinic since 1980. He had an undying dedication and passion for serving the underserved. In the midst of starting his own practice, Dr. Jan would do his rounds between seven different hospitals and then come to the clinic to take on any patient that needed his help. Dr. Jan served for about 18-20 years before passing his position to the current medical director Dr. Christian Bohringer.",
+          "image": "/continuingtheleagacy.png",
+          "alt": "The Entire Medical Team in a group picture, smiling",
+          "svg": "/images/aboutUs/vector4.svg"
+      },
+      "Card5": {
+          "title": "Today",
+          "content": "The existence of the Paul Hom Asian Clinic has proved beneficial not only to the patients, but also to the undergraduate students, medical students, and physicians who volunteer their time and efforts. The legacy of Dr. Paul Hom continues to thrive and is the oldest Asian clinic in all of America.",
+          "image": "/Today.png",
+          "alt": "Current Student-Run Clinic Team in a group picture, smiling"
+      }
+  },
+  "404page" : {
+    "PageNotFound": "Error 404: Page not found",
+    "BackToHome": "Back to home"
   }
+}
