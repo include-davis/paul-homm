@@ -24,6 +24,7 @@ export default function HomepageGallery() {
         src={element}
         alt="Previous Gallery Image"
         className={styles.frame + " " + styles.prev}
+        fill={true}
       />
     );
     curr.push(
@@ -31,6 +32,7 @@ export default function HomepageGallery() {
         src={element}
         alt="Current Gallery Image"
         className={styles.frame + " " + styles.curr}
+        fill={true}
       />
     );
     prevR.push(
@@ -38,6 +40,7 @@ export default function HomepageGallery() {
         src={element}
         alt="Previous Gallery Image"
         className={styles.frameR + " " + styles.prevR}
+        fill={true}
       />
     );
     currR.push(
@@ -45,6 +48,7 @@ export default function HomepageGallery() {
         src={element}
         alt="Current Gallery Image"
         className={styles.frameR + " " + styles.curr}
+        fill={true}
       />
     );
   }

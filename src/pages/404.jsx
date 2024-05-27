@@ -1,3 +1,4 @@
+import PageLayout from "@/components/layout";
 import { useTranslations } from "next-intl";
 
 export async function getStaticProps({ locale }) {
@@ -12,8 +13,10 @@ export default function Custom404() {
   const t = useTranslations("404page");
 
   return (
-    <div>
-      <h1>{t("PageNotFound")}</h1>
-    </div>
+    <PageLayout>
+      <div>
+        <h1>{t("PageNotFound")}</h1>
+      </div>
+    </PageLayout>
   );
 }
