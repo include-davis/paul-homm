@@ -1,6 +1,7 @@
 import styles from "@/styles/pages/services/services.module.scss";
 import ImageSlider from "@/components/services/imageSlider.jsx";
 import { useTranslations } from "next-intl";
+import ImageSlider from "@/components/services/imageSlider.jsx";
 import ImageSliderMobile from "@/components/services/imageSliderMobile.jsx";
 import PageLayout from "@/components/layout";
 
