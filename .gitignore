@@ -32,6 +32,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+#strapi
+strapi/node_modules
+strapi/.strapi
+strapi/.tmp
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
