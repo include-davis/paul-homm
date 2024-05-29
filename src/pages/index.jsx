@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useFormatter } from "next-intl";
 import HomepageGallery from "@/components/homepage/homepageGallery";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
@@ -8,118 +8,175 @@ import styles from "@/styles/pages/home/home.module.scss";
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
+  let messages = {};
+  let closureDates = [];
+  let upcomingEvents = [];
+
+  try{
+    const res = await (await fetch('http://localhost:3000/api/home', {
+      method: 'POST',
+      headers: {
+        "Content-Type": 'application/json',
+      },
+      body: JSON.stringify({
+        locale: locale,
+      })
+    })).json();
+
+    const body = res.body;
+    console.log(body);
+    messages = {"Index" : body.text};
+    closureDates = body.closure_dates;
+    upcomingEvents = body.upcoming_events;
+  } catch (e){
+    console.log(e.message)
+    // TODO: IMPLEMENT A BETTER FALLBACK
+    messages = (await import(`@/messages/${locale}.json`)).default;
+  }
+  
   return {
     props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
+      messages: messages,
+      closureDates,
+      upcomingEvents
     },
   };
 }
 
-export default function Home() {
+export default function Home({ closureDates, upcomingEvents }) {
   const t = useTranslations("Index");
+  const format = useFormatter();
 
-  const dates = ["date1", "date2", "date3", "date4", "date5"];
-  const events = ["event1", "event2", "event3", "event4", "event5"];
+  const formatDate = (d) => {
+    const formatted = format.dateTime(d, {
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
+    return formatted;
+  }
+  
+
+  const formattedDates = closureDates.map((dateString)=>{
+    return formatDate(new Date(dateString));
+  })
+  // 5 upcoming dates rendered at most
+  formattedDates.sort();
+  formattedDates.length = formattedDates.length > 5 ? 5 : formattedDates.length;
+
+
+  const formattedEvents = upcomingEvents.map((eventObj)=>{
+    return {
+      event: eventObj.event,
+      date: formatDate(new Date(eventObj.date))
+    };
+  })
+  const cmpDate = (a,b) => {
+    const d1 = new Date(a.date).getTime();
+    const d2 = new Date(b.date).getTime();
+    if(d1 > d2){ return 1 }
+    else if (d1 < d2){ return -1 }
+    else{ return 0 }
+  }
+  formattedEvents.sort(cmpDate);
+  formattedEvents.length = formattedEvents.length > 5 ? 5 : formattedEvents.length;
 
   return (
     <PageLayout>
       <div className={styles.container}>
-        <HomepageGallery />
-        {/* Red "Our Mission" Section */}
-        <div className={styles.mission}>
-          <div className={styles.mission_text}>
-            <h1>{t("mission.title")}</h1>
-            <p>{t("mission.paragraph1")}</p>
-            <p>{t("mission.paragraph2")}</p>
-            <p>{t("mission.paragraph3")}</p>
-          </div>
-          <div className={styles.doctors_image}>
-            <Image
-              src={t("mission.image")}
-              style={{ objectFit: "fill" }}
-              fill={true}
-              alt={"Happy doctors"}
-            />
+      <HomepageGallery />
+      {/* Red "Our Mission" Section */}
+      <div className={styles.mission}>
+        <div className={styles.mission_text}>
+          <h1>{t("mission.our_mission_text")}</h1>
+          <p>{t("mission.text")}</p>
+        </div>
+        <div className={styles.doctors_image}>
+          <Image
+            src={"/images/home-page/happy-doctors.png"}
+            style={{ objectFit: "fill" }}
+            fill={true}
+            alt={"Happy doctors"}
+          />
+        </div>
+      </div>
+      
+      {/* White Section with Info cards */}
+      <div className={styles.info}>
+        {/* Visit us card with contact Info */}
+        <div className={styles.visit_card}>
+          <h1>{t("visit_us.visit_us_text")}</h1>
+          <p>{t("visit_us.contact_instruction")}</p>
+          <div className={styles.visit}>
+            <div className={styles.contact}>
+              <div className={styles.row_icons}>
+                <div className={styles.circle_frame}>
+                  <MdPhone />
+                </div>
+                <p>{t("visit_us.phone")}</p>
+              </div>
+              <div className={styles.row_icons}>
+                <div className={styles.circle_frame}>
+                  <BiSolidMessage />
+                </div>
+                <p>{t("visit_us.message")}</p>
+              </div>
+            </div>
+            <div className={styles.address}>
+              <div className={styles.row_icons}>
+                <div className={styles.circle_frame}>
+                  <MdLocationOn />
+                </div>
+                <p>{t("visit_us.address")}</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* White Section with Info cards */}
-        <div className={styles.info}>
-          {/* Visit us card with contact Info */}
-          <div className={styles.visit_card}>
-            <h1>{t("cards.visit.title")}</h1>
-            <p>{t("cards.visit.description")}</p>
-            <div className={styles.visit}>
-              <div className={styles.contact}>
-                <div className={styles.row_icons}>
-                  <div className={styles.circle_frame}>
-                    <MdPhone />
-                  </div>
-                  <p>{t("cards.visit.contact.phone")}</p>
-                </div>
-                <div className={styles.row_icons}>
-                  <div className={styles.circle_frame}>
-                    <BiSolidMessage />
-                  </div>
-                  <p>{t("cards.visit.contact.msg")}</p>
-                </div>
-              </div>
-              <div className={styles.address}>
-                <div className={styles.row_icons}>
-                  <div className={styles.circle_frame}>
-                    <MdLocationOn />
-                  </div>
-                  <p>{t("cards.visit.contact.address")}</p>
-                </div>
-              </div>
-            </div>
+        <div className={styles.dates}>
+          {/* Important Closure Dates */}
+          <div className={styles.closure_card}>
+            <h1>{t("closure_dates_text")}</h1>
+            <ul>{formattedDates.map((date, index)=>{
+                return <li key={index}>{date}</li>
+              })}
+            </ul>
           </div>
-          <div className={styles.dates}>
-            {/* Important Closure Dates */}
-            <div className={styles.closure_card}>
-              <h1>{t("cards.closure.title")}</h1>
-              <ul>
-                {dates.map((item, index) => {
-                  return <li key={index}>{t("cards.closure." + item)}</li>;
-                })}
-              </ul>
+          {/* Upcoming Events Section */}
+          <div className={styles.events_card}>
+            <div className={styles.events_image_mobile}>
+              <Image
+                src={ "/images/home-page/events-img.png"}
+                style={{ objectFit: "fill" }}
+                fill={true}
+                alt={"People holding posters"}
+              />
             </div>
-            {/* Upcoming Events Section */}
-            <div className={styles.events_card}>
-              <div className={styles.events_image_mobile}>
+            <h1>{t("upcoming_events_text")}</h1>
+            <div className={styles.events}>
+              <div className={styles.date_container}>
+                <ul>
+                  {formattedEvents.map((event, index) => (
+                    <li key={index}>{event.date}</li>
+                  ))}
+                </ul>
+                <ul>
+                  {formattedEvents.map((event, index) => (
+                    <li key={index}>{event.event}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.events_image}>
                 <Image
-                  src={t("cards.events.image")}
+                  src={ "/images/home-page/events-img.png"}
                   style={{ objectFit: "fill" }}
                   fill={true}
                   alt={"People holding posters"}
                 />
               </div>
-              <h1>{t("cards.events.title")}</h1>
-              <div className={styles.events}>
-                <div className={styles.date_container}>
-                  <ul>
-                    {dates.map((item, index) => (
-                      <li key={index}>{t("cards.events." + item)}</li>
-                    ))}
-                  </ul>
-                  <ul>
-                    {events.map((item, index) => (
-                      <li key={index}>{t("cards.events." + item)}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.events_image}>
-                  <Image
-                    src={t("cards.events.image")}
-                    style={{ objectFit: "fill" }}
-                    fill={true}
-                    alt={"People holding posters"}
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </PageLayout>
   );
