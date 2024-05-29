@@ -12,7 +12,11 @@
             "address": "6341 Folsom Blvd Sacramento, CA 95819"
         },
         "closure_dates_text": "Closure Dates",
-        "upcoming_events_text": "Upcoming Events"
+        "upcoming_events_text": "Upcoming Events",
+        "image_gallery_overlay_text": {
+            "title": "A Passion To Serve",
+            "description": "Quality clinical services for our local community"
+        }
     },
     "About": {
         "title": "The Legacy of Paul Hom",
@@ -90,24 +94,6 @@
         "donateText": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
         "address": "Paul Home Asian Clinic\n6341 Folsom Blvd\nSacramento, CA 95819",
         "donateText2": "We thank you for your generoristy!"
-    },
-    "Footer": {
-        "pages": {
-            "page1": "HOME",
-            "page2": "ABOUT US",
-            "page3": "SERVICES",
-            "page4": "COMMITEES",
-            "page5": "GET INVOLVED"
-        },
-        "contact": {
-            "message": "CONTACT US",
-            "address": "6341 Folsom Blvd Sacramento, CA 95819"
-        },
-        "sponsor": {
-            "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
-            "image": "/images/footer/credit-union.png"
-        },
-        "include": "Designed & Developed with 🤍 by #include @ Davis"
     },
     "Services": {
         "heading": "Our Services",
@@ -313,17 +299,17 @@
         }
     },
     "Header": {
-        "pages": {
-            "page1": "HOME",
-            "page2": "ABOUT US",
-            "page3": "SERVICES",
-            "page4": "COMMITEES",
-            "page5": "GET INVOLVED"
-        },
-        "title": {
-            "clinic_name": "Paul Hom Asian Clinic",
-            "subtitle": "A Student-Run Clinic at UC Davis"
-        }
+        "home": "HOME",
+        "about_us": "ABOUT US",
+        "services": "SERVICES",
+        "committees": "COMMITEES",
+        "get_involved": "GET INVOLVED",
+        "clinic_name": "Paul Hom Asian Clinic",
+        "clinic_description": "A Student-Run Clinic at UC Davis",
+        "contact_us": "CONTACT US",
+        "address": "6341 Folsom Blvd Sacramento, CA 95819",
+        "thank_you_sponsors_text": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+        "include_credit_line": "Designed & Developed with 🤍 by #include @ Davis"
     },
     "Flipping Cards": {
         "Card1": {

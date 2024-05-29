@@ -11,6 +11,22 @@ export async function getStaticProps({ locale }) {
   let messages = {};
   let closureDates = [];
   let upcomingEvents = [];
+  let headerMessages = {};
+
+  try{
+    const res = await (await fetch('http://localhost:3000/api/header', {
+      method: 'POST',
+      headers: {
+        "Content-Type": 'application/json',
+      },
+      body: JSON.stringify({
+        locale: locale,
+      })
+    })).json();
+    headerMessages = res.body;
+  } catch (e){
+    console.log(e.message)
+  }
 
   try{
     const res = await (await fetch('http://localhost:3000/api/home', {
@@ -24,8 +40,7 @@ export async function getStaticProps({ locale }) {
     })).json();
 
     const body = res.body;
-    console.log(body);
-    messages = {"Index" : body.text};
+    messages = {"Index" : body.text, "Header" : headerMessages};
     closureDates = body.closure_dates;
     upcomingEvents = body.upcoming_events;
   } catch (e){
@@ -38,12 +53,13 @@ export async function getStaticProps({ locale }) {
     props: {
       messages: messages,
       closureDates,
-      upcomingEvents
+      upcomingEvents,
+      headerMessages,
     },
   };
 }
 
-export default function Home({ closureDates, upcomingEvents }) {
+export default function Home({ closureDates, upcomingEvents, headerMessages }) {
   const t = useTranslations("Index");
   const format = useFormatter();
 
