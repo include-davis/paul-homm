@@ -14,7 +14,7 @@ export async function getStaticProps({ locale }) {
   let headerMessages = {};
 
   try{
-    const res = await (await fetch('http://localhost:3000/api/header', {
+    const res = await (await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json',
@@ -29,7 +29,7 @@ export async function getStaticProps({ locale }) {
   }
 
   try{
-    const res = await (await fetch('http://localhost:3000/api/home', {
+    const res = await (await fetch(`${process.env.NEXT_APP_BASE_URL}/api/home`, {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json',
