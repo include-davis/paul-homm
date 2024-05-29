@@ -84,7 +84,7 @@ export default function Home({ closureDates, upcomingEvents }) {
   return (
     <PageLayout>
       <div className={styles.container}>
-      <HomepageGallery />
+      <HomepageGallery overlay_title={t("image_gallery_overlay_text.title")} overlay_description={t("image_gallery_overlay_text.description")}/>
       {/* Red "Our Mission" Section */}
       <div className={styles.mission}>
         <div className={styles.mission_text}>
