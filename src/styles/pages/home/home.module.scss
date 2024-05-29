@@ -58,6 +58,7 @@
     p {
         font-size: 1.5rem;
         line-height: 40px;
+        white-space: pre-wrap;
 
         @include mixins.sm-desktop {
             font-size: 1.25rem;

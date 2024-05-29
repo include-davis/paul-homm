@@ -9,23 +9,15 @@ import { MdOutlineMailOutline, MdFacebook } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
 
 const pages = [
-  { page: "pages.page1", route: "/" },
-  { page: "pages.page2", route: "/about-us" },
-  { page: "pages.page3", route: "/services" },
-  { page: "pages.page4", route: "/committees" },
-  { page: "pages.page5", route: "/get-involved" },
+  { page: "home", route: "/" },
+  { page: "about_us", route: "/about-us" },
+  { page: "services", route: "/services" },
+  { page: "committees", route: "/committees" },
+  { page: "get_involved", route: "/get-involved" },
 ];
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
-    },
-  };
-}
-
 export default function Footer() {
-  const t = useTranslations("Footer");
+  const t = useTranslations("Header");
 
   // Function creates a page link list element from the parameters
   function createPageLink(page, route, index) {
@@ -51,7 +43,7 @@ export default function Footer() {
 
         {/* contacts */}
         <div className={styles.contact}>
-          <p className={styles.contact_us}>{t("contact.message")}</p>
+          <p className={styles.contact_us}>{t("contact_us")}</p>
           <div className={styles.icons}>
             <a
               href="https://www.facebook.com/paulhomasianclinicatucdavis"
@@ -81,12 +73,12 @@ export default function Footer() {
               <MdOutlineMailOutline />
             </a>
           </div>
-          <p className={styles.address}>{t("contact.address")}</p>
+          <p className={styles.address}>{t("address")}</p>
         </div>
 
         {/* thank you message */}
         <div className={styles.sponsor}>
-          <p>{t("sponsor.message")}</p>
+          <p>{t("thank_you_sponsors_text")}</p>
           <div className={styles.sponsor_image}>
             <Image
               src="/images/footer/credit-union.png"
@@ -99,7 +91,7 @@ export default function Footer() {
         </div>
       </div>
       {/* Subfooter: Include developer message */}
-      <div className={styles.subfooter}>{t("include")}</div>
+      <div className={styles.subfooter}>{t("include_credit_line")}</div>
     </footer>
   );
 }

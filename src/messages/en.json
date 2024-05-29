@@ -1,45 +1,21 @@
 {
     "Index": {
-        "title": "Home",
         "mission": {
-            "title": "Our Mission",
-            "paragraph1": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.",
-            "paragraph2": "At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.",
-            "paragraph3": "Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.",
-            "image": "/images/home-page/happy-doctors.png"
+            "our_mission_text": "Our Mission",
+            "text": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner.\n\nAt Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community.\n\nOur success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services."
         },
-        "cards": {
-            "visit": {
-                "title": "Visit Us!",
-                "description": "Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.",
-                "contact": {
-                    "phone": "(916) 736-3966",
-                    "msg": "Message",
-                    "address": "6341 Folsom Blvd Sacramento, CA 95819"
-                }
-            },
-            "closure": {
-                "title": "Closure Dates",
-                "date1": "Feb. 10, 2024",
-                "date2": "Mar. 30, 2024",
-                "date3": "May 25, 2024",
-                "date4": "Jul. 6, 2024",
-                "date5": "Aug 31, 2024"
-            },
-            "events": {
-                "title": "Upcoming Events",
-                "date1": "Jan. 7, 2023",
-                "date2": "Jan. 8, 2023",
-                "date3": "Jan. 14, 2023",
-                "date4": "Jan. 15, 2023",
-                "date5": "Jan. 29, 2023",
-                "event1": "Musculoskeletal Clinic",
-                "event2": "VN Cares Cancer Screening",
-                "event3": "Psychiatry Clinic",
-                "event4": "Hepatitis Vaccination",
-                "event5": "Dermatology Clinic",
-                "image": "/images/home-page/events-img.png"
-            }
+        "visit_us": {
+            "visit_us_text": "Visit Us!",
+            "contact_instruction": "Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.",
+            "phone": "(916) 736-3966",
+            "message": "Message",
+            "address": "6341 Folsom Blvd Sacramento, CA 95819"
+        },
+        "closure_dates_text": "Closure Dates",
+        "upcoming_events_text": "Upcoming Events",
+        "image_gallery_overlay_text": {
+            "title": "A Passion To Serve",
+            "description": "Quality clinical services for our local community"
         }
     },
     "About": {
@@ -118,24 +94,6 @@
         "donateText": "Paul Hom Asian Clinic is a 501(c)(3) organization. If you would like to support our clinic, donations can be mailed to:",
         "address": "Paul Home Asian Clinic\n6341 Folsom Blvd\nSacramento, CA 95819",
         "donateText2": "We thank you for your generoristy!"
-    },
-    "Footer": {
-        "pages": {
-            "page1": "HOME",
-            "page2": "ABOUT US",
-            "page3": "SERVICES",
-            "page4": "COMMITEES",
-            "page5": "GET INVOLVED"
-        },
-        "contact": {
-            "message": "CONTACT US",
-            "address": "6341 Folsom Blvd Sacramento, CA 95819"
-        },
-        "sponsor": {
-            "message": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
-            "image": "/images/footer/credit-union.png"
-        },
-        "include": "Designed & Developed with 🤍 by #include @ Davis"
     },
     "Services": {
         "heading": "Our Services",
@@ -341,17 +299,17 @@
         }
     },
     "Header": {
-        "pages": {
-            "page1": "HOME",
-            "page2": "ABOUT US",
-            "page3": "SERVICES",
-            "page4": "COMMITEES",
-            "page5": "GET INVOLVED"
-        },
-        "title": {
-            "clinic_name": "Paul Hom Asian Clinic",
-            "subtitle": "A Student-Run Clinic at UC Davis"
-        }
+        "home": "HOME",
+        "about_us": "ABOUT US",
+        "services": "SERVICES",
+        "committees": "COMMITEES",
+        "get_involved": "GET INVOLVED",
+        "clinic_name": "Paul Hom Asian Clinic",
+        "clinic_description": "A Student-Run Clinic at UC Davis",
+        "contact_us": "CONTACT US",
+        "address": "6341 Folsom Blvd Sacramento, CA 95819",
+        "thank_you_sponsors_text": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
+        "include_credit_line": "Designed & Developed with 🤍 by #include @ Davis"
     },
     "Flipping Cards": {
         "Card1": {

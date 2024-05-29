@@ -7,15 +7,8 @@ import { RxCross1 } from "react-icons/rx";
 import { IoMenuOutline } from "react-icons/io5";
 import LangDropDown from "../dropDown/dropDown";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
-    },
-  };
-}
-
 export default function Header() {
+  const t = useTranslations("Header");
   // use state for links
   const [activeLinks, setActiveLinks] = useState([
     false,
@@ -40,14 +33,13 @@ export default function Header() {
   };
 
   const links = [
-    { href: "/", text: "pages.page1" },
-    { href: "/about-us", text: "pages.page2" },
-    { href: "/services", text: "pages.page3" },
-    { href: "/committees", text: "pages.page4" },
-    { href: "/get-involved", text: "pages.page5" },
+    { href: "/", text: "home" },
+    { href: "/about-us", text: "about_us" },
+    { href: "/services", text: "services" },
+    { href: "/committees", text: "committees" },
+    { href: "/get-involved", text: "get_involved" },
   ];
 
-  const t = useTranslations(`Header`);
 
   return (
     <header className={styles.header}>
@@ -62,8 +54,8 @@ export default function Header() {
           />
         </Link>
         <div className={styles.title_text}>
-          <h1>{t("title.clinic_name")}</h1>
-          <h2>{t("title.subtitle")}</h2>
+          <h1>{t("clinic_name")}</h1>
+          <h2>{t("clinic_description")}</h2>
         </div>
 
         <div className={styles.language_dropdown}>
