@@ -1,5 +1,6 @@
 import CommitteeDescription from "@/components/committees/committeeDesription";
 import React from "react";
+import PageLayout from "@/components/layout";
 
 const data = [
   "covered-california",
@@ -34,8 +35,8 @@ export async function getStaticProps({ params, locale }) {
 
 export default function CommitteePage({ committeeNames }) {
   return (
-    <div>
+    <PageLayout>
       <CommitteeDescription props={committeeNames} />
-    </div>
+    </PageLayout>
   );
 }
