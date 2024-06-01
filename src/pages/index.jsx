@@ -13,53 +13,56 @@ export async function getStaticProps({ locale }) {
   let upcomingEvents = [];
   let headerMessages = {};
 
-  try{
-    const res = await (await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-      method: 'POST',
-      headers: {
-        "Content-Type": 'application/json',
-      },
-      body: JSON.stringify({
-        locale: locale,
+  try {
+    const res = await (
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          locale: locale,
+        }),
       })
-    })).json();
+    ).json();
     headerMessages = res.body;
-  } catch (e){
-    console.log(e.message)
+  } catch (e) {
+    console.log(`Fetching header data: ${e.message}`);
   }
 
-  try{
-    const res = await (await fetch(`${process.env.NEXT_APP_BASE_URL}/api/home`, {
-      method: 'POST',
-      headers: {
-        "Content-Type": 'application/json',
-      },
-      body: JSON.stringify({
-        locale: locale,
+  try {
+    const res = await (
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/home`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          locale: locale,
+        }),
       })
-    })).json();
+    ).json();
 
     const body = res.body;
-    messages = {"Index" : body.text, "Header" : headerMessages};
+    messages = { Index: body.text, Header: headerMessages };
     closureDates = body.closure_dates;
     upcomingEvents = body.upcoming_events;
-  } catch (e){
-    console.log(e.message)
+  } catch (e) {
+    console.log(`Fetching homepage data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK
     messages = (await import(`@/messages/${locale}.json`)).default;
   }
-  
+
   return {
     props: {
       messages: messages,
       closureDates,
       upcomingEvents,
-      headerMessages,
     },
   };
 }
 
-export default function Home({ closureDates, upcomingEvents, headerMessages }) {
+export default function Home({ closureDates, upcomingEvents }) {
   const t = useTranslations("Index");
   const format = useFormatter();
 
@@ -67,132 +70,139 @@ export default function Home({ closureDates, upcomingEvents, headerMessages }) {
     const formatted = format.dateTime(d, {
       year: "numeric",
       month: "short",
-      day: "numeric"
+      day: "numeric",
     });
     return formatted;
-  }
-  
+  };
 
-  const formattedDates = closureDates.map((dateString)=>{
+  const formattedDates = closureDates.map((dateString) => {
     return formatDate(new Date(dateString));
-  })
+  });
   // 5 upcoming dates rendered at most
   formattedDates.sort();
   formattedDates.length = formattedDates.length > 5 ? 5 : formattedDates.length;
 
-
-  const formattedEvents = upcomingEvents.map((eventObj)=>{
+  const formattedEvents = upcomingEvents.map((eventObj) => {
     return {
       event: eventObj.event,
-      date: formatDate(new Date(eventObj.date))
+      date: formatDate(new Date(eventObj.date)),
     };
-  })
-  const cmpDate = (a,b) => {
+  });
+  const cmpDate = (a, b) => {
     const d1 = new Date(a.date).getTime();
     const d2 = new Date(b.date).getTime();
-    if(d1 > d2){ return 1 }
-    else if (d1 < d2){ return -1 }
-    else{ return 0 }
-  }
+    if (d1 > d2) {
+      return 1;
+    } else if (d1 < d2) {
+      return -1;
+    } else {
+      return 0;
+    }
+  };
   formattedEvents.sort(cmpDate);
-  formattedEvents.length = formattedEvents.length > 5 ? 5 : formattedEvents.length;
+  formattedEvents.length =
+    formattedEvents.length > 5 ? 5 : formattedEvents.length;
 
   return (
     <PageLayout>
       <div className={styles.container}>
-      <HomepageGallery overlay_title={t("image_gallery_overlay_text.title")} overlay_description={t("image_gallery_overlay_text.description")}/>
-      {/* Red "Our Mission" Section */}
-      <div className={styles.mission}>
-        <div className={styles.mission_text}>
-          <h1>{t("mission.our_mission_text")}</h1>
-          <p>{t("mission.text")}</p>
+        <HomepageGallery
+          overlay_title={t("image_gallery_overlay_text.title")}
+          overlay_description={t("image_gallery_overlay_text.description")}
+        />
+        {/* Red "Our Mission" Section */}
+        <div className={styles.mission}>
+          <div className={styles.mission_text}>
+            <h1>{t("mission.our_mission_text")}</h1>
+            <p>{t("mission.text")}</p>
+          </div>
+          <div className={styles.doctors_image}>
+            <Image
+              src={"/images/home-page/happy-doctors.png"}
+              style={{ objectFit: "fill" }}
+              fill={true}
+              alt={"Happy doctors"}
+            />
+          </div>
         </div>
-        <div className={styles.doctors_image}>
-          <Image
-            src={"/images/home-page/happy-doctors.png"}
-            style={{ objectFit: "fill" }}
-            fill={true}
-            alt={"Happy doctors"}
-          />
-        </div>
-      </div>
-      
-      {/* White Section with Info cards */}
-      <div className={styles.info}>
-        {/* Visit us card with contact Info */}
-        <div className={styles.visit_card}>
-          <h1>{t("visit_us.visit_us_text")}</h1>
-          <p>{t("visit_us.contact_instruction")}</p>
-          <div className={styles.visit}>
-            <div className={styles.contact}>
-              <div className={styles.row_icons}>
-                <div className={styles.circle_frame}>
-                  <MdPhone />
+
+        {/* White Section with Info cards */}
+        <div className={styles.info}>
+          {/* Visit us card with contact Info */}
+          <div className={styles.visit_card}>
+            <h1>{t("visit_us.visit_us_text")}</h1>
+            <p>{t("visit_us.contact_instruction")}</p>
+            <div className={styles.visit}>
+              <div className={styles.contact}>
+                <div className={styles.row_icons}>
+                  <div className={styles.circle_frame}>
+                    <MdPhone />
+                  </div>
+                  <p>{t("visit_us.phone")}</p>
                 </div>
-                <p>{t("visit_us.phone")}</p>
+                <div className={styles.row_icons}>
+                  <div className={styles.circle_frame}>
+                    <BiSolidMessage />
+                  </div>
+                  <p>{t("visit_us.message")}</p>
+                </div>
               </div>
-              <div className={styles.row_icons}>
-                <div className={styles.circle_frame}>
-                  <BiSolidMessage />
+              <div className={styles.address}>
+                <div className={styles.row_icons}>
+                  <div className={styles.circle_frame}>
+                    <MdLocationOn />
+                  </div>
+                  <p>{t("visit_us.address")}</p>
                 </div>
-                <p>{t("visit_us.message")}</p>
-              </div>
-            </div>
-            <div className={styles.address}>
-              <div className={styles.row_icons}>
-                <div className={styles.circle_frame}>
-                  <MdLocationOn />
-                </div>
-                <p>{t("visit_us.address")}</p>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.dates}>
-          {/* Important Closure Dates */}
-          <div className={styles.closure_card}>
-            <h1>{t("closure_dates_text")}</h1>
-            <ul>{formattedDates.map((date, index)=>{
-                return <li key={index}>{date}</li>
-              })}
-            </ul>
-          </div>
-          {/* Upcoming Events Section */}
-          <div className={styles.events_card}>
-            <div className={styles.events_image_mobile}>
-              <Image
-                src={ "/images/home-page/events-img.png"}
-                style={{ objectFit: "fill" }}
-                fill={true}
-                alt={"People holding posters"}
-              />
+          <div className={styles.dates}>
+            {/* Important Closure Dates */}
+            <div className={styles.closure_card}>
+              <h1>{t("closure_dates_text")}</h1>
+              <ul>
+                {formattedDates.map((date, index) => {
+                  return <li key={index}>{date}</li>;
+                })}
+              </ul>
             </div>
-            <h1>{t("upcoming_events_text")}</h1>
-            <div className={styles.events}>
-              <div className={styles.date_container}>
-                <ul>
-                  {formattedEvents.map((event, index) => (
-                    <li key={index}>{event.date}</li>
-                  ))}
-                </ul>
-                <ul>
-                  {formattedEvents.map((event, index) => (
-                    <li key={index}>{event.event}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className={styles.events_image}>
+            {/* Upcoming Events Section */}
+            <div className={styles.events_card}>
+              <div className={styles.events_image_mobile}>
                 <Image
-                  src={ "/images/home-page/events-img.png"}
+                  src={"/images/home-page/events-img.png"}
                   style={{ objectFit: "fill" }}
                   fill={true}
                   alt={"People holding posters"}
                 />
               </div>
+              <h1>{t("upcoming_events_text")}</h1>
+              <div className={styles.events}>
+                <div className={styles.date_container}>
+                  <ul>
+                    {formattedEvents.map((event, index) => (
+                      <li key={index}>{event.date}</li>
+                    ))}
+                  </ul>
+                  <ul>
+                    {formattedEvents.map((event, index) => (
+                      <li key={index}>{event.event}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={styles.events_image}>
+                  <Image
+                    src={"/images/home-page/events-img.png"}
+                    style={{ objectFit: "fill" }}
+                    fill={true}
+                    alt={"People holding posters"}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </PageLayout>
   );
