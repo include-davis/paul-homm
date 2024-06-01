@@ -5,7 +5,10 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Image from "next/image";
 
-export default function HomepageGallery({ overlay_title, overlay_description }) {
+export default function HomepageGallery({
+  overlay_title,
+  overlay_description,
+}) {
   const [activeImg, setActiveImg] = useState(0); // activeImg can hold values 0-7 indicating which image from the lists below to use at each render
   let imgPaths = [
     "/images/homepage/HomepageGalleryImage1.jpg",
@@ -113,9 +116,7 @@ export default function HomepageGallery({ overlay_title, overlay_description }) 
         <div className={styles.textContainer}>
           <div className={styles.blur}>
             <h2 className={styles.title}>{overlay_title}</h2>
-            <p className={styles.description}>
-              {overlay_description}
-            </p>
+            <p className={styles.description}>{overlay_description}</p>
           </div>
         </div>
         <div key={activeImg} className={styles.frameContainer}>

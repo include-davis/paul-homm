@@ -40,7 +40,6 @@ export default function Header() {
     { href: "/get-involved", text: "get_involved" },
   ];
 
-
   return (
     <header className={styles.header}>
       <div className={styles.title}>
