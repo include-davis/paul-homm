@@ -25,79 +25,71 @@
         },
         "commitment_statement": "Dr. Paul Hom had an untiring commitment to the clinic and to its purpose in serving patients of all ages in the Asian community who lack adequate healthcare due to cultural, linguistic, or economic barriers. Healthcare continues to be provided at no charge to all patients.",
         "sister_clinics": {
-            "number_of_clinics_in_list": "2",
             "clinic_category_title": "Our Sister Clinics",
+            "clinic_count": "2",
             "clinic1": {
                 "name": "VN Cares",
-                "link": "https://www.vncares.org/"
+                "website_link": "https://www.vncares.org/"
             },
             "clinic2": {
                 "name": "HLUB",
-                "link": "https://hlubclinic.wordpress.com/"
+                "website_link": "https://hlubclinic.wordpress.com/"
             }
         },
         "ucd_clinics": {
-            "number_of_clinics_in_list": "6",
             "clinic_category_title": "UC Davis Student-Run Clinics",
+            "clinic_count": "6",
             "clinic1": {
                 "name": "Bayanihan",
-                "link": "https://www.bayanihanclinic.com/"
+                "website_link": "https://www.bayanihanclinic.com/"
             },
             "clinic2": {
                 "name": "Clinica Tepati",
-                "link": "https://clinicatepati.com/"
+                "website_link": "https://clinicatepati.com/"
             },
             "clinic3": {
                 "name": "Imani clinic",
-                "link": "https://www.imaniclinic.org/"
+                "website_link": "https://www.imaniclinic.org/"
             },
             "clinic4": {
                 "name": "Joan Viteri Memorial Clinic",
-                "link": "https://www.jvmclinic.com/"
+                "website_link": "https://www.jvmclinic.com/"
             },
             "clinic5": {
                 "name": "Shifa Clinic",
-                "link": "https://shifaclinic.org/"
+                "website_link": "https://shifaclinic.org/"
             },
             "clinic6": {
                 "name": "Willow Clinic",
-                "link": "https://www.willowclinic.org/"
+                "website_link": "https://www.willowclinic.org/"
             }
         },
-        "Flipping_Cards": {
-            "Card1": {
+        "history_cards": {
+            "card_count": "5",
+            "card1": {
                 "title": "1971 Our Beginning",
-                "content": "In 1971, a group of UC Davis medical students led by Paul Hom held meetings with a group of activist undergraduate students from the California State University of Sacramento to discuss improving health care for elderly Asians and new immigrant families who were struggling to obtain adequate health care due to socioeconomic and language barriers. They decided to start a free clinic to target this problem.",
-                "image": "/images/about-us-timeline/1971image.png",
-                "alt": "portrait of the founder, Paul Hom",
-                "svg": "/images/aboutUs/vector1.svg"
+                "description": "In 1971, a group of UC Davis medical students led by Paul Hom held meetings with a group of activist undergraduate students from the California State University of Sacramento to discuss improving health care for elderly Asians and new immigrant families who were struggling to obtain adequate health care due to socioeconomic and language barriers. They decided to start a free clinic to target this problem.",
+                "image_description": "portrait of the founder, Paul Hom"
             },
-            "Card2": {
+            "card2": {
                 "title": "Creating a Team",
-                "content": "Paul Hom approached Dr. Lindy Kumagai, one of the few Asian medical faculty members at UC Davis School of Medicine, and asked if he would be the medical director of the clinic. Dr. Lindy Kumagai was an advocate for the Civil Rights Movement and underserved Asian communities. He accepted the position and worked with Paul Hom and UC Davis medical students for the next 30 years.",
-                "image": "/images/about-us-timeline/creatingateam.png",
-                "alt": "portrait of Dr.Lindy Kumagai",
-                "svg": "/images/aboutUs/vector2.svg"
+                "description": "Paul Hom approached Dr. Lindy Kumagai, one of the few Asian medical faculty members at UC Davis School of Medicine, and asked if he would be the medical director of the clinic. Dr. Lindy Kumagai was an advocate for the Civil Rights Movement and underserved Asian communities. He accepted the position and worked with Paul Hom and UC Davis medical students for the next 30 years.",
+                "image_description": "portrait of Dr.Lindy Kumagai"
             },
-            "Card3": {
+            "card3": {
                 "title": "Early Operations",
-                "content": "The ‘Asian Clinic’, as it was called before being renamed to the Paul Hom Asian Clinic, operated out of the back of a bookstore providing primary care services to about 9-10 patients every Saturday. After some time, the community closed the bookstore and the clinic moved to the Sacramento Projects in New Helvecia (low income housing). The clinic later moved to its current location at the Safe Credit Union on Folsom Boulevard.",
-                "image": "/images/about-us-timeline/earlyoperations.png",
-                "alt": "Picture of former clinic",
-                "svg": "/images/aboutUs/vector3.svg"
+                "description": "The ‘Asian Clinic’, as it was called before being renamed to the Paul Hom Asian Clinic, operated out of the back of a bookstore providing primary care services to about 9-10 patients every Saturday. After some time, the community closed the bookstore and the clinic moved to the Sacramento Projects in New Helvecia (low income housing). The clinic later moved to its current location at the Safe Credit Union on Folsom Boulevard.",
+                "image_description": "Picture of former clinic"
             },
-            "Card4": {
+            "card4": {
                 "title": "Continuing the Legacy",
-                "content": "After serving for 30 years, Dr. Lindy Kumagai passed on his position as medical director to Dr. Ronald Guy Jan. Dr. Jan had been volunteering for the clinic since 1980. He had an undying dedication and passion for serving the underserved. In the midst of starting his own practice, Dr. Jan would do his rounds between seven different hospitals and then come to the clinic to take on any patient that needed his help. Dr. Jan served for about 18-20 years before passing his position to the current medical director Dr. Christian Bohringer.",
-                "image": "/images/about-us-timeline/continuingthelegacy.png",
-                "alt": "The Entire Medical Team in a group picture, smiling",
-                "svg": "/images/aboutUs/vector4.svg"
+                "description": "After serving for 30 years, Dr. Lindy Kumagai passed on his position as medical director to Dr. Ronald Guy Jan. Dr. Jan had been volunteering for the clinic since 1980. He had an undying dedication and passion for serving the underserved. In the midst of starting his own practice, Dr. Jan would do his rounds between seven different hospitals and then come to the clinic to take on any patient that needed his help. Dr. Jan served for about 18-20 years before passing his position to the current medical director Dr. Christian Bohringer.",
+                "image_description": "The Entire Medical Team in a group picture, smiling"
             },
-            "Card5": {
+            "card5": {
                 "title": "Today",
-                "content": "The existence of the Paul Hom Asian Clinic has proved beneficial not only to the patients, but also to the undergraduate students, medical students, and physicians who volunteer their time and efforts. The legacy of Dr. Paul Hom continues to thrive and is the oldest Asian clinic in all of America.",
-                "image": "/images/about-us-timeline/Today.png",
-                "alt": "Current Student-Run Clinic Team in a group picture, smiling"
+                "description": "The existence of the Paul Hom Asian Clinic has proved beneficial not only to the patients, but also to the undergraduate students, medical students, and physicians who volunteer their time and efforts. The legacy of Dr. Paul Hom continues to thrive and is the oldest Asian clinic in all of America.",
+                "image_description": "Current Student-Run Clinic Team in a group picture, smiling"
             }
         }
     },
