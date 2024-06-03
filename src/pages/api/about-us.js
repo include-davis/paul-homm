@@ -44,7 +44,7 @@ export default async function fetchAboutUsData(req, res) {
           image_description: card.image_description,
         };
       });
-      pageData["history_cards"] = {
+      pageData.history_cards = {
         card_count: history_cards.length.toString(),
         ...history_cards_json,
       };
@@ -58,7 +58,7 @@ export default async function fetchAboutUsData(req, res) {
           website_link: clinic.website_link,
         };
       });
-      pageData["sister_clinics"] = {
+      pageData.sister_clinics = {
         clinic_category_title: clinic_category_title,
         clinic_count: sister_clinics.length.toString(),
         ...sister_clinics_json,
@@ -73,7 +73,7 @@ export default async function fetchAboutUsData(req, res) {
           website_link: clinic.website_link,
         };
       });
-      pageData["ucd_clinics"] = {
+      pageData.ucd_clinics = {
         clinic_category_title: clinic_category_title,
         clinic_count: ucd_clinics.length.toString(),
         ...ucd_clinics_json,
