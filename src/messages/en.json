@@ -135,7 +135,7 @@
     },
     "Services": {
         "page_title": "Our Services",
-        "regular_services": {
+        "regular_service": {
             "service1": {
                 "title": "Primary Care Services",
                 "description": "Every Saturday"
@@ -145,50 +145,51 @@
                 "description": "First Sunday Monthly"
             }
         },
-        "tabs": {
-            "tab1": "Specialty Clinics",
-            "tab2": "Hepatitis",
-            "tab3": "Health Education & Preventative Measures",
-            "tab4": "Vaccines"
-        },
-        "slides": {
-            "slide1": {
-                "image": "/images/services/specialtyClinics.png",
-                "list": {
-                    "item1": "Musculoskeletal Clinic (MSK)",
-                    "item2": "Dermatology",
-                    "item3": "Cardiopulmonary Clinic",
-                    "item4": "Liver Clinic"
-                }
-            },
-            "slide2": {
-                "image": "/images/services/hepatitis.png",
-                "list": {
-                    "item1": "Liver cancer is often tied to Hepatitis B",
-                    "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
-                    "item3": "Asians more vulnerable, higher infection rates, mortality",
-                    "item4": "Screening, vaccination, tratments available",
-                    "item5": "Free vaccines"
-                }
-            },
-            "slide3": {
-                "image": "/images/services/healthEdu.png",
-                "list": {
-                    "item1": "Hypertension Workshops",
-                    "item2": "Nutrition Counseling",
-                    "item3": "Health Fair"
-                }
-            },
-            "slide4": {
-                "image4": "/images/services/vaccines.png",
-                "list": {
-                    "item1": "Hepatitis",
-                    "item2": "Annual flu-shots",
-                    "item3": "Health Fair"
+        "services_slides":{
+            "slide_count": "4",
+            "slides": {
+                "slide1": {
+                    "title": "Specialty Clinics",
+                    "count_of_bullet_points": "4",
+                    "list": {
+                        "item1": "Musculoskeletal Clinic (MSK)",
+                        "item2": "Dermatology",
+                        "item3": "Cardiopulmonary Clinic",
+                        "item4": "Liver Clinic"
+                    }
+                },
+                "slide2": {
+                    "title": "Hepatitis",
+                    "count_of_bullet_points": "5",
+                    "list": {
+                        "item1": "Liver cancer is often tied to Hepatitis B",
+                        "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+                        "item3": "Asians more vulnerable, higher infection rates, mortality",
+                        "item4": "Screening, vaccination, tratments available",
+                        "item5": "Free vaccines"
+                    }
+                },
+                "slide3": {
+                    "title": "Health Education & Preventative Measures",
+                    "count_of_bullet_points": "3",    
+                    "list": {
+                        "item1": "Hypertension Workshops",
+                        "item2": "Nutrition Counseling",
+                        "item3": "Health Fair"
+                    }
+                },
+                "slide4": {
+                    "title": "Vaccines",
+                    "count_of_bullet_points": "3",
+                    "list": {
+                        "item1": "Hepatitis",
+                        "item2": "Annual flu-shots",
+                        "item3": "Health Fair"
+                    }
                 }
             }
         },
-        "referrals_tile_text": "Referrals",
+        "referrals_title_text": "Referrals",
         "referrals": {
             "item1": "Surgery with SPIRIT program",
             "item2": "UCDMC",
@@ -202,40 +203,6 @@
             "item4": "Taishanese",
             "item5": "Vietnamese",
             "item6": "Hmong"
-        },
-        "mobile": {
-            "Specialty Clinics": {
-                "image": "/images/services/healthEdu.png",
-                "bulletCount": "5",
-                "bullet1": "Muskuloskeletal Clinic (MSK)",
-                "bullet2": "Dermatology",
-                "bullet3": "Ophthalmology Clinic",
-                "bullet4": "Cardiopulmonary Clinic",
-                "bullet5": "Liver Clinic"
-            },
-            "Hepatitis": {
-                "image": "/images/services/hepatitis.png",
-                "bulletCount": "5",
-                "bullet1": "Liver cancer is often tied to Hepatitis B",
-                "bullet2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
-                "bullet3": "Asians more vulnerable, higher infection rates, mortality",
-                "bullet4": "Screening, vaccination, treatments available",
-                "bullet5": "Free vaccinations"
-            },
-            "Health Education and Preventative Measures": {
-                "image": "/images/services/specialtyClinics.png",
-                "bulletCount": "3",
-                "bullet1": "Hypertension Workshops",
-                "bullet2": "Nutrition Counseling",
-                "bullet3": "Health Fair"
-            },
-            "Vaccines": {
-                "image": "/images/services/vaccines.png",
-                "bulletCount": "3",
-                "bullet1": "Hepatitis",
-                "bullet2": "Annual flu-shots",
-                "bullet3": "Health Fair"
-            }
         }
     },
     "Committees": {

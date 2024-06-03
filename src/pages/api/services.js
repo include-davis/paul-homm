@@ -6,9 +6,10 @@ export default async function fetchServicesData(req, res) {
       "regular_service.title",
       "regular_service.description",
       "services_slides",
-      "services_slides.slide.title",
-      "services_slides.slide.bullet_points",
-      "services_slides.slide.count_of_bullet_points",
+      "services_slides.slide_count",
+      "services_slides.slides.title",
+      "services_slides.slides.bullet_points",
+      "services_slides.slides.count_of_bullet_points",
     ];
     const query = query_params
       .map((param, index) => {
@@ -42,7 +43,7 @@ export default async function fetchServicesData(req, res) {
       }
       pageData.regular_service = regular_services_json;
 
-      const services_slides_data = pageData.services_slides.slide;
+      const services_slides_data = pageData.services_slides.slides;
       const services_slides = services_slides_data.map((slide) => {
         const parsed_bullet_points = slide.bullet_points.split("\n");
         if (
@@ -63,12 +64,11 @@ export default async function fetchServicesData(req, res) {
           );
         }
       });
-
       let services_slides_json = {};
       for (let i = 0; i < services_slides.length; i++) {
         services_slides_json[`slide${i + 1}`] = services_slides[i];
       }
-      pageData.services_slides = services_slides_json;
+      pageData.services_slides.slides = services_slides_json;
 
       const referrals = pageData.referrals_list_items.split("\n");
       delete pageData.referrals_list_items;
@@ -86,13 +86,9 @@ export default async function fetchServicesData(req, res) {
 
       const responseBody = {
         ...pageData,
-        regular_services: regular_services_json,
-        services_slides: services_slides_json,
         referrals: referrals_json,
         translators: translators_json,
       };
-
-      console.log(responseBody);
 
       res.send({
         status: 200,

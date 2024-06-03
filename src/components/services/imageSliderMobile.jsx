@@ -6,14 +6,6 @@ import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { useTranslations } from "next-intl";
 import DropDown from "@/components/dropDown/imageSliderDropdown.jsx";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
-    },
-  };
-}
-
 // Calculates division of space based on number of frames shown
 function calcDividor(numFramesShown, primary, scaleDiff) {
   let sum = primary;
@@ -69,17 +61,23 @@ function ImageSliderMobileFrame(props) {
 
 // Acutal image slider component
 export default function ImageSliderMobile() {
-  const t = useTranslations("Services.mobile");
+  const t = useTranslations("Services.services_slides");
+
+  const slideCount = Number(t("slide_count"));
+  const slideNum = [...Array(slideCount).keys()];
 
   // Images and services
-  const services = [
-    "Specialty Clinics",
-    "Hepatitis",
-    "Health Education and Preventative Measures",
-    "Vaccines",
+  const services = slideNum.map((_, index) => {
+    const num = index + 1;
+    return t(`slides.slide${num}.title`);
+  });
+
+  const images = [
+    "/images/services/specialtyClinics.png",
+    "/images/services/hepatitis.png",
+    "/images/services/healthEdu.png",
+    "/images/services/vaccines.png",
   ];
-  const images = services.map((service) => t(`${service}.image`));
-  // const images = [t(services[0].image), "hepatitis.png", "specialtyClinics.png", "vaccines.png"]
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [service, setService] = useState(services[0]);
@@ -107,7 +105,9 @@ export default function ImageSliderMobile() {
   };
 
   // Keep track of bullets below images
-  const bulletCount = parseInt(t(`${service}.bulletCount`));
+  const bulletCount = parseInt(
+    t(`slides.slide${services.indexOf(service) + 1}.count_of_bullet_points`)
+  );
   const bullets = [...Array(bulletCount).keys()];
 
   return (
@@ -178,7 +178,9 @@ export default function ImageSliderMobile() {
           {bullets.map((bullet, index) => {
             return (
               <li className={styles.info_item} key={index}>
-                {t(`${service}.bullet${bullet + 1}`)}
+                {t(
+                  `slides.slide${services.indexOf(service) + 1}.list.item${bullet + 1}`
+                )}
               </li>
             );
           })}

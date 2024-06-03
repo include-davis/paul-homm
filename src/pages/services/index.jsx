@@ -48,7 +48,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       messages: messages,
-      // messages: (await import(`@/messages/${locale}.json`)).default,
     },
   };
 }
@@ -65,23 +64,23 @@ export default function Services() {
 
           <div className={styles.boxContainer}>
             <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
-              <h2> {t("regular_services.service1.title")}</h2>
-              <p>{t("regular_services.service1.description")}</p>
+              <h2> {t("regular_service.service1.title")}</h2>
+              <p>{t("regular_service.service1.description")}</p>
             </div>
 
             <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
-              <h2>{t("regular_services.service2.title")}</h2>
-              <p>{t("regular_services.service2.description")}</p>
+              <h2>{t("regular_service.service2.title")}</h2>
+              <p>{t("regular_service.service2.description")}</p>
             </div>
           </div>
         </div>
 
-        {/* <div className={styles.desktop}>
+        <div className={styles.desktop}>
           <ImageSlider />
         </div>
         <div className={styles.mobile}>
           <ImageSliderMobile />
-        </div> */}
+        </div>
 
         <div className={styles.servicesContainer}>
           <div
