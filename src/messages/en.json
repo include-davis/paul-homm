@@ -134,15 +134,15 @@
         "donateText2": "We thank you for your generoristy!"
     },
     "Services": {
-        "heading": "Our Services",
-        "topServices": {
+        "page_title": "Our Services",
+        "regular_services": {
             "service1": {
-                "heading": "Primary Care Services",
-                "desc": "Every Saturday"
+                "title": "Primary Care Services",
+                "description": "Every Saturday"
             },
             "service2": {
-                "heading": "Cancer Screenings",
-                "desc": "First Sunday Monthly"
+                "title": "Cancer Screenings",
+                "description": "First Sunday Monthly"
             }
         },
         "tabs": {
@@ -188,26 +188,20 @@
                 }
             }
         },
-        "bottomServices": {
-            "service1": {
-                "heading": "Referrals",
-                "list": {
-                    "item1": "Surgery with SPIRIT program",
-                    "item2": "UCDMC",
-                    "item3": "Primary Care Clinic"
-                }
-            },
-            "service2": {
-                "heading": "Translators",
-                "list": {
-                    "item1": "Cantonese",
-                    "item2": "Mandaring",
-                    "item3": "Korean",
-                    "item4": "Taishanese",
-                    "item5": "Vietnamese",
-                    "item6": "Hmong"
-                }
-            }
+        "referrals_tile_text": "Referrals",
+        "referrals": {
+            "item1": "Surgery with SPIRIT program",
+            "item2": "UCDMC",
+            "item3": "Primary Care Clinic"
+        },
+        "translators_title_text": "Translators",
+        "translators": {
+            "item1": "Cantonese",
+            "item2": "Mandaring",
+            "item3": "Korean",
+            "item4": "Taishanese",
+            "item5": "Vietnamese",
+            "item6": "Hmong"
         },
         "mobile": {
             "Specialty Clinics": {
