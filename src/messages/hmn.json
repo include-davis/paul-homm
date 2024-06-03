@@ -139,45 +139,43 @@
         },
         "services_slides":{
             "slide_count": "4",
-            "slides": {
-                "slide1": {
-                    "title": "Specialty Clinics",
-                    "count_of_bullet_points": "4",
-                    "list": {
-                        "item1": "Musculoskeletal Clinic (MSK)",
-                        "item2": "Dermatology",
-                        "item3": "Cardiopulmonary Clinic",
-                        "item4": "Liver Clinic"
-                    }
-                },
-                "slide2": {
-                    "title": "Hepatitis",
-                    "count_of_bullet_points": "5",
-                    "list": {
-                        "item1": "Liver cancer is often tied to Hepatitis B",
-                        "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
-                        "item3": "Asians more vulnerable, higher infection rates, mortality",
-                        "item4": "Screening, vaccination, tratments available",
-                        "item5": "Free vaccines"
-                    }
-                },
-                "slide3": {
-                    "title": "Health Education & Preventative Measures",
-                    "count_of_bullet_points": "3",    
-                    "list": {
-                        "item1": "Hypertension Workshops",
-                        "item2": "Nutrition Counseling",
-                        "item3": "Health Fair"
-                    }
-                },
-                "slide4": {
-                    "title": "Vaccines",
-                    "count_of_bullet_points": "3",
-                    "list": {
-                        "item1": "Hepatitis",
-                        "item2": "Annual flu-shots",
-                        "item3": "Health Fair"
-                    }
+            "slide1": {
+                "title": "Specialty Clinics",
+                "count_of_bullet_points": "4",
+                "list": {
+                    "item1": "Musculoskeletal Clinic (MSK)",
+                    "item2": "Dermatology",
+                    "item3": "Cardiopulmonary Clinic",
+                    "item4": "Liver Clinic"
+                }
+            },
+            "slide2": {
+                "title": "Hepatitis",
+                "count_of_bullet_points": "5",
+                "list": {
+                    "item1": "Liver cancer is often tied to Hepatitis B",
+                    "item2": "Transmission: blood, sex, mother-to-child; late diagnosis common",
+                    "item3": "Asians more vulnerable, higher infection rates, mortality",
+                    "item4": "Screening, vaccination, tratments available",
+                    "item5": "Free vaccines"
+                }
+            },
+            "slide3": {
+                "title": "Health Education & Preventative Measures",
+                "count_of_bullet_points": "3",    
+                "list": {
+                    "item1": "Hypertension Workshops",
+                    "item2": "Nutrition Counseling",
+                    "item3": "Health Fair"
+                }
+            },
+            "slide4": {
+                "title": "Vaccines",
+                "count_of_bullet_points": "3",
+                "list": {
+                    "item1": "Hepatitis",
+                    "item2": "Annual flu-shots",
+                    "item3": "Health Fair"
                 }
             }
         },
