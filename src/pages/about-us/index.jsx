@@ -48,7 +48,6 @@ export async function getStaticProps({ locale }) {
     ).json();
 
     messages = { About: res.body, Header: headerMessages };
-    console.log(res.body);
   } catch (e) {
     console.log(`Fetching about-us data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK
