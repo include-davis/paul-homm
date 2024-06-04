@@ -5,21 +5,63 @@ import Card from "@/components/get-involved/card";
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
+  let messages = {};
+
+  try {
+    const res = await (
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          locale: locale,
+        }),
+      })
+    ).json();
+    messages.Header = res.body;
+  } catch (e) {
+    console.log(`Fetching header data: ${e.message}`);
+  }
+
+  try {
+    const res = await (
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/get-involved`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          locale: locale,
+        }),
+      })
+    ).json();
+    messages.GetInvolved = res.body;
+  } catch (e) {
+    console.log(`Fetching get-involved data: ${e.message}`);
+    // TODO: IMPLEMENT A BETTER FALLBACK
+    messages = (await import(`@/messages/${locale}.json`)).default;
+  }
+
   return {
     props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
+      messages: messages,
     },
   };
 }
 
-const cardProps = ["Card1", "Card2", "Card3"];
+const cardProps = [
+  { card: "card1", imgSrc: "/images/get-involved/physiciansAndResidents.png" },
+  { card: "card2", imgSrc: "/images/get-involved/undergrad.png" },
+  { card: "card3", imgSrc: "/images/get-involved/clinics.png" },
+];
 export default function GetInvolved() {
   const t = useTranslations("GetInvolved");
 
   return (
     <PageLayout>
       <div className={styles.sectionContainer}>
-        <h1 className={styles.sectionHeading}>{t("pageTitle")}</h1>
+        <h1 className={styles.sectionHeading}>{t("page_title")}</h1>
         <div className={styles.cardContainer}>
           {cardProps.map((cardProp, index) => (
             <Card key={index} cardProps={cardProp} />
@@ -27,11 +69,11 @@ export default function GetInvolved() {
         </div>
 
         <div className={styles.donateBoxContainer}>
-          <h3 className={styles.donateHeading}>{t("donateHeading")}</h3>
-          <p className={styles.donateText}>{t("donateText")}</p>
+          <h3 className={styles.donateHeading}>{t("donate_today_text")}</h3>
+          <p className={styles.donateText}>{t("donation_instruction")}</p>
           <div className={styles.centeredText}>
             <p className={styles.address}>{t("address")}</p>
-            <p className={styles.donateText}>{t("donateText2")}</p>
+            <p className={styles.donateText}>{t("thank_you_text")}</p>
           </div>
         </div>
       </div>

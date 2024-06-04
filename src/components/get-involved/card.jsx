@@ -5,16 +5,9 @@ import { useTranslations } from "next-intl";
 import PopupCard from "./popupCard";
 import { useState } from "react";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
-    },
-  };
-}
-
 export default function Card({ cardProps }) {
-  const t = useTranslations("GetInvolved.CardComponent");
+  const { card, imgSrc } = cardProps;
+  const t = useTranslations("GetInvolved");
   const [popup, setPopup] = useState(false);
 
   const togglePopup = () => {
@@ -26,16 +19,16 @@ export default function Card({ cardProps }) {
       <div className={styles.card}>
         <div
           className={styles.cardImg}
-          style={{ backgroundImage: `url(${t(`${cardProps}.imgSrc`)})` }}
+          style={{ backgroundImage: `url(${imgSrc})` }}
         >
-          <p className={styles.cardText}>{t(`${cardProps}.titleShort`)}</p>
+          <p className={styles.cardText}>{t(`${card}.title_short`)}</p>
         </div>
         <button className={styles.detailsButton} onClick={togglePopup}>
-          {t("details")}
+          {t("details_text")}
         </button>
-        <button className={styles.signUpButton}>{t("signUp")}</button>
+        <button className={styles.signUpButton}>{t("sign_up_text")}</button>
       </div>
-      {popup && <PopupCard card={cardProps} onClose={togglePopup} />}
+      {popup && <PopupCard card={card} onClose={togglePopup} />}
     </div>
   );
 }
