@@ -36,20 +36,52 @@ export default async function fetchAboutUsData(req, res) {
       }
 
       const history_cards = pageData.history_cards.card_details;
-      delete pageData["history_cards"];
-      const sister_clinics = pageData.sister_clinics.clinic_details;
-      const ucd_clinics = pageData.ucd_clinics.clinic_details;
+      const history_cards_json = {};
+      history_cards.map((card) => {
+        history_cards_json[`card${card.card_number}`] = {
+          title: card.title,
+          description: card.description,
+          image_description: card.image_description,
+        };
+      });
+      pageData.history_cards = {
+        card_count: history_cards.length.toString(),
+        ...history_cards_json,
+      };
 
-      const responseBody = {
-        text: pageData,
-        history_cards: history_cards,
-        sister_clinics: sister_clinics,
-        ucd_clinics: ucd_clinics,
+      let clinic_category_title = pageData.sister_clinics.clinic_category_title;
+      const sister_clinics = pageData.sister_clinics.clinic_details;
+      const sister_clinics_json = {};
+      sister_clinics.map((clinic, index) => {
+        sister_clinics_json[`clinic${index + 1}`] = {
+          name: clinic.name,
+          website_link: clinic.website_link,
+        };
+      });
+      pageData.sister_clinics = {
+        clinic_category_title: clinic_category_title,
+        clinic_count: sister_clinics.length.toString(),
+        ...sister_clinics_json,
+      };
+
+      clinic_category_title = pageData.ucd_clinics.clinic_category_title;
+      const ucd_clinics = pageData.ucd_clinics.clinic_details;
+      const ucd_clinics_json = {};
+      ucd_clinics.map((clinic, index) => {
+        ucd_clinics_json[`clinic${index + 1}`] = {
+          name: clinic.name,
+          website_link: clinic.website_link,
+        };
+      });
+      pageData.ucd_clinics = {
+        clinic_category_title: clinic_category_title,
+        clinic_count: ucd_clinics.length.toString(),
+        ...ucd_clinics_json,
       };
 
       res.send({
         status: 200,
-        body: responseBody,
+        body: pageData,
         error: null,
       });
     } catch (e) {

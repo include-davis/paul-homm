@@ -15,10 +15,6 @@ import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
   let messages = {};
-  let history_cards = [];
-  let sister_clinics = [];
-  let ucd_clinics = [];
-  let headerMessages = {};
 
   try {
     const res = await (
@@ -32,7 +28,7 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    headerMessages = res.body;
+    messages.Header = res.body;
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -50,11 +46,7 @@ export async function getStaticProps({ locale }) {
       })
     ).json();
 
-    const body = res.body;
-    messages = { About: body.text, Header: headerMessages };
-    history_cards = body.history_cards;
-    sister_clinics = body.sister_clinics;
-    ucd_clinics = body.ucd_clinics;
+    messages.About = res.body;
   } catch (e) {
     console.log(`Fetching about-us data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK
@@ -63,60 +55,60 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       messages: messages,
-      history_cards,
-      sister_clinics,
-      ucd_clinics,
     },
   };
 }
 
-const data = ["Card1", "Card2", "Card3", "Card4", "Card5"];
-
-const dimensions = [
+const mobileDims = [
   ["220px", "168px"],
   ["226px", "199px"],
   ["186px", "289px"],
   ["195px", "291px"],
   ["212px", "291px"],
 ];
-
+const desktopDims = [
+  ["432px", "506px"],
+  ["427px", "507px"],
+  ["701px", "483px"],
+  ["701px", "483px"],
+  ["701px", "507px"],
+];
 const svgDims = [
   [375, 162],
   [455, 40],
   [454, 41],
   [322, 110],
 ];
-
-export default function About({ history_cards, ucd_clinics, sister_clinics }) {
+const carouselData = [
+  "/images/aboutUs/frame1.png",
+  "/images/aboutUs/frame2.png",
+  "/images/aboutUs/frame3.png",
+  "/images/aboutUs/frame4.png",
+  "/images/aboutUs/frame5.png",
+  "/images/aboutUs/frame6.png",
+  "/images/aboutUs/frame7.png",
+];
+const cardImages = [
+  "/images/about-us-timeline/1971image.png",
+  "/images/about-us-timeline/creatingateam.png",
+  "/images/about-us-timeline/earlyoperations.png",
+  "/images/about-us-timeline/continuingthelegacy.png",
+  "/images/about-us-timeline/Today.png",
+];
+export default function About() {
   const t = useTranslations("About");
 
-  const carouselData = [
-    "/images/aboutUs/frame1.png",
-    "/images/aboutUs/frame2.png",
-    "/images/aboutUs/frame3.png",
-    "/images/aboutUs/frame4.png",
-    "/images/aboutUs/frame5.png",
-    "/images/aboutUs/frame6.png",
-    "/images/aboutUs/frame7.png",
+  const cardNums = [...Array(Number(t("history_cards.card_count"))).keys()];
+  const sisterClinicsNums = [
+    ...Array(Number(t("sister_clinics.clinic_count"))).keys(),
   ];
-  const cardImages = [
-    "/images/about-us-timeline/1971image.png",
-    "/images/about-us-timeline/creatingateam.png",
-    "/images/about-us-timeline/earlyoperations.png",
-    "/images/about-us-timeline/continuingthelegacy.png",
-    "/images/about-us-timeline/Today.png",
-  ];
-  const dims = [
-    ["432px", "506px"],
-    ["427px", "507px"],
-    ["701px", "483px"],
-    ["701px", "483px"],
-    ["701px", "507px"],
+  const ucdClinicsNums = [
+    ...Array(Number(t("ucd_clinics.clinic_count"))).keys(),
   ];
 
   /* Mobile Flipping Cards */
   const [activeIndex, setActiveIndex] = useState(0);
-  const n = data.length;
+  const n = cardNums.length;
   const subIndex = () => {
     setActiveIndex((activeIndex + n - 1) % n);
   };
@@ -146,28 +138,16 @@ export default function About({ history_cards, ucd_clinics, sister_clinics }) {
                 }}
               >
                 <div className={styles.flipping_cards}>
-                  {Object.entries(history_cards).length !== 0
-                    ? data.map((card, index) => {
-                        const details = history_cards.find(
-                          (card) => card.card_number === index + 1
-                        );
-                        return (
-                          <div key={index} className={styles.frame}>
-                            <h1 className={styles.frame_content}>
-                              {details.title}
-                            </h1>
-                          </div>
-                        );
-                      })
-                    : data.map((card, index) => {
-                        return (
-                          <div key={index} className={styles.frame}>
-                            <h1 className={styles.frame_content}>
-                              {t(`Flipping_Cards.${card}.title`)}
-                            </h1>
-                          </div>
-                        );
-                      })}
+                  {cardNums.map((_, index) => {
+                    const num = index + 1;
+                    return (
+                      <div key={index} className={styles.frame}>
+                        <h1 className={styles.frame_content}>
+                          {t(`history_cards.card${num}.title`)}
+                        </h1>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -186,91 +166,53 @@ export default function About({ history_cards, ucd_clinics, sister_clinics }) {
                 }}
               >
                 <div className={styles.flipping_cards}>
-                  {Object.entries(history_cards).length !== 0
-                    ? history_cards.map((card, index) => (
-                        <div key={index} className={styles.frame}>
-                          <FlippingCardMobile
-                            props={card}
-                            dimensions={dimensions[index]}
-                            imgsrc={cardImages[index]}
-                          />
-                        </div>
-                      ))
-                    : data.map((card, index) => {
-                        const description = t(`Flipping_Cards.${card}.content`);
-                        const image_description = t(
-                          `Flipping_Cards.${card}.alt`
-                        );
-                        return (
-                          <div key={index} className={styles.frame}>
-                            <FlippingCardMobile
-                              props={(description, image_description)}
-                              dimensions={dimensions[index]}
-                              imgsrc={t(`Flipping_Cards.${card}.image`)}
-                            />
-                          </div>
-                        );
-                      })}
+                  {cardNums.map((_, index) => {
+                    const num = index + 1;
+                    return (
+                      <div key={index} className={styles.frame}>
+                        <FlippingCardMobile
+                          props={[
+                            t(`history_cards.card${num}.description`),
+                            t(`history_cards.card${num}.image_description`),
+                          ]}
+                          dimensions={mobileDims[index]}
+                          imgsrc={cardImages[index]}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className={`${styles.cardsDiv} ${styles.desktop}`}>
-          {Object.entries(history_cards).length !== 0
-            ? data.map((elem, index) => {
-                const details = history_cards.find(
-                  (card) => card.card_number === index + 1
-                );
-                return (
-                  <div
-                    className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index === 0 ? styles.topPath : ""}`}
-                    key={index}
-                  >
-                    <FlippingCard
-                      title={details.title}
-                      content={details.description}
-                      image={cardImages[index]}
-                      alt={details.image_description}
-                      dims={dims[index]}
-                    />
-                    {index !== data.length - 1 && ( // Render SVG for all but the last card
-                      <Image
-                        className={styles.svg}
-                        src={`/images/aboutUs/vector${index + 1}.svg`}
-                        alt="Dotted path leading to proceeding image"
-                        width={svgDims[index][0]}
-                        height={svgDims[index][1]}
-                      />
-                    )}
-                  </div>
-                );
-              })
-            : data.map((elem, index) => {
-                return (
-                  <div
-                    className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index === 0 ? styles.topPath : ""}`}
-                    key={index}
-                  >
-                    <FlippingCard
-                      title={t(`Flipping_Cards.${elem}.title`)}
-                      content={t(`Flipping_Cards.${elem}.content`)}
-                      image={t(`Flipping_Cards.${elem}.image`)}
-                      alt={t(`Flipping_Cards.${elem}.alt`)}
-                      dims={dims[index]}
-                    />
-                    {index !== data.length - 1 && ( // Render SVG for all but the last card
-                      <Image
-                        className={styles.svg}
-                        src={`/images/aboutUs/vector${index + 1}.svg`}
-                        alt="Dotted path leading to proceeding image"
-                        width={svgDims[index][0]}
-                        height={svgDims[index][1]}
-                      />
-                    )}
-                  </div>
-                );
-              })}
+          {cardNums.map((_, index) => {
+            const num = index + 1;
+            return (
+              <div
+                className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index === 0 ? styles.topPath : ""}`}
+                key={index}
+              >
+                <FlippingCard
+                  title={t(`history_cards.card${num}.title`)}
+                  content={t(`history_cards.card${num}.description`)}
+                  image={cardImages[index]}
+                  alt={t(`history_cards.card${num}.image_description`)}
+                  dims={desktopDims[index]}
+                />
+                {index !== cardNums.length - 1 && ( // Render SVG for all but the last card
+                  <Image
+                    className={styles.svg}
+                    src={`/images/aboutUs/vector${index + 1}.svg`}
+                    alt="Dotted path leading to proceeding image"
+                    width={svgDims[index][0]}
+                    height={svgDims[index][1]}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
         <p>{t("commitment_statement")}</p>
         <YoutubeEmbed embedId="UUguG3tATJE" />
@@ -278,15 +220,16 @@ export default function About({ history_cards, ucd_clinics, sister_clinics }) {
           <div className={styles.defaultClass}>
             <h3>{t("ucd_clinics.clinic_category_title")}</h3>
             <ul>
-              {ucd_clinics.map((clinic, index) => {
+              {ucdClinicsNums.map((_, index) => {
+                const num = index + 1;
                 return (
                   <li key={index}>
                     <Link
-                      href={clinic.website_link}
+                      href={t(`ucd_clinics.clinic${num}.website_link`)}
                       target="__blank"
                       className={styles.link}
                     >
-                      {clinic.name}
+                      {t(`ucd_clinics.clinic${num}.name`)}
                     </Link>
                   </li>
                 );
@@ -296,15 +239,16 @@ export default function About({ history_cards, ucd_clinics, sister_clinics }) {
           <div className={styles.defaultClass}>
             <h3>{t("sister_clinics.clinic_category_title")}</h3>
             <ul>
-              {sister_clinics.map((clinic, index) => {
+              {sisterClinicsNums.map((_, index) => {
+                const num = index + 1;
                 return (
                   <li key={index}>
                     <Link
-                      href={clinic.website_link}
+                      href={t(`sister_clinics.clinic${num}.website_link`)}
                       target="__blank"
                       className={styles.link}
                     >
-                      {clinic.name}
+                      {t(`sister_clinics.clinic${num}.name`)}
                     </Link>
                   </li>
                 );

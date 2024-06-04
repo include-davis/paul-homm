@@ -69,7 +69,7 @@ export default function ImageSliderMobile() {
   // Images and services
   const services = slideNum.map((_, index) => {
     const num = index + 1;
-    return t(`slides.slide${num}.title`);
+    return t(`slide${num}.title`);
   });
 
   const images = [
@@ -106,7 +106,7 @@ export default function ImageSliderMobile() {
 
   // Keep track of bullets below images
   const bulletCount = parseInt(
-    t(`slides.slide${services.indexOf(service) + 1}.count_of_bullet_points`)
+    t(`slide${services.indexOf(service) + 1}.count_of_bullet_points`)
   );
   const bullets = [...Array(bulletCount).keys()];
 
@@ -179,7 +179,7 @@ export default function ImageSliderMobile() {
             return (
               <li className={styles.info_item} key={index}>
                 {t(
-                  `slides.slide${services.indexOf(service) + 1}.list.item${bullet + 1}`
+                  `slide${services.indexOf(service) + 1}.list.item${bullet + 1}`
                 )}
               </li>
             );

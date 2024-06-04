@@ -6,7 +6,6 @@ import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
   let messages = {};
-  let headerMessages = {};
 
   try {
     const res = await (
@@ -20,7 +19,7 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    headerMessages = res.body;
+    messages.Header = res.body;
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -37,8 +36,7 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-
-    messages = { Services: res.body, Header: headerMessages };
+    messages.Services = res.body;
   } catch (e) {
     console.log(`Fetching services data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK

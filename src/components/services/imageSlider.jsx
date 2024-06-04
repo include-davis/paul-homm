@@ -37,7 +37,7 @@ export default function ImageSlider() {
               onClick={() => toggleTab(num)}
               key={index}
             >
-              {t(`slides.slide${num}.title`)}
+              {t(`slide${num}.title`)}
             </button>
           );
         })}
@@ -47,9 +47,7 @@ export default function ImageSlider() {
         {slideNum.map((_, index) => {
           const num = index + 1;
           const bulletNum = [
-            ...Array(
-              Number(t(`slides.slide${num}.count_of_bullet_points`))
-            ).keys(),
+            ...Array(Number(t(`slide${num}.count_of_bullet_points`))).keys(),
           ];
           return (
             <div
@@ -83,9 +81,7 @@ export default function ImageSlider() {
                 <ul>
                   {bulletNum.map((_, i) => {
                     return (
-                      <li key={i}>
-                        {t(`slides.slide${num}.list.item${i + 1}`)}
-                      </li>
+                      <li key={i}>{t(`slide${num}.list.item${i + 1}`)}</li>
                     );
                   })}
                 </ul>
