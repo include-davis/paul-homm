@@ -68,7 +68,6 @@ export async function getStaticProps({ params, locale }) {
     props: {
       committeeNames,
       messages: messages,
-      // messages: (await import(`@/messages/${locale}.json`)).default,
     },
   };
 }
