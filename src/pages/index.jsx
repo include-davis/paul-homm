@@ -11,7 +11,6 @@ export async function getStaticProps({ locale }) {
   let messages = {};
   let closureDates = [];
   let upcomingEvents = [];
-  let headerMessages = {};
 
   try {
     const res = await (
@@ -25,7 +24,7 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    headerMessages = res.body;
+    messages.Header = res.body;
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -44,7 +43,7 @@ export async function getStaticProps({ locale }) {
     ).json();
 
     const body = res.body;
-    messages = { Index: body.text, Header: headerMessages };
+    messages.Index = body.text;
     closureDates = body.closure_dates;
     upcomingEvents = body.upcoming_events;
   } catch (e) {
