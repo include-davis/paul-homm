@@ -8,7 +8,6 @@ const data = [
   "patient-assistance-program",
   "dermatology",
   "diabetes",
-  "hlub",
   "hepatitis",
   "ophthalmology",
   "womens-health",
