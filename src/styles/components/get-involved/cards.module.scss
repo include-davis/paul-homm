@@ -58,6 +58,10 @@
   border: none;
 }
 
+.links {
+  text-decoration: none;
+}
+
 @include mixins.phone{
   .cardImg{
     width: 320px;
