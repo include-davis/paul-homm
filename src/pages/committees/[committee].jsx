@@ -38,7 +38,11 @@ export async function getStaticProps({ params, locale }) {
         }),
       })
     ).json();
-    messages.Header = res.body;
+    if (res.status === 200) {
+      messages.Header = res.body;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -56,7 +60,11 @@ export async function getStaticProps({ params, locale }) {
       })
     ).json();
 
-    messages.Committees = res.body;
+    if (res.status === 200) {
+      messages.Committees = res.body;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching committees data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK

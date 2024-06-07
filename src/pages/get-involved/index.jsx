@@ -19,7 +19,11 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    messages.Header = res.body;
+    if (res.status === 200) {
+      messages.Header = res.body;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -36,7 +40,11 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    messages.GetInvolved = res.body;
+    if (res.status === 200) {
+      messages.GetInvolved = res.body;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching get-involved data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK

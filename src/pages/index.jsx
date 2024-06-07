@@ -24,7 +24,11 @@ export async function getStaticProps({ locale }) {
         }),
       })
     ).json();
-    messages.Header = res.body;
+    if (res.status === 200) {
+      messages.Header = res.body;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching header data: ${e.message}`);
   }
@@ -42,10 +46,14 @@ export async function getStaticProps({ locale }) {
       })
     ).json();
 
-    const body = res.body;
-    messages.Index = body.text;
-    closureDates = body.closure_dates;
-    upcomingEvents = body.upcoming_events;
+    if (res.status === 200) {
+      const body = res.body;
+      messages.Index = body.text;
+      closureDates = body.closure_dates;
+      upcomingEvents = body.upcoming_events;
+    } else {
+      throw new Error(res.error);
+    }
   } catch (e) {
     console.log(`Fetching homepage data: ${e.message}`);
     // TODO: IMPLEMENT A BETTER FALLBACK
