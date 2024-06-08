@@ -16,7 +16,7 @@ export default function CommitteeDescription({ props }) {
           <button className={styles.button}>
             <IoArrowBack className={styles.desktop_arrow} />
             <IoChevronBack className={styles.mobile_arrow} />
-            {l("back_to_committees")}
+            <p>{l("back_to_committees")}</p>
           </button>
         </Link>
       </div>

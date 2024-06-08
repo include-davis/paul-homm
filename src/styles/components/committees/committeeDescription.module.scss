@@ -1,26 +1,27 @@
 @use '../../mixins.scss';
 
-.wrapper{
+.wrapper {
     height: auto;
     background: var(--color-white);
     padding-bottom: 32px;
-    margin: 0 auto; /* Centering horizontally */
-    text-align: center; 
+    margin: 0 auto;
+    /* Centering horizontally */
+    text-align: center;
 }
 
-.content{
+.content {
     font-family: var(--font-inter);
     margin: 0;
     width: 50%;
     display: inline-block;
-    
-    > * {
-        text-align:center;
+
+    >* {
+        text-align: center;
         margin: 0 auto;
-        padding-bottom:32px;
+        padding-bottom: 32px;
     }
 
-    >h1{
+    >h1 {
         color: var(--color-maroon);
         font-size: 2rem;
         text-align: center;
@@ -28,12 +29,12 @@
         line-height: normal;
     }
 
-    >h2{
+    >h2 {
         font-size: 1.25rem;
         text-align: center;
         font-weight: 500;
         line-height: 32px;
-        white-space: pre-wrap; 
+        white-space: pre-wrap;
     }
 }
 
@@ -46,36 +47,42 @@
     padding-top: 56px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+
+    >p {
+        margin-top: -4px;
+    }
 }
 
-.mobile_arrow{
+.mobile_arrow {
     display: none;
 }
 
-.buttonClass{
+.buttonClass {
     padding-left: 32px;
     display: flex;
     flex-direction: row;
 }
 
-.linkStyle{
+.linkStyle {
     text-decoration: none;
 }
 
 @include mixins.tablet {
-    .desktop_arrow{
+    .desktop_arrow {
         display: none;
     }
 
-    .mobile_arrow{
+    .mobile_arrow {
         display: block;
     }
 
-    .content{
+    .content {
         width: 60%;
     }
 
-    .button{
+    .button {
         padding-top: 32px;
         padding-bottom: 32px;
     }
@@ -85,12 +92,12 @@
     .content {
         width: 80%;
     }
-    
-    .button{
+
+    .button {
         padding-top: 16px;
     }
 
-    .buttonClass{
+    .buttonClass {
         padding-left: 16px;
     }
 }
