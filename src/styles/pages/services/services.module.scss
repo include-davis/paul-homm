@@ -194,13 +194,13 @@
         }
 
         .desc {
-            font-size: 2rem;
+            font-size: 1.85rem;
             color: black;
             list-style-position: inside;
             padding-left: 27px;
 
             @include mixins.sm-desktop {
-                font-size: 2rem;
+                font-size: 1.85rem;
             }
 
             @include mixins.tablet {
@@ -212,7 +212,7 @@
             }
 
             @include mixins.v-sm-phone {
-                font-size: 0.95rem;
+                font-size: 0.85rem;
             }
         }
 
