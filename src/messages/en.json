@@ -135,7 +135,7 @@
                 "description": "First Sunday Monthly"
             }
         },
-        "services_slides":{
+        "services_slides": {
             "slide_count": "4",
             "slide1": {
                 "title": "Specialty Clinics",
@@ -160,7 +160,7 @@
             },
             "slide3": {
                 "title": "Health Education & Preventative Measures",
-                "count_of_bullet_points": "3",    
+                "count_of_bullet_points": "3",
                 "list": {
                     "item1": "Hypertension Workshops",
                     "item2": "Nutrition Counseling",
@@ -212,7 +212,7 @@
             "cardiopulmonary": {
                 "name": "Cardiopulmonary",
                 "image": "/images/committees/cardiopulmonary.png",
-                "path": "/committees/cardiopulmonary", 
+                "path": "/committees/cardiopulmonary",
                 "description": "The Cardiopulmonary Committee educates patients about cardiovascular, pulmonary, and heart-related diseases. We assist patients who are at risk or already addicted to nicotine by providing free cessation resources. The Cardiopulmonary Committee holds monthly specialty clinics that offer electrocardiogram (EKG) strips, ankle brachial index (ABI) tests, and spirometry tests. \n  \n Next Cardiopulmonary Clinic: Sunday, November 20, 2022"
             },
             "covered-california": {
@@ -259,7 +259,7 @@
             },
             "ophthalmology": {
                 "name": "Ophthalmology",
-                "image": "/images/committees/ophthalmology.png",
+                "image": "/images/committees/opthalmology.png",
                 "path": "/committees/ophthalmology",
                 "description": "The Ophthalmology Committee monitors our patients’ history for eye conditions and provides patients with an assessment and follow-up care plan if needed. The committee conducts pupillary exams, intraocular pressure exams, visual acuity exams, slit lamp exams, and retinal exams during our clinic hours. Ophthalmology clinics are held quarterly on Sundays from 8:30am to 12pm. Depending on a patient’s insurance status and visual acuity, the Ophthalmology Committee can provide a VSP voucher which patients can use at a local optometrist’s office to obtain free-of-charge eyeglass frames and lenses and eye exams."
             }
@@ -278,8 +278,8 @@
         "thank_you_sponsors_text": "THANK YOU TO OUR SPONSORS FOR THEIR GENEROUS SUPPORT",
         "include_credit_line": "Designed & Developed with 🤍 by #include @ Davis"
     },
-    "404page" : {
-      "PageNotFound": "Error 404: Page not found",
-      "BackToHome": "Back to home"
+    "404page": {
+        "PageNotFound": "Error 404: Page not found",
+        "BackToHome": "Back to home"
     }
 }

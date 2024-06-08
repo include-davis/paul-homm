@@ -19,12 +19,14 @@ export default function CommitteeCard({ props }) {
       <div className={styles.committee_card}>
         <div className={styles.image_container}>
           <Image
+            className={styles.image}
             src={t("image")}
             alt={t("name")}
             style={{ objectFit: "fill" }}
             fill={true}
             priority={true}
           />
+          <div className={styles.gradient}></div>
         </div>
         <h3>{t("name")}</h3>
       </div>
