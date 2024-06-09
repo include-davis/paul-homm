@@ -128,6 +128,8 @@ export default function Home({ closureDates, upcomingEvents }) {
               src={"/images/home-page/happy-doctors.png"}
               style={{ objectFit: "fill" }}
               fill={true}
+              priority={true}
+              sizes="(max-width: 1048px) 100vw, 50vw"
               alt={"Happy doctors"}
             />
           </div>
@@ -181,6 +183,7 @@ export default function Home({ closureDates, upcomingEvents }) {
                   src={"/images/home-page/events-img.png"}
                   style={{ objectFit: "fill" }}
                   fill={true}
+                  sizes="(max-width: 1048px) 100vw, 50vw"
                   alt={"People holding posters"}
                 />
               </div>
@@ -203,6 +206,7 @@ export default function Home({ closureDates, upcomingEvents }) {
                     src={"/images/home-page/events-img.png"}
                     style={{ objectFit: "fill" }}
                     fill={true}
+                    sizes="(max-width: 1048px) 100vw, 50vw"
                     alt={"People holding posters"}
                   />
                 </div>

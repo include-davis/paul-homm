@@ -19,12 +19,7 @@
     align-items: center;
     width: 100%;
     position: relative;
-
-
-    >*:first-child {
-        margin-left: 32px;
-    }
-
+    padding-left: 32px;
 }
 
 .title_text {
@@ -134,20 +129,14 @@
         height: var(--tablet-header-height);
 
         .title {
+            margin-top: 0px;
+            padding-left: 24px;
             a {
                 img {
                     height: 64px;
                     width: 100%;
                 }
             }
-        }
-    }
-
-    .title {
-        margin-top: 0px;
-
-        >*:first-child {
-            margin-left: 24px;
         }
     }
 
@@ -241,19 +230,13 @@
         height: var(--mobile-header-height);
 
         .title {
+            padding-left: 12px;
             a {
                 img {
                     height: 48px;
                     width: 100%;
                 }
             }
-        }
-    }
-
-    .title {
-
-        >*:first-child {
-            margin-left: 12px;
         }
     }
 

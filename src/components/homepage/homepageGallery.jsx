@@ -36,6 +36,7 @@ export default function HomepageGallery({
         alt="Current Gallery Image"
         className={styles.frame + " " + styles.curr}
         fill={true}
+        priority={true}
       />
     );
     prevR.push(

@@ -49,6 +49,7 @@ export default function Header() {
             width={110}
             height={110}
             alt="Paul Hom logo"
+            priority={true}
             href="/"
           />
         </Link>
