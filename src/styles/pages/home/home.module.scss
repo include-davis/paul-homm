@@ -116,7 +116,8 @@
     align-items: center;
     //height: calc(8px * 113);
     background-color: var(--color-white);
-    padding: 24px;
+    padding: 48px 64px;
+    gap: 64px;
 }
 
 .doctors_image {
@@ -153,6 +154,7 @@
 .visit_card {
     display: flex;
     flex-direction: column;
+    gap: 32px;
     align-items: center;
     border-radius: 16px;
 
@@ -160,35 +162,30 @@
     color: var(--text-black);
     font-size: 1.5rem;
     line-height: 40px;
-    padding: 0px 40px;
+    padding: 32px 48px;
 
     h1 {
-        padding: 24px 32px 16px 32px;
         color: var(--color-maroon);
         font-size: 2.5rem;
     }
 
-    width: 936px;
-    height: 384px;
+    width: 80%;
 
     @include mixins.sm-desktop {
-        width: 720px;
-
         >p {
             font-size: 1.25rem;
         }
     }
 
     @include mixins.tablet {
-        max-width: 100%;
-        height: 536px;
-
+        width: 100%;
         >p {
             text-align: center;
         }
     }
-
+    
     @include mixins.phone {
+    
         h1 {
             font-size: 1.375rem;
         }
@@ -196,10 +193,6 @@
         p {
             font-size: 1.125rem;
         }
-
-        height: fit-content;
-        width: 328px;
-        padding: 0px 12px 24px;
     }
 
     @include mixins.v-sm-phone {
@@ -212,7 +205,6 @@
             font-size: 0.75rem;
         }
     }
-
 }
 
 .visit {
@@ -222,8 +214,6 @@
     gap: 32px;
     font-size: 1.875rem;
     color: var(--color-maroon);
-
-    padding-top: 40px;
 
     @include mixins.tablet {
         flex-direction: column;
@@ -262,8 +252,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--edge-spacer);
-
-
+    min-width: fit-content;
 }
 
 .address {
@@ -290,53 +279,29 @@
 .dates {
     // This is to style lower two cards
     display: flex;
-    align-items: center;
-    column-gap: 32px;
-    margin: 64px 0px;
-    max-width: 100%;
-
-    @include mixins.tablet {
-        flex-direction: column;
-        margin: 32px;
-    }
-
-
-
-}
-
-// Styling for "Closure Dates" card
-.closure_card {
-    width: 362px;
-    height: 384px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 8px;
-    border-radius: 16px;
-
-    background-color: var(--color-beige);
-    color: var(--text-black);
+    gap: 32px;
+    width: 100%;
 
     h1 {
         text-align: center;
         color: var(--color-maroon);
         font-size: 2.5rem;
-
     }
 
     ul {
         list-style-type: none;
+        min-width: fit-content;
     }
 
     li {
-        margin-bottom: var(--edge-spacer);
+        padding: calc(var(--edge-spacer) / 2);
         font-size: 1.5rem;
     }
 
-    @include mixins.sm-desktop {
-        width: 300px;
-        height: 400px;
+    @include mixins.sm-desktop{
+        h1 {
+            font-size: 2rem;
+        }
 
         li {
             font-size: 1.15rem;
@@ -344,143 +309,104 @@
     }
 
     @include mixins.tablet {
+        flex-direction: column;
+
         h1 {
-            font-size: 2.0rem;
+            font-size: 2.5rem;
         }
-
-        margin-bottom: 32px;
-    }
-
-    @include mixins.phone {
-        h1 {
-            font-size: 1.375rem;
-        }
-
-        p {
-            font-size: 1.125rem;
-        }
-
-        width: 328px;
-        height: 296px;
-        padding-top: 24px;
-
     }
 
     @include mixins.sm-phone {
-        font-size: 1.375rem;
+
+        li {
+            font-size: 1.375rem;
+        }
     }
 
     @include mixins.v-sm-phone {
-        h1 {
-            font-size: 1rem;
-        }
-
         li {
             line-height: normal;
             font-size: 0.75rem;
         }
-
-        width: 240px;
     }
+}
 
+// Styling for "Closure Dates" card
+.closure_card {
+    width: 362px;
+    min-width: fit-content;
+    min-height: 384px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 16px;
+
+    background-color: var(--color-beige);
+    color: var(--text-black);
+
+    @include mixins.tablet {
+        width: 100%;
+    }
 }
 
 // Styling for "Upcoming Events" card
 .events_card {
-    width: 1024px;
-    height: 384px;
-    padding: 8px;
+    width: 100%;
+    min-height: 384px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 16px;
+    padding: 32px;
     align-items: center;
     border-radius: 16px;
 
     background-color: var(--color-beige);
     color: var(--text-black);
 
-    h1 {
-        padding: 0px 32px 32px 32px;
-        color: var(--color-maroon);
-        font-size: 2.5rem;
-
-
-
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    li {
-        margin-bottom: var(--edge-spacer);
-        font-size: 1.5rem;
-
-        @include mixins.sm-phone {
-            font-size: 1.125rem;
-        }
-    }
-
-
-
-    @include mixins.sm-desktop {
-        width: 700px;
-        height: 400px;
-
-        li {
-            font-size: 1.15rem;
-        }
-    }
-
     @include mixins.tablet {
-        max-width: 100%;
-        // width: 640px;
-        height: 616px;
-        padding: 24px 0px 0px;
-
-        h1 {
-            font-size: 2.0rem;
-        }
+        width: 100%;
+        padding: 24px;
     }
-
-    @include mixins.phone {
-        h1 {
-            font-size: 1.35rem;
-        }
-
-        width: 328px;
-    }
-
-    @include mixins.v-sm-phone {
-        h1 {
-            font-size: 1rem;
-        }
-
-        li {
-            line-height: normal;
-            font-size: 0.75rem;
-        }
-
-        height: 500px;
-    }
-
 }
 
 .events {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    gap: 24px;
     width: 100%;
     align-items: center;
+    overflow: hidden;
+
+    @include mixins.sm-desktop{
+        gap: 16px;
+    }
 
     @include mixins.phone {
-        padding: 0px 8px;
+        padding: 8px;
+    }
+}
+
+.date_container {
+    display: flex;
+    column-gap: 24px;
+
+    .date{
+        min-width: 145px;
+
+        @include mixins.sm-desktop{
+            min-width: 110px;
+        }
     }
 }
 
 .events_image_mobile {
     position: relative;
-    width: 400px;
-    height: 400px;
+    // width: 400px;
+    // height: 400px;
+    width: 100%;
+    aspect-ratio: 1.5;
     border-radius: 8px;
     overflow: hidden;
     display: none;
@@ -488,47 +414,18 @@
     @include mixins.tablet {
         display: block;
     }
-
-    @include mixins.phone {
-        width: 280px;
-        height: 200px;
-    }
-
-    @include mixins.sm-phone {
-        width: 250px;
-    }
-
-    @include mixins.v-sm-phone {
-        width: 200px;
-        height: 140px;
-    }
 }
 
 .events_image {
     position: relative;
-    width: 320px;
-    height: 200px;
-
+    // width: 320px;
+    height: 100%;
+    aspect-ratio: 1.5;
     border-radius: 8px;
-    overflow: hidden;
-
-    @include mixins.sm-desktop {
-        width: 280px;
-        height: 160px;
-    }
 
     @include mixins.tablet {
         display: none;
     }
-
-
-
-
-}
-
-.date_container {
-    display: flex;
-    column-gap: 24px;
 }
 
 // Add circular background behind icons

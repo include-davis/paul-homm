@@ -189,18 +189,15 @@ export default function Home({ closureDates, upcomingEvents }) {
               </div>
               <h1>{t("upcoming_events_text")}</h1>
               <div className={styles.events}>
-                <div className={styles.date_container}>
-                  <ul>
-                    {formattedEvents.map((event, index) => (
-                      <li key={index}>{event.date}</li>
-                    ))}
-                  </ul>
-                  <ul>
-                    {formattedEvents.map((event, index) => (
-                      <li key={index}>{event.event}</li>
-                    ))}
-                  </ul>
-                </div>
+                {/* <div className={styles.date_container}> */}
+                <ul>
+                  {formattedEvents.map((event, index) => (
+                    <div key={index} className={styles.date_container}>
+                      <li className={styles.date}>{event.date}</li>
+                      <li>{event.event}</li>
+                    </div>
+                  ))}
+                </ul>
                 <div className={styles.events_image}>
                   <Image
                     src={"/images/home-page/events-img.png"}
