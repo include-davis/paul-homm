@@ -3,7 +3,8 @@ import styles from "@/styles/components/about-us/flippingcard-mobile.module.scss
 import Image from "next/image";
 
 export default function FlippingCardMobile({ props, dimensions, imgsrc }) {
-  const { description, image_description } = props;
+  const [description, image_description] = props;
+  console.log(description);
   const [height, width] = dimensions;
   return (
     <div className={styles.flipping_card}>
