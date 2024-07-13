@@ -29,7 +29,9 @@ export default async function fetchGetInvolvedData(req, res) {
       if (pageRes.data) {
         pageData = pageRes.data.attributes;
       } else {
-        throw new Error("Failed to retrieve get-involved  data from CMS.");
+        throw new Error(
+          `Failed to retrieve get-involved  data from CMS.\n${pageRes.error.name}: ${pageRes.error.message}`
+        );
       }
 
       const cards = pageData.involvement_opportunities.opportunity_details;

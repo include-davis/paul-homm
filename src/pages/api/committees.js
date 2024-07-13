@@ -27,7 +27,9 @@ export default async function fetchCommitteesData(req, res) {
       if (pageRes.data) {
         pageData = pageRes.data.attributes;
       } else {
-        throw new Error("Failed to retrieve committees data from CMS.");
+        throw new Error(
+          `Failed to retrieve committees data from CMS.\n${pageRes.error.name}: ${pageRes.error.message}`
+        );
       }
 
       const cards = pageData.cards.card_details;

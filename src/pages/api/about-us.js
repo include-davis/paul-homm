@@ -32,7 +32,9 @@ export default async function fetchAboutUsData(req, res) {
       if (pageRes.data) {
         pageData = pageRes.data.attributes;
       } else {
-        throw new Error("Failed to retrieve about-us data from CMS.");
+        throw new Error(
+          `Failed to retrieve about-us data from CMS.\n${pageRes.error.name}: ${pageRes.error.message}`
+        );
       }
 
       const history_cards = pageData.history_cards.card_details;

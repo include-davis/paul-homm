@@ -19,7 +19,9 @@ export default async function fetchHomepageData(req, res) {
       if (homepageRes.data) {
         homepageData = homepageRes.data.attributes;
       } else {
-        throw new Error("Failed to retrieve homepage data from CMS.");
+        throw new Error(
+          `Failed to retrieve homepage data from CMS.\n${homepageRes.error.name}: ${homepageRes.error.message}`
+        );
       }
 
       // closure dates
@@ -48,7 +50,9 @@ export default async function fetchHomepageData(req, res) {
           return date;
         });
       } else {
-        throw new Error("Failed to retrieve closure_dates data from CMS.");
+        throw new Error(
+          `Failed to retrieve closure_dates data from CMS.\n${closureDatesRes.error.name}: ${closureDatesRes.error.message}`
+        );
       }
 
       // upcoming events
@@ -79,7 +83,9 @@ export default async function fetchHomepageData(req, res) {
           };
         });
       } else {
-        throw new Error("Failed to retrieve upcoming_events data from CMS.");
+        throw new Error(
+          `Failed to retrieve upcoming_events data from CMS.\n${eventsRes.error.name}: ${eventsRes.error.message}`
+        );
       }
 
       const responseBody = {

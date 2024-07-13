@@ -18,7 +18,10 @@ export default async function fetchHeaderData(req, res) {
       if (response.data) {
         data = response.data.attributes;
       } else {
-        throw new Error("Failed to retrieve header data from CMS.");
+        console.log(response);
+        throw new Error(
+          `Failed to retrieve header data from CMS.\n${response.error.name}: ${response.error.message}`
+        );
       }
 
       res.send({
