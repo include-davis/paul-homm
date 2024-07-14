@@ -32,11 +32,13 @@ jobs:
           -n ${{ vars.VERCEL_PROJECT }}
           --yes
           --prod
-          --debug
           --env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
           --env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
           --build-env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
-          --build-env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
+          --build-env CMS_API_KEY=${{ secrets.CMS_API_KEY }} | tee vercel_output.txt
+
+      - name: Debug
+        run: vercel logs paulhom-staging-pysq4rbdd-paul-homs-projects.vercel.app --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Success
         run: echo "🛠️ Deploy successful 🛠️"
