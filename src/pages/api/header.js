@@ -3,32 +3,32 @@ export default async function fetchHeaderData(req, res) {
     const locale = req.body.locale === "hmn" ? "ha" : req.body.locale;
 
     // try {
-      const response = await (
-        await fetch(
-          `${process.env.CMS_BASE_URL}/api/header?locale=${locale}&populate=*`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.CMS_API_KEY}`,
-            },
-          }
-        )
-      ).json();
-      let data = {};
-      if (response.data) {
-        data = response.data.attributes;
-      } else {
-        console.log(response);
-        throw new Error(
-          `Failed to retrieve header data from CMS.\n${response.error.name}: ${response.error.message}`
-        );
-      }
+    const response = await (
+      await fetch(
+        `${process.env.CMS_BASE_URL}/api/header?locale=${locale}&populate=*`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${process.env.CMS_API_KEY}`,
+          },
+        }
+      )
+    ).json();
+    let data = {};
+    if (response.data) {
+      data = response.data.attributes;
+    } else {
+      console.log(response);
+      throw new Error(
+        `Failed to retrieve header data from CMS.\n${response.error.name}: ${response.error.message}`
+      );
+    }
 
-      res.send({
-        status: 200,
-        body: data,
-        error: null,
-      });
+    res.send({
+      status: 200,
+      body: data,
+      error: null,
+    });
     // } catch (e) {
     //   console.log(e.message);
     //   res.send({
