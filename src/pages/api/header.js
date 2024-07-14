@@ -2,7 +2,7 @@ export default async function fetchHeaderData(req, res) {
   if (req.method === "POST" && req.body.locale) {
     const locale = req.body.locale === "hmn" ? "ha" : req.body.locale;
 
-    try {
+    // try {
       const response = await (
         await fetch(
           `${process.env.CMS_BASE_URL}/api/header?locale=${locale}&populate=*`,
@@ -29,14 +29,14 @@ export default async function fetchHeaderData(req, res) {
         body: data,
         error: null,
       });
-    } catch (e) {
-      console.log(e.message);
-      res.send({
-        status: 500,
-        body: null,
-        error: e.message,
-      });
-    }
+    // } catch (e) {
+    //   console.log(e.message);
+    //   res.send({
+    //     status: 500,
+    //     body: null,
+    //     error: e.message,
+    //   });
+    // }
   } else {
     console.log("bad request");
     res.send({
