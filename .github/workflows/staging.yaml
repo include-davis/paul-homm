@@ -32,13 +32,12 @@ jobs:
           -n ${{ vars.VERCEL_PROJECT }}
           --yes
           --prod
+          --env NEXT_APP_BASE_URL=${{ vars.NEXT_APP_BASE_URL }}
           --env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
           --env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
+          --build-env NEXT_APP_BASE_URL=${{ vars.NEXT_APP_BASE_URL }}
           --build-env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
           --build-env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
-
-      - name: Debug
-        run: vercel logs paulhom-staging-bf6t097zr-paul-homs-projects.vercel.app --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Success
         run: echo "🛠️ Deploy successful 🛠️"
