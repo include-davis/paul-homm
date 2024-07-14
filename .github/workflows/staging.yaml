@@ -38,7 +38,7 @@ jobs:
           --build-env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
 
       - name: Debug
-        run: vercel logs paulhom-staging-pysq4rbdd-paul-homs-projects.vercel.app --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel logs paulhom-staging-bf6t097zr-paul-homs-projects.vercel.app --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Success
         run: echo "🛠️ Deploy successful 🛠️"
