@@ -34,10 +34,8 @@ jobs:
           --prod
           --env NEXT_APP_BASE_URL=${{ vars.NEXT_APP_BASE_URL }}
           --env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
-          --env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
           --build-env NEXT_APP_BASE_URL=${{ vars.NEXT_APP_BASE_URL }}
           --build-env CMS_BASE_URL=${{ vars.CMS_BASE_URL }}
-          --build-env CMS_API_KEY=${{ secrets.CMS_API_KEY }}
 
       - name: Success
         run: echo "🛠️ Deploy successful 🛠️"
