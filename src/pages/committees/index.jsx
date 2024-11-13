@@ -5,78 +5,73 @@ import CommitteeCard from "@/components/committees/committee";
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
-  let messages = {};
+  const messages = {};
+  let committeeLinks = [];
 
   try {
     const res = await (
-      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/general`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
-    if (res.status === 200) {
-      messages.Header = res.body;
+
+    if (res.ok) {
+      messages.General = res.body;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching header data: ${e.message}`);
+    console.log(`Error fetching general data: ${e.message}`);
+    messages.General = (await import("@/messages/committees.json")).default;
   }
 
   try {
     const res = await (
       await fetch(`${process.env.NEXT_APP_BASE_URL}/api/committees`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
 
-    if (res.status === 200) {
+    if (res.ok) {
       messages.Committees = res.body;
+      committeeLinks = res.body.committee_links;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching committees data: ${e.message}`);
-    // TODO: IMPLEMENT A BETTER FALLBACK
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    console.log(`Error fetching committees data: ${e.message}`);
+    messages.Committees = (await import(`@/messages/committees.json`)).default;
+    committeeLinks = messages.Committees.committee_links;
   }
 
   return {
     props: {
       messages: messages,
+      locale,
+      committeeLinks,
     },
   };
 }
 
-export default function Committees() {
-  const t = useTranslations(`Committees`);
-
-  const data = [...Array(Number(t("count_of_committees"))).keys()];
+export default function Committees({ locale, committeeLinks }) {
+  const g = useTranslations("General");
 
   return (
     <PageLayout>
       <div className={styles.committees_page}>
-        <h1>{t("title_text")}</h1>
+        <h1>{g(`title_text_${locale}`)}</h1>
         <div className={styles.committees_cards}>
-          {data.map((_, index) => {
-            const committee = t(`committee_names.item${index + 1}`);
-            return (
-              <div key={index}>
-                <CommitteeCard props={committee} />
-              </div>
-            );
-          })}
+          {committeeLinks.map((link, index) => (
+            <div key={index}>
+              <CommitteeCard name={link} locale={locale} />
+            </div>
+          ))}
         </div>
       </div>
     </PageLayout>

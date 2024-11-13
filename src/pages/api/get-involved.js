@@ -1,64 +1,54 @@
 export default async function fetchGetInvolvedData(req, res) {
-  if (req.method === "POST" && req.body.locale) {
-    const locale = req.body.locale === "hmn" ? "ha" : req.body.locale;
-    const query_params = [
-      "involvement_opportunities.opportunity_details.title_short",
-      "involvement_opportunities.opportunity_details.title_long",
-      "involvement_opportunities.opportunity_details.content_1",
-      "involvement_opportunities.opportunity_details.content_2",
-    ];
-    const query = query_params
-      .map((param, index) => {
-        return `populate[${index}]=${param}`;
-      })
-      .join("&");
-
-    try {
-      const pageRes = await (
-        await fetch(
-          `${process.env.CMS_BASE_URL}/api/get-involved?locale=${locale}&${query}`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.CMS_API_KEY}`,
-            },
-          }
-        )
-      ).json();
-      let pageData = {};
-      if (pageRes.data) {
-        pageData = pageRes.data.attributes;
-      } else {
-        throw new Error(
-          `Failed to retrieve get-involved  data from CMS.\n${pageRes.error.name}: ${pageRes.error.message}`
-        );
-      }
-
-      const cards = pageData.involvement_opportunities.opportunity_details;
-      delete pageData.involvement_opportunities;
-      cards.map((card, index) => {
-        pageData[`card${index + 1}`] = card;
-      });
-
-      res.send({
-        status: 200,
-        body: pageData,
-        error: null,
-      });
-    } catch (e) {
-      console.log(e.message);
-      res.send({
-        status: 500,
-        body: null,
-        error: e.message,
-      });
-    }
-  } else {
-    console.log("bad request");
+  if (req.method !== "GET")
     res.send({
+      ok: false,
       status: 400,
       body: null,
       error: "Bad request",
+    });
+
+  try {
+    const response = await (
+      await fetch(
+        `${process.env.CMS_BASE_URL}/api/content/get-involved?_published=true`
+      )
+    ).json();
+
+    if (!response.ok)
+      throw new Error(
+        `Failed to retrieve get involved data from CMS.\n${response.error.name}: ${response.error.message}`
+      );
+
+    const data = response.body.sort(
+      (a, b) => new Date(b._last_modified) - new Date(a._last_modified)
+    )[0];
+
+    data.page_media = {};
+    data.page_media["cards_section"] = data.get_involved_cards_images.map(
+      (image) => ({
+        src: image.src,
+        alt: image.name,
+      })
+    );
+
+    const extra_fields = [
+      "get_involved_cards_images",
+      "unordered_get_involved_cards_images",
+    ];
+    extra_fields.forEach((field) => delete data[field]);
+
+    res.send({
+      ok: true,
+      status: 200,
+      body: data,
+      error: null,
+    });
+  } catch (e) {
+    res.send({
+      ok: false,
+      status: 500,
+      body: null,
+      error: e.message,
     });
   }
 }

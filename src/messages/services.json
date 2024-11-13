@@ -1,0 +1,307 @@
+{
+  "_id": "6733279ddc67a045cf0eca80",
+  "_name": "staging",
+  "_published": true,
+  "regular_service_1_name_en": "Primary Care Services",
+  "regular_service_1_name_zh": "普通科门诊",
+  "regular_service_1_name_hmn": "Kev Pab Xyuas Thawj Zaug",
+  "regular_service_1_name_ko": "기본 진료",
+  "regular_service_1_name_es": "Servicios de atención primaria",
+  "regular_service_1_name_vi": "Dịch vụ khám sức khỏe tổng quát",
+  "regular_service_1_frequency_en": "Every Saturday ",
+  "regular_service_1_frequency_zh": "每周六",
+  "regular_service_1_frequency_hmn": "Txhua Vam Xos",
+  "regular_service_1_frequency_ko": "매주 토요일",
+  "regular_service_1_frequency_es": "Cada Sábado",
+  "regular_service_1_frequency_vi": "Mỗi thứ bảy",
+  "regular_service_2_name_en": "Cancer Screenings ",
+  "regular_service_2_name_zh": "癌症筛查 ",
+  "regular_service_2_name_hmn": "Tshuaj Ntsuam Khees Xaws",
+  "regular_service_2_name_ko": "암 검진",
+  "regular_service_2_name_es": "Exámenes de cáncer",
+  "regular_service_2_name_vi": "Kiểm tra ung thư",
+  "regular_service_2_frequency_en": "First Sunday Monthly ",
+  "regular_service_2_frequency_zh": "每月之首周天",
+  "regular_service_2_frequency_hmn": "Thawj Hnub Vas Thiv",
+  "regular_service_2_frequency_ko": "매월 첫 번째 일요일",
+  "regular_service_2_frequency_es": "Primer domingo de cada mes",
+  "regular_service_2_frequency_vi": "Chủ nhật đầu tiên hàng tháng",
+  "slide_1_title_en": "Specialty Clinics ",
+  "slide_1_title_zh": "专科门诊",
+  "slide_1_title_hmn": "Tsev Kho Mob Kho Thawj Yam Mob",
+  "slide_1_title_ko": "전문 클리닉",
+  "slide_1_title_es": "Clínicas especializadas",
+  "slide_1_title_vi": "Phòng khám chuyên khoa",
+  "slide_1_items_en": {
+    "1": "Musculoskeletal Clinic",
+    "2": "Dermatology",
+    "3": "Cardiopulmonary Clinic",
+    "4": "Liver Clinic"
+  },
+  "slide_1_items_zh": {
+    "1": "(MSK) 肌肉骨骼专科",
+    "2": "皮肤专科",
+    "3": "心肺专科",
+    "4": "肝脏专科"
+  },
+  "slide_1_items_hmn": {
+    "1": "Tsev Kho Mob Kuaj Cov Leeg Thiab Pob Txha",
+    "2": "Tsev Kho Mob Kuaj Daim Tawv Nqaij",
+    "3": "Tsev Kho Mob Kuaj Daim Siab Ntsws",
+    "4": "Tsev Kho Mob Kuaj Lub Ntsws"
+  },
+  "slide_1_items_ko": {
+    "1": "(MSK) 근골격계 클리닉",
+    "2": "피부과",
+    "3": "심폐 클리닉",
+    "4": "간 클리닉"
+  },
+  "slide_1_items_es": {
+    "1": "Musculoesquelética",
+    "2": "Dermatología",
+    "3": "Clinica Cardiopulmonar",
+    "4": "Clínica del Hígado"
+  },
+  "slide_1_items_vi": {
+    "1": "Cơ xương khớp",
+    "2": "Da liễu",
+    "3": "Tim phổi",
+    "4": "Khám gan"
+  },
+  "slide_2_title_en": "Hepatitis ",
+  "slide_2_title_zh": "肝炎",
+  "slide_2_title_hmn": "Kab Mob Ua Rau Daim Siab Pib O",
+  "slide_2_title_ko": "간염",
+  "slide_2_title_es": "Hepatitis ",
+  "slide_2_title_vi": "Viêm gan",
+  "slide_2_items_en": {
+    "1": "Liver cancer is often tied to Hepatitis B",
+    "2": "Transmission: blood, sex, mother-to-child. late diagnosis common",
+    "3": "Asians more vulnerable, higher infection rates, mortality",
+    "4": "Screening, vaccination, treatments available",
+    "5": "Free vaccines"
+  },
+  "slide_2_items_zh": {
+    "1": "肝癌通常与B 型肝炎有关",
+    "2": "传播途径：血液、性行为、母婴垂直传播. 常见晚期诊断",
+    "3": "亚裔处于劣势, 较高的感染率, 死亡率",
+    "4": "筛查, 疫苗接种, 可治疗",
+    "5": "免费疫苗",
+    "6": ""
+  },
+  "slide_2_items_hmn": {
+    "1": "Khees xaws ntawm daim siab yeej feem ntau los ntawm kev mob nyob ntawm daim siab thaum nws pib o",
+    "2": "Kis los ntawm: ntshav, kev pw ua ke, niam-rau-menyuam, feem ntau qhov kab mob no mam kuaj lig dhau lawm",
+    "3": "Cov neeg Esxias feem ntau raug qhov kab mob no tshaj lwm hais neeg thiab ua rau lawv tuag los ntawm qhov kab mob heev tshaj",
+    "4": "Peb kuaj tau, muaj tshuaj tiv thaiv qhov kab mob no, thiab kho tau qhov kab mob no"
+  },
+  "slide_2_items_ko": {
+    "1": "간암은 종종 B형 간염과 관련이 있습니다",
+    "2": "전염: 혈액, 성접촉, 모자 간 전파. 진단이 늦어지는 경우가 많습니다",
+    "3": "아시아인들이 더 취약하며, 감염률과 사망률이 높습니다",
+    "4": "검진, 예방접종, 치료가 가능합니다",
+    "5": "무료 예방접종"
+  },
+  "slide_2_items_es": {
+    "1": "El cáncer de hígado suele estar relacionado con la hepatitis B",
+    "2": "Transmisión: sanguínea, sexual, de madre a hijo. diagnostico tardío común",
+    "3": "Los asiáticos son más vulnerables, tasas de infección más altas, mortalidad",
+    "4": "Detección, vacunación, tratamientos disponibles",
+    "5": "Vacunas gratis"
+  },
+  "slide_2_items_vi": {
+    "1": "Ung thư gan thường gắn liền với viêm gan B",
+    "2": "Lây truyền: máu, tình dục, mẹ sang con. chẩn đoán muộn phổ biến",
+    "3": "Người Châu Á dễ bị tổn thương hơn, có tỷ lệ lây nhiễm và tử vong cao hơn",
+    "4": "Có sẵn tầm soát, tiêm chủng, điều trị",
+    "5": "Tiêm Vắc-xin miễn phí"
+  },
+  "slide_3_title_en": "Health Education & Preventative Measure",
+  "slide_3_title_zh": "健康教育及预防措施",
+  "slide_3_title_hmn": "Kawm Txog Kab Mob Thiab Los Kawm Kev Tiv Thaiv",
+  "slide_3_title_ko": "건강 교육 및 예방 조치",
+  "slide_3_title_es": "Educación sanitaria y medidas preventivas",
+  "slide_3_title_vi": "Giáo dục sức khỏe & biện pháp phòng ngừa",
+  "slide_3_items_en": {
+    "1": "Hypertension Workshops",
+    "2": "Nutrition Counseling",
+    "3": "Health Fair"
+  },
+  "slide_3_items_zh": {
+    "1": "高血压研讨会",
+    "2": "营养咨询",
+    "3": "健康博览会"
+  },
+  "slide_3_items_hmn": {
+    "1": "Chav Kawm Txog Ntshav Siab",
+    "2": "Tham Txog Kev Zaub Mov",
+    "3": "Koom Txoos Kho Mob"
+  },
+  "slide_3_items_ko": {
+    "1": "고혈압 워크숍",
+    "2": "영양 상담",
+    "3": "건강 박람회"
+  },
+  "slide_3_items_es": {
+    "1": "Talleres de hipertensión",
+    "2": "Asesoramiento nutricional",
+    "3": "Feria de la salud"
+  },
+  "slide_3_items_vi": {
+    "1": "Lớp giáo dục về bệnh tăng huyết áp",
+    "2": "Tư vấn dinh dưỡng",
+    "3": "Hội chợ y tế"
+  },
+  "slide_4_title_en": "Vaccines ",
+  "slide_4_title_zh": "疫苗接种",
+  "slide_4_title_hmn": "Tshuaj Tiv Thaiv Kab Mob",
+  "slide_4_title_ko": "예방접종",
+  "slide_4_title_es": "Vacunas",
+  "slide_4_title_vi": "Vắc-xin",
+  "slide_4_items_en": {
+    "1": "Hepatitis",
+    "2": "Annual flu-shots",
+    "3": "Health Fair"
+  },
+  "slide_4_items_zh": {
+    "1": "肝炎",
+    "2": "年度流感疫苗",
+    "3": "健康博览会"
+  },
+  "slide_4_items_hmn": {
+    "1": "Kab Mob Ua Rau Daim Siab O Tuaj",
+    "2": "Tshuaj Tiv Thaiv Khaub Thuas Txhua Xyoo",
+    "3": "Koom Txoos Kho Mob"
+  },
+  "slide_4_items_ko": {
+    "1": "간염",
+    "2": "매년 독감 예방 접종",
+    "3": "건강 박람회"
+  },
+  "slide_4_items_es": {
+    "1": "Hepatitis",
+    "2": "Vacunas anuales",
+    "3": "Feria de la salud"
+  },
+  "slide_4_items_vi": {
+    "1": "Viêm gan",
+    "2": "Chích ngừa cảm cúm hằng năm",
+    "3": "Hội chợ y tế"
+  },
+  "referrals_title_text_en": "Referrals ",
+  "referrals_title_text_zh": "转诊",
+  "referrals_title_text_hmn": "Chaws Peb Xa Tau Mus",
+  "referrals_title_text_ko": "전문 진료 의뢰",
+  "referrals_title_text_es": "Referencias",
+  "referrals_title_text_vi": "Giới Thiệu",
+  "referrals_en": [
+    "Surgery with SPIRIT program",
+    "UCDMC",
+    "Primary Care Clinic"
+  ],
+  "referrals_zh": [
+    "手术（与萨克拉门托医生的拓展、创新和教学计划合作）",
+    "加州大学戴维斯分校医学中心",
+    "初级保健诊所"
+  ],
+  "referrals_hmn": [
+    "Phais mob nrog lub koom haum SPIRIT",
+    "UC Davis Tsev Kho Mob",
+    "Tsev Kho Mob Saib Xyuas Thawj Zaug"
+  ],
+  "referrals_ko": [
+    "프로그램을 통한 수술",
+    "UC 데이비스 메디컬 센터",
+    "기본 진료 클리닉"
+  ],
+  "referrals_es": [
+    "Cirugía con programa SPIRIT",
+    "Centro médico UC Davis",
+    "Clinica de Atencion Primaria"
+  ],
+  "referrals_vi": [
+    "Phẫu thuật bằng chương trình SPIRIT",
+    "Trung tâm y tế UC Davis",
+    "Phòng khám tổng quát"
+  ],
+  "translators_title_text_en": "Translators",
+  "translators_title_text_zh": "翻译",
+  "translators_title_text_hmn": "Cov Lus Peb Txawj Txhais",
+  "translators_title_text_ko": "통역사",
+  "translators_title_text_es": "Traductores",
+  "translators_title_text_vi": "Thông dịch viên",
+  "translators_en": [
+    "Cantonese",
+    "Mandarin",
+    "Korean",
+    "Taishanese",
+    "Vietnamese",
+    "Hmong"
+  ],
+  "translators_zh": [
+    "广东话",
+    "普通话",
+    "朝鲜语",
+    "台山话",
+    "越南话",
+    "苗语"
+  ],
+  "translators_hmn": [
+    "Cantonese",
+    "Mandarin",
+    "Korean",
+    "Taishanese",
+    "Vietnamese",
+    "Hmong"
+  ],
+  "translators_ko": [
+    "광동어",
+    "중국어",
+    "한국어",
+    "태산어",
+    "베트남어",
+    "몽어"
+  ],
+  "translators_es": [
+    "Cantonés",
+    "Mandarín",
+    "Coreano",
+    "Taishan",
+    "Vietnamita",
+    "Hmong"
+  ],
+  "translators_vi": [
+    "Tiếng Quảng Đông",
+    "Tiếng Quan Thoại",
+    "Tiếng Hàn Quốc",
+    "Tiếng Thái Sơn",
+    "Tiếng Việt",
+    "Tiếng H'Mông"
+  ],
+  "_last_modified": "2024-11-12T13:29:43.313Z",
+  "_created_at": "2024-11-12T10:02:05.728Z",
+  "num_slide_1_items": "4",
+  "num_slide_2_items": "5",
+  "num_slide_3_items": "3",
+  "num_slide_4_items": "3",
+  "page_media": {
+    "slides_section": [
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406343/mjxucjxxrc8ynh1r2lyw.png",
+        "alt": "specialtyClinics.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406338/pgizvq1vxgm4gzpxrojp.png",
+        "alt": "hepatitis.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406340/tmihvgsftnmwidm59acf.png",
+        "alt": "healthEdu.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406334/kuftjrnjzweq6k4nueuc.png",
+        "alt": "vaccines.png"
+      }
+    ]
+  }
+}

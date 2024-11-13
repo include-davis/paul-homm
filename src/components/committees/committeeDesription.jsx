@@ -4,11 +4,10 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-/* add and import styles */
-/* view and test it out by importing it to the respective page */
-export default function CommitteeDescription({ props }) {
-  const l = useTranslations("Committees");
-  const t = useTranslations(`Committees.cards.${props}`);
+export default function CommitteeDescription({ name, locale }) {
+  const t = useTranslations("Committees");
+  const g = useTranslations("General");
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.buttonClass}>
@@ -16,13 +15,13 @@ export default function CommitteeDescription({ props }) {
           <button className={styles.button}>
             <IoArrowBack className={styles.desktop_arrow} />
             <IoChevronBack className={styles.mobile_arrow} />
-            <p>{l("back_to_committees")}</p>
+            <p>{g(`back_to_committees_${locale}`)}</p>
           </button>
         </Link>
       </div>
       <div className={styles.content}>
-        <h1>{t("name")}</h1>
-        <h2>{t("description")}</h2>
+        <h1>{t(`${name}.committee_name_${locale}`)}</h1>
+        <h2>{t(`${name}.committee_description_${locale}`)}</h2>
       </div>
     </div>
   );

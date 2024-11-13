@@ -1,0 +1,24 @@
+.container {
+    background-color: var(--color-white);
+    text-align: center;
+    padding: var(--edge-spacer);
+
+    h1 {
+        color: var(--color-maroon);
+        padding: 24px;
+    }
+
+    a {
+        position: relative;
+
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: var(--text-black);
+
+        svg {
+            position: absolute;
+            bottom: 0.25rem;
+            right: -1.75rem;
+        }
+    }
+}

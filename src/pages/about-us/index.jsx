@@ -14,56 +14,64 @@ import FlippingCardMobile from "@/components/about-us/flippingcard-mobile";
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
-  let messages = {};
+  const messages = {};
+  let sisterClinics = [];
+  let ucdClinics = [];
+  let aboutUsImages = {};
 
   try {
     const res = await (
-      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/general`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
 
-    if (res.status === 200) {
-      messages.Header = res.body;
+    if (res.ok) {
+      messages.General = res.body;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching header data: ${e.message}`);
+    console.log(`Error fetching general data: ${e.message}`);
+    messages.General = (await import(`@/messages/general.json`)).default;
   }
 
   try {
     const res = await (
       await fetch(`${process.env.NEXT_APP_BASE_URL}/api/about-us`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
 
-    if (res.status === 200) {
-      messages.About = res.body;
+    if (res.ok) {
+      messages.AboutUs = res.body;
+      sisterClinics = res.body[`sister_clinics_${locale}`];
+      ucdClinics = res.body[`ucd_clinics_${locale}`];
+      aboutUsImages = res.body.page_media;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching about-us data: ${e.message}`);
-    // TODO: IMPLEMENT A BETTER FALLBACK
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    console.log(`Error fetching about-us data: ${e.message}`);
+    messages.AboutUs = (await import(`@/messages/about-us.json`)).default;
+    sisterClinics = messages.AboutUs[`sister_clinics_${locale}`];
+    ucdClinics = messages.AboutUs[`ucd_clinics_${locale}`];
+    aboutUsImages = messages.AboutUs.page_media;
   }
+
   return {
     props: {
       messages: messages,
+      locale,
+      sisterClinics,
+      ucdClinics,
+      aboutUsImages,
     },
   };
 }
@@ -88,36 +96,20 @@ const svgDims = [
   [454, 41],
   [322, 110],
 ];
-const carouselData = [
-  "/images/aboutUs/frame1.png",
-  "/images/aboutUs/frame2.png",
-  "/images/aboutUs/frame3.png",
-  "/images/aboutUs/frame4.png",
-  "/images/aboutUs/frame5.png",
-  "/images/aboutUs/frame6.png",
-  "/images/aboutUs/frame7.png",
-];
-const cardImages = [
-  "/images/about-us-timeline/1971image.png",
-  "/images/about-us-timeline/creatingateam.png",
-  "/images/about-us-timeline/earlyoperations.png",
-  "/images/about-us-timeline/continuingthelegacy.png",
-  "/images/about-us-timeline/Today.png",
-];
-export default function About() {
-  const t = useTranslations("About");
 
-  const cardNums = [...Array(Number(t("history_cards.card_count"))).keys()];
-  const sisterClinicsNums = [
-    ...Array(Number(t("sister_clinics.clinic_count"))).keys(),
-  ];
-  const ucdClinicsNums = [
-    ...Array(Number(t("ucd_clinics.clinic_count"))).keys(),
-  ];
+export default function About({
+  locale,
+  sisterClinics,
+  ucdClinics,
+  aboutUsImages,
+}) {
+  const t = useTranslations("AboutUs");
+
+  const historyImages = aboutUsImages.history_section;
 
   /* Mobile Flipping Cards */
   const [activeIndex, setActiveIndex] = useState(0);
-  const n = cardNums.length;
+  const n = historyImages.length;
   const subIndex = () => {
     setActiveIndex((activeIndex + n - 1) % n);
   };
@@ -130,9 +122,9 @@ export default function About() {
   return (
     <PageLayout>
       <div className={styles.wrapperClass}>
-        <h1>{t("page_title_and_subtitle.title")}</h1>
-        <h2>{t("page_title_and_subtitle.description")}</h2>
-        <Carousel data={carouselData} />
+        <h1>{t(`page_title_${locale}`)}</h1>
+        <h2>{t(`page_subtitle_${locale}`)}</h2>
+        <Carousel data={aboutUsImages.gallery_section} />
         <div className={`${styles.main_container} ${styles.mobile}`}>
           <div className={styles.window_container}>
             <button className={styles.arrow} onClick={subIndex}>
@@ -147,16 +139,13 @@ export default function About() {
                 }}
               >
                 <div className={styles.flipping_cards}>
-                  {cardNums.map((_, index) => {
-                    const num = index + 1;
-                    return (
-                      <div key={index} className={styles.frame}>
-                        <h1 className={styles.frame_content}>
-                          {t(`history_cards.card${num}.title`)}
-                        </h1>
-                      </div>
-                    );
-                  })}
+                  {historyImages.map((_, idx) => (
+                    <div key={idx} className={styles.frame}>
+                      <h1 className={styles.frame_content}>
+                        {t(`history_card_${idx + 1}_title_${locale}`)}
+                      </h1>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -175,70 +164,65 @@ export default function About() {
                 }}
               >
                 <div className={styles.flipping_cards}>
-                  {cardNums.map((_, index) => {
-                    const num = index + 1;
-                    return (
-                      <div key={index} className={styles.frame}>
-                        <FlippingCardMobile
-                          props={[
-                            t(`history_cards.card${num}.description`),
-                            t(`history_cards.card${num}.image_description`),
-                          ]}
-                          dimensions={mobileDims[index]}
-                          imgsrc={cardImages[index]}
-                        />
-                      </div>
-                    );
-                  })}
+                  {historyImages.map((image, idx) => (
+                    <div key={idx} className={styles.frame}>
+                      <FlippingCardMobile
+                        props={[
+                          t(`history_card_${idx + 1}_text_${locale}`),
+                          image.alt,
+                        ]}
+                        dimensions={mobileDims[idx]}
+                        imgsrc={image.src}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className={`${styles.cardsDiv} ${styles.desktop}`}>
-          {cardNums.map((_, index) => {
-            const num = index + 1;
+          {historyImages.map((image, idx) => {
             return (
               <div
-                className={`${styles.cardContainer} ${index % 2 !== 0 ? styles.altPath : styles.path} ${index === 0 ? styles.topPath : ""}`}
-                key={index}
+                className={`${styles.cardContainer} ${idx % 2 !== 0 ? styles.altPath : styles.path} ${idx === 0 ? styles.topPath : ""}`}
+                key={idx}
               >
                 <FlippingCard
-                  title={t(`history_cards.card${num}.title`)}
-                  content={t(`history_cards.card${num}.description`)}
-                  image={cardImages[index]}
-                  alt={t(`history_cards.card${num}.image_description`)}
-                  dims={desktopDims[index]}
+                  title={t(`history_card_${idx + 1}_title_${locale}`)}
+                  content={t(`history_card_${idx + 1}_text_${locale}`)}
+                  image={image.src}
+                  alt={image.alt}
+                  dims={desktopDims[idx]}
                 />
-                {index !== cardNums.length - 1 && ( // Render SVG for all but the last card
+                {idx !== historyImages.length - 1 && ( // Render SVG for all but the last card
                   <Image
                     className={styles.svg}
-                    src={`/images/aboutUs/vector${index + 1}.svg`}
+                    src={`/images/aboutUs/vector${idx + 1}.svg`}
                     alt="Dotted path leading to proceeding image"
-                    width={svgDims[index][0]}
-                    height={svgDims[index][1]}
+                    width={svgDims[idx][0]}
+                    height={svgDims[idx][1]}
                   />
                 )}
               </div>
             );
           })}
         </div>
-        <p>{t("commitment_statement")}</p>
-        <YoutubeEmbed embedId="UUguG3tATJE" />
+        <p>{t(`commitment_statement_${locale}`)}</p>
+        <YoutubeEmbed link={t("aboutus_youtube_video")} />
         <div className={styles.listClass}>
           <div className={styles.defaultClass}>
-            <h3>{t("ucd_clinics.clinic_category_title")}</h3>
+            <h3>{t(`ucd_clinics_text_${locale}`)}</h3>
             <ul>
-              {ucdClinicsNums.map((_, index) => {
-                const num = index + 1;
+              {ucdClinics.map((clinic, index) => {
                 return (
                   <li key={index}>
                     <Link
-                      href={t(`ucd_clinics.clinic${num}.website_link`)}
+                      href={clinic.link}
                       target="__blank"
                       className={styles.link}
                     >
-                      {t(`ucd_clinics.clinic${num}.name`)}
+                      {clinic.name}
                     </Link>
                   </li>
                 );
@@ -246,18 +230,17 @@ export default function About() {
             </ul>
           </div>
           <div className={styles.defaultClass}>
-            <h3>{t("sister_clinics.clinic_category_title")}</h3>
+            <h3>{t(`sister_clinics_text_${locale}`)}</h3>
             <ul>
-              {sisterClinicsNums.map((_, index) => {
-                const num = index + 1;
+              {sisterClinics.map((clinic, index) => {
                 return (
                   <li key={index}>
                     <Link
-                      href={t(`sister_clinics.clinic${num}.website_link`)}
+                      href={clinic.link}
                       target="__blank"
                       className={styles.link}
                     >
-                      {t(`sister_clinics.clinic${num}.name`)}
+                      {clinic.name}
                     </Link>
                   </li>
                 );

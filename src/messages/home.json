@@ -1,0 +1,118 @@
+{
+  "_id": "673318dadc67a045cf0eca7f",
+  "_name": "staging",
+  "_published": true,
+  "image_gallery_overlay_title_en": "A Passion To Serve ",
+  "image_gallery_overlay_title_zh": "「心」勤奉献",
+  "image_gallery_overlay_title_hmn": "Mob Siab Rau Kev Pab",
+  "image_gallery_overlay_title_ko": "정성을 다해 봉사합니다",
+  "image_gallery_overlay_title_es": "Pasión por servir",
+  "image_gallery_overlay_title_vi": "Niềm đam mê phục vụ",
+  "image_gallery_overlay_description_en": "Quality clinical services for our local community",
+  "image_gallery_overlay_description_zh": "为在地社区量身打造的高质量诊疗服务",
+  "image_gallery_overlay_description_hmn": "Kev kho mob zoo rau peb lub zej zog",
+  "image_gallery_overlay_description_ko": "지역사회를 위한 양질의 의료 서비스",
+  "image_gallery_overlay_description_es": "Servicios clínicos de calidad para nuestra comunidad local",
+  "image_gallery_overlay_description_vi": "Dịch vụ lâm sàng chất lượng cho cộng đồng địa phương của chúng tôi",
+  "our_mission_title_en": "Our Mission",
+  "our_mission_title_zh": "我们的宗旨",
+  "our_mission_title_hmn": "Peb Txoj Hauj Lwm",
+  "our_mission_title_ko": " 미션",
+  "our_mission_title_es": "Nuestra Misión",
+  "our_mission_title_vi": " Sứ mệnh của phòng khám",
+  "our_mission_text_en": "Paul Hom Asian Clinic is a 501C(3) non-profit organization committed to serving underserved and uninsured Asian populations in a linguistically and culturally sensitive manner. At Paul Hom we provide free primary care to the medically underserved, quality community medicine for our local community and interpretation services for the underserved Asian community. Our success is a result of the collaborative effort of all our health professional and undergraduate staff working to provide such important services.",
+  "our_mission_text_zh": "亚洲诊所是一所 501C(3) 的非营利组织，致力于以语言和文化友好的方式向未投保和照护不足的亚裔提供医疗服务。我们开设免费的初级门诊、高质量社区医学和翻译服务。我们的成就源自于我们的医疗专业人员以及本科生的共同努力。",
+  "our_mission_text_hmn": "Lub Tsev Kho Mob Paul Hom Asian Clinic yog ib lub 501C(3) koom haum pub dawb tau cog lus los pab txhais lus thiab pab raws li kab lis kev cai rau cov neeg Esxias tsis tau kev pab txaus thiab tsis muaj ntawv pov hwm rau kev kho mob. Ntawm Paul Hom, peb kho mob dawb rau cov tsis muaj kev pab kho mob txaus, peb muab cov tshuaj zoo hauv zej zoo rau peb lub zej zoj, thiab peb pab txhais lus rau cov neeg Esxias tsis tau kev pab txaus. Peb txoj kev vam meej yog los ntawm kev sib koom tes ntawm peb cov kws kho mob thiab tub kawm ua hauj lwm los muab cov kev pab cuam tseem ceeb.",
+  "our_mission_text_ko": "폴 홈 아시안 클리닉은 언어와 문화적 배경을 고려하여 의료 서비스가 부족한 아시아인 커뮤니티를 돕는 501C(3) 비영리 단체입니다. 저희는 의료 소외 계층을 위해 무료 기본 진료를 제공하고, 지역사회를 위한 질 높은 커뮤니티 의료 서비스 및 아시아인 대상 통역 서비스를 운영하고 있습니다. 저희가 이룬 성과는 필수적인 서비스를 제공하려는 모든 의료 전문가와 학부생 직원들의 헌신적인 협력 덕분입니다. ",
+  "our_mission_text_es": "La Clínica Asiática Paul Hom es una organización sin fines de lucro 501C(3) comprometida a atender poblaciones asiáticas marginadas y sin seguro de una manera lingüística y culturalmente sensible. En la clínica de Paul Hom brindamos atención primaria gratuita a las personas médicamente desatendidas, medicina comunitaria de calidad para nuestra comunidad local y servicios de interpretación para la comunidad asiática desatendida. Nuestro éxito es el resultado del esfuerzo colaborativo de todos nuestros profesionales de la salud y personal universitario que trabajan para brindar servicios tan importantes. ",
+  "our_mission_text_vi": "Phòng khám Châu Á Paul Hom là một tổ chức phi lợi nhuận 501C(3) cam kết phục vụ cộng đồng Châu Á chưa được phục vụ đầy đủ và không có bảo hiểm bằng cách hỗ trợ về mặt ngôn ngữ và văn hóa. Tại Paul Hom, chúng tôi cung cấp dịch vụ chăm sóc sức khoẻ miễn phí, cấp dưỡng về mặt y tế chất lượng cho cộng đồng địa phương của chúng tôi và cung cấp các dịch vụ phiên dịch cho cộng đồng người Châu Á. Thành công của chúng tôi là kết quả của nỗ lực hợp tác của tất cả các chuyên gia y tế và nhân viên đại học của chúng tôi làm việc để cung cấp các dịch vụ quan trọng như vậy. ",
+  "visit_us_text_en": "Visit Us",
+  "visit_us_text_zh": "Visit Us",
+  "visit_us_text_hmn": "Visit Us",
+  "visit_us_text_ko": "Visit Us",
+  "visit_us_text_es": "Visit Us",
+  "visit_us_text_vi": "Visit Us",
+  "contact_instruction_en": "Leave us a voicemail with your name and phone number, and we'll call you back to book an appointment.",
+  "contact_instruction_zh": "请在语音信箱中留下您的姓名和手机号，我们将会尽快致电与您登记预约。",
+  "contact_instruction_hmn": "Sau koj lub suab nrog koj lub npe thiab xov tooj es peb mam li hu rov qab rau koj mus teem caij.",
+  "contact_instruction_ko": "이름과 전화번호를 음성 메시지로 남겨주시면 예약을 도와드리기 위해 연락드리겠습니다.",
+  "contact_instruction_es": "Déjenos un mensaje de voz con su nombre y número de teléfono y le devolveremos la llamada para programar una cita.",
+  "contact_instruction_vi": "Hãy để lại cho chúng tôi một thư thoại có tên và số điện thoại của bạn, chúng tôi sẽ gọi lại cho bạn để đặt lịch hẹn.",
+  "message_en": "Message",
+  "message_zh": "信息",
+  "message_hmn": "Message",
+  "message_ko": "Message",
+  "message_es": "Message",
+  "message_vi": "Tin nhắn",
+  "closure_dates_text_en": "Closure Dates ",
+  "closure_dates_text_zh": "诊所公休日期 ",
+  "closure_dates_text_hmn": "Cov Hnub Kaw",
+  "closure_dates_text_ko": "휴무일 ",
+  "closure_dates_text_es": "Fechas de cierre ",
+  "closure_dates_text_vi": "Ngày đóng cửa",
+  "closure_dates": [
+    "Jan 1, 2025",
+    "Jan 15, 2025",
+    "Feb 19, 2025",
+    "May 27, 2025",
+    "Jun 19, 2025"
+  ],
+  "upcoming_events_text_en": "Upcoming Events ",
+  "upcoming_events_text_zh": "近期活动",
+  "upcoming_events_text_hmn": "Cov Xwm Txheej Tom Ntej No",
+  "upcoming_events_text_ko": "다가오는 행사",
+  "upcoming_events_text_es": "Próximos Eventos",
+  "upcoming_events_text_vi": "Sự kiện sắp tới",
+  "upcoming_events": [
+    {
+      "date": "Jan 1, 2025",
+      "name": "New Year"
+    },
+    {
+      "date": "Jan 15, 2025",
+      "name": "MLK Jr Day"
+    },
+    {
+      "date": "Feb 19, 2025",
+      "name": "Presidents Day"
+    },
+    {
+      "date": "May 27, 2025",
+      "name": "Memorial Day"
+    },
+    {
+      "date": "Jun 19, 2025",
+      "name": "Juneteenth"
+    }
+  ],
+  "_last_modified": "2024-11-12T13:28:59.570Z",
+  "_created_at": "2024-11-12T08:59:06.883Z",
+  "page_media": {
+    "gallery_section": [
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406307/gaf9m32tut7vpakoo26d.jpg",
+        "alt": "HomepageGalleryImage1.jpg"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406347/ulufqwnsusdpqxhuivzy.png",
+        "alt": "HomepageGalleryImage2.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406338/inr4015elcfzvvaoorti.png",
+        "alt": "HomepageGalleryImage3.png"
+      },
+      {
+        "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406330/wwjuwjg7jaiqybcf9ecs.png",
+        "alt": "HomepageGalleryImage4.png"
+      }
+    ],
+    "mission_section": {
+      "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406308/qwci6ulwggd2qwmeud7p.jpg",
+      "alt": "happy-doctors.png"
+    },
+    "upcoming_events_section": {
+      "src": "https://res.cloudinary.com/dhkigvupu/image/upload/v1731406307/vzeaxk2mtwk6ixtepzq6.jpg",
+      "alt": "events-img.png"
+    }
+  }
+}

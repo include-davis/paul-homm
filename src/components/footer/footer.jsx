@@ -16,8 +16,8 @@ const pages = [
   { page: "get_involved", route: "/get-involved" },
 ];
 
-export default function Footer() {
-  const t = useTranslations("Header");
+export default function Footer({ locale }) {
+  const t = useTranslations("General");
 
   // Function creates a page link list element from the parameters
   function createPageLink(page, route, index) {
@@ -25,7 +25,7 @@ export default function Footer() {
       <li key={index}>
         {" "}
         <Link className={styles.link} href={route}>
-          {t(page)}
+          {t(`${page}_${locale}`)}
         </Link>{" "}
       </li>
     );
@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* contacts */}
         <div className={styles.contact}>
-          <p className={styles.contact_us}>{t("contact_us")}</p>
+          <p className={styles.contact_us}>{t(`contact_us_${locale}`)}</p>
           <div className={styles.icons}>
             <a
               href="https://www.facebook.com/paulhomasianclinicatucdavis"
@@ -73,12 +73,12 @@ export default function Footer() {
               <MdOutlineMailOutline />
             </a>
           </div>
-          <p className={styles.address}>{t("address")}</p>
+          <p className={styles.address}>{t(`address_${locale}`)}</p>
         </div>
 
         {/* thank you message */}
         <div className={styles.sponsor}>
-          <p>{t("thank_you_sponsors_text")}</p>
+          <p>{t(`thank_you_sponsors_text_${locale}`)}</p>
           <div className={styles.sponsor_image}>
             <Image
               src="/images/footer/credit-union.png"
@@ -91,7 +91,9 @@ export default function Footer() {
         </div>
       </div>
       {/* Subfooter: Include developer message */}
-      <div className={styles.subfooter}>{t("include_credit_line")}</div>
+      <div className={styles.subfooter}>
+        Designed & Developed with 🤍 by #include @ Davis
+      </div>
     </footer>
   );
 }

@@ -9,7 +9,12 @@ const nextConfig = {
   reactStrictMode: true,
   i18n: { ...i18n },
   images: {
-    domains: ["res.cloudinary.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ]
   },
 };
 

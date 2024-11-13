@@ -6,43 +6,38 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import Image from "next/image";
 
 export default function HomepageGallery({
+  images,
   overlay_title,
   overlay_description,
 }) {
   const [activeImg, setActiveImg] = useState(0); // activeImg can hold values 0-7 indicating which image from the lists below to use at each render
-  let imgPaths = [
-    "/images/homepage/HomepageGalleryImage1.jpg",
-    "/images/homepage/HomepageGalleryImage2.png",
-    "/images/homepage/HomepageGalleryImage3.png",
-    "/images/homepage/HomepageGalleryImage4.png",
-  ];
+
   // for each image, hold a version of the image with different css stylings corresponding to possible roles it can take on each rerender, whether it is the previously shown image in the gallery or the currently shown image in the gallery
   let prev = [];
   let curr = [];
   let prevR = []; // images in these 2 "R" lists will have stylings necessary to animate the backwards/Reverse sliding (necessary for when the left arrow in the mobile ver. is tapped)
   let currR = [];
-  for (const element of imgPaths) {
+  for (const element of images) {
     prev.push(
       <Image
-        src={element}
-        alt="Previous Gallery Image"
+        src={element.src}
+        alt={element.alt}
         className={styles.frame + " " + styles.prev}
         fill={true}
       />
     );
     curr.push(
       <Image
-        src={element}
-        alt="Current Gallery Image"
+        src={element.src}
+        alt={element.alt}
         className={styles.frame + " " + styles.curr}
         fill={true}
-        priority={true}
       />
     );
     prevR.push(
       <Image
-        src={element}
-        alt="Previous Gallery Image"
+        src={element.src}
+        alt={element.alt}
         className={styles.frameR + " " + styles.prevR}
         fill={true}
       />

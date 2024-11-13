@@ -2,87 +2,97 @@ import CommitteeDescription from "@/components/committees/committeeDesription";
 import React from "react";
 import PageLayout from "@/components/layout";
 
-const data = [
-  "covered-california",
-  "cardiopulmonary",
-  "patient-assistance-program",
-  "dermatology",
-  "diabetes",
-  "hepatitis",
-  "ophthalmology",
-  "womens-health",
-  "neurology",
-];
-
-export async function getStaticPaths() {
-  const committees = data;
-  const paths = committees.map((committee) => ({
-    params: { committee },
-  }));
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params, locale }) {
-  const committeeNames = params.committee;
-  let messages = {};
+export async function getStaticPaths({ locales }) {
+  let committees = [];
 
   try {
     const res = await (
-      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/committees`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
-    if (res.status === 200) {
-      messages.Header = res.body;
+
+    if (res.ok) {
+      committees = res.body.committee_links;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching header data: ${e.message}`);
+    console.log(`Error fetching committees data: ${e.message}`);
+    committees = (await import(`@/messages/committees.json`)).default
+      .committee_links;
+  }
+
+  const paths = locales.flatMap((locale) =>
+    committees.map((committee) => ({
+      params: { committee },
+      locale,
+    }))
+  );
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params, locale }) {
+  const committeeName = params.committee;
+  const messages = {};
+
+  try {
+    const res = await (
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/general`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+    ).json();
+
+    if (res.ok) {
+      messages.General = res.body;
+    } else {
+      throw new Error(res.error);
+    }
+  } catch (e) {
+    console.log(`Error fetching general data: ${e.message}`);
+    messages.General = (await import("@/messages/committees.json")).default;
   }
 
   try {
     const res = await (
       await fetch(`${process.env.NEXT_APP_BASE_URL}/api/committees`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
 
-    if (res.status === 200) {
+    if (res.ok) {
       messages.Committees = res.body;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching committees data: ${e.message}`);
-    // TODO: IMPLEMENT A BETTER FALLBACK
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    console.log(`Error fetching committees data: ${e.message}`);
+    messages.Committees = (await import(`@/messages/committees.json`)).default;
   }
 
   return {
     props: {
-      committeeNames,
       messages: messages,
+      locale,
+      committeeName,
     },
   };
 }
 
-export default function CommitteePage({ committeeNames }) {
+export default function CommitteePage({ committeeName, locale }) {
   return (
     <PageLayout>
-      <CommitteeDescription props={committeeNames} />
+      <CommitteeDescription name={committeeName} locale={locale} />
     </PageLayout>
   );
 }

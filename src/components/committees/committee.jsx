@@ -4,31 +4,30 @@ import styles from "@/styles/components/committees/committee.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      messages: (await import(`@/messages/${locale}.json`)).default,
-    },
-  };
-}
+// export async function getStaticProps({ locale }) {
+//   return {
+//     props: {
+//       messages: (await import(`@/messages/${locale}.json`)).default,
+//     },
+//   };
+// }
 
-export default function CommitteeCard({ props }) {
-  const t = useTranslations(`Committees.cards.${props}`);
+export default function CommitteeCard({ name, locale }) {
+  const t = useTranslations("Committees");
   return (
-    <Link href={t("path")}>
+    <Link href={`/committees/${name}`}>
       <div className={styles.committee_card}>
         <div className={styles.image_container}>
           <Image
             className={styles.image}
-            src={t("image")}
-            alt={t("name")}
+            src={t(`${name}.committee_image.src`)}
+            alt={t(`${name}.committee_image.alt`)}
             style={{ objectFit: "fill" }}
             fill={true}
-            priority={true}
           />
           <div className={styles.gradient}></div>
         </div>
-        <h3>{t("name")}</h3>
+        <h3>{t(`${name}.committee_name_${locale}`)}</h3>
       </div>
     </Link>
   );

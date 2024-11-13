@@ -33,11 +33,6 @@
 
 .CardFront,
 .FlipBack {
-    >img {
-        width: 100%;
-        height: 100%;
-    }
-
     position: absolute;
     width: 100%;
     height: 100%;
@@ -58,6 +53,11 @@
     p {
         font-size: 1.3rem;
         text-align: left;
-
     }
+}
+
+.image_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }

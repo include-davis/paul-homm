@@ -11,13 +11,7 @@ export default function FlippingCard({ title, content, image, alt, dims }) {
         <div className={styles.CardInner}>
           <div className={styles.CardFront}>
             <div className={styles.image_container}>
-              <Image
-                src={image}
-                alt={alt}
-                style={{ objectFit: "scale-down" }}
-                fill={true}
-                priority={true}
-              />
+              <Image src={image} alt={alt} objectFit="cover" fill={true} />
             </div>
           </div>
           <div className={styles.FlipBack}>

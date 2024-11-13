@@ -1,118 +1,73 @@
 export default async function fetchHomepageData(req, res) {
-  if (req.method === "POST" && req.body.locale) {
-    const locale = req.body.locale === "hmn" ? "ha" : req.body.locale;
-
-    try {
-      // home single type content
-      const homepageRes = await (
-        await fetch(
-          `${process.env.CMS_BASE_URL}/api/homepage?locale=${locale}&populate=*`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.CMS_API_KEY}`,
-            },
-          }
-        )
-      ).json();
-      let homepageData = {};
-      if (homepageRes.data) {
-        homepageData = homepageRes.data.attributes;
-      } else {
-        throw new Error(
-          `Failed to retrieve homepage data from CMS.\n${homepageRes.error.name}: ${homepageRes.error.message}`
-        );
-      }
-
-      // closure dates
-      const today = new Date().toISOString().split("T")[0];
-      const closureDatesRes = await (
-        await fetch(
-          `${process.env.CMS_BASE_URL}/api/closure-dates?populate=*&publicationState=live&filters[$and][0][closure_date][$gte]=${today}`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.CMS_API_KEY}`,
-            },
-          }
-        )
-      ).json();
-      let closureDates = [];
-      if (closureDatesRes.data) {
-        const dates = closureDatesRes.data;
-        closureDates = dates.map((dateDoc) => {
-          const dateString = dateDoc.attributes.closure_date;
-          const now = new Date();
-          const date =
-            now.getTimezoneOffset() > 420
-              ? `${dateString}T00:00:00-08:00`
-              : `${dateString}T00:00:00-07:00`;
-          return date;
-        });
-      } else {
-        throw new Error(
-          `Failed to retrieve closure_dates data from CMS.\n${closureDatesRes.error.name}: ${closureDatesRes.error.message}`
-        );
-      }
-
-      // upcoming events
-      const eventsRes = await (
-        await fetch(
-          `${process.env.CMS_BASE_URL}/api/upcoming-events?locale=${locale}&populate=*&publicationState=live&filters[$and][0][event_date][$gte]=${today}`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.CMS_API_KEY}`,
-            },
-          }
-        )
-      ).json();
-      let upcomingEvents = [];
-      if (eventsRes.data) {
-        const events = eventsRes.data;
-        upcomingEvents = events.map((eventDoc) => {
-          const { event_date, event_title } = eventDoc.attributes;
-          const now = new Date();
-          const dateString =
-            now.getTimezoneOffset() > 420
-              ? `${event_date}T00:00:00-08:00`
-              : `${event_date}T00:00:00-07:00`;
-          return {
-            date: dateString,
-            event: event_title,
-          };
-        });
-      } else {
-        throw new Error(
-          `Failed to retrieve upcoming_events data from CMS.\n${eventsRes.error.name}: ${eventsRes.error.message}`
-        );
-      }
-
-      const responseBody = {
-        text: homepageData,
-        closure_dates: closureDates,
-        upcoming_events: upcomingEvents,
-      };
-
-      res.send({
-        status: 200,
-        body: responseBody,
-        error: null,
-      });
-    } catch (e) {
-      console.log(e.message);
-      res.send({
-        status: 500,
-        body: null,
-        error: e.message,
-      });
-    }
-  } else {
-    console.log("bad request");
+  if (req.method !== "GET")
     res.send({
+      ok: false,
       status: 400,
       body: null,
       error: "Bad request",
+    });
+
+  try {
+    const response = await (
+      await fetch(
+        `${process.env.CMS_BASE_URL}/api/content/home?_published=true`
+      )
+    ).json();
+
+    if (!response.ok)
+      throw new Error(
+        `Failed to retrieve homepage data from CMS.\n${response.error.name}: ${response.error.message}`
+      );
+
+    const data = response.body.sort(
+      (a, b) => new Date(b._last_modified) - new Date(a._last_modified)
+    )[0];
+
+    data.page_media = {};
+    data.page_media["gallery_section"] = data.home_gallery.map((image) => ({
+      src: image.src,
+      alt: image.name,
+    }));
+    data.page_media["mission_section"] = {
+      src: data.home_mission_image[0].src,
+      alt: data.home_mission_image[0].name,
+    };
+    data.page_media["upcoming_events_section"] = {
+      src: data.home_upcoming_events_image[0].src,
+      alt: data.home_upcoming_events_image[0].name,
+    };
+
+    const closure_dates_array = data.closure_dates.split(";");
+    data.closure_dates = closure_dates_array.map((date) => date.trim());
+
+    const upcoming_events_array = data.upcoming_events.split(";");
+    data.upcoming_events = upcoming_events_array.map((event) => ({
+      date: event.split(":")[0].trim(),
+      name: event.split(":")[1].trim(),
+    }));
+
+    const extra_fields = [
+      "home_gallery",
+      "home_mission_image",
+      "home_upcoming_events_image",
+      "unordered_home_gallery",
+      "unordered_home_mission_image",
+      "unordered_home_upcoming_events_image",
+    ];
+    extra_fields.forEach((field) => delete data[field]);
+
+    res.send({
+      ok: true,
+      status: 200,
+      body: data,
+      error: null,
+    });
+  } catch (e) {
+    res.send({
+      ok: false,
+      status: 500,
+      body: null,
+      error: e.message,
     });
   }
 }

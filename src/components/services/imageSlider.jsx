@@ -4,51 +4,41 @@ import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-export default function ImageSlider() {
-  const t = useTranslations("Services.services_slides");
+export default function ImageSlider({ locale, imageData }) {
+  const t = useTranslations("Services");
 
   const [currTab, setCurrTab] = useState(1);
   const toggleTab = (index) => {
     setCurrTab(index);
   };
 
-  const imageData = [
-    ["/images/services/specialtyClinics.png", "Clinic staff"],
-    ["/images/services/hepatitis.png", "Woman being vaccinated"],
-    ["/images/services/healthEdu.png", "Clinic students"],
-    ["/images/services/vaccines.png", "Woman being vaccinated"],
-  ];
-
-  const slideCount = Number(t("slide_count"));
-  const slideNum = [...Array(slideCount).keys()];
+  const slideCount = imageData.length;
 
   return (
     <div className={styles.slideContainer}>
       <div className={styles.tabContainer}>
-        {slideNum.map((_, index) => {
-          const num = index + 1;
-          return (
-            <button
-              className={
-                currTab === num
-                  ? `${styles.tab} ${styles.activeTab}`
-                  : `${styles.tab}`
-              }
-              onClick={() => toggleTab(num)}
-              key={index}
-            >
-              {t(`slide${num}.title`)}
-            </button>
-          );
-        })}
+        {imageData.map((_, idx) => (
+          <button
+            className={
+              currTab === idx + 1
+                ? `${styles.tab} ${styles.activeTab}`
+                : `${styles.tab}`
+            }
+            onClick={() => toggleTab(idx + 1)}
+            key={idx}
+          >
+            {t(`slide_${idx + 1}_title_${locale}`)}
+          </button>
+        ))}
       </div>
 
       <div className={styles.slideContainer}>
-        {slideNum.map((_, index) => {
-          const num = index + 1;
-          const bulletNum = [
-            ...Array(Number(t(`slide${num}.count_of_bullet_points`))).keys(),
+        {imageData.map((image, idx) => {
+          const num = idx + 1;
+          const bullets_array = [
+            ...Array(Number(t(`num_slide_${num}_items`))).keys(),
           ];
+
           return (
             <div
               className={
@@ -56,15 +46,15 @@ export default function ImageSlider() {
                   ? `${styles.activeSlide}`
                   : `${styles.inactiveSlide}`
               }
-              key={index}
+              key={idx}
             >
               <div className={styles.imageContainer}>
                 <Image
                   className={styles.image}
-                  src={imageData[index][0]}
+                  src={image.src}
                   width={478}
                   height={345}
-                  alt={imageData[index][1]}
+                  alt={image.alt}
                 />
               </div>
 
@@ -79,9 +69,11 @@ export default function ImageSlider() {
 
               <div className={styles.slideText}>
                 <ul>
-                  {bulletNum.map((_, i) => {
+                  {bullets_array.map((_, i) => {
                     return (
-                      <li key={i}>{t(`slide${num}.list.item${i + 1}`)}</li>
+                      <li key={i}>
+                        {t(`slide_${num}_items_${locale}.${i + 1}`)}
+                      </li>
                     );
                   })}
                 </ul>

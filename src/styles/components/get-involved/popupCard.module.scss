@@ -1,9 +1,9 @@
 @use '../../mixins.scss';
 
 .container {
-    max-width: 1080px;
+    max-width: calc(100% - calc(2 * var(--edge-spacer)));
     width: 75%;
-    height: 90vh;
+    min-height: 50vh;
     padding: 16px;
     position: fixed;
     top: 50%;
@@ -31,6 +31,7 @@
     flex-direction: column;
     font-family: var(--font-inter);
     padding: 48px;
+    padding-bottom: 64px;
 
     >h1 {
         color: var(--color-maroon);
@@ -57,6 +58,10 @@
 
 .contentMobile, .paginationButton{
     display: none;
+}
+
+.invisible_icon {
+    visibility: hidden;
 }
 
 @include mixins.sm-desktop{

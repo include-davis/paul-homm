@@ -29,7 +29,7 @@ const x = `calc(${contentSpace} / ${dividor})`; // x = (W - 2g) / 2.6
 const shiftAmount = `calc(${x} * 0.74 + ${g})`; // amount that slider shifts when service changes
 
 function ImageSliderMobileFrame(props) {
-  const { selfIndex, activeIndex, image } = props;
+  const { selfIndex, activeIndex, imageSrc, imageAlt } = props;
   const dist = Math.abs(selfIndex - activeIndex);
 
   function getSizeClass(dist) {
@@ -44,49 +44,33 @@ function ImageSliderMobileFrame(props) {
   return (
     <div className={`${styles.frame} ${getSizeClass(dist)}`}>
       <Image
-        src={image}
+        src={imageSrc}
         style={{ objectFit: "fill" }}
         fill={true}
-        alt="Insert alt"
+        alt={imageAlt}
         sizes={"(max-width: 1048px) 100vw"}
-        priority={
-          image === "healthEdu.png" || image === "vaccines.png"
-            ? "true"
-            : "false"
-        } // check for LCP elements
       />
     </div>
   );
 }
 
 // Acutal image slider component
-export default function ImageSliderMobile() {
-  const t = useTranslations("Services.services_slides");
-
-  const slideCount = Number(t("slide_count"));
-  const slideNum = [...Array(slideCount).keys()];
+export default function ImageSliderMobile({ locale, imageData }) {
+  const t = useTranslations("Services");
 
   // Images and services
-  const services = slideNum.map((_, index) => {
-    const num = index + 1;
-    return t(`slide${num}.title`);
+  const services = imageData.map((_, idx) => {
+    return t(`slide_${idx + 1}_title_${locale}`);
   });
-
-  const images = [
-    "/images/services/specialtyClinics.png",
-    "/images/services/hepatitis.png",
-    "/images/services/healthEdu.png",
-    "/images/services/vaccines.png",
-  ];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [service, setService] = useState(services[0]);
 
   // Process images from array, concatenating from and back secondary images
-  const n = images.length;
-  const imagesFront = images.slice(0, 1);
-  const imagesBack = images.slice(-1);
-  const processedImages = imagesBack.concat(images).concat(imagesFront);
+  const n = imageData.length;
+  const imagesFront = imageData.slice(0, 1);
+  const imagesBack = imageData.slice(-1);
+  const processedImages = imagesBack.concat(imageData).concat(imagesFront);
 
   // Move left and right through images AND change dropdown title
   const changeService = (index) => {
@@ -103,12 +87,6 @@ export default function ImageSliderMobile() {
     const right = (activeIndex + 1) % n;
     changeService(right);
   };
-
-  // Keep track of bullets below images
-  const bulletCount = parseInt(
-    t(`slide${services.indexOf(service) + 1}.count_of_bullet_points`)
-  );
-  const bullets = [...Array(bulletCount).keys()];
 
   return (
     <div className={styles.main_container}>
@@ -145,7 +123,8 @@ export default function ImageSliderMobile() {
                     key={index}
                     selfIndex={index - 1}
                     activeIndex={activeIndex}
-                    image={frame}
+                    imageSrc={frame.src}
+                    imageAlt={frame.alt}
                   />
                 );
               })}
@@ -161,7 +140,7 @@ export default function ImageSliderMobile() {
 
       {/* Dots below slider */}
       <div className={styles.dots}>
-        {images.map((frame, index) => {
+        {imageData.map((_, index) => {
           return (
             <div
               key={index}
@@ -175,12 +154,12 @@ export default function ImageSliderMobile() {
       {/* Text under corresponding image */}
       <div className={styles.info}>
         <ul className={styles.info_items}>
-          {bullets.map((bullet, index) => {
+          {[
+            ...Array(Number(t(`num_slide_${activeIndex + 1}_items`))).keys(),
+          ].map((bullet, index) => {
             return (
               <li className={styles.info_item} key={index}>
-                {t(
-                  `slide${services.indexOf(service) + 1}.list.item${bullet + 1}`
-                )}
+                {t(`slide_${activeIndex + 1}_items_${locale}.${bullet + 1}`)}
               </li>
             );
           })}

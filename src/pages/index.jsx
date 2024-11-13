@@ -1,4 +1,4 @@
-import { useTranslations, useFormatter } from "next-intl";
+import { useTranslations } from "next-intl";
 import HomepageGallery from "@/components/homepage/homepageGallery";
 import Image from "next/image";
 import { MdPhone, MdLocationOn } from "react-icons/md";
@@ -8,129 +8,98 @@ import styles from "@/styles/pages/home/home.module.scss";
 import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
-  let messages = {};
+  const messages = {};
   let closureDates = [];
   let upcomingEvents = [];
+  let homepageImages = {};
 
   try {
     const res = await (
-      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/general`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
-    if (res.status === 200) {
-      messages.Header = res.body;
+
+    if (res.ok) {
+      messages.General = res.body;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching header data: ${e.message}`);
+    console.log(`Error fetching general data: ${e.message}`);
+    messages.General = (await import(`@/messages/general.json`)).default;
   }
 
   try {
     const res = await (
       await fetch(`${process.env.NEXT_APP_BASE_URL}/api/home`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
 
-    if (res.status === 200) {
-      const body = res.body;
-      messages.Index = body.text;
-      closureDates = body.closure_dates;
-      upcomingEvents = body.upcoming_events;
+    if (res.ok) {
+      messages.Index = res.body;
+      closureDates = res.body.closure_dates;
+      upcomingEvents = res.body.upcoming_events;
+      homepageImages = res.body.page_media;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching homepage data: ${e.message}`);
-    // TODO: IMPLEMENT A BETTER FALLBACK
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    console.log(`Error fetching homepage data: ${e.message}`);
+    messages.Index = (await import(`@/messages/home.json`)).default;
+    closureDates = messages.Index.closure_dates;
+    upcomingEvents = messages.Index.upcoming_events;
+    homepageImages = messages.Index.page_media;
   }
 
   return {
     props: {
       messages: messages,
+      locale,
       closureDates,
       upcomingEvents,
+      homepageImages,
     },
   };
 }
 
-export default function Home({ closureDates, upcomingEvents }) {
+export default function Home({
+  locale,
+  closureDates,
+  upcomingEvents,
+  homepageImages,
+}) {
   const t = useTranslations("Index");
-  const format = useFormatter();
-
-  const formatDate = (d) => {
-    const formatted = format.dateTime(d, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-    return formatted;
-  };
-
-  const formattedDates = closureDates.map((dateString) => {
-    return formatDate(new Date(dateString));
-  });
-  // 5 upcoming dates rendered at most
-  formattedDates.sort();
-  formattedDates.length = formattedDates.length > 5 ? 5 : formattedDates.length;
-
-  const formattedEvents = upcomingEvents.map((eventObj) => {
-    return {
-      event: eventObj.event,
-      date: formatDate(new Date(eventObj.date)),
-    };
-  });
-  const cmpDate = (a, b) => {
-    const d1 = new Date(a.date).getTime();
-    const d2 = new Date(b.date).getTime();
-    if (d1 > d2) {
-      return 1;
-    } else if (d1 < d2) {
-      return -1;
-    } else {
-      return 0;
-    }
-  };
-  formattedEvents.sort(cmpDate);
-  formattedEvents.length =
-    formattedEvents.length > 5 ? 5 : formattedEvents.length;
+  const g = useTranslations("General");
 
   return (
     <PageLayout>
       <div className={styles.container}>
         <HomepageGallery
-          overlay_title={t("image_gallery_overlay_text.title")}
-          overlay_description={t("image_gallery_overlay_text.description")}
+          images={homepageImages.gallery_section}
+          overlay_title={t(`image_gallery_overlay_title_${locale}`)}
+          overlay_description={t(`image_gallery_overlay_description_${locale}`)}
         />
         {/* Red "Our Mission" Section */}
         <div className={styles.mission}>
           <div className={styles.mission_text}>
-            <h1>{t("mission.our_mission_text")}</h1>
-            <p>{t("mission.text")}</p>
+            <h1>{t(`our_mission_title_${locale}`)}</h1>
+            <p>{t(`our_mission_text_${locale}`)}</p>
           </div>
           <div className={styles.doctors_image}>
             <Image
-              src={"/images/home-page/happy-doctors.png"}
+              src={homepageImages.mission_section.src}
               style={{ objectFit: "fill" }}
               fill={true}
-              priority={true}
               sizes="(max-width: 1048px) 100vw, 50vw"
-              alt={"Happy doctors"}
+              alt={homepageImages.mission_section.alt}
             />
           </div>
         </div>
@@ -139,21 +108,21 @@ export default function Home({ closureDates, upcomingEvents }) {
         <div className={styles.info}>
           {/* Visit us card with contact Info */}
           <div className={styles.visit_card}>
-            <h1>{t("visit_us.visit_us_text")}</h1>
-            <p>{t("visit_us.contact_instruction")}</p>
+            <h1>{t(`visit_us_text_${locale}`)}</h1>
+            <p>{t(`contact_instruction_${locale}`)}</p>
             <div className={styles.visit}>
               <div className={styles.contact}>
                 <div className={styles.row_icons}>
                   <div className={styles.circle_frame}>
                     <MdPhone />
                   </div>
-                  <p>{t("visit_us.phone")}</p>
+                  <p>{g(`phone_number`)}</p>
                 </div>
                 <div className={styles.row_icons}>
                   <div className={styles.circle_frame}>
                     <BiSolidMessage />
                   </div>
-                  <p>{t("visit_us.message")}</p>
+                  <p>{t(`message_${locale}`)}</p>
                 </div>
               </div>
               <div className={styles.address}>
@@ -161,7 +130,7 @@ export default function Home({ closureDates, upcomingEvents }) {
                   <div className={styles.circle_frame}>
                     <MdLocationOn />
                   </div>
-                  <p>{t("visit_us.address")}</p>
+                  <p>{g(`address_${locale}`)}</p>
                 </div>
               </div>
             </div>
@@ -169,42 +138,37 @@ export default function Home({ closureDates, upcomingEvents }) {
           <div className={styles.dates}>
             {/* Important Closure Dates */}
             <div className={styles.closure_card}>
-              <h1>{t("closure_dates_text")}</h1>
+              <h1>{t(`closure_dates_text_${locale}`)}</h1>
               <ul>
-                {formattedDates.map((date, index) => {
+                {closureDates.map((date, index) => {
                   return <li key={index}>{date}</li>;
                 })}
               </ul>
             </div>
             {/* Upcoming Events Section */}
             <div className={styles.events_card}>
-              <div className={styles.events_image_mobile}>
-                <Image
-                  src={"/images/home-page/events-img.png"}
-                  style={{ objectFit: "fill" }}
-                  fill={true}
-                  sizes="(max-width: 1048px) 100vw, 50vw"
-                  alt={"People holding posters"}
-                />
-              </div>
-              <h1>{t("upcoming_events_text")}</h1>
-              <div className={styles.events}>
-                {/* <div className={styles.date_container}> */}
-                <ul>
-                  {formattedEvents.map((event, index) => (
-                    <div key={index} className={styles.date_container}>
-                      <li className={styles.date}>{event.date}</li>
-                      <li>{event.event}</li>
-                    </div>
-                  ))}
-                </ul>
+              <h1>{t(`upcoming_events_text_${locale}`)}</h1>
+              <div className={styles.events_container}>
+                <div className={styles.events}>
+                  <ul>
+                    {upcomingEvents.map((event, index) => (
+                      <li key={index}>{event.date}</li>
+                    ))}
+                  </ul>
+                  <ul>
+                    {upcomingEvents.map((event, index) => (
+                      <li key={index}>{event.name}</li>
+                    ))}
+                  </ul>
+                </div>
+
                 <div className={styles.events_image}>
                   <Image
-                    src={"/images/home-page/events-img.png"}
+                    src={homepageImages.upcoming_events_section.src}
                     style={{ objectFit: "fill" }}
                     fill={true}
                     sizes="(max-width: 1048px) 100vw, 50vw"
-                    alt={"People holding posters"}
+                    alt={homepageImages.upcoming_events_section.src}
                   />
                 </div>
               </div>

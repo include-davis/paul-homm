@@ -3,9 +3,7 @@ import { RxArrowLeft, RxArrowRight } from "react-icons/rx";
 import styles from "@/styles/pages/about/carousel.module.scss";
 import Image from "next/image";
 
-// data is passed in as an array of strings as of now
-// data = ['frame1', 'frame2', frame3', ...]
-export default function PracticeCarouselExample({ data }) {
+export default function Carousel({ data }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const startXRef = useRef(0);
   const endXRef = useRef(0);
@@ -49,7 +47,7 @@ export default function PracticeCarouselExample({ data }) {
           >
             {data.map((frame, index) => (
               <div key={index} className={styles.frame}>
-                <Image src={frame} alt={`frame ${index}`} fill={true} />
+                <Image src={frame.src} alt={frame.alt} fill={true} />
               </div>
             ))}
           </div>
@@ -60,7 +58,7 @@ export default function PracticeCarouselExample({ data }) {
         <div></div>
       </div>
       <div className={styles.dots}>
-        {data.map((frame, index) => {
+        {data.map((_, index) => {
           return (
             <div
               key={index}

@@ -2,12 +2,10 @@
 /* view and test it out by importing it to the respective page */
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import Link from "next/link";
 import styles from "@/styles/components/get-involved/cards.module.scss";
 import PopupCard from "./popupCard";
 
-export default function Card({ cardProps }) {
-  const { card, imgSrc } = cardProps;
+export default function Card({ cardNum, cardImg, locale }) {
   const t = useTranslations("GetInvolved");
   const [popup, setPopup] = useState(false);
 
@@ -20,22 +18,28 @@ export default function Card({ cardProps }) {
       <div className={styles.card}>
         <div
           className={styles.cardImg}
-          style={{ backgroundImage: `url(${imgSrc})` }}
+          style={{ backgroundImage: `url(${cardImg.src})` }}
         >
-          <p className={styles.cardText}>{t(`${card}.title_short`)}</p>
+          <p className={styles.cardText}>
+            {t(`card_${cardNum}_title_${locale}`)}
+          </p>
         </div>
         <button className={styles.detailsButton} onClick={togglePopup}>
-          {t("details_text")}
+          {t(`details_text_${locale}`)}
         </button>
-        <Link
-          href={t(`${card}.sign_up_link`)}
+        <a
+          href={t(`card_${cardNum}_signup_link`)}
           target="_blank"
           className={styles.links}
         >
-          <button className={styles.signUpButton}>{t("sign_up_text")}</button>
-        </Link>
+          <button className={styles.signUpButton}>
+            {t(`sign_up_text_${locale}`)}
+          </button>
+        </a>
       </div>
-      {popup && <PopupCard card={card} onClose={togglePopup} />}
+      {popup && (
+        <PopupCard card={cardNum} onClose={togglePopup} locale={locale} />
+      )}
     </div>
   );
 }

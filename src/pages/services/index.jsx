@@ -6,86 +6,108 @@ import PageLayout from "@/components/layout";
 
 export async function getStaticProps({ locale }) {
   let messages = {};
+  let referrals = [];
+  let translators = [];
+  let servicesImages = {};
 
   try {
     const res = await (
-      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/header`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_APP_BASE_URL}/api/general`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
-    if (res.status === 200) {
-      messages.Header = res.body;
+
+    if (res.ok) {
+      messages.General = res.body;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching header data: ${e.message}`);
+    console.log(`Error fetching general data: ${e.message}`);
+    messages.General = await import(`@/messages/general.json`).default;
   }
 
   try {
     const res = await (
       await fetch(`${process.env.NEXT_APP_BASE_URL}/api/services`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          locale: locale,
-        }),
       })
     ).json();
-    if (res.status === 200) {
+
+    if (res.ok) {
       messages.Services = res.body;
+      referrals = res.body[`referrals_${locale}`];
+      translators = res.body[`translators_${locale}`];
+      servicesImages = res.body.page_media;
     } else {
       throw new Error(res.error);
     }
   } catch (e) {
-    console.log(`Fetching services data: ${e.message}`);
-    // TODO: IMPLEMENT A BETTER FALLBACK
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    console.log(`Error fetching services data: ${e.message}`);
+    messages.Services = (await import(`@/messages/services.json`)).default;
+    referrals = messages.Services.body[`referrals_${locale}`];
+    translators = messages.Services.body[`translators_${locale}`];
+    servicesImages = messages.Services.body.page_media;
   }
 
   return {
     props: {
       messages: messages,
+      locale,
+      referrals,
+      translators,
+      servicesImages,
     },
   };
 }
 
-export default function Services() {
+export default function Services({
+  locale,
+  referrals,
+  translators,
+  servicesImages,
+}) {
   const t = useTranslations("Services");
+  const g = useTranslations("General");
+
   return (
     <PageLayout>
       <div className={styles.mainContainer}>
         <div className={styles.servicesContainer}>
           <div>
-            <h1 className={styles.pageHeading}>{t("page_title")}</h1>
+            <h1 className={styles.pageHeading}>{g(`services_${locale}`)}</h1>
           </div>
 
           <div className={styles.boxContainer}>
             <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
-              <h2> {t("regular_service.service1.title")}</h2>
-              <p>{t("regular_service.service1.description")}</p>
+              <h2>{t(`regular_service_1_name_${locale}`)}</h2>
+              <p>{t(`regular_service_1_frequency_${locale}`)}</p>
             </div>
 
             <div className={`${styles.serviceBox} ${styles.topServiceBox}`}>
-              <h2>{t("regular_service.service2.title")}</h2>
-              <p>{t("regular_service.service2.description")}</p>
+              <h2>{t(`regular_service_2_name_${locale}`)}</h2>
+              <p>{t(`regular_service_2_frequency_${locale}`)}</p>
             </div>
           </div>
         </div>
 
         <div className={styles.desktop}>
-          <ImageSlider />
+          <ImageSlider
+            locale={locale}
+            imageData={servicesImages.slides_section}
+          />
         </div>
         <div className={styles.mobile}>
-          <ImageSliderMobile />
+          <ImageSliderMobile
+            locale={locale}
+            imageData={servicesImages.slides_section}
+          />
         </div>
 
         <div className={styles.servicesContainer}>
@@ -93,23 +115,20 @@ export default function Services() {
             className={`${styles.boxContainer} ${styles.bottomBoxContainer}`}
           >
             <div className={`${styles.serviceBox} ${styles.bottomServiceBox}`}>
-              <h2>{t("referrals_title_text")}</h2>
+              <h2>{t(`referrals_title_text_${locale}`)}</h2>
               <ul className={styles.desc}>
-                <li>{t("referrals.item1")}</li>
-                <li>{t("referrals.item2")}</li>
-                <li>{t("referrals.item3")}</li>
+                {referrals.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             </div>
 
             <div className={`${styles.serviceBox} ${styles.bottomServiceBox}`}>
-              <h2>{t("translators_title_text")}</h2>
+              <h2>{t(`translators_title_text_${locale}`)}</h2>
               <ul className={`${styles.desc} ${styles.translatorsList}`}>
-                <li>{t("translators.item1")}</li>
-                <li>{t("translators.item2")}</li>
-                <li>{t("translators.item3")}</li>
-                <li>{t("translators.item4")}</li>
-                <li>{t("translators.item5")}</li>
-                <li>{t("translators.item6")}</li>
+                {translators.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>

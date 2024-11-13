@@ -7,8 +7,8 @@ import { RxCross1 } from "react-icons/rx";
 import { IoMenuOutline } from "react-icons/io5";
 import LangDropDown from "../dropDown/dropDown";
 
-export default function Header() {
-  const t = useTranslations("Header");
+export default function Header({ locale }) {
+  const t = useTranslations("General");
   // use state for links
   const [activeLinks, setActiveLinks] = useState([
     false,
@@ -49,13 +49,11 @@ export default function Header() {
             width={110}
             height={110}
             alt="Paul Hom logo"
-            priority={true}
-            href="/"
           />
         </Link>
         <div className={styles.title_text}>
-          <h1>{t("clinic_name")}</h1>
-          <h2>{t("clinic_description")}</h2>
+          <h1>{t(`clinic_name_${locale}`)}</h1>
+          <h2>{t(`clinic_description_${locale}`)}</h2>
         </div>
 
         <div className={styles.language_dropdown}>
@@ -71,7 +69,9 @@ export default function Header() {
           >
             <div className={styles.link_wrapper}>
               <Link href={`${link.href}`} onClick={() => toggleAll(index)}>
-                <p className={styles.link_text}>{t(link.text)}</p>
+                <p className={styles.link_text}>
+                  {t(`${link.text}_${locale}`)}
+                </p>
               </Link>
             </div>
           </li>
