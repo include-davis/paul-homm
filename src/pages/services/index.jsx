@@ -27,7 +27,7 @@ export async function getStaticProps({ locale }) {
     }
   } catch (e) {
     console.log(`Error fetching general data: ${e.message}`);
-    messages.General = await import(`@/messages/general.json`).default;
+    messages.General = (await import("@/messages/general.json")).default;
   }
 
   try {
@@ -51,9 +51,9 @@ export async function getStaticProps({ locale }) {
   } catch (e) {
     console.log(`Error fetching services data: ${e.message}`);
     messages.Services = (await import(`@/messages/services.json`)).default;
-    referrals = messages.Services.body[`referrals_${locale}`];
-    translators = messages.Services.body[`translators_${locale}`];
-    servicesImages = messages.Services.body.page_media;
+    referrals = messages.Services[`referrals_${locale}`];
+    translators = messages.Services[`translators_${locale}`];
+    servicesImages = messages.Services.page_media;
   }
 
   return {

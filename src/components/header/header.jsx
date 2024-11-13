@@ -6,8 +6,12 @@ import Image from "next/image";
 import { RxCross1 } from "react-icons/rx";
 import { IoMenuOutline } from "react-icons/io5";
 import LangDropDown from "../dropDown/dropDown";
+import { useRouter } from "next/router";
 
-export default function Header({ locale }) {
+export default function Header() {
+  const router = useRouter();
+  const { locale } = router;
+
   const t = useTranslations("General");
   // use state for links
   const [activeLinks, setActiveLinks] = useState([

@@ -1,5 +1,6 @@
 import styles from "@/styles/components/footer/footer.module.scss";
 
+import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,9 @@ const pages = [
   { page: "get_involved", route: "/get-involved" },
 ];
 
-export default function Footer({ locale }) {
+export default function Footer() {
+  const router = useRouter();
+  const { locale } = router;
   const t = useTranslations("General");
 
   // Function creates a page link list element from the parameters
