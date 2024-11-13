@@ -8,6 +8,9 @@ const i18n = {
 const nextConfig = {
   reactStrictMode: true,
   i18n: { ...i18n },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 export default nextConfig;
