@@ -7,6 +7,15 @@ import { BiSolidMessage } from "react-icons/bi";
 import styles from "@/styles/pages/home/home.module.scss";
 import PageLayout from "@/components/layout";
 
+function sortDates(datesArray, eventsArray) {
+  const parseDate = (dateString) => new Date(dateString);
+
+  datesArray.sort((a, b) => parseDate(a) - parseDate(b));
+  eventsArray.sort((a, b) => parseDate(a.date) - parseDate(b.date));
+
+  return [datesArray.slice(0, 5), eventsArray.slice(0, 5)];
+}
+
 export async function getStaticProps({ locale }) {
   const messages = {};
   let closureDates = [];
@@ -45,8 +54,10 @@ export async function getStaticProps({ locale }) {
 
     if (res.ok) {
       messages.Index = res.body;
-      closureDates = res.body.closure_dates;
-      upcomingEvents = res.body.upcoming_events;
+      [closureDates, upcomingEvents] = sortDates(
+        res.body.closure_dates,
+        res.body.upcoming_events
+      );
       homepageImages = res.body.page_media;
     } else {
       throw new Error(res.error);
@@ -54,8 +65,6 @@ export async function getStaticProps({ locale }) {
   } catch (e) {
     console.log(`Error fetching homepage data: ${e.message}`);
     messages.Index = (await import(`@/messages/home.json`)).default;
-    closureDates = messages.Index.closure_dates;
-    upcomingEvents = messages.Index.upcoming_events;
     homepageImages = messages.Index.page_media;
   }
 
@@ -140,9 +149,13 @@ export default function Home({
             <div className={styles.closure_card}>
               <h1>{t(`closure_dates_text_${locale}`)}</h1>
               <ul>
-                {closureDates.map((date, index) => {
-                  return <li key={index}>{date}</li>;
-                })}
+                {closureDates.length > 0 ? (
+                  closureDates.map((date, index) => {
+                    return <li key={index}>{date}</li>;
+                  })
+                ) : (
+                  <li>No closure dates scheduled currently!</li>
+                )}
               </ul>
             </div>
             {/* Upcoming Events Section */}
@@ -151,14 +164,16 @@ export default function Home({
               <div className={styles.events_container}>
                 <div className={styles.events}>
                   <ul>
-                    {upcomingEvents.map((event, index) => (
-                      <li key={index}>{event.date}</li>
-                    ))}
-                  </ul>
-                  <ul>
-                    {upcomingEvents.map((event, index) => (
-                      <li key={index}>{event.name}</li>
-                    ))}
+                    {upcomingEvents.length > 0 ? (
+                      upcomingEvents.map((event, index) => (
+                        <li key={index}>
+                          <p className={styles.event_date}>{event.date}</p>
+                          <p className={styles.event_name}>{event.name}</p>
+                        </li>
+                      ))
+                    ) : (
+                      <li>No events scheduled currently!</li>
+                    )}
                   </ul>
                 </div>
 

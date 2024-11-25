@@ -290,7 +290,6 @@
 
     ul {
         list-style-type: none;
-        min-width: fit-content;
         display: flex;
         flex-direction: column;
         gap: var(--edge-spacer);
@@ -378,22 +377,39 @@
     justify-content: space-between;
     gap: 24px;
     width: 100%;
-    align-items: center;
+    height: 100%;
     overflow: hidden;
 
     @include mixins.sm-desktop{
         gap: 16px;
         flex-direction: column-reverse;
+        align-items: center;
     }
 }
 
 .events {
     display: flex;
-    min-width: fit-content;
+    width: calc(100% - 64px);
     gap: 48px;
+
+    ul {
+        width: 100%;
+    }
+    
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px
+    }
+
+    .event_name {
+        width: 70%;
+    }
 
     @include mixins.phone{
         gap: 24px;
+        width: 100%;
     }
 }
 
