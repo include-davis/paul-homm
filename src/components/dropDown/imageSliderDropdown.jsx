@@ -31,13 +31,15 @@ export default function ImageSliderDropDown({
       <div className={`${styles.table} ${dropDown ? styles.active : null}`}>
         {services.map((service, index) => (
           <div key={index} className={styles.option}>
-            <div className={styles.divider} alt="Divider"></div>
-            <option
+            {index !== 0 && (
+              <div className={styles.divider} alt="Divider"></div>
+            )}
+            <div
               className={styles.option_text}
               onClick={() => clickService(service, index)}
             >
               {service}
-            </option>
+            </div>
           </div>
         ))}
       </div>

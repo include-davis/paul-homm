@@ -163,11 +163,9 @@
 
     color: var(--color-gold);
     background-color: var(--color-maroon);
-    height: 264px;
     width: 100%;
 
     @include mixins.phone {
-        height: 336px;
         align-items: center;
         justify-content: flex-start;
         padding-left: 104px;
@@ -175,13 +173,11 @@
     }
 
     @include mixins.sm-phone {
-        height: 400px;
         padding: 16px 0px;
         padding-left: 96px;
     }
 
     @include mixins.v-sm-phone {
-        height: 440px;
         padding-left: 48px;
     }
 
