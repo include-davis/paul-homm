@@ -47,11 +47,10 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.title}>
-        <Link href="/">
+        <Link href="/" className={styles.logo}>
           <Image
             src="/images/header/paul_hom_logo.png"
-            width={110}
-            height={110}
+            fill={true}
             alt="Paul Hom logo"
           />
         </Link>

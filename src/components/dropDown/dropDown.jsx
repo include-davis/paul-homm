@@ -75,13 +75,12 @@ export default function LangDropDown() {
         {locales.map((language, index) => (
           <div key={index} className={styles.option}>
             <div className={styles.divider} alt="Divider"></div>
-            <option
+            <div
               className={styles.option_text}
-              value={language.code}
               onClick={() => clickLanguage(language.code, language.name)}
             >
               {language.name}
-            </option>
+            </div>
           </div>
         ))}
       </div>

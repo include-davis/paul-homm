@@ -7,19 +7,24 @@
     flex-direction: column;
     background-color: var(--color-maroon);
     height: var(--desktop-header-height);
-    justify-content: space-around;
-
+    justify-content: space-between;
+    padding: 24px 0px;
 }
 
 .title {
     display: flex;
     flex-direction: row;
     column-gap: 11px;
-    margin-top: 8px;
     align-items: center;
     width: 100%;
     position: relative;
     padding-left: 32px;
+}
+
+.logo {
+    height: 100%;
+    aspect-ratio: 1;
+    position: relative;
 }
 
 .title_text {
@@ -220,7 +225,7 @@
 
     
     .language_dropdown{
-        top: 40px;
+        top: 15px;
         right: 240px;
     }
 }
@@ -270,7 +275,7 @@
     }
 
     .language_dropdown>div{
-        top: calc(var(--mobile-header-height)/2 - 0.7rem);
+        top: 0px;
         left: auto;
         right: 4px;
     }
